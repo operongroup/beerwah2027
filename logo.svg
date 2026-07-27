@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="sky" cx="50%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#1A2138"/>
+      <stop offset="55%" stop-color="#111527"/>
+      <stop offset="100%" stop-color="#0A0C18"/>
+    </radialGradient>
+    <linearGradient id="mtn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF7A3D"/>
+      <stop offset="45%" stop-color="#F0521C"/>
+      <stop offset="100%" stop-color="#9E2A08"/>
+    </linearGradient>
+    <linearGradient id="mtnShade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7A1F05"/>
+      <stop offset="100%" stop-color="#C23A10"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF6A2F" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FF6A2F" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- app-icon rounded square -->
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="url(#sky)"/>
+
+  <!-- stars -->
+  <g fill="#F4E8DC">
+    <circle cx="96"  cy="104" r="3.2" opacity=".9"/>
+    <circle cx="150" cy="70"  r="2.0" opacity=".55"/>
+    <circle cx="216" cy="112" r="2.4" opacity=".7"/>
+    <circle cx="300" cy="72"  r="2.0" opacity=".5"/>
+    <circle cx="118" cy="170" r="1.8" opacity=".45"/>
+    <circle cx="415" cy="150" r="2.6" opacity=".75"/>
+    <circle cx="366" cy="102" r="1.8" opacity=".5"/>
+    <circle cx="446" cy="216" r="1.8" opacity=".4"/>
+    <circle cx="64"  cy="232" r="2.0" opacity=".5"/>
+    <circle cx="260" cy="150" r="1.6" opacity=".4"/>
+  </g>
+
+  <!-- crescent moon -->
+  <g transform="translate(388,96)">
+    <circle r="34" fill="#FFE3C9"/>
+    <circle cx="-14" cy="-9" r="31" fill="url(#sky)"/>
+  </g>
+
+  <!-- horizon glow low in the sky, behind the mountain -->
+  <rect x="8" y="300" width="496" height="112" fill="url(#glow)" transform="rotate(180 256 356)"/>
+
+  <!-- Mt Beerwah: steep-sided volcanic dome -->
+  <path d="M84 408
+           C 120 404, 138 372, 158 322
+           C 178 270, 200 210, 228 172
+           C 242 152, 252 144, 262 144
+           C 274 144, 288 158, 302 180
+           C 330 226, 348 282, 368 330
+           C 388 376, 404 402, 430 408
+           Z" fill="url(#mtn)"/>
+
+  <!-- shaded western face -->
+  <path d="M262 144 C 252 144, 242 152, 228 172 C 200 210, 178 270, 158 322 C 144 358, 130 388, 110 402
+           C 160 398, 204 378, 232 336 C 254 302, 260 216, 262 144 Z"
+        fill="url(#mtnShade)" opacity="0.45"/>
+
+  <!-- ridge lines (Beerwah's fluted rock face) -->
+  <g stroke="#7A1F05" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M262 166 C 260 240, 256 316, 248 380"/>
+    <path d="M286 192 C 292 254, 302 320, 314 384"/>
+    <path d="M238 194 C 226 256, 210 320, 192 376"/>
+  </g>
+
+  <!-- baseline -->
+  <rect x="72" y="404" width="368" height="8" rx="4" fill="#FF6A2F"/>
+</svg>
