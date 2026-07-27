@@ -666,12 +666,14 @@ function drawCharts(){
     const ph=(H-B-8)*m.km/max, py=(H-B)-ph;
     s+=`<rect x="${x}" y="${py}" width="${wd}" height="${ph}" rx="3" fill="none" stroke="var(--axis)" stroke-width="1" data-tip="W${w} planned ${m.km}km"/>`;
     if(a.km>0){ const ah=(H-B-8)*Math.min(max,a.km)/max, ay=(H-B)-ah;
-      s+=`<rect x="${x+1.5}" y="${ay}" width="${Math.max(2,wd-3)}" height="${ah}" rx="3" fill="var(--s1)" data-tip="W${w} actual ${a.km.toFixed(1)}km / ${m.km} planned"/>`; }
+      s+=`<rect x="${x+1.5}" y="${ay}" width="${Math.max(2,wd-3)}" height="${ah}" rx="3" fill="var(--s1)" data-tip="W${w} actual ${a.km.toFixed(1)}km / ${m.km} planned"/>`;
+      if(w===cur) s+=`<text x="${x+wd/2}" y="${ay-5}" font-size="10" font-weight="800" fill="var(--s1)" text-anchor="middle">${a.km.toFixed(1)}</text>`; }
     if(w%5===0||w===1||w===27) s+=`<text x="${x+wd/2}" y="${H-8}" font-size="9" fill="var(--muted)" text-anchor="middle">W${w}</text>`;
     if(w===cur) s+=`<line x1="${x+wd/2}" y1="8" x2="${x+wd/2}" y2="14" stroke="var(--s2)" stroke-width="2"/>`;
   }
   s+=`<line x1="${L}" y1="${H-B}" x2="${W}" y2="${H-B}" stroke="var(--axis)"/></svg>`;
-  $("#chVol").innerHTML=s;
+  const curA=weekActual(cur), curM=WEEKS[cur];
+  $("#chVol").innerHTML=s+`<p class="small" style="margin-top:6px">Week ${cur} so far: <b style="color:var(--brand2)">${curA.km.toFixed(1)}</b> of ${curM.km}km (${Math.round(100*curA.km/curM.km)}%)${curA.vert?` · ${Math.round(curA.vert)}m vert`:""}</p>`;
   // TT chart
   const tts=loggedTTs(); const mk=Object.entries(TT_MARKERS).map(([w,v])=>({w:+w,v}));
   const wks=[1,8,16,23,27]; const x27=w=>L+ (W-L-14)*(w-1)/26;
