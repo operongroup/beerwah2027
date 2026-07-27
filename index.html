@@ -146,6 +146,10 @@ details.wucd summary{font-size:13px;font-weight:800;color:var(--ink2);letter-spa
 .wurow b{font-size:13.5px}
 .wurow .dose{font-size:12px;color:var(--brand2);font-weight:700;margin-left:6px}
 .wurow p{font-size:12.5px;color:var(--muted);margin-top:1px}
+.wl{display:flex;gap:11px;align-items:flex-start;cursor:pointer;width:100%}
+.wl input{width:18px;height:18px;accent-color:var(--brand);flex:none;margin-top:2px;cursor:pointer}
+.wuc{color:var(--brand2);font-weight:800}
+.wuc.ok{color:var(--goodtext)}
 </style>
 </head>
 <body>
@@ -380,15 +384,19 @@ function sessionCard(s, expanded){
       <button class="btn" onclick="saveStr(${s.id})">${done?"Update":"Save session"}</button>
     </div>`;
   }
-  const wucd = (sec,label,icon)=> sec? `<details class="wucd"><summary>${icon} ${label} · ~${sec.mins} min</summary>${sec.items.map(x=>
-    `<div class="wurow"><div><b>${esc(x[0])}</b>${x[1]?` <span class="dose">${esc(x[1])}</span>`:""}</div><p>${esc(x[2])}</p></div>`).join("")}</details>` : "";
+  const wucd = (sec,label,icon,key)=>{
+    if(!sec) return "";
+    const st=(l[key]||[]); const n=sec.items.length, c=st.filter(Boolean).length;
+    return `<details class="wucd"${c>0&&c<n?" open":""}><summary>${icon} ${label} · ~${sec.mins} min · <span class="wuc${c>=n?" ok":""}" id="wuc${s.id}_${key}">${c}/${n}${c>=n?" ✓":""}</span></summary>${sec.items.map((x,i)=>
+    `<div class="wurow"><label class="wl"><input type="checkbox" ${st[i]?"checked":""} onchange="tickWU(${s.id},'${key}',${i},this.checked)"><div><b>${esc(x[0])}</b>${x[1]?` <span class="dose">${esc(x[1])}</span>`:""}<p>${esc(x[2])}</p></div></label></div>`).join("")}</details>`;
+  };
   const acts=actsOn(s.date);
   const actHtml = (s.type!=="strength"&&acts.length)? `<p class="small" style="margin-top:6px">Garmin: ${acts.map(a=>`${a.km.toFixed(1)}km · ${fmtT(a.secs)} · ${fmtPace(a.secs/a.km)}${a.hr?" · "+Math.round(a.hr)+"bpm":""}${a.vert?" · "+Math.round(a.vert)+"m":""}`).join(" | ")}</p>` : "";
   return `<div class="card"><div>${pills}</div>
     <h3>${esc(s.title)}</h3>
     ${meta?`<p class="small">${meta}${s.type!=="strength"?" planned":""}</p>`:""}
     <p class="pres">${esc(s.prescription)}</p>
-    ${wucd(s.wu,"Warm-up","↗")}${logForm}${wucd(s.cd,"Cool-down","↘")}${actHtml}</div>`;
+    ${wucd(s.wu,"Warm-up","↗","wu")}${logForm}${wucd(s.cd,"Cool-down","↘","cdd")}${actHtml}</div>`;
 }
 function rToday(){
   const t=todayISO(); let list=sessionsOn(t);
@@ -424,6 +432,14 @@ function saveLog(id){
   l.completed=true; l.km=parseFloat($("#lk"+id).value)||null; l.time=parseT($("#lt"+id).value);
   l.hr=parseInt($("#lh"+id).value)||null; l.rpe=parseInt($("#lr"+id).value)||null; l.notes=$("#ln"+id).value;
   l.at=new Date().toISOString(); logs[id]=l; store.logs=logs; render();
+}
+function tickWU(id,key,i,checked){
+  const logs=store.logs; const l=logs[id]||{}; const arr=l[key]||[];
+  arr[i]=checked; l[key]=arr; logs[id]=l; store.logs=logs;
+  const s=SESSIONS.find(x=>x.id===id); const sec=key==="wu"? s.wu : s.cd;
+  const c=arr.filter(Boolean).length, n=sec.items.length;
+  const el=$("#wuc"+id+"_"+key);
+  if(el){ el.textContent=c+"/"+n+(c>=n?" ✓":""); el.classList.toggle("ok",c>=n); }
 }
 let restTimer=null;
 function beep(){
