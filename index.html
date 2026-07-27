@@ -803,10 +803,17 @@ async function syncNow(){
     const r=await fetch(`https://intervals.icu/api/v1/athlete/${encodeURIComponent(c.aid)}/activities?oldest=${START}&newest=${end}`,{headers:{Authorization:auth}});
     if(!r.ok) throw new Error("activities "+r.status);
     const acts=await r.json();
-    store.acts = acts.filter(a=>a.type&&/run/i.test(a.type)).map(a=>({
+    const mapped = acts.filter(a=>a.type&&/run/i.test(a.type)).map(a=>({
       id:a.id, date:(a.start_date_local||"").slice(0,10), run:true,
       km:(a.distance||0)/1000, secs:a.moving_time||a.elapsed_time||0,
       vert:a.total_elevation_gain||a.icu_climb||0, hr:a.average_heartrate||null, name:a.name||"Run"}));
+    // guard: Garmin + Strava can both deliver the same run — drop same-day near-identical duplicates
+    const kept=[];
+    for(const a of mapped){
+      const dup=kept.find(b=>b.date===a.date && Math.abs(b.km-a.km)<Math.max(0.25,0.05*a.km) && Math.abs((b.secs||0)-(a.secs||0))<150);
+      if(!dup) kept.push(a);
+    }
+    store.acts = kept;
     let wellCount=0;
     try{
       const rw=await fetch(`https://intervals.icu/api/v1/athlete/${encodeURIComponent(c.aid)}/wellness?oldest=${START}&newest=${end}`,{headers:{Authorization:auth}});
