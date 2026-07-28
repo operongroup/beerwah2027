@@ -158,6 +158,9 @@ details.wucd summary{font-size:13px;font-weight:800;color:var(--ink2);letter-spa
 .libchips{display:flex;flex-wrap:wrap;gap:6px;padding-top:8px}
 button.lib{font-size:12px;padding:6px 10px;text-align:left}
 button.lib span{color:var(--muted);font-size:11px}
+.tmr{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--brand2);border-radius:8px;padding:5px 9px;font-size:11px;font-weight:800;cursor:pointer;flex:none;margin-top:2px;white-space:nowrap}
+.tmrrow{display:flex;align-items:flex-start;gap:6px}
+.tmrrow .wl{flex:1}
 </style>
 </head>
 <body>
@@ -383,6 +386,7 @@ function sessionCard(s, expanded){
         <div class="exn"><b>${esc(e.name)}</b><span>${esc(e.scheme)}${e.note?" · "+esc(e.note):""}</span></div>
         <button class="setbtn ${csets>=nsets?"fin":""}" onclick="doneSet(${s.id},${i})">
           <span class="dots">${dots}</span>${csets>=nsets?"done":"set "+(csets+1)+"/"+nsets+" ✓"}</button>
+        ${parseDur(e.scheme)?`<button class="tmr" onclick="startExTimer(${s.id},${i})">⏱ ${durLbl(parseDur(e.scheme))}</button>`:""}
         ${e.load?`<div class="exl"><input class="w" type="number" step="0.5" id="exw${s.id}_${i}" value="${sv.load ?? (last? last.load : "")}" placeholder="kg"><span class="exlast">${last?"last "+last.load+"kg":"first time"}</span></div>`:""}
       </div>`;
     }).join("") + `</div>
@@ -400,9 +404,9 @@ function sessionCard(s, expanded){
     const tot=n+ext.length, ctot=c+ext.filter(x=>x&&x.done).length;
     const open=openSec.has(s.id+key)||(ctot>0&&ctot<tot);
     const baseRows=sec.items.map((x,i)=>
-      `<div class="wurow"><label class="wl"><input type="checkbox" ${st[i]?"checked":""} onchange="tickWU(${s.id},'${key}',${i},this.checked)"><div><b>${esc(x[0])}</b>${x[1]?` <span class="dose">${esc(x[1])}</span>`:""}<p>${esc(x[2])}</p></div></label></div>`).join("");
+      `<div class="wurow tmrrow"><label class="wl"><input type="checkbox" ${st[i]?"checked":""} onchange="tickWU(${s.id},'${key}',${i},this.checked)"><div><b>${esc(x[0])}</b>${x[1]?` <span class="dose">${esc(x[1])}</span>`:""}<p>${esc(x[2])}</p></div></label>${parseDur(x[1])?`<button class="tmr" onclick="startWuTimer(${s.id},'${key}',${i},false)">⏱ ${durLbl(parseDur(x[1]))}</button>`:""}</div>`).join("");
     const extRows=ext.map((x,i)=>{ const e=LIB.find(z=>z[0]===x.k); if(!e) return "";
-      return `<div class="wurow added"><label class="wl"><input type="checkbox" ${x.done?"checked":""} onchange="tickWUX(${s.id},'${key}',${i},this.checked)"><div><b>${esc(e[1])}</b> <span class="dose">${esc(e[2])}</span><p>${esc(e[3])}</p></div></label><button class="rmx" onclick="rmWUX(${s.id},'${key}',${i})">✕</button></div>`; }).join("");
+      return `<div class="wurow added"><label class="wl"><input type="checkbox" ${x.done?"checked":""} onchange="tickWUX(${s.id},'${key}',${i},this.checked)"><div><b>${esc(e[1])}</b> <span class="dose">${esc(e[2])}</span><p>${esc(e[3])}</p></div></label>${parseDur(e[2])?`<button class="tmr" onclick="startWuTimer(${s.id},'${key}',${i},true)">⏱ ${durLbl(parseDur(e[2]))}</button>`:""}<button class="rmx" onclick="rmWUX(${s.id},'${key}',${i})">✕</button></div>`; }).join("");
     const chips=LIB.filter(e=>!ext.some(x=>x.k===e[0])).map(e=>
       `<button class="ghost lib" onclick="addWUX(${s.id},'${key}','${e[0]}')">${esc(e[1])} <span>${esc(e[2])}</span></button>`).join("");
     return `<details class="wucd"${open?" open":""}><summary>${icon} ${label} · ~${sec.mins} min · <span class="wuc${ctot>=tot&&tot>0?" ok":""}" id="wuc${s.id}_${key}">${ctot}/${tot}${ctot>=tot&&tot>0?" ✓":""}</span></summary>${baseRows}${extRows}
@@ -475,6 +479,23 @@ const LIB_CD=[
  ["doorway","Doorway chest stretch","30s","Forearm on the frame, step through. For after upper days."],
  ["downdog","Down-dog calf pedal","30s","Hips high, pedal the heels one at a time."]];
 const openSec=new Set();
+function durLbl(d){ return d>=60? (Math.round(d/60)+"m") : (d+"s"); }
+function parseDur(str){ if(!str) return null;
+  let m=String(str).match(/(\d+)\s*min/); if(m) return +m[1]*60;
+  m=String(str).match(/(\d+)\s*s/); if(m) return +m[1]; return null; }
+function startWuTimer(id,key,i,isExt){
+  const s=SESSIONS.find(x=>x.id===id); const sec=key==="wu"? s.wu : s.cd; if(!sec) return;
+  let name,dose;
+  if(isExt){ const l=store.logs[id]||{}; const ext=l[key+"x"]||[]; const LIB=key==="wu"? LIB_WU : LIB_CD;
+    const e=LIB.find(z=>z[0]===(ext[i]||{}).k); if(!e) return; name=e[1]; dose=e[2]; }
+  else { const it=sec.items[i]; if(!it) return; name=it[0]; dose=it[1]; }
+  const d=parseDur(dose); if(!d) return;
+  startRest(d, name, /each/.test(dose)? "switch sides, start it again":"done, tick it off", "hold");
+}
+function startExTimer(id,i){
+  const s=SESSIONS.find(x=>x.id===id); const e=s.exercises[i]; const d=parseDur(e.scheme); if(!d) return;
+  startRest(d, e.name, /each/.test(e.scheme)? "switch sides":"hold done, tap set ✓", "hold");
+}
 function wucdCount(id,key){
   const s=SESSIONS.find(x=>x.id===id); const sec=key==="wu"? s.wu : s.cd; if(!sec) return;
   const l=store.logs[id]||{}; const st=l[key]||[]; const ext=l[key+"x"]||[];
@@ -512,10 +533,10 @@ function beep(){
   }catch(e){}
   if(navigator.vibrate) navigator.vibrate([250,120,250]);
 }
-function startRest(secs,label,goText){
+function startRest(secs,label,goText,mode){
   clearInterval(restTimer&&restTimer.iv);
   const bar=$("#timerbar");
-  restTimer={end:Date.now()+secs*1000,label,goText};
+  restTimer={end:Date.now()+secs*1000,label,goText,mode:mode||"rest"};
   bar.classList.remove("hide","go");
   const tick=()=>{
     const left=Math.ceil((restTimer.end-Date.now())/1000);
@@ -527,7 +548,7 @@ function startRest(secs,label,goText){
       return;
     }
     const m=Math.floor(left/60), x=left%60;
-    bar.innerHTML=`<b>${m}:${String(x).padStart(2,"0")}</b><span>rest · ${esc(restTimer.label)} · next: ${esc(restTimer.goText)}</span>
+    bar.innerHTML=`<b>${m}:${String(x).padStart(2,"0")}</b><span>${restTimer.mode==="hold"?"⏱ hold":"rest"} · ${esc(restTimer.label)} · ${restTimer.mode==="hold"?"then":"next"}: ${esc(restTimer.goText)}</span>
       <button class="tb" onclick="restTimer.end+=30000">+30s</button>
       <button class="tb" onclick="hideTimer()">skip</button>`;
   };
