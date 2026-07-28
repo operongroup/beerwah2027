@@ -141,6 +141,14 @@ details.exd summary{display:flex;align-items:center;gap:10px;list-style:none;fle
 .timerbar.go b{color:var(--goodtext);font-size:16px;flex:1;min-width:0}
 @keyframes pulse{50%{box-shadow:0 0 24px rgba(47,194,79,.5)}}
 details.wucd{border:1px solid var(--border);border-radius:12px;padding:9px 12px;margin:8px 0;background:rgba(255,255,255,.02)}
+details.vday{border:1px solid var(--border);border-radius:16px;padding:11px 13px;margin:9px 0;background:rgba(255,255,255,.025)}
+details.vday>summary{display:flex;flex-direction:column;gap:5px;list-style:none}
+details.vday>summary::-webkit-details-marker{display:none}
+.vt{font-size:14.5px;font-weight:700;color:var(--ink);display:flex;align-items:baseline;gap:7px}
+.vt .vch{color:var(--muted);font-size:15px;line-height:1;transition:transform .15s;flex:none}
+details.vday[open] .vt{color:var(--brand2)}
+details.vday[open] .vt .vch{transform:rotate(90deg);color:var(--brand)}
+.vm{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted);font-weight:600;padding-left:19px}
 details.wucd summary{font-size:13px;font-weight:800;color:var(--ink2);letter-spacing:.02em}
 .wurow{padding:7px 0;border-top:1px solid var(--grid)}
 .wurow:first-of-type{border-top:0;margin-top:6px}
@@ -780,6 +788,7 @@ function rRules(){
 }
 // ---------- Vlog ----------
 const VLOG_DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const VLOG_ORDER = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
 const VLOG_DAYS = {
  Mon:{t:"Joint conditioning + Upper A", mins:"film ~10 min", tag:"",
   shots:[["Wall sit with the app timer on screen","10-15s","Get the shake. The timer counting on screen is the point."],
@@ -829,7 +838,7 @@ const VLOG_DAYS = {
   shots:[["Screen record the Progress tab: volume chart, TT chain, predictor","30s","Slow, deliberate scrolling. This is the proof."],
    ["Piece to camera, clean audio, tripod","60-90s","Week number, km banked vs plan, how the body feels, what next week brings."]],
   talk:["Always close on the same line format so it becomes appointment viewing.",
-   "Then edit: cut 3 shorts for the coming week, bank the rest for the episode."]}
+   "Then edit: cut 3 shorts for the week ahead, bank everything else for the episode."]}
 };
 const VLOG_SHORTS = [
  ["Training moment","Tue or Thu footage. Hook with a number in the first 2 seconds.","30-45s"],
@@ -871,65 +880,81 @@ const VLOG_ASKS = [
  ["Once posting","Paste analytics screenshots for a monthly review of what's actually working."],
  ["When reality changes","Injury, breakthrough TT, plan change — ask how to fold it into the story. Honest beats polished, every time."]
 ];
-function vlogDayNum(){ return Math.max(1, dayDiff(START, todayISO())+1); }
-function vTick(k, grp, checked){
+const vAddD = (d,n) => iso(new Date(new Date(d+"T12:00").getTime()+n*864e5));
+const vDayNum = d => Math.max(1, dayDiff(START,d)+1);
+const vNiceDate = d => new Date(d+"T12:00").toLocaleDateString("en-AU",{day:"numeric",month:"short"});
+function vTick(k, checked){
   const v=store.vlog; v[k]=checked; store.vlog=v;
-  const el=$("#vcnt_"+grp);
-  if(el){ const tot=+el.dataset.tot, pre=el.dataset.pre;
-    let c=0; for(let i=0;i<tot;i++){ if(store.vlog[pre+i]) c++; }
-    el.textContent=c+"/"+tot+(c>=tot?" ✓":""); el.classList.toggle("ok",c>=tot); }
+  document.querySelectorAll('input[data-k="'+k+'"]').forEach(el=>{ el.checked=checked; });
+  vRecount();
 }
-function vRows(items, pre, grp){
+function vRecount(){
+  const v=store.vlog;
+  document.querySelectorAll('.wuc[data-pre]').forEach(el=>{
+    const tot=+el.dataset.tot, pre=el.dataset.pre; let c=0;
+    for(let i=0;i<tot;i++){ if(v[pre+i]) c++; }
+    el.textContent=c+"/"+tot+(c>=tot?" ✓":""); el.classList.toggle("ok",c>=tot);
+  });
+}
+function vRows(items, pre){
   const v=store.vlog;
   return items.map((it,i)=>`<div class="wurow"><label class="wl">
-    <input type="checkbox" ${v[pre+i]?"checked":""} onchange="vTick('${pre+i}','${grp}',this.checked)">
+    <input type="checkbox" data-k="${pre+i}" ${v[pre+i]?"checked":""} onchange="vTick('${pre+i}',this.checked)">
     <span><b>${esc(it[0])}</b>${it[1]?`<span class="dose">${esc(it[1])}</span>`:""}${it[2]?`<p>${esc(it[2])}</p>`:""}</span>
   </label></div>`).join("");
 }
-function vCount(pre, tot, grp){
-  let c=0; for(let i=0;i<tot;i++){ if(store.vlog[pre+i]) c++; }
-  return `<span class="wuc ${c>=tot?"ok":""}" id="vcnt_${grp}" data-tot="${tot}" data-pre="${pre}">${c}/${tot}${c>=tot?" ✓":""}</span>`;
+function vCount(pre, tot){
+  const v=store.vlog; let c=0; for(let i=0;i<tot;i++){ if(v[pre+i]) c++; }
+  return `<span class="wuc ${c>=tot?"ok":""}" data-tot="${tot}" data-pre="${pre}">${c}/${tot}${c>=tot?" ✓":""}</span>`;
+}
+function vTalk(x){
+  return x.talk.map(s=>`<div class="wurow"><p style="color:var(--ink2);font-size:13px;margin:0">${esc(s)}</p></div>`).join("");
+}
+// the full shoot card body, used for today AND every day dropdown
+function vBody(k, date){
+  const x=VLOG_DAYS[k], pre="d_"+date+"_";
+  const sess=sessionsOn(date).map(s=>s.title).filter(Boolean).join(" + ");
+  const tt=latest5k(); const cur=tt? fmtT(tt.secs) : "26:40";
+  return `<p class="small" style="margin:2px 0 4px">Day ${vDayNum(date)} of 189 · ${vNiceDate(date)}${sess?` · on the plan: ${esc(sess)}`:""}</p>
+   <details class="wucd" open><summary>Shot list ${vCount(pre, x.shots.length)}</summary>${vRows(x.shots, pre)}</details>
+   <details class="wucd"><summary>What to say</summary>${vTalk(x)}</details>
+   <p class="small" style="margin-top:9px">Closing line: <b style="color:var(--ink2)">“Day ${vDayNum(date)} of 189. Current 5km: ${cur}. Podium needs: 21:30. See you tomorrow.”</b></p>`;
 }
 function rVlog(){
-  const t=todayISO(), dn=vlogDayNum(), wk=Math.min(27,Math.max(1,weekOf(t)));
+  const t=todayISO(), wk=Math.min(27,Math.max(1,weekOf(t)));
   const dow=VLOG_DOW[new Date(t+"T12:00").getDay()];
+  const mon=vAddD(START,(wk-1)*7);
   const d=VLOG_DAYS[dow];
-  const sess=sessionsOn(t).map(s=>s.title).filter(Boolean).join(" + ");
-  const tt=latest5k(); const cur=tt? fmtT(tt.secs) : "26:40";
-  const pre="d_"+t+"_";
   let out=`<div class="card"><h2>Project Sub-50 · today's shoot</h2>
    <div class="hero"><div class="ht"><b>${dow} — ${esc(d.t)}</b>
-   <p>${esc(d.mins)}${d.tag?` · <span class="pill test" style="margin:0">${esc(d.tag)}</span>`:""}</p>
-   <p class="small">Day ${dn} of 189 · Week ${wk} of 27${sess?` · on the plan: ${esc(sess)}`:""}</p></div></div>
-   <details class="wucd" open><summary>Shot list ${vCount(pre, d.shots.length, "today")}</summary>${vRows(d.shots, pre, "today")}</details>
-   <details class="wucd"><summary>What to say</summary>${d.talk.map(x=>`<div class="wurow"><p style="color:var(--ink2);font-size:13px">${esc(x)}</p></div>`).join("")}</details>
-   <p class="small" style="margin-top:9px">Closing line, every time: <b style="color:var(--ink2)">“Day ${dn} of 189. Current 5km: ${cur}. Podium needs: 21:30. See you tomorrow.”</b></p></div>`;
+   <p>${esc(d.mins)}${d.tag?` · <span class="pill test" style="margin:0">${esc(d.tag)}</span>`:""}</p></div></div>
+   ${vBody(dow,t)}</div>`;
+
+  out+=`<div class="card"><h2>Every day of the week</h2>
+   <p class="small" style="margin-bottom:2px">Week ${wk} of 27. Ticks are saved against the real date, so today's boxes match the card above.</p>`;
+  VLOG_ORDER.forEach((k,i)=>{
+    const x=VLOG_DAYS[k], date=vAddD(mon,i), isT=date===t;
+    out+=`<details class="vday" ${isT?"open":""}><summary>
+     <span class="vt"><span class="vch">&#8250;</span><span><b>${k}</b> &middot; ${esc(x.t)}</span></span>
+     <span class="vm">${vCount("d_"+date+"_", x.shots.length)}<span>${esc(x.mins)}</span>${isT?'<span class="pill done" style="margin:0">TODAY</span>':""}${x.tag?`<span class="pill test" style="margin:0">${esc(x.tag)}</span>`:""}</span></summary>
+     ${vBody(k,date)}</details>`;
+  });
+  out+=`</div>`;
 
   const lc=VLOG_LAUNCH.map(x=>[x[0],"",x[1]||""]);
   out+=`<div class="card"><h2>Launch sequence — the first 10 days</h2>
    <p class="small" style="margin-bottom:4px">Priority order. Day-one footage expires. Items 1-4 this week.</p>
-   <details class="wucd" open><summary>Checklist ${vCount("launch_", VLOG_LAUNCH.length, "launch")}</summary>${vRows(lc,"launch_","launch")}</details></div>`;
+   <details class="wucd" open><summary>Checklist ${vCount("launch_", VLOG_LAUNCH.length)}</summary>${vRows(lc,"launch_")}</details></div>`;
 
   out+=`<div class="card"><h2>The 3 shorts, every week</h2>
    ${VLOG_SHORTS.map(s=>`<div class="verdict"><span class="dot" style="background:var(--brand)"></span><div><b>${esc(s[0])} <span class="dose">${esc(s[2])}</span></b><p>${esc(s[1])}</p></div></div>`).join("")}
    <p class="small" style="margin-top:8px">Capture daily, 5-15 min of phone clips, no editing. Edit once, Sunday afternoon, 2-3 hrs: cut 3 shorts for the week ahead and bank everything else for the episode.</p></div>`;
 
-  out+=`<div class="card"><h2>The weekly capture map</h2>`;
-  for(const k of ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]){
-    const x=VLOG_DAYS[k]; const isT=k===dow;
-    out+=`<details ${isT?"open":""}><summary>${k} — ${esc(x.t)} <span class="small" style="font-weight:600">${esc(x.mins)}</span>${x.tag?` <span class="pill test" style="margin:0">${esc(x.tag)}</span>`:""}</summary>
-     <ul>${x.shots.map(s=>`<li><b>${esc(s[0])}</b> <span class="dose">${esc(s[1])}</span>${s[2]?`<br><span class="small">${esc(s[2])}</span>`:""}</li>`).join("")}</ul>
-     <p style="margin-top:6px"><b style="font-size:12.5px;color:var(--muted);letter-spacing:.06em">TOUCH ON</b></p>
-     <ul>${x.talk.map(s=>`<li>${esc(s)}</li>`).join("")}</ul></details>`;
-  }
-  out+=`</div>`;
-
   out+=`<div class="card"><h2>Milestones — non-negotiable filming days</h2>`;
   for(const m of VLOG_MILES){
-    const away=dayDiff(t,m[0]);
-    const past=away<0;
+    const away=dayDiff(t,m[0]), past=away<0;
     out+=`<details ${(!past&&away<=10)?"open":""}><summary style="${past?"opacity:.45":""}">${esc(m[1])} <span class="dose">${past?"done":(away===0?"TODAY":away+" days")}</span></summary>
-     <p>${esc(m[0])}</p><p>${esc(m[2])}</p></details>`;
+     <p class="small">${esc(vNiceDate(m[0]))} ${m[0].slice(0,4)}</p><p>${esc(m[2])}</p></details>`;
   }
   out+=`</div>`;
 
