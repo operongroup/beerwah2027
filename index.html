@@ -40,9 +40,10 @@ header .count span{font-size:10px;color:var(--muted);text-transform:uppercase;le
 .chip.acc{border-color:rgba(255,90,36,.5);color:var(--brand2);background:rgba(255,90,36,.10)}
 nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(13,16,26,.85);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
   border-top:1px solid var(--border);z-index:50;padding-bottom:env(safe-area-inset-bottom)}
-nav button{flex:1;padding:9px 0 7px;border:0;background:none;color:var(--muted);font-size:9.5px;font-weight:700;letter-spacing:.03em;cursor:pointer;
+nav button{flex:1;min-width:0;padding:9px 1px 7px;border:0;background:none;color:var(--muted);font-size:8.8px;font-weight:700;letter-spacing:.01em;cursor:pointer;
   display:flex;flex-direction:column;align-items:center;gap:3px}
-nav button svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav button svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(min-width:520px){nav button{font-size:10px;letter-spacing:.03em} nav button svg{width:22px;height:22px}}
 nav button.on{color:var(--brand)}
 main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .card{background:linear-gradient(180deg,#171C2D 0%,#131726 100%);border:1px solid var(--border);border-radius:20px;padding:17px;margin-bottom:13px;
@@ -170,10 +171,11 @@ const ICONS={
  Strength:'<path d="M2 12h3M19 12h3M8 12h8"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="16" y="7" width="3" height="10" rx="1"/>',
  Progress:'<path d="M3 21h18"/><path d="M4 17l5-6 4 3 6-8"/>',
  Rules:'<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/>',
- Sync:'<path d="M20 8a8 8 0 0 0-14-2M4 16a8 8 0 0 0 14 2"/><path d="M20 3v5h-5M4 21v-5h5"/>'};
+ Sync:'<path d="M20 8a8 8 0 0 0-14-2M4 16a8 8 0 0 0 14 2"/><path d="M20 3v5h-5M4 21v-5h5"/>',
+ Vlog:'<rect x="2" y="6" width="13" height="12" rx="3"/><path d="M15 10.5l6-3.5v10l-6-3.5z"/>'};
 function ringSVG(pct,center,sub){ const r=34,c=2*Math.PI*r,off=c*(1-Math.min(1,Math.max(0,pct)));
  return `<svg class="hr-ring" width="92" height="92" viewBox="0 0 92 92"><circle cx="46" cy="46" r="${r}" fill="none" stroke="var(--grid)" stroke-width="9"/><circle cx="46" cy="46" r="${r}" fill="none" stroke="url(#ringg)" stroke-width="9" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 46 46)"/><defs><linearGradient id="ringg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#E8430E"/></linearGradient></defs><text x="46" y="44" text-anchor="middle" font-size="17" font-weight="800" fill="var(--ink)">${center}</text><text x="46" y="60" text-anchor="middle" font-size="8.5" font-weight="700" fill="var(--muted)" letter-spacing=".08em">${sub}</text></svg>`; }
-const TABS = ["Today","Week","Plan","Strength","Progress","Rules","Sync"];
+const TABS = ["Today","Week","Plan","Strength","Progress","Rules","Sync","Vlog"];
 // ---------- state ----------
 const store = {
   get logs(){ try{return JSON.parse(localStorage.getItem("bw_logs")||"{}")}catch(e){return {}} },
@@ -190,6 +192,8 @@ const store = {
   set moves(v){ localStorage.setItem("bw_moves", JSON.stringify(v)) },
   get cfg(){ try{return JSON.parse(localStorage.getItem("bw_cfg")||"{}")}catch(e){return {}} },
   set cfg(v){ localStorage.setItem("bw_cfg", JSON.stringify(v)) },
+  get vlog(){ try{return JSON.parse(localStorage.getItem("bw_vlog")||"{}")}catch(e){return {}} },
+  set vlog(v){ localStorage.setItem("bw_vlog", JSON.stringify(v)) },
 };
 let tab = location.hash ? location.hash.slice(1) : "Today";
 if(!TABS.includes(tab)) tab = "Today";
@@ -336,7 +340,7 @@ function render(){
   $("#chips").innerHTML = `<span class="chip acc">Week ${Math.min(27,Math.max(1,wk))} of 27 · Phase ${wkm?esc(wkm.phase):""}</span>
     ${wkm&&wkm.down?'<span class="chip">DOWN WEEK · not optional</span>':""}
     <span class="chip">${wkm?wkm.km+"km · "+wkm.vert+"m vert this week":""}</span>`;
-  const R={Today:rToday,Week:rWeek,Plan:rPlan,Strength:rStrength,Progress:rProgress,Rules:rRules,Sync:rSync};
+  const R={Today:rToday,Week:rWeek,Plan:rPlan,Strength:rStrength,Progress:rProgress,Rules:rRules,Sync:rSync,Vlog:rVlog};
   $("#main").innerHTML = (tab==="Today"&&dayView)? rDayView(dayView) : R[tab]();
   if(tab==="Progress") drawCharts();
 }
@@ -773,6 +777,167 @@ function rRules(){
   <ul><li>☐ Enter Beerwah@Daybreak (closes 30 Nov)</li><li>☐ Enter flat road 10km (Oct/Nov)</li>
   <li>☐ Enter Beerwah@Night (closes 24 Jan — no entries on the day)</li>
   <li>☐ Head torch 500+ lm dual beam ☐ backup torch ☐ trail shoes ☐ caffeine ☐ electrolytes ☐ compression bandage (mandatory gear) ☐ phone</li></ul></details></div>`;
+}
+// ---------- Vlog ----------
+const VLOG_DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const VLOG_DAYS = {
+ Mon:{t:"Joint conditioning + Upper A", mins:"film ~10 min", tag:"",
+  shots:[["Wall sit with the app timer on screen","10-15s","Get the shake. The timer counting on screen is the point."],
+   ["Slow step-downs, filmed from the side","10s","Low angle, knee tracking visible."],
+   ["One push-up set or DB press set","10s","Phone leaned on the bench, side on."],
+   ["One line to camera, sweaty","15-20s","Straight after, before you cool down."]],
+  talk:['"Rest day. Except my AI coach doesn\'t believe in rest days, it believes in insurance."',
+   "The circuit is knee and tendon protection, not training.",
+   "Say the day count out loud."]},
+ Tue:{t:"Quality run AM + Strength A PM", mins:"film ~15 min", tag:"BEST DAY",
+  shots:[["Pre-dawn: watch face + street or trail","5s","Dark, torch on, one clean shot."],
+   ["Strides or reps: phone on a fence or the ground, run through frame","15s","2-3 passes. Let the frame stay still and you move through it."],
+   ["Piece to camera straight after finishing, breathing hard","20-30s","What the session was, what the app said vs what you actually did, RPE."],
+   ["Gym: plates loading on the bar, close-up","10s","Hands and steel. No face needed."],
+   ["One squat set from the side","15s","Full rep, feet in frame."],
+   ["THE REST TIMER: screen counting down then flashing GO","10s","The signature shot of the series. Get it every week."],
+   ["Exercise progression screen showing the load trend","10s","Screen record, slow scroll."]],
+  talk:["The number of the day: pace, HR, or weight on the bar.",
+   "One honest feeling: legs, doubt, or confidence. Pick one, say it plainly."]},
+ Wed:{t:"Easy run", mins:"film ~5 min", tag:"",
+  shots:[["Watch on wrist showing HR while jogging","10s","Arm swinging, screen readable."],
+   ["Slow scenic clip","10s","Hold still, let the world move."]],
+  talk:['"My coach makes me run embarrassingly slow. 7 minute ks. Here\'s why that\'s the whole plan."',
+   "Easy days build the engine, the grey zone kills it.",
+   "HR trend: same pace costing fewer beats over the weeks is the engine being rebuilt. Call it out the moment it moves."]},
+ Thu:{t:"Terrain + Strength B", mins:"film ~15 min", tag:"",
+  shots:[["Trail POV, phone in hand at chest height","20s","Good single track only. Walk the first 3 steps to settle the shake."],
+   ["One uphill rep from behind or the side, audible breathing","10-15s","The breathing is the audio track. Don't talk over it."],
+   ["One descent clip","15s","From week 18 these become night and torch shots, the best footage of the series."],
+   ["Mt Beerwah itself, any time it is visible","10s","The hero shot. Collect these constantly, you will never have enough."]],
+  talk:["Why hills: 294m of climbing on race night.",
+   "The race is won on the mostly-uphill final 3km.",
+   "The Dungeon exists and it is waiting."]},
+ Fri:{t:"Upper B + optional easy run", mins:"film ~5 min", tag:"",
+  shots:[["Push-up burnout to near failure","15s","One take, let it get ugly."],
+   ["Farmer carry down the driveway","10s","Wide, walking away from camera."]],
+  talk:['"The one session my coach lets me drop."',
+   "Chest and shoulders survived the running program. That was deliberate."]},
+ Sat:{t:"Long run", mins:"film ~15-20 min", tag:"",
+  shots:[["Trailhead arrival, shoes going on","10s","Low angle on the shoes."],
+   ["Mid-run check-in, stopped at a lookout","20-30s","Piece to camera. Wind is the enemy, turn your back to it."],
+   ["Post-run: food, couch, dead face","10s","No commentary needed."],
+   ["The weekly volume ring on the app","10s","Screen record."]],
+  talk:["Longest run since when? Name the milestone.",
+   "Anything that hurt. Anything that surprised you."]},
+ Sun:{t:"Recovery + THE SCOREBOARD", mins:"film ~10 min", tag:"SHORT #3",
+  shots:[["Screen record the Progress tab: volume chart, TT chain, predictor","30s","Slow, deliberate scrolling. This is the proof."],
+   ["Piece to camera, clean audio, tripod","60-90s","Week number, km banked vs plan, how the body feels, what next week brings."]],
+  talk:["Always close on the same line format so it becomes appointment viewing.",
+   "Then edit: cut 3 shorts for the coming week, bank the rest for the episode."]}
+};
+const VLOG_SHORTS = [
+ ["Training moment","Tue or Thu footage. Hook with a number in the first 2 seconds.","30-45s"],
+ ["App / AI insight","Show one feature doing its job: rest timer, auto-synced run, the verdict panel. Frame it as “my AI coach caught me doing X”.","30-60s"],
+ ["Sunday scoreboard","The accountability short. Same format every single week.","45-60s"]
+];
+const VLOG_LAUNCH = [
+ ["The starting-line piece to camera","Shoot once, use forever. 2-3 min, tripod or leaned phone, clean audio. Three years of results read off the actual results page on screen, “23rd male”, the decision, the bet (top 3 or bust, 30 Jan, 7pm, in the dark), and the twist: “so I hired a coach that doesn't sleep”. This is the one that expires. You can never reshoot “before”."],
+ ["The app tour screen recording","2-3 min raw. Scroll Today, tick a warm-up box, fire the rest timer, the 27-week grid, the TT chain chart, the logo. Voiceover gets added later."],
+ ["The build story capture","Screenshots and screen recordings of the actual Claude chat, the program document, the logo appearing, the deploy. This is Episode 1's montage material and it is sitting in your history right now."],
+ ["Order the kit","A ~$30 clip-on lav mic and a cheap tripod. In your hands before the weekend or every piece to camera this month sounds like wind."],
+ ["This week's training per the weekly map"],
+ ["First short posted: the starting-line cut","Hook: “Last year I came 23rd. My AI coach says I can podium. 186 days to find out.” End on the logo."],
+ ["Shorts 2 and 3","The rest-timer app clip, and Sunday scoreboard #1."],
+ ["Episode 1, “The Starting Line”","Assemble over the next 2 weekends, 8-12 min. History, the bet, the AI build montage, week 1 training. Ends on the 189-day wall ahead and the first scoreboard."]
+];
+const VLOG_MILES = [
+ ["2026-08-08","Rainbow Beach 11km","The fun episode-bit. Start line energy, the dunes (walking them, per coach's orders), family if they're in. Angle: “My coach entered me in a race and banned me from racing it.”"],
+ ["2026-09-15","Time trial #2 — marker 24:45","Film the complete arc: the marker stated to camera before, the warm-up, the watch start, final-lap suffering, and the IMMEDIATE number reveal while still gasping. Prediction, effort, number. Do not miss the reveal."],
+ ["2026-11-10","Time trial #3 — marker 22:50","Same arc. Prediction, effort, number."],
+ ["2026-12-06","Beerwah@Daybreak 10km","The mid-season finale and its own episode. Film the stakes explainer the day before (target 50:00-51:30, what each outcome means on the GO/NO-GO table), the race, and the verdict piece after."],
+ ["2026-12-29","Time trial #4 — marker 21:45","Last checkpoint before race month. Same arc."],
+ ["2027-01-09","Night course rehearsal (week 24)","The cinematic one. Torch beams in the dark, the Dungeon, kit flat-lay. Shoot generously, this footage carries all of race-week hype content."],
+ ["2027-01-30","RACE NIGHT","Kit flat-lay short, the 4pm snack and 6pm caffeine routine, the drive to the mountain, start line seeding. Arrange ONE person to film the finish. Chest mount or handheld in-race only if it doesn't cost focus. The result piece to camera gets filmed that night whatever happens. That is the deal."]
+];
+const VLOG_RULES = [
+ "A number in the first 2 seconds of every short. Scoreboard line at the end.",
+ "Vertical 9:16 for everything. YouTube episodes can letterbox or reuse wides.",
+ "Never name the junior runners. They are under 18. Say “the kid who beat everyone” or “the field”. Campbell Smith (~50:20-50:45) is the adult benchmark and is fine to reference respectfully.",
+ "Publish results win or lose. No medical or injury drama beyond honest niggle talk.",
+ "Kit: phone + ~$30 clip-on lav + cheap tripod. Nothing else until episode 3 proves you want it. From week 16 the head torch doubles as a light source.",
+ "Capture daily, edit only on Sundays, bank everything else for the episodes.",
+ "Branding: mountain logo end card, dark thumbnails with big orange numbers (26:40 style), titles as “DAY X: …” or “WEEK X: …”."
+];
+const VLOG_ASKS = [
+ ["Every Sunday","“Here's what I filmed this week” → get 3 short scripts with hooks, captions and title options."],
+ ["Monthly","Episode assembly brief: structure, beats, which banked clips go where."],
+ ["Any time","Thumbnails and title A/Bs from the logo assets in Desktop/Beerwah2027."],
+ ["Once posting","Paste analytics screenshots for a monthly review of what's actually working."],
+ ["When reality changes","Injury, breakthrough TT, plan change — ask how to fold it into the story. Honest beats polished, every time."]
+];
+function vlogDayNum(){ return Math.max(1, dayDiff(START, todayISO())+1); }
+function vTick(k, grp, checked){
+  const v=store.vlog; v[k]=checked; store.vlog=v;
+  const el=$("#vcnt_"+grp);
+  if(el){ const tot=+el.dataset.tot, pre=el.dataset.pre;
+    let c=0; for(let i=0;i<tot;i++){ if(store.vlog[pre+i]) c++; }
+    el.textContent=c+"/"+tot+(c>=tot?" ✓":""); el.classList.toggle("ok",c>=tot); }
+}
+function vRows(items, pre, grp){
+  const v=store.vlog;
+  return items.map((it,i)=>`<div class="wurow"><label class="wl">
+    <input type="checkbox" ${v[pre+i]?"checked":""} onchange="vTick('${pre+i}','${grp}',this.checked)">
+    <span><b>${esc(it[0])}</b>${it[1]?`<span class="dose">${esc(it[1])}</span>`:""}${it[2]?`<p>${esc(it[2])}</p>`:""}</span>
+  </label></div>`).join("");
+}
+function vCount(pre, tot, grp){
+  let c=0; for(let i=0;i<tot;i++){ if(store.vlog[pre+i]) c++; }
+  return `<span class="wuc ${c>=tot?"ok":""}" id="vcnt_${grp}" data-tot="${tot}" data-pre="${pre}">${c}/${tot}${c>=tot?" ✓":""}</span>`;
+}
+function rVlog(){
+  const t=todayISO(), dn=vlogDayNum(), wk=Math.min(27,Math.max(1,weekOf(t)));
+  const dow=VLOG_DOW[new Date(t+"T12:00").getDay()];
+  const d=VLOG_DAYS[dow];
+  const sess=sessionsOn(t).map(s=>s.title).filter(Boolean).join(" + ");
+  const tt=latest5k(); const cur=tt? fmtT(tt.secs) : "26:40";
+  const pre="d_"+t+"_";
+  let out=`<div class="card"><h2>Project Sub-50 · today's shoot</h2>
+   <div class="hero"><div class="ht"><b>${dow} — ${esc(d.t)}</b>
+   <p>${esc(d.mins)}${d.tag?` · <span class="pill test" style="margin:0">${esc(d.tag)}</span>`:""}</p>
+   <p class="small">Day ${dn} of 189 · Week ${wk} of 27${sess?` · on the plan: ${esc(sess)}`:""}</p></div></div>
+   <details class="wucd" open><summary>Shot list ${vCount(pre, d.shots.length, "today")}</summary>${vRows(d.shots, pre, "today")}</details>
+   <details class="wucd"><summary>What to say</summary>${d.talk.map(x=>`<div class="wurow"><p style="color:var(--ink2);font-size:13px">${esc(x)}</p></div>`).join("")}</details>
+   <p class="small" style="margin-top:9px">Closing line, every time: <b style="color:var(--ink2)">“Day ${dn} of 189. Current 5km: ${cur}. Podium needs: 21:30. See you tomorrow.”</b></p></div>`;
+
+  const lc=VLOG_LAUNCH.map(x=>[x[0],"",x[1]||""]);
+  out+=`<div class="card"><h2>Launch sequence — the first 10 days</h2>
+   <p class="small" style="margin-bottom:4px">Priority order. Day-one footage expires. Items 1-4 this week.</p>
+   <details class="wucd" open><summary>Checklist ${vCount("launch_", VLOG_LAUNCH.length, "launch")}</summary>${vRows(lc,"launch_","launch")}</details></div>`;
+
+  out+=`<div class="card"><h2>The 3 shorts, every week</h2>
+   ${VLOG_SHORTS.map(s=>`<div class="verdict"><span class="dot" style="background:var(--brand)"></span><div><b>${esc(s[0])} <span class="dose">${esc(s[2])}</span></b><p>${esc(s[1])}</p></div></div>`).join("")}
+   <p class="small" style="margin-top:8px">Capture daily, 5-15 min of phone clips, no editing. Edit once, Sunday afternoon, 2-3 hrs: cut 3 shorts for the week ahead and bank everything else for the episode.</p></div>`;
+
+  out+=`<div class="card"><h2>The weekly capture map</h2>`;
+  for(const k of ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]){
+    const x=VLOG_DAYS[k]; const isT=k===dow;
+    out+=`<details ${isT?"open":""}><summary>${k} — ${esc(x.t)} <span class="small" style="font-weight:600">${esc(x.mins)}</span>${x.tag?` <span class="pill test" style="margin:0">${esc(x.tag)}</span>`:""}</summary>
+     <ul>${x.shots.map(s=>`<li><b>${esc(s[0])}</b> <span class="dose">${esc(s[1])}</span>${s[2]?`<br><span class="small">${esc(s[2])}</span>`:""}</li>`).join("")}</ul>
+     <p style="margin-top:6px"><b style="font-size:12.5px;color:var(--muted);letter-spacing:.06em">TOUCH ON</b></p>
+     <ul>${x.talk.map(s=>`<li>${esc(s)}</li>`).join("")}</ul></details>`;
+  }
+  out+=`</div>`;
+
+  out+=`<div class="card"><h2>Milestones — non-negotiable filming days</h2>`;
+  for(const m of VLOG_MILES){
+    const away=dayDiff(t,m[0]);
+    const past=away<0;
+    out+=`<details ${(!past&&away<=10)?"open":""}><summary style="${past?"opacity:.45":""}">${esc(m[1])} <span class="dose">${past?"done":(away===0?"TODAY":away+" days")}</span></summary>
+     <p>${esc(m[0])}</p><p>${esc(m[2])}</p></details>`;
+  }
+  out+=`</div>`;
+
+  out+=`<div class="card"><h2>Filming rules</h2><ul style="padding-left:18px">${VLOG_RULES.map(r=>`<li style="font-size:13px;color:var(--ink2);margin:6px 0">${esc(r)}</li>`).join("")}</ul></div>`;
+
+  out+=`<div class="card"><h2>What to ask Claude in the vlog chat</h2>
+   ${VLOG_ASKS.map(a=>`<div class="verdict"><span class="dot" style="background:var(--s2)"></span><div><b>${esc(a[0])}</b><p>${esc(a[1])}</p></div></div>`).join("")}</div>`;
+  return out;
 }
 // ---------- Sync ----------
 function rSync(){
