@@ -161,6 +161,12 @@ button.lib span{color:var(--muted);font-size:11px}
 .tmr{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--brand2);border-radius:8px;padding:5px 9px;font-size:11px;font-weight:800;cursor:pointer;flex:none;margin-top:2px;white-space:nowrap}
 .tmrrow{display:flex;align-items:flex-start;gap:6px}
 .tmrrow .wl{flex:1}
+.setcol{display:flex;flex-direction:column;gap:4px;align-items:stretch;flex:none}
+.setrow{display:flex;gap:4px;justify-content:center}
+.minib{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--ink2);border-radius:7px;padding:3px 7px;font-size:10.5px;font-weight:800;cursor:pointer;white-space:nowrap}
+.minib.won{border-color:rgba(255,90,36,.5);color:var(--brand2);background:rgba(255,90,36,.10)}
+.minib.tclr{color:var(--brand2)}
+.setbtn .dots em{font-style:normal;font-size:9px;color:var(--goodtext);font-weight:800;margin-left:2px}
 </style>
 </head>
 <body>
@@ -379,14 +385,20 @@ function sessionCard(s, expanded){
       const sv=(l.ex&&l.ex[i])||{};
       const hist=(exh[e.k]||[]).filter(x=>x.load!=null);
       const last=hist.length? hist[hist.length-1] : null;
-      const nsets=e.sets||3, csets=sv.sets||0;
-      const dots=Array.from({length:nsets},(_,d)=>`<i class="${d<csets?"on":""}"></i>`).join("");
+      const nsets=e.sets||3, csets=sv.sets||0, wsets=sv.wsets||0;
+      const dots=Array.from({length:nsets},(_,d)=>`<i class="${d<Math.min(csets,nsets)?"on":""}"></i>`).join("")+(csets>nsets?`<em>+${csets-nsets}</em>`:"");
       return `<div class="exrow">
         <input type="checkbox" id="exd${s.id}_${i}" ${sv.done?"checked":""} onchange="toggleEx(${s.id},${i},this.checked)">
         <div class="exn"><b>${esc(e.name)}</b><span>${esc(e.scheme)}${e.note?" · "+esc(e.note):""}</span></div>
-        <button class="setbtn ${csets>=nsets?"fin":""}" onclick="doneSet(${s.id},${i})">
-          <span class="dots">${dots}</span>${csets>=nsets?"done":"set "+(csets+1)+"/"+nsets+" ✓"}</button>
-        ${parseDur(e.scheme)?`<button class="tmr" onclick="startExTimer(${s.id},${i})">⏱ ${durLbl(parseDur(e.scheme))}</button>`:""}
+        <div class="setcol">
+          <button class="setbtn ${csets>=nsets?"fin":""}" onclick="doneSet(${s.id},${i})">
+            <span class="dots">${dots}</span>${csets>=nsets?"done · +1":"set "+(csets+1)+"/"+nsets+" ✓"}</button>
+          <div class="setrow">
+            <button class="minib ${wsets>0?"won":""}" onclick="wuSet(${s.id},${i})" title="log a warm-up set">${wsets>0?"W×"+wsets:"W+"}</button>
+            <button class="minib" onclick="decSet(${s.id},${i})" title="undo a set">−</button>
+            ${parseDur(e.scheme)?`<button class="minib tclr" onclick="startExTimer(${s.id},${i})">⏱${durLbl(parseDur(e.scheme))}</button>`:""}
+          </div>
+        </div>
         ${e.load?`<div class="exl"><input class="w" type="number" step="0.5" id="exw${s.id}_${i}" value="${sv.load ?? (last? last.load : "")}" placeholder="kg"><span class="exlast">${last?"last "+last.load+"kg":"first time"}</span></div>`:""}
       </div>`;
     }).join("") + `</div>
@@ -569,13 +581,29 @@ function doneSet(id,i){
   const logs=store.logs; const l=logs[id]||{}; l.ex=l.ex||[];
   const entry=l.ex[i]||{}; const nsets=e.sets||3;
   const wi0=$("#exw"+id+"_"+i); if(wi0&&wi0.value) entry.load=parseFloat(wi0.value)||entry.load;
-  if((entry.sets||0)>=nsets){ entry.sets=0; entry.done=false; }  // tap when finished = reset
-  else{
-    entry.sets=(entry.sets||0)+1;
-    if(entry.sets>=nsets){ entry.done=true; captureLoad(id,i,entry,e); }
-    const nextEx = entry.sets>=nsets ? (s.exercises[i+1]? s.exercises[i+1].name : "session done — hit Save") : `${e.name} set ${entry.sets+1} of ${nsets}`;
-    if(e.rest>0) startRest(e.rest, e.name, nextEx); else hideTimer();
-  }
+  entry.sets=(entry.sets||0)+1;
+  if(entry.sets>=nsets){ entry.done=true; captureLoad(id,i,entry,e); }
+  const nextEx = entry.sets>nsets ? "extra set banked — +1 for another"
+    : entry.sets===nsets ? (s.exercises[i+1]? s.exercises[i+1].name : "session done — hit Save")
+    : `${e.name} set ${entry.sets+1} of ${nsets}`;
+  if(e.rest>0) startRest(e.rest, e.name, nextEx); else hideTimer();
+  l.ex[i]=entry; l.completed=l.ex.some(x=>x&&x.done); logs[id]=l; store.logs=logs; render();
+}
+function wuSet(id,i){
+  const s=SESSIONS.find(x=>x.id===id); const e=s.exercises[i];
+  const logs=store.logs; const l=logs[id]||{}; l.ex=l.ex||[];
+  const entry=l.ex[i]||{}; entry.wsets=(entry.wsets||0)+1;
+  const wi0=$("#exw"+id+"_"+i); if(wi0&&wi0.value) entry.load=parseFloat(wi0.value)||entry.load;
+  l.ex[i]=entry; logs[id]=l; store.logs=logs;
+  startRest(60, e.name+" (warm-up set)", "another warm-up or first work set");
+  render();
+}
+function decSet(id,i){
+  const s=SESSIONS.find(x=>x.id===id); const e=s.exercises[i]; const nsets=e.sets||3;
+  const logs=store.logs; const l=logs[id]||{}; l.ex=l.ex||[];
+  const entry=l.ex[i]||{};
+  if((entry.sets||0)>0) entry.sets--; else if((entry.wsets||0)>0) entry.wsets--;
+  entry.done=(entry.sets||0)>=nsets;
   l.ex[i]=entry; l.completed=l.ex.some(x=>x&&x.done); logs[id]=l; store.logs=logs; render();
 }
 function toggleEx(id,i,checked){
@@ -594,11 +622,12 @@ function saveStr(id){
     const done=cb? cb.checked : false;
     const w=wi? (parseFloat(wi.value)||null) : null;
     const sets=(prev[i]&&prev[i].sets)|| (done? (e.sets||3):0);
+    const wsets=(prev[i]&&prev[i].wsets)||0;
     if(done){ const h=exh[e.k]||[]; const entry={date:s.date, load:e.load? w : null};
       const j=h.findIndex(x=>x.date===s.date);
       if(j>=0) h[j]=entry; else h.push(entry);
       h.sort((a,b)=>a.date<b.date?-1:1); exh[e.k]=h; }
-    return {done, load:w, sets};
+    return {done, load:w, sets, wsets};
   });
   l.completed=l.ex.some(x=>x.done);
   l.notes=$("#ln"+id)?$("#ln"+id).value:""; l.rpe=$("#lr"+id)? (parseInt($("#lr"+id).value)||null):null;
