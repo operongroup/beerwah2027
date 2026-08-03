@@ -114,7 +114,7 @@ details ul{padding-left:18px}
 .small{font-size:12px;color:var(--muted)}
 .ok{color:var(--goodtext);font-weight:700}
 .bad{color:var(--crit);font-weight:700}
-.hide{display:none}
+.hide{display:none!important}
 .exlist{margin-top:6px}
 .exrow{display:flex;align-items:center;gap:11px;padding:9px 0;border-top:1px solid var(--grid)}
 .exrow:first-child{border-top:0}
@@ -174,6 +174,7 @@ button.lib span{color:var(--muted);font-size:11px}
   opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast b{color:#FF5A24;margin-right:6px}
+.btn.saved{background:var(--good);border-color:var(--good);color:#fff}
 </style>
 </head>
 <body>
@@ -383,7 +384,7 @@ function sessionCard(s, expanded){
     </div>
     <div class="row" style="margin-top:6px">
       <input placeholder="notes / niggles" id="ln${s.id}" style="flex:1" value="${esc(l.notes||"")}">
-      <button class="btn" onclick="saveLog(${s.id})">${done?"Update":"Complete"}</button>
+      <button class="btn ${savedFlash===s.id?"saved":""}" onclick="saveLog(${s.id})">${savedFlash===s.id?"\u2713 Saved":(done?"Update":"Complete")}</button>
       ${done?`<button class="ghost" onclick="unLog(${s.id})">Undo</button>`:""}
     </div>`;
   }
@@ -413,7 +414,7 @@ function sessionCard(s, expanded){
     <div class="row" style="margin-top:9px">
       <input placeholder="notes (form cues, niggles)" id="ln${s.id}" style="flex:1" value="${esc(l.notes||"")}">
       <label class="f">RPE 1-10<input type="number" min="1" max="10" id="lr${s.id}" value="${l.rpe??""}"></label>
-      <button class="btn" onclick="saveStr(${s.id})">${done?"Update":"Save session"}</button>
+      <button class="btn ${savedFlash===s.id?"saved":""}" onclick="saveStr(${s.id})">${savedFlash===s.id?"\u2713 Saved":(done?"Update":"Save session")}</button>
     </div>`;
   }
   const wucd = (sec,label,icon,key)=>{
@@ -469,6 +470,8 @@ function rToday(){
     `<div class="verdict"><span class="dot" style="background:var(--${v.lvl==="good"?"good":v.lvl==="warn"?"warn":v.lvl==="serious"?"serious":"crit"})"></span><div><b>${esc(v.t)}</b><p>${esc(v.p)}</p></div></div>`).join("")}</div>`;
   return html;
 }
+let savedFlash=null;
+function flashSaved(id){ savedFlash=id; render(); setTimeout(()=>{ if(savedFlash===id){ savedFlash=null; render(); } },1600); }
 let toastTm=null;
 function toast(msg){
   const el=$("#toast"); el.innerHTML="<b>\u2713</b>"+msg;
@@ -481,7 +484,7 @@ function saveLog(id){
   const logs=store.logs; const l=logs[id]||{};
   l.completed=true; l.km=parseFloat($("#lk"+id).value)||null; l.time=parseT($("#lt"+id).value);
   l.hr=parseInt($("#lh"+id).value)||null; l.rpe=parseInt($("#lr"+id).value)||null; l.notes=$("#ln"+id).value;
-  l.at=new Date().toISOString(); logs[id]=l; store.logs=logs; render(); toast("Session saved");
+  l.at=new Date().toISOString(); logs[id]=l; store.logs=logs; flashSaved(id); toast("Session saved");
 }
 const LIB_WU=[
  ["walklunge","Walking lunges","10 each side","Big step forward, back knee kisses the ground, tall chest. The full lower-body wake-up."],
@@ -647,7 +650,7 @@ function saveStr(id){
   });
   l.completed=l.ex.some(x=>x.done);
   l.notes=$("#ln"+id)?$("#ln"+id).value:""; l.rpe=$("#lr"+id)? (parseInt($("#lr"+id).value)||null):null;
-  l.at=new Date().toISOString(); logs[id]=l; store.logs=logs; store.exh=exh; render(); toast("Session saved");
+  l.at=new Date().toISOString(); logs[id]=l; store.logs=logs; store.exh=exh; flashSaved(id); toast("Session saved");
 }
 function sparkline(vals){
   if(vals.length<2) return "";
