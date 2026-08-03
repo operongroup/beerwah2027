@@ -301,6 +301,39 @@ for s in sessions:
         s["type"] = "rest"; s["title"] = "Rest"
         s["prescription"] = "Scheduled rest — this week's volume is consolidated into fewer, longer runs. A 20-30 min walk is fine."
 
+# --- Week 2 adjustment (3 Aug 2026): flu return + unplanned birthday run ---
+# Mitch ran 3.5km @5:26/km (HR 171, RPE ~8.5) Mon arvo instead of cond+Upper A.
+# Mon = the run (done). Cond + Upper A move to Tue. Tue strides run + Strength A dropped
+# (missed sessions drop, never stack; no heavy lower 3 days post-flu with a race Sat).
+# Thu Strength B lightened. Fri Upper B dropped -> pure rest before Rainbow Beach.
+_moved = [s for s in sessions if s["date"] == "2026-08-03" and s["type"] in ("cond", "strength")]
+for s in _moved:
+    s["date"] = "2026-08-04"; s["day"] = "Tue"
+for s in sessions:
+    if s["date"] == "2026-08-04" and s["title"] == "Easy + strides":
+        s["date"] = "2026-08-03"; s["day"] = "Mon"; s["type"] = "easy"
+        s["title"] = "Run - DONE (birthday run)"
+        s["prescription"] = ("Completed: 3.5km at 5:26/km, avg HR 171, RPE ~8.5. Unplanned afternoon run, "
+            "first session back after the flu. Felt strong, natural stride, slightly puffed late. "
+            "Counts as this week's Tuesday run - do NOT run again Tuesday.")
+sessions[:] = [s for s in sessions if not (s["date"] == "2026-08-04" and s["title"].startswith("Strength A"))]
+sessions[:] = [s for s in sessions if not (s["date"] == "2026-08-07" and s["title"].startswith("Upper B"))]
+for s in sessions:
+    if s["date"] == "2026-08-04" and s["type"] == "cond":
+        s["prescription"] = ("Moved from Monday. No running today - yesterday's run covered it. " + s["prescription"])
+    if s["date"] == "2026-08-06" and s["title"].startswith("Strength B"):
+        s["title"] = "Strength B (light) - single leg"
+        s["prescription"] = ("First lift back after the flu and the race is in 2 days: 2 sets of everything at "
+            "~80% of your usual weights, 3+ reps in reserve (reps you could still do). Crisp, controlled, "
+            "nothing close to grinding. The point is to switch the legs back on, not load them.")
+        for e in s.get("exercises", []):
+            e["sets"] = min(e.get("sets", 2), 2)
+            if " x " in e.get("scheme", ""):
+                e["scheme"] = "2 x " + e["scheme"].split(" x ", 1)[1]
+    if s["date"] == "2026-08-08" and s.get("is_race"):
+        s["prescription"] += (" POST-FLU RULE: start only if you feel 100% on the morning and resting HR is back "
+            "at baseline. Cap HR at 155 the whole way, walk the dunes, treat it as a supported long run.")
+
 # --- structured warm-ups / cool-downs ---
 SWINGS_FB = ["Leg swings, front-back", "10 each leg", "Hold a wall, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."]
 SWINGS_SIDE = ["Leg swings, side-to-side", "10 each leg", "Face the wall, swing the leg across your body then out wide. Opens the hips."]

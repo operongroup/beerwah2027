@@ -616,8 +616,8 @@
  {
   "week": 2,
   "phase": "0 Ramp",
-  "date": "2026-08-03",
-  "day": "Mon",
+  "date": "2026-08-04",
+  "day": "Tue",
   "is_down": false,
   "is_night": false,
   "is_test": false,
@@ -626,7 +626,7 @@
   "vert": 0,
   "type": "cond",
   "title": "Joint conditioning + mobility (~20 min)",
-  "prescription": "Rest day from running. This circuit is the knee/ankle/tendon insurance policy: light, controlled, never to failure.",
+  "prescription": "Moved from Monday. No running today - yesterday's run covered it. Rest day from running. This circuit is the knee/ankle/tendon insurance policy: light, controlled, never to failure.",
   "exercises": [
    {
     "k": "wallsit",
@@ -688,8 +688,8 @@
  {
   "week": 2,
   "phase": "0 Ramp",
-  "date": "2026-08-03",
-  "day": "Mon",
+  "date": "2026-08-04",
+  "day": "Tue",
   "is_down": false,
   "is_night": false,
   "is_test": false,
@@ -776,60 +776,50 @@
  {
   "week": 2,
   "phase": "0 Ramp",
-  "date": "2026-08-04",
-  "day": "Tue",
+  "date": "2026-08-03",
+  "day": "Mon",
   "is_down": false,
   "is_night": false,
   "is_test": false,
   "is_race": false,
   "km": 3.5,
   "vert": 10,
-  "type": "quality",
-  "title": "Easy + strides",
-  "prescription": "Easy run at Easy pace: 6:35-6:55/km, HR under 138, conversational in full sentences. Uphills by effort/HR, never pace. Zones reset at the Week 8 TT. Then 6 x 20s strides on flat: build to ~90% speed, tall and relaxed, NOT sprinting. Walk 60-90s between each. Strides train the legs, the easy running trains the engine.",
+  "type": "easy",
+  "title": "Run - DONE (birthday run)",
+  "prescription": "Completed: 3.5km at 5:26/km, avg HR 171, RPE ~8.5. Unplanned afternoon run, first session back after the flu. Felt strong, natural stride, slightly puffed late. Counts as this week's Tuesday run - do NOT run again Tuesday.",
   "id": 13,
   "wu": {
-   "mins": 18,
+   "mins": 4,
    "items": [
-    [
-     "Easy jog",
-     "10 min",
-     "Properly easy for 8 min, building to steady over the last 2. This is most of the warm-up."
-    ],
     [
      "Leg swings, front-back",
      "10 each leg",
      "Hold a wall, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
     ],
     [
-     "Hamstring sweeps",
-     "10 total, walking",
-     "The ground-sweep one: step a heel forward with the leg straight, hinge and sweep both hands down past your foot as you rock over it. Alternate legs walking forward."
+     "Leg swings, side-to-side",
+     "10 each leg",
+     "Face the wall, swing the leg across your body then out wide. Opens the hips."
     ],
     [
-     "A-skips",
-     "2 x 20m",
-     "A rhythmic skip driving one knee up tall each step. Light, springy, off the ground fast."
+     "Ankle wall rocks",
+     "10 each side",
+     "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "High knees",
-     "2 x 20m",
-     "Fast little steps driving knees to hip height, tall posture, arms pumping."
-    ],
-    [
-     "Strides",
-     "4 x 20s",
-     "Build to ~90% of top speed, tall and relaxed, NOT sprinting. Walk back between each. Do the last one 2 min before the session starts."
+     "First km at shuffle pace",
+     "",
+     "Slower than easy pace. This IS part of the warm-up, not wasted time."
     ]
    ]
   },
   "cd": {
-   "mins": 13,
+   "mins": 4,
    "items": [
     [
-     "Easy jog down",
-     "10 min",
-     "Genuinely easy. This is where the session gets absorbed."
+     "Walk it off",
+     "3-5 min",
+     "Do not stop dead at the driveway. Walk until breathing is normal."
     ],
     [
      "Calf stretch, straight knee",
@@ -840,117 +830,6 @@
      "Calf stretch, bent knee",
      "30s each side",
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
-    ],
-    [
-     "Standing quad stretch",
-     "30s each side",
-     "Grab the ankle behind you, knees together, push the hips slightly forward."
-    ]
-   ]
-  }
- },
- {
-  "week": 2,
-  "phase": "0 Ramp",
-  "date": "2026-08-04",
-  "day": "Tue",
-  "is_down": false,
-  "is_night": false,
-  "is_test": false,
-  "is_race": false,
-  "km": 0,
-  "vert": 0,
-  "type": "strength",
-  "title": "Strength A \u2014 heavy lower",
-  "prescription": "After the run, evening if possible. Warm up each big lift with 2 ramp-up sets (~50% then ~70% of working weight). Squat grip: high bar, wide grip, elbows down and back (elbow rule).",
-  "exercises": [
-   {
-    "k": "squat",
-    "name": "Back squat (high bar, wide grip)",
-    "scheme": "3 x 8",
-    "note": "stop 3 reps short of failure",
-    "load": true,
-    "sets": 3,
-    "rest": 150
-   },
-   {
-    "k": "rdl",
-    "name": "Romanian deadlift",
-    "scheme": "3 x 8",
-    "note": "moderate load, hinge not squat, replaces conventional deadlifts (back rule)",
-    "load": true,
-    "sets": 3,
-    "rest": 120
-   },
-   {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "3 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "calf_str",
-    "name": "Calf raise, straight knee",
-    "scheme": "4 x 12",
-    "note": "3-second slow lower",
-    "load": true,
-    "sets": 4,
-    "rest": 90
-   },
-   {
-    "k": "calf_bent",
-    "name": "Calf raise, bent knee (soleus)",
-    "scheme": "3 x 15",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 60
-   },
-   {
-    "k": "deadbug",
-    "name": "Dead bug",
-    "scheme": "3 x 10",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 45
-   },
-   {
-    "k": "plank",
-    "name": "Side plank",
-    "scheme": "3 x 30s each side",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 45
-   }
-  ],
-  "id": 14,
-  "wu": {
-   "mins": 5,
-   "items": [
-    [
-     "Glute bridges",
-     "10 slow",
-     "On your back, knees bent, drive hips up and squeeze the glutes hard at the top for 2 seconds."
-    ],
-    [
-     "Clamshells",
-     "10 each side",
-     "Lie on your side, knees bent, heels together. Lift the top knee like a clam opening without rolling your hips back. You should feel the side of your glute switch on."
-    ],
-    [
-     "Bodyweight squats",
-     "10 slow",
-     "Full depth, controlled, arms out front. Greases the exact pattern before load goes on."
-    ],
-    [
-     "Ramp-up sets",
-     "2 sets",
-     "Before the first heavy exercise: one set at ~50% of working weight, one at ~70%. Then work sets."
     ]
    ]
   }
@@ -1094,61 +973,61 @@
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength B \u2014 single leg",
-  "prescription": "After the run. Lighter day: single-leg control, not grinding. 2 ramp-up sets before anything heavy.",
+  "title": "Strength B (light) - single leg",
+  "prescription": "First lift back after the flu and the race is in 2 days: 2 sets of everything at ~80% of your usual weights, 3+ reps in reserve (reps you could still do). Crisp, controlled, nothing close to grinding. The point is to switch the legs back on, not load them.",
   "exercises": [
    {
     "k": "stepup",
     "name": "Dumbbell step-ups",
-    "scheme": "3 x 10 each leg",
+    "scheme": "2 x 10 each leg",
     "note": "",
     "load": true,
-    "sets": 3,
+    "sets": 2,
     "rest": 90
    },
    {
     "k": "slrdl",
     "name": "Single-leg Romanian deadlift",
-    "scheme": "3 x 8 each leg",
+    "scheme": "2 x 8 each leg",
     "note": "",
     "load": true,
-    "sets": 3,
+    "sets": 2,
     "rest": 90
    },
    {
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
-    "scheme": "3 x 12",
+    "scheme": "2 x 12",
     "note": "",
     "load": true,
-    "sets": 3,
+    "sets": 2,
     "rest": 90
    },
    {
     "k": "backext",
     "name": "Back extension",
-    "scheme": "3 x 12",
+    "scheme": "2 x 12",
     "note": "",
     "load": false,
-    "sets": 3,
+    "sets": 2,
     "rest": 60
    },
    {
     "k": "dbpress",
     "name": "Neutral-grip dumbbell press",
-    "scheme": "3 x 8",
+    "scheme": "2 x 8",
     "note": "SKIP if the elbow objects",
     "load": true,
-    "sets": 3,
+    "sets": 2,
     "rest": 90
    },
    {
     "k": "pallof",
     "name": "Pallof press",
-    "scheme": "3 x 10 each side",
+    "scheme": "2 x 10 each side",
     "note": "band or cable",
     "load": false,
-    "sets": 3,
+    "sets": 2,
     "rest": 45
    }
   ],
@@ -1198,94 +1077,6 @@
  {
   "week": 2,
   "phase": "0 Ramp",
-  "date": "2026-08-07",
-  "day": "Fri",
-  "is_down": false,
-  "is_night": false,
-  "is_test": false,
-  "is_race": false,
-  "km": 0,
-  "vert": 0,
-  "type": "strength",
-  "title": "Upper B - shoulders, back, core",
-  "prescription": "Second upper day. Rule: never at the cost of a run. If you're flat, THIS is the session that gets dropped, not the km.",
-  "exercises": [
-   {
-    "k": "dbpress",
-    "name": "Neutral-grip DB shoulder press",
-    "scheme": "3 x 8",
-    "note": "SKIP if the elbow objects",
-    "load": true,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "rdfly",
-    "name": "Rear-delt fly",
-    "scheme": "3 x 12",
-    "note": "light, hinge forward or chest on an incline bench",
-    "load": true,
-    "sets": 3,
-    "rest": 60
-   },
-   {
-    "k": "pushup",
-    "name": "Push-up burnout",
-    "scheme": "2 x max minus 2",
-    "note": "",
-    "load": false,
-    "sets": 2,
-    "rest": 60
-   },
-   {
-    "k": "carry",
-    "name": "Farmer carry",
-    "scheme": "2 x 40m",
-    "note": "22.5kg DBs, tall posture, crush the grip - elbow-safe arm work",
-    "load": true,
-    "sets": 2,
-    "rest": 75
-   },
-   {
-    "k": "situp",
-    "name": "Weighted sit-up",
-    "scheme": "3 x 10",
-    "note": "plate hugged to chest",
-    "load": false,
-    "sets": 3,
-    "rest": 45
-   }
-  ],
-  "id": 19,
-  "wu": {
-   "mins": 5,
-   "items": [
-    [
-     "Glute bridges",
-     "10 slow",
-     "On your back, knees bent, drive hips up and squeeze the glutes hard at the top for 2 seconds."
-    ],
-    [
-     "Clamshells",
-     "10 each side",
-     "Lie on your side, knees bent, heels together. Lift the top knee like a clam opening without rolling your hips back. You should feel the side of your glute switch on."
-    ],
-    [
-     "Bodyweight squats",
-     "10 slow",
-     "Full depth, controlled, arms out front. Greases the exact pattern before load goes on."
-    ],
-    [
-     "Ramp-up sets",
-     "2 sets",
-     "Before the first heavy exercise: one set at ~50% of working weight, one at ~70%. Then work sets."
-    ]
-   ]
-  }
- },
- {
-  "week": 2,
-  "phase": "0 Ramp",
   "date": "2026-08-08",
   "day": "Sat",
   "is_down": false,
@@ -1296,7 +1087,7 @@
   "vert": 100,
   "type": "race",
   "title": "RACE (easy): Rainbow Beach 11km",
-  "prescription": "8:00am start, Phil Rogers Park. NOT raced \u2014 conversational effort, WALK the dunes, finish feeling like you could do it again. Highest injury-risk day of the early block. Expect 2-4 days calf soreness.",
+  "prescription": "8:00am start, Phil Rogers Park. NOT raced \u2014 conversational effort, WALK the dunes, finish feeling like you could do it again. Highest injury-risk day of the early block. Expect 2-4 days calf soreness. POST-FLU RULE: start only if you feel 100% on the morning and resting HR is back at baseline. Cap HR at 155 the whole way, walk the dunes, treat it as a supported long run.",
   "id": 20,
   "wu": {
    "mins": 20,
