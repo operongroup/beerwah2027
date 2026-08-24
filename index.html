@@ -61,6 +61,14 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .locbtn{font-size:11px;font-weight:700;padding:6px 12px;border-radius:99px;cursor:pointer;
   background:transparent;color:var(--ink2);border:1px solid var(--border)}
 .locbtn.on{background:var(--brand2);border-color:var(--brand2);color:#fff}
+.locwrap{margin:10px 0 0}
+.locbtn{font-size:13px;font-weight:700;padding:9px 16px}
+.brief{margin:10px 0 4px;padding:12px 14px;border-radius:12px;
+  background:rgba(255,90,36,.10);border:1px solid rgba(255,90,36,.35);
+  color:var(--ink);font-size:15px;font-weight:600;line-height:1.45}
+.fullpres{margin-top:8px}
+.fullpres summary{cursor:pointer;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--muted)}
+.fullpres .pres{margin-top:8px}
 .pres{font-size:14px;color:var(--ink2);white-space:pre-wrap;margin:7px 0}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 button.btn{background:linear-gradient(135deg,#FF6A2F,#E8430E);color:#fff;border:0;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer;
@@ -2583,6 +2591,8 @@ const SESSIONS = [
   "title": "Hill sprints",
   "prescription": "Easy run + 5 x 20s hill sprints (steep), walk-down full recovery. REDUCED from 8 reps: first hard session back after flu, and last week was ~14km. Sprints are effort, not pace - hard but controlled, and stop if form falls apart.  ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 46,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -2774,6 +2784,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 48,
+  "opt_out": "Easy 4.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 31 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -2835,6 +2847,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "4 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 49,
+  "hill_reps": 4,
+  "opt_out": "10 min easy. Then 4 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 4 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -2901,6 +2916,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 7km easy trail with real climbing. ALL EASY - the hard descent segment moves to next week. Reduced from 8.5km: this is the first proper volume week back after flu. Walk the steep climbs, run the descents controlled.",
   "id": 53,
+  "opt_out": "7.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -2972,6 +2989,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 54,
+  "opt_out": "Easy 4.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 31 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -3141,6 +3160,8 @@ const SESSIONS = [
   "title": "Hill sprints",
   "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 57,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -3332,6 +3353,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 59,
+  "opt_out": "Easy 5.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 34 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -3393,6 +3416,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "5 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 60,
+  "hill_reps": 5,
+  "opt_out": "10 min easy. Then 5 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -3459,6 +3485,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 9.5km easy trail with real climbing; run ONE descent segment hard. ",
   "id": 64,
+  "opt_out": "9.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -3530,6 +3558,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 65,
+  "opt_out": "Easy 5.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 34 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -3699,6 +3729,8 @@ const SESSIONS = [
   "title": "Hill sprints",
   "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 68,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -3890,6 +3922,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 70,
+  "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 38 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -3951,6 +3985,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "5 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 71,
+  "hill_reps": 5,
+  "opt_out": "10 min easy. Then 5 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -4017,6 +4054,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 10.5km easy trail with real climbing; run ONE descent segment hard. ",
   "id": 75,
+  "opt_out": "10.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -4088,6 +4127,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 76,
+  "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 38 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -4257,6 +4298,8 @@ const SESSIONS = [
   "title": "5km Time Trial #2",
   "prescription": "5km TT, maximal. Do it at a Saturday parkrun if the timing works - real competition pacing beats a solo effort. This resets all zones.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 79,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -4453,6 +4496,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 81,
+  "opt_out": "Easy 4.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 28 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -4514,6 +4559,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "4 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 82,
+  "hill_reps": 4,
+  "opt_out": "10 min easy. Then 4 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 4 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -4580,6 +4628,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 7.5km easy trail with real climbing; run ONE descent segment hard. ",
   "id": 86,
+  "opt_out": "7.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -4651,6 +4701,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 87,
+  "opt_out": "Easy 3.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 24 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -4820,6 +4872,8 @@ const SESSIONS = [
   "title": "Hill sprints",
   "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 90,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -5011,6 +5065,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 92,
+  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -5072,6 +5128,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "6 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 93,
+  "hill_reps": 6,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -5138,6 +5197,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 11.5km easy trail with real climbing; run ONE descent segment hard. ",
   "id": 97,
+  "opt_out": "11.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -5209,6 +5270,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 98,
+  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -5378,6 +5441,8 @@ const SESSIONS = [
   "title": "Hill sprints",
   "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 101,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -5569,6 +5634,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 103,
+  "opt_out": "Easy 7.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 48 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -5630,6 +5697,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "7 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 104,
+  "hill_reps": 7,
+  "opt_out": "10 min easy. Then 7 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 7 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -5696,6 +5766,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 12.5km easy trail with real climbing; run ONE descent segment hard. ",
   "id": 108,
+  "opt_out": "12.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -5767,6 +5839,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 109,
+  "opt_out": "Easy 6.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 45 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -5936,6 +6010,8 @@ const SESSIONS = [
   "title": "Sub-threshold",
   "prescription": "3 x 8 min @ threshold (5:40-5:50/km), 2 min jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 112,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -6154,6 +6230,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 114,
+  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -6215,6 +6293,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "9 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 115,
+  "hill_reps": 9,
+  "opt_out": "10 min easy. Then 9 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 9 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -6281,6 +6362,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long progressive trail",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 13.5km on technical ground, final 20% progressive to steady. ",
   "id": 119,
+  "opt_out": "13.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -6352,6 +6435,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 120,
+  "opt_out": "Easy 7.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 48 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -6521,6 +6606,8 @@ const SESSIONS = [
   "title": "Sub-threshold",
   "prescription": "2 x 8 min @ threshold, 2 min jog (down week). CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 123,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -6712,6 +6799,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 125,
+  "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 38 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -6773,6 +6862,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "5 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 126,
+  "hill_reps": 5,
+  "opt_out": "10 min easy. Then 5 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -6839,6 +6931,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long progressive trail",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 10.0km on technical ground, final 20% progressive to steady. ",
   "id": 130,
+  "opt_out": "10.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -6910,6 +7004,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 131,
+  "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 38 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -7079,6 +7175,8 @@ const SESSIONS = [
   "title": "Sub-threshold",
   "prescription": "4 x 8 min @ threshold, 2 min jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 134,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -7297,6 +7395,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 136,
+  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -7358,6 +7458,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "10 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 137,
+  "hill_reps": 10,
+  "opt_out": "10 min easy. Then 10 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 10 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -7424,6 +7527,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long progressive trail",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 14.0km on technical ground, final 20% progressive to steady. ",
   "id": 141,
+  "opt_out": "14.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -7495,6 +7600,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 142,
+  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -7664,6 +7771,8 @@ const SESSIONS = [
   "title": "Sub-threshold",
   "prescription": "4 x 8 min @ threshold, 2 min jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 145,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -7882,6 +7991,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 147,
+  "opt_out": "Easy 8.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 55 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -7943,6 +8054,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "10 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 148,
+  "hill_reps": 10,
+  "opt_out": "10 min easy. Then 10 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 10 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -8009,6 +8123,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long progressive trail",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 15.0km on technical ground, final 20% progressive to steady. ",
   "id": 152,
+  "opt_out": "15.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -8080,6 +8196,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 153,
+  "opt_out": "Easy 8.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 55 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -8249,6 +8367,8 @@ const SESSIONS = [
   "title": "Sub-threshold",
   "prescription": "5 x 1km @ threshold, 90s jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 156,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -8467,6 +8587,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 158,
+  "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 59 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -8528,6 +8650,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "10 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 159,
+  "hill_reps": 10,
+  "opt_out": "10 min easy. Then 10 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 10 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -8594,6 +8719,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long progressive trail",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.0km on technical ground, final 20% progressive to steady. ",
   "id": 163,
+  "opt_out": "16.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -8665,6 +8792,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 164,
+  "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 59 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -8834,6 +8963,8 @@ const SESSIONS = [
   "title": "5km Time Trial #3",
   "prescription": "5km TT, flat, maximal. Progress gate: needs meaningful movement toward 21:30.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 167,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -9030,6 +9161,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 169,
+  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -9091,6 +9224,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "8 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 170,
+  "hill_reps": 8,
+  "opt_out": "10 min easy. Then 8 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 8 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -9157,6 +9293,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long progressive trail",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 12.0km on technical ground, final 20% progressive to steady. ",
   "id": 174,
+  "opt_out": "12.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -9228,6 +9366,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 175,
+  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -9397,6 +9537,8 @@ const SESSIONS = [
   "title": "Sub-threshold",
   "prescription": "5 x 1km @ threshold, 90s jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 178,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -9615,6 +9757,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 180,
+  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -9676,6 +9820,9 @@ const SESSIONS = [
   "title": "Hill reps (4am road)",
   "prescription": "10 x 60s uphill on your moderate rise - EFFORT, not pace. Jog back down easy. A moderate gradient is plenty for this; you do not need steep. Descents here are recovery only, run them relaxed. STEEP AND TECHNICAL DESCENT WORK STAYS ON THE WEEKEND TERRAIN DAY - picking your feet through rocks and roots in the dark on a road hill is not the same skill and is not worth the risk at 4am.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 181,
+  "hill_reps": 10,
+  "opt_out": "10 min easy. Then 10 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 10 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -9742,6 +9889,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long progressive trail",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.5km on technical ground, final 20% progressive to steady. ",
   "id": 185,
+  "opt_out": "16.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -9813,6 +9962,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 186,
+  "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 59 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -9982,6 +10133,8 @@ const SESSIONS = [
   "title": "VO2 intervals",
   "prescription": "5 x 3 min hard (5:20-5:25/km), 2 min jog.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 189,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -10200,6 +10353,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 191,
+  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -10261,6 +10416,8 @@ const SESSIONS = [
   "title": "Climb + descend (night)",
   "prescription": "NIGHT + TECHNICAL TERRAIN - this needs a weekend evening, not a 4am road run. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 192,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -10327,6 +10484,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long w/ race-effort (night)",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.5km with 2 x 10 min at race effort. Night run, head torch. ",
   "id": 196,
+  "opt_out": "16.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -10398,6 +10557,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 197,
+  "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 59 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -10567,6 +10728,8 @@ const SESSIONS = [
   "title": "VO2 intervals",
   "prescription": "4 x 3 min hard, 2 min jog (down week).   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 200,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -10758,6 +10921,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 202,
+  "opt_out": "Easy 9.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 66 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -10819,6 +10984,8 @@ const SESSIONS = [
   "title": "Climb + descend (night)",
   "prescription": "NIGHT + TECHNICAL TERRAIN - this needs a weekend evening, not a 4am road run. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 203,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -10885,6 +11052,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Shakeout + strides",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 4km easy + 4 x 20s strides. Race is TOMORROW morning.",
   "id": 207,
+  "opt_out": "7.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -10956,6 +11125,8 @@ const SESSIONS = [
   "title": "RACE: Beerwah@Daybreak 10km",
   "prescription": "Dress rehearsal, same course, daylight. TARGET 50:00-51:30. GO/NO-GO gate: sub-51:30 ahead of schedule; 51:30-53 on plan; 53-56 A needs a perfect 8 weeks; over 56 recalibrate to B/C. Full race-day routine.",
   "id": 208,
+  "opt_out": "Race day. Outside, obviously.",
+  "opt_tm": "Not a treadmill session.",
   "wu": {
    "mins": 20,
    "items": [
@@ -11130,6 +11301,8 @@ const SESSIONS = [
   "title": "VO2 intervals",
   "prescription": "5 x 3 min hard, 2 min jog.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 211,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -11348,6 +11521,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 213,
+  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -11409,6 +11584,8 @@ const SESSIONS = [
   "title": "Climb + descend (night)",
   "prescription": "NIGHT + TECHNICAL TERRAIN - this needs a weekend evening, not a 4am road run. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 214,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -11475,6 +11652,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long w/ race-effort (night)",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.5km with 2 x 10 min at race effort. Night run, head torch. ",
   "id": 218,
+  "opt_out": "16.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -11546,6 +11725,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 219,
+  "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 59 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -11715,6 +11896,8 @@ const SESSIONS = [
   "title": "VO2 intervals",
   "prescription": "6 x 3 min hard, 2 min jog.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 222,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -11933,6 +12116,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 224,
+  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -11994,6 +12179,8 @@ const SESSIONS = [
   "title": "Climb + descend (night)",
   "prescription": "NIGHT + TECHNICAL TERRAIN - this needs a weekend evening, not a 4am road run. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 225,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -12060,6 +12247,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long w/ race-effort",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.5km with 2 x 10 min at race effort. ",
   "id": 229,
+  "opt_out": "16.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -12131,6 +12320,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 230,
+  "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 59 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -12300,6 +12491,8 @@ const SESSIONS = [
   "title": "VO2 intervals",
   "prescription": "4 x 3 min hard, 2 min jog (down week).   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 233,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -12491,6 +12684,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 235,
+  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -12552,6 +12747,8 @@ const SESSIONS = [
   "title": "Climb + descend (night)",
   "prescription": "NIGHT + TECHNICAL TERRAIN - this needs a weekend evening, not a 4am road run. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 236,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -12618,6 +12815,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long w/ race-effort (night)",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 13.5km with 2 x 10 min at race effort. Night run, head torch. ",
   "id": 240,
+  "opt_out": "13.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -12689,6 +12888,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 241,
+  "opt_out": "Easy 7.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 48 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -12858,6 +13059,8 @@ const SESSIONS = [
   "title": "5km Time Trial #4",
   "prescription": "5km TT, flat, maximal. Final go/no-go on the A goal.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 244,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -13081,6 +13284,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 246,
+  "opt_out": "Easy 10.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 72 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -13142,6 +13347,8 @@ const SESSIONS = [
   "title": "Climb + descend (night)",
   "prescription": "NIGHT + TECHNICAL TERRAIN - this needs a weekend evening, not a 4am road run. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 247,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -13208,6 +13415,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long w/ race-effort",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.0km with 2 x 10 min at race effort. ",
   "id": 251,
+  "opt_out": "16.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -13279,6 +13488,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 252,
+  "opt_out": "Easy 10.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 72 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -13448,6 +13659,8 @@ const SESSIONS = [
   "title": "Trail reps",
   "prescription": "8 x 90s hard w/ 90s jog, on trail.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 255,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -13666,6 +13879,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 257,
+  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -13727,6 +13942,8 @@ const SESSIONS = [
   "title": "Race-effort climbs (night)",
   "prescription": "NIGHT + TECHNICAL TERRAIN - this needs a weekend evening, not a 4am road run. Flagged 24 Aug 2026, we plan the back half properly in November. || 5 x 2 min climb at race effort + descent. Night, head torch. ",
   "id": 258,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -13793,6 +14010,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - FULL COURSE REHEARSAL \u2014 Beerwah, night",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || Full course at Beerwah, at night, full race kit: 500+ lumen dual-beam head torch (flood for footing, spot for descents) + backup, trail shoes, caffeine at 6pm, water only. Run the Dungeon at race effort, power-hike the steep walls, practise FAST descending in torchlight - that is where the field loses 30-90s/km. Rehearse the 4pm snack + 6pm caffeine timing too.",
   "id": 262,
+  "opt_out": "12km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -13864,6 +14083,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 263,
+  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -14033,6 +14254,8 @@ const SESSIONS = [
   "title": "Trail reps",
   "prescription": "8 x 90s hard w/ 90s jog, on trail.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 266,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -14251,6 +14474,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 268,
+  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -14312,6 +14537,8 @@ const SESSIONS = [
   "title": "LAST hard descent session (night)",
   "prescription": "NIGHT + TECHNICAL TERRAIN - this needs a weekend evening, not a 4am road run. Flagged 24 Aug 2026, we plan the back half properly in November. || 5 x 2 min climb at race effort + hard descent. This is the final hard downhill of the block \u2014 nothing eccentric after this. ",
   "id": 269,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -14378,6 +14605,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Long run w/ race-effort blocks",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 14km with 2 x 10 min at race effort on trail. ",
   "id": 273,
+  "opt_out": "14km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -14449,6 +14678,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 274,
+  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -14526,6 +14757,8 @@ const SESSIONS = [
   "title": "Taper reps",
   "prescription": "4 x 90s hard w/ 90s jog. Same effort as Sharpen, half the volume.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 276,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -14672,6 +14905,8 @@ const SESSIONS = [
   "title": "Easy run (heat)",
   "prescription": "HEAT TOP-UP: run in the heat of the day, easy only, and consider a 30 min hot bath (~40C) straight after. Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 278,
+  "opt_out": "Easy 3.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 21 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -14733,6 +14968,8 @@ const SESSIONS = [
   "title": "Race-effort touches (night)",
   "prescription": "NIGHT + TECHNICAL TERRAIN - this needs a weekend evening, not a 4am road run. Flagged 24 Aug 2026, we plan the back half properly in November. || 3 x 2 min at race effort, night, head torch. ",
   "id": 279,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -14860,6 +15097,8 @@ const SESSIONS = [
   "title": "WEEKEND TERRAIN DAY - Taper long run",
   "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is now the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 12km easy trail with 3-4 strides late. ",
   "id": 282,
+  "opt_out": "12km trail, easy throughout. Walk the steep climbs, run descents controlled.",
+  "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
   "wu": {
    "mins": 5,
    "items": [
@@ -14931,6 +15170,8 @@ const SESSIONS = [
   "title": "Recovery run",
   "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 283,
+  "opt_out": "Easy 3.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 24 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -15008,6 +15249,8 @@ const SESSIONS = [
   "title": "Taper reps",
   "prescription": "4 x 90s hard w/ 90s jog. Same effort as Sharpen, half the volume.   ||  Do the hard efforts on your moderate rise. For 20s sprints a gentle hill is fine, the point is the effort and the uphill mechanics, not the gradient.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 285,
+  "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
   "wu": {
    "mins": 18,
    "items": [
@@ -15084,6 +15327,8 @@ const SESSIONS = [
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 286,
+  "opt_out": "Easy 4km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 28 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -15145,6 +15390,8 @@ const SESSIONS = [
   "title": "Race-effort touches (night)",
   "prescription": "NIGHT + TECHNICAL TERRAIN - this needs a weekend evening, not a 4am road run. Flagged 24 Aug 2026, we plan the back half properly in November. || 3 x 2 min at race effort, night, head torch. ",
   "id": 287,
+  "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
+  "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
   "wu": {
    "mins": 15,
    "items": [
@@ -15211,6 +15458,8 @@ const SESSIONS = [
   "title": "Easy run (optional)",
   "prescription": "Optional recovery run, conversational. FIRST session to drop when fatigue accumulates.  ||  Flat or gently rolling, sealed and familiar.  ||  4am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 288,
+  "opt_out": "Easy 3km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "8.7 km/h, 1% incline, 21 min.",
   "wu": {
    "mins": 4,
    "items": [
@@ -15272,6 +15521,8 @@ const SESSIONS = [
   "title": "RACE: BEERWAH@NIGHT 10km - 7:00PM",
   "prescription": "THE ONE. Official course: ~10.4km / 294m gain. Day plan: carb-heavy lunch, light carb snack ~4pm, caffeine ~250-400mg at 6pm, pre-load fluids + electrolytes (humid 25C+ start). WU: 15 min easy + drills + 3 strides, done by 6:45pm. START POSITION: seed yourself top 10 into the first single track - passing in torchlight is expensive. Pace the first climb conservatively, race the mostly-uphill final 3km: that is where this course is decided. Power-hike the Dungeon walls. Water only on course. A goal: sub-50.",
   "id": 289,
+  "opt_out": "Race day. Outside, obviously.",
+  "opt_tm": "Not a treadmill session.",
   "wu": {
    "mins": 20,
    "items": [
@@ -15536,11 +15787,6 @@ function sessionCard(s, expanded){
       <label class="f">avg HR<input type="number" id="lh${s.id}" value="${l.hr ?? (act0&&act0.hr? Math.round(act0.hr) : "")}"></label>
       <label class="f">RPE 1-10<input type="number" min="1" max="10" id="lr${s.id}" value="${l.rpe??""}"></label>
     </div>
-    <div class="locwrap">
-      <span class="lbl">WHERE</span>
-      <button class="locbtn ${l.loc==="tm"?"on":""}" onclick="setLoc(${s.id},'tm')">Treadmill</button>
-      <button class="locbtn ${l.loc==="out"?"on":""}" onclick="setLoc(${s.id},'out')">Outside</button>
-    </div>
     <div class="row" style="margin-top:6px">
       <input placeholder="notes / niggles" id="ln${s.id}" style="flex:1" value="${esc(l.notes||"")}">
       <button class="btn ${savedFlash===s.id?"saved":""}" onclick="saveLog(${s.id})">${savedFlash===s.id?"\u2713 Saved":(done?"Update":"Complete")}</button>
@@ -15594,10 +15840,20 @@ function sessionCard(s, expanded){
   };
   const acts=actsOn(s.date);
   const actHtml = (s.type!=="strength"&&acts.length)? `<p class="small" style="margin-top:6px">Garmin: ${acts.map(a=>`${a.km.toFixed(1)}km · ${fmtT(a.secs)} · ${fmtPace(a.secs/a.km)}${a.hr?" · "+Math.round(a.hr)+"bpm":""}${a.vert?" · "+Math.round(a.vert)+"m":""}`).join(" | ")}</p>` : "";
+  let locBlock="";
+  if(s.opt_out||s.opt_tm){
+    const brief = l.loc==="tm" ? s.opt_tm : (l.loc==="out" ? s.opt_out : null);
+    locBlock = `<div class="locwrap">
+      <button class="locbtn ${l.loc==="out"?"on":""}" onclick="setLoc(${s.id},'out')">🌳 Outside</button>
+      <button class="locbtn ${l.loc==="tm"?"on":""}" onclick="setLoc(${s.id},'tm')">🏃 Treadmill</button>
+    </div>` + (brief? `<div class="brief">${esc(brief)}</div>`
+                    : `<p class="small" style="margin:6px 2px 0">Pick one to see the short version.</p>`);
+  }
   return `<div class="card"><div>${pills}</div>
     <h3>${esc(s.title)}</h3>
     ${meta?`<p class="small">${meta}${s.type!=="strength"?" planned":""}</p>`:""}
-    <p class="pres">${esc(s.prescription)}</p>
+    ${locBlock}
+    <details class="fullpres"><summary>Full detail</summary><p class="pres">${esc(s.prescription)}</p></details>
     ${wucd(s.wu,"Warm-up","↗","wu")}${logForm}${wucd(s.cd,"Cool-down","↘","cdd")}${actHtml}</div>`;
 }
 function rToday(){
