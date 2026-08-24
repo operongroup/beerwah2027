@@ -55,6 +55,12 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .pill.race{background:rgba(229,72,77,.15);color:#FF7B80;border:1px solid rgba(229,72,77,.5)}
 .pill.down{background:rgba(255,255,255,.06);color:var(--ink2);border:1px solid var(--border)}
 .pill.done{background:rgba(47,194,79,.15);color:var(--goodtext);border:1px solid rgba(47,194,79,.45)}
+.pill.loc{background:rgba(255,255,255,.06);color:var(--ink2);border:1px solid var(--border)}
+.locwrap{display:flex;gap:6px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.locwrap .lbl{font-size:10px;font-weight:800;letter-spacing:.06em;color:var(--muted)}
+.locbtn{font-size:11px;font-weight:700;padding:6px 12px;border-radius:99px;cursor:pointer;
+  background:transparent;color:var(--ink2);border:1px solid var(--border)}
+.locbtn.on{background:var(--brand2);border-color:var(--brand2);color:#fff}
 .pres{font-size:14px;color:var(--ink2);white-space:pre-wrap;margin:7px 0}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 button.btn{background:linear-gradient(135deg,#FF6A2F,#E8430E);color:#fff;border:0;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer;
@@ -2575,7 +2581,7 @@ const SESSIONS = [
   "vert": 10,
   "type": "quality",
   "title": "Hill sprints",
-  "prescription": "Easy run + 5 x 20s hill sprints (steep), walk-down full recovery. REDUCED from 8 reps: first hard session back after flu, and last week was ~14km. Sprints are effort, not pace - hard but controlled, and stop if form falls apart.  ||  TREADMILL VERSION (if you cannot get outside): 12 min easy warm-up at 8.2 km/h, 1% incline. Then set incline to 8% and LEAVE IT THERE for the whole block. 5 x 60s at 8.8 km/h (hard but controlled, not flat out), with 90s walking recovery at 4.8 km/h - incline stays at 8% through the walk, that walk is power-hike practice for the Dungeon. Then incline back to 1% and 12 min easy cool-down at 8.0 km/h. About 4.5km, 36 min. Change speed only, never step on or off a moving belt. This is a substitute, not the same session: it loses the max-effort sprint and all downhill loading. Thursday's hill reps + descents MUST be outdoors - a treadmill cannot do descents.",
+  "prescription": "Easy run + 5 x 20s hill sprints (steep), walk-down full recovery. REDUCED from 8 reps: first hard session back after flu, and last week was ~14km. Sprints are effort, not pace - hard but controlled, and stop if form falls apart.  ||  TREADMILL VERSION (if you cannot get outside): 12 min easy warm-up at 8.2 km/h, 1% incline. Then set incline to 8% and LEAVE IT THERE for the whole block. 5 x 60s at 8.8 km/h (hard but controlled, not flat out), with 90s walking recovery at 4.8 km/h - incline stays at 8% through the walk, that walk is power-hike practice for the Dungeon. Then incline back to 1% and 12 min easy cool-down at 8.0 km/h. About 4.5km, 36 min. Change speed only, never step on or off a moving belt. This is a substitute, not the same session: it loses the max-effort sprint and all downhill loading. Thursday's hill reps + descents MUST be outdoors - a treadmill cannot do descents.  ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 46,
   "wu": {
    "mins": 18,
@@ -2766,7 +2772,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 48,
   "wu": {
    "mins": 4,
@@ -2826,8 +2832,8 @@ const SESSIONS = [
   "km": 4.5,
   "vert": 90,
   "type": "terrain",
-  "title": "Hill reps + descents",
-  "prescription": "6 x 60s steep uphill (effort, not pace), jog down. REDUCED from 8-10 reps. Run each descent controlled and deliberate - downhill exposure starts now, but easy on the way down.",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 4 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 49,
   "wu": {
    "mins": 15,
@@ -2892,8 +2898,8 @@ const SESSIONS = [
   "km": 7.0,
   "vert": 120,
   "type": "long",
-  "title": "Long trail + hard descent",
-  "prescription": "7km easy trail with real climbing. ALL EASY - the hard descent segment moves to next week. Reduced from 8.5km: this is the first proper volume week back after flu. Walk the steep climbs, run the descents controlled.",
+  "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 7km easy trail with real climbing. ALL EASY - the hard descent segment moves to next week. Reduced from 8.5km: this is the first proper volume week back after flu. Walk the steep climbs, run the descents controlled.",
   "id": 53,
   "wu": {
    "mins": 5,
@@ -2964,7 +2970,7 @@ const SESSIONS = [
   "vert": 20,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 54,
   "wu": {
    "mins": 4,
@@ -3133,7 +3139,7 @@ const SESSIONS = [
   "vert": 20,
   "type": "quality",
   "title": "Hill sprints",
-  "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery. ",
+  "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 57,
   "wu": {
    "mins": 18,
@@ -3324,7 +3330,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 59,
   "wu": {
    "mins": 4,
@@ -3384,8 +3390,8 @@ const SESSIONS = [
   "km": 5.0,
   "vert": 100,
   "type": "terrain",
-  "title": "Hill reps + descents",
-  "prescription": "8-10 x 60s steep uphill (effort, not pace), jog down. Run each descent controlled and deliberate \u2014 downhill exposure starts now. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 5 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 60,
   "wu": {
    "mins": 15,
@@ -3450,8 +3456,8 @@ const SESSIONS = [
   "km": 9.5,
   "vert": 150,
   "type": "long",
-  "title": "Long trail + hard descent",
-  "prescription": "9.5km easy trail with real climbing; run ONE descent segment hard. ",
+  "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 9.5km easy trail with real climbing; run ONE descent segment hard. ",
   "id": 64,
   "wu": {
    "mins": 5,
@@ -3522,7 +3528,7 @@ const SESSIONS = [
   "vert": 30,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 65,
   "wu": {
    "mins": 4,
@@ -3691,7 +3697,7 @@ const SESSIONS = [
   "vert": 20,
   "type": "quality",
   "title": "Hill sprints",
-  "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery. ",
+  "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 68,
   "wu": {
    "mins": 18,
@@ -3882,7 +3888,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 70,
   "wu": {
    "mins": 4,
@@ -3942,8 +3948,8 @@ const SESSIONS = [
   "km": 5.5,
   "vert": 120,
   "type": "terrain",
-  "title": "Hill reps + descents",
-  "prescription": "8-10 x 60s steep uphill (effort, not pace), jog down. Run each descent controlled and deliberate \u2014 downhill exposure starts now. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 6 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 71,
   "wu": {
    "mins": 15,
@@ -4008,8 +4014,8 @@ const SESSIONS = [
   "km": 10.5,
   "vert": 180,
   "type": "long",
-  "title": "Long trail + hard descent",
-  "prescription": "10.5km easy trail with real climbing; run ONE descent segment hard. ",
+  "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 10.5km easy trail with real climbing; run ONE descent segment hard. ",
   "id": 75,
   "wu": {
    "mins": 5,
@@ -4080,7 +4086,7 @@ const SESSIONS = [
   "vert": 40,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 76,
   "wu": {
    "mins": 4,
@@ -4249,7 +4255,7 @@ const SESSIONS = [
   "vert": 10,
   "type": "quality",
   "title": "5km Time Trial #2",
-  "prescription": "5km TT, maximal. Do it at a Saturday parkrun if the timing works - real competition pacing beats a solo effort. This resets all zones. ",
+  "prescription": "5km TT, maximal. Do it at a Saturday parkrun if the timing works - real competition pacing beats a solo effort. This resets all zones.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 79,
   "wu": {
    "mins": 18,
@@ -4445,7 +4451,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 81,
   "wu": {
    "mins": 4,
@@ -4505,8 +4511,8 @@ const SESSIONS = [
   "km": 4.0,
   "vert": 70,
   "type": "terrain",
-  "title": "Hill reps + descents",
-  "prescription": "8-10 x 60s steep uphill (effort, not pace), jog down. Run each descent controlled and deliberate \u2014 downhill exposure starts now. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 4 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 82,
   "wu": {
    "mins": 15,
@@ -4571,8 +4577,8 @@ const SESSIONS = [
   "km": 7.5,
   "vert": 100,
   "type": "long",
-  "title": "Long trail + hard descent",
-  "prescription": "7.5km easy trail with real climbing; run ONE descent segment hard. ",
+  "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 7.5km easy trail with real climbing; run ONE descent segment hard. ",
   "id": 86,
   "wu": {
    "mins": 5,
@@ -4643,7 +4649,7 @@ const SESSIONS = [
   "vert": 20,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 87,
   "wu": {
    "mins": 4,
@@ -4812,7 +4818,7 @@ const SESSIONS = [
   "vert": 20,
   "type": "quality",
   "title": "Hill sprints",
-  "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery. ",
+  "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 90,
   "wu": {
    "mins": 18,
@@ -5003,7 +5009,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 92,
   "wu": {
    "mins": 4,
@@ -5063,8 +5069,8 @@ const SESSIONS = [
   "km": 6.0,
   "vert": 140,
   "type": "terrain",
-  "title": "Hill reps + descents",
-  "prescription": "8-10 x 60s steep uphill (effort, not pace), jog down. Run each descent controlled and deliberate \u2014 downhill exposure starts now. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 7 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 93,
   "wu": {
    "mins": 15,
@@ -5129,8 +5135,8 @@ const SESSIONS = [
   "km": 11.5,
   "vert": 200,
   "type": "long",
-  "title": "Long trail + hard descent",
-  "prescription": "11.5km easy trail with real climbing; run ONE descent segment hard. ",
+  "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 11.5km easy trail with real climbing; run ONE descent segment hard. ",
   "id": 97,
   "wu": {
    "mins": 5,
@@ -5201,7 +5207,7 @@ const SESSIONS = [
   "vert": 40,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 98,
   "wu": {
    "mins": 4,
@@ -5370,7 +5376,7 @@ const SESSIONS = [
   "vert": 20,
   "type": "quality",
   "title": "Hill sprints",
-  "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery. ",
+  "prescription": "Easy run + 8 x 20s hill sprints (steep), walk-down full recovery.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 101,
   "wu": {
    "mins": 18,
@@ -5561,7 +5567,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 103,
   "wu": {
    "mins": 4,
@@ -5621,8 +5627,8 @@ const SESSIONS = [
   "km": 6.0,
   "vert": 160,
   "type": "terrain",
-  "title": "Hill reps + descents",
-  "prescription": "8-10 x 60s steep uphill (effort, not pace), jog down. Run each descent controlled and deliberate \u2014 downhill exposure starts now. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 8 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 104,
   "wu": {
    "mins": 15,
@@ -5687,8 +5693,8 @@ const SESSIONS = [
   "km": 12.5,
   "vert": 220,
   "type": "long",
-  "title": "Long trail + hard descent",
-  "prescription": "12.5km easy trail with real climbing; run ONE descent segment hard. ",
+  "title": "WEEKEND TERRAIN DAY - Long trail + hard descent",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 12.5km easy trail with real climbing; run ONE descent segment hard. ",
   "id": 108,
   "wu": {
    "mins": 5,
@@ -5759,7 +5765,7 @@ const SESSIONS = [
   "vert": 40,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 109,
   "wu": {
    "mins": 4,
@@ -5928,7 +5934,7 @@ const SESSIONS = [
   "vert": 30,
   "type": "quality",
   "title": "Sub-threshold",
-  "prescription": "3 x 8 min @ threshold (5:40-5:50/km), 2 min jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded. ",
+  "prescription": "3 x 8 min @ threshold (5:40-5:50/km), 2 min jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 112,
   "wu": {
    "mins": 18,
@@ -6146,7 +6152,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 114,
   "wu": {
    "mins": 4,
@@ -6206,8 +6212,8 @@ const SESSIONS = [
   "km": 6.5,
   "vert": 190,
   "type": "terrain",
-  "title": "Hill reps + fast descents",
-  "prescription": "10-12 x 60s uphill hard, FAST controlled descent on each recovery. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 10 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 115,
   "wu": {
    "mins": 15,
@@ -6272,8 +6278,8 @@ const SESSIONS = [
   "km": 13.5,
   "vert": 280,
   "type": "long",
-  "title": "Long progressive trail",
-  "prescription": "13.5km on technical ground, final 20% progressive to steady. ",
+  "title": "WEEKEND TERRAIN DAY - Long progressive trail",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 13.5km on technical ground, final 20% progressive to steady. ",
   "id": 119,
   "wu": {
    "mins": 5,
@@ -6344,7 +6350,7 @@ const SESSIONS = [
   "vert": 60,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 120,
   "wu": {
    "mins": 4,
@@ -6513,7 +6519,7 @@ const SESSIONS = [
   "vert": 20,
   "type": "quality",
   "title": "Sub-threshold",
-  "prescription": "2 x 8 min @ threshold, 2 min jog (down week). CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded. ",
+  "prescription": "2 x 8 min @ threshold, 2 min jog (down week). CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 123,
   "wu": {
    "mins": 18,
@@ -6704,7 +6710,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 125,
   "wu": {
    "mins": 4,
@@ -6764,8 +6770,8 @@ const SESSIONS = [
   "km": 5.0,
   "vert": 120,
   "type": "terrain",
-  "title": "Hill reps + fast descents",
-  "prescription": "10-12 x 60s uphill hard, FAST controlled descent on each recovery. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 6 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 126,
   "wu": {
    "mins": 15,
@@ -6830,8 +6836,8 @@ const SESSIONS = [
   "km": 10.0,
   "vert": 180,
   "type": "long",
-  "title": "Long progressive trail",
-  "prescription": "10.0km on technical ground, final 20% progressive to steady. ",
+  "title": "WEEKEND TERRAIN DAY - Long progressive trail",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 10.0km on technical ground, final 20% progressive to steady. ",
   "id": 130,
   "wu": {
    "mins": 5,
@@ -6902,7 +6908,7 @@ const SESSIONS = [
   "vert": 40,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 131,
   "wu": {
    "mins": 4,
@@ -7071,7 +7077,7 @@ const SESSIONS = [
   "vert": 30,
   "type": "quality",
   "title": "Sub-threshold",
-  "prescription": "4 x 8 min @ threshold, 2 min jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded. ",
+  "prescription": "4 x 8 min @ threshold, 2 min jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 134,
   "wu": {
    "mins": 18,
@@ -7289,7 +7295,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 136,
   "wu": {
    "mins": 4,
@@ -7349,8 +7355,8 @@ const SESSIONS = [
   "km": 7.0,
   "vert": 230,
   "type": "terrain",
-  "title": "Hill reps + fast descents",
-  "prescription": "10-12 x 60s uphill hard, FAST controlled descent on each recovery. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 12 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 137,
   "wu": {
    "mins": 15,
@@ -7415,8 +7421,8 @@ const SESSIONS = [
   "km": 14.0,
   "vert": 320,
   "type": "long",
-  "title": "Long progressive trail",
-  "prescription": "14.0km on technical ground, final 20% progressive to steady. ",
+  "title": "WEEKEND TERRAIN DAY - Long progressive trail",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 14.0km on technical ground, final 20% progressive to steady. ",
   "id": 141,
   "wu": {
    "mins": 5,
@@ -7487,7 +7493,7 @@ const SESSIONS = [
   "vert": 60,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 142,
   "wu": {
    "mins": 4,
@@ -7656,7 +7662,7 @@ const SESSIONS = [
   "vert": 40,
   "type": "quality",
   "title": "Sub-threshold",
-  "prescription": "4 x 8 min @ threshold, 2 min jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded. ",
+  "prescription": "4 x 8 min @ threshold, 2 min jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 145,
   "wu": {
    "mins": 18,
@@ -7874,7 +7880,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 147,
   "wu": {
    "mins": 4,
@@ -7934,8 +7940,8 @@ const SESSIONS = [
   "km": 7.5,
   "vert": 240,
   "type": "terrain",
-  "title": "Hill reps + fast descents",
-  "prescription": "10-12 x 60s uphill hard, FAST controlled descent on each recovery. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 12 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 148,
   "wu": {
    "mins": 15,
@@ -8000,8 +8006,8 @@ const SESSIONS = [
   "km": 15.0,
   "vert": 350,
   "type": "long",
-  "title": "Long progressive trail",
-  "prescription": "15.0km on technical ground, final 20% progressive to steady. ",
+  "title": "WEEKEND TERRAIN DAY - Long progressive trail",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 15.0km on technical ground, final 20% progressive to steady. ",
   "id": 152,
   "wu": {
    "mins": 5,
@@ -8072,7 +8078,7 @@ const SESSIONS = [
   "vert": 70,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 153,
   "wu": {
    "mins": 4,
@@ -8241,7 +8247,7 @@ const SESSIONS = [
   "vert": 40,
   "type": "quality",
   "title": "Sub-threshold",
-  "prescription": "5 x 1km @ threshold, 90s jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded. ",
+  "prescription": "5 x 1km @ threshold, 90s jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 156,
   "wu": {
    "mins": 18,
@@ -8459,7 +8465,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 158,
   "wu": {
    "mins": 4,
@@ -8519,8 +8525,8 @@ const SESSIONS = [
   "km": 8.0,
   "vert": 280,
   "type": "terrain",
-  "title": "Hill reps + fast descents",
-  "prescription": "10-12 x 60s uphill hard, FAST controlled descent on each recovery. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 12 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 159,
   "wu": {
    "mins": 15,
@@ -8585,8 +8591,8 @@ const SESSIONS = [
   "km": 16.0,
   "vert": 400,
   "type": "long",
-  "title": "Long progressive trail",
-  "prescription": "16.0km on technical ground, final 20% progressive to steady. ",
+  "title": "WEEKEND TERRAIN DAY - Long progressive trail",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.0km on technical ground, final 20% progressive to steady. ",
   "id": 163,
   "wu": {
    "mins": 5,
@@ -8657,7 +8663,7 @@ const SESSIONS = [
   "vert": 80,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 164,
   "wu": {
    "mins": 4,
@@ -8826,7 +8832,7 @@ const SESSIONS = [
   "vert": 20,
   "type": "quality",
   "title": "5km Time Trial #3",
-  "prescription": "5km TT, flat, maximal. Progress gate: needs meaningful movement toward 21:30. ",
+  "prescription": "5km TT, flat, maximal. Progress gate: needs meaningful movement toward 21:30.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 167,
   "wu": {
    "mins": 18,
@@ -9022,7 +9028,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 169,
   "wu": {
    "mins": 4,
@@ -9082,8 +9088,8 @@ const SESSIONS = [
   "km": 6.0,
   "vert": 180,
   "type": "terrain",
-  "title": "Hill reps + fast descents",
-  "prescription": "10-12 x 60s uphill hard, FAST controlled descent on each recovery. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 9 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 170,
   "wu": {
    "mins": 15,
@@ -9148,8 +9154,8 @@ const SESSIONS = [
   "km": 12.0,
   "vert": 250,
   "type": "long",
-  "title": "Long progressive trail",
-  "prescription": "12.0km on technical ground, final 20% progressive to steady. ",
+  "title": "WEEKEND TERRAIN DAY - Long progressive trail",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 12.0km on technical ground, final 20% progressive to steady. ",
   "id": 174,
   "wu": {
    "mins": 5,
@@ -9220,7 +9226,7 @@ const SESSIONS = [
   "vert": 50,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 175,
   "wu": {
    "mins": 4,
@@ -9389,7 +9395,7 @@ const SESSIONS = [
   "vert": 40,
   "type": "quality",
   "title": "Sub-threshold",
-  "prescription": "5 x 1km @ threshold, 90s jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded. ",
+  "prescription": "5 x 1km @ threshold, 90s jog. CONTROL: comfortably hard, 5:40-5:50/km cap, HR 155-170, you could still say a short sentence. NOT race pace, and if in doubt go slower - the Norwegian rule is that sub-threshold repeated beats threshold exceeded.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 178,
   "wu": {
    "mins": 18,
@@ -9607,7 +9613,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 180,
   "wu": {
    "mins": 4,
@@ -9667,8 +9673,8 @@ const SESSIONS = [
   "km": 8.5,
   "vert": 300,
   "type": "terrain",
-  "title": "Hill reps + fast descents",
-  "prescription": "10-12 x 60s uphill hard, FAST controlled descent on each recovery. ",
+  "title": "Uphill power (treadmill or flat)",
+  "prescription": "WEEKDAY 4am SESSION - treadmill, no descents. 12 x 60s at 10-12% incline, hard but controlled effort, never flat out. Between reps: 90s walking at about 4.8 km/h with the incline LEFT WHERE IT IS - that walk is power-hike practice for the Dungeon. Easy warm-up and cool-down at 1% incline either side. Change speed only, never step on or off a moving belt. What this session does NOT give you is descent loading. All downhill work now lives on the weekend terrain day, which makes that day the most important run of your week.",
   "id": 181,
   "wu": {
    "mins": 15,
@@ -9733,8 +9739,8 @@ const SESSIONS = [
   "km": 16.5,
   "vert": 420,
   "type": "long",
-  "title": "Long progressive trail",
-  "prescription": "16.5km on technical ground, final 20% progressive to steady. ",
+  "title": "WEEKEND TERRAIN DAY - Long progressive trail",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.5km on technical ground, final 20% progressive to steady. ",
   "id": 185,
   "wu": {
    "mins": 5,
@@ -9805,7 +9811,7 @@ const SESSIONS = [
   "vert": 80,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 186,
   "wu": {
    "mins": 4,
@@ -9974,7 +9980,7 @@ const SESSIONS = [
   "vert": 40,
   "type": "quality",
   "title": "VO2 intervals",
-  "prescription": "5 x 3 min hard (5:20-5:25/km), 2 min jog. ",
+  "prescription": "5 x 3 min hard (5:20-5:25/km), 2 min jog.   ||  4am TREADMILL VERSION: run the hard efforts at 8-12% incline instead of on a hill, same durations, same recoveries. Walk the recoveries at incline. Warm-up and cool-down at 1%.",
   "id": 189,
   "wu": {
    "mins": 18,
@@ -10192,7 +10198,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 191,
   "wu": {
    "mins": 4,
@@ -10253,7 +10259,7 @@ const SESSIONS = [
   "vert": 320,
   "type": "terrain",
   "title": "Climb + descend (night)",
-  "prescription": "6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
+  "prescription": "NIGHT + TERRAIN - this one cannot be done on the treadmill or at 4am on the dark path. From late November these need a weekend evening. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 192,
   "wu": {
    "mins": 15,
@@ -10318,8 +10324,8 @@ const SESSIONS = [
   "km": 16.5,
   "vert": 450,
   "type": "long",
-  "title": "Long w/ race-effort (night)",
-  "prescription": "16.5km with 2 x 10 min at race effort. Night run, head torch. ",
+  "title": "WEEKEND TERRAIN DAY - Long w/ race-effort (night)",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.5km with 2 x 10 min at race effort. Night run, head torch. ",
   "id": 196,
   "wu": {
    "mins": 5,
@@ -10390,7 +10396,7 @@ const SESSIONS = [
   "vert": 90,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 197,
   "wu": {
    "mins": 4,
@@ -10750,7 +10756,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 202,
   "wu": {
    "mins": 4,
@@ -10811,7 +10817,7 @@ const SESSIONS = [
   "vert": 210,
   "type": "terrain",
   "title": "Climb + descend (night)",
-  "prescription": "6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
+  "prescription": "NIGHT + TERRAIN - this one cannot be done on the treadmill or at 4am on the dark path. From late November these need a weekend evening. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 203,
   "wu": {
    "mins": 15,
@@ -10876,8 +10882,8 @@ const SESSIONS = [
   "km": 7.0,
   "vert": 300,
   "type": "long",
-  "title": "Shakeout + strides",
-  "prescription": "4km easy + 4 x 20s strides. Race is TOMORROW morning.",
+  "title": "WEEKEND TERRAIN DAY - Shakeout + strides",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 4km easy + 4 x 20s strides. Race is TOMORROW morning.",
   "id": 207,
   "wu": {
    "mins": 5,
@@ -11340,7 +11346,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 213,
   "wu": {
    "mins": 4,
@@ -11401,7 +11407,7 @@ const SESSIONS = [
   "vert": 330,
   "type": "terrain",
   "title": "Climb + descend (night)",
-  "prescription": "6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
+  "prescription": "NIGHT + TERRAIN - this one cannot be done on the treadmill or at 4am on the dark path. From late November these need a weekend evening. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 214,
   "wu": {
    "mins": 15,
@@ -11466,8 +11472,8 @@ const SESSIONS = [
   "km": 16.5,
   "vert": 480,
   "type": "long",
-  "title": "Long w/ race-effort (night)",
-  "prescription": "16.5km with 2 x 10 min at race effort. Night run, head torch. ",
+  "title": "WEEKEND TERRAIN DAY - Long w/ race-effort (night)",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.5km with 2 x 10 min at race effort. Night run, head torch. ",
   "id": 218,
   "wu": {
    "mins": 5,
@@ -11538,7 +11544,7 @@ const SESSIONS = [
   "vert": 100,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 219,
   "wu": {
    "mins": 4,
@@ -11925,7 +11931,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 224,
   "wu": {
    "mins": 4,
@@ -11986,7 +11992,7 @@ const SESSIONS = [
   "vert": 350,
   "type": "terrain",
   "title": "Climb + descend (night)",
-  "prescription": "6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
+  "prescription": "NIGHT + TERRAIN - this one cannot be done on the treadmill or at 4am on the dark path. From late November these need a weekend evening. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 225,
   "wu": {
    "mins": 15,
@@ -12051,8 +12057,8 @@ const SESSIONS = [
   "km": 16.5,
   "vert": 500,
   "type": "long",
-  "title": "Long w/ race-effort",
-  "prescription": "16.5km with 2 x 10 min at race effort. ",
+  "title": "WEEKEND TERRAIN DAY - Long w/ race-effort",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.5km with 2 x 10 min at race effort. ",
   "id": 229,
   "wu": {
    "mins": 5,
@@ -12123,7 +12129,7 @@ const SESSIONS = [
   "vert": 100,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 230,
   "wu": {
    "mins": 4,
@@ -12483,7 +12489,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 235,
   "wu": {
    "mins": 4,
@@ -12544,7 +12550,7 @@ const SESSIONS = [
   "vert": 230,
   "type": "terrain",
   "title": "Climb + descend (night)",
-  "prescription": "6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
+  "prescription": "NIGHT + TERRAIN - this one cannot be done on the treadmill or at 4am on the dark path. From late November these need a weekend evening. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 236,
   "wu": {
    "mins": 15,
@@ -12609,8 +12615,8 @@ const SESSIONS = [
   "km": 13.5,
   "vert": 320,
   "type": "long",
-  "title": "Long w/ race-effort (night)",
-  "prescription": "13.5km with 2 x 10 min at race effort. Night run, head torch. ",
+  "title": "WEEKEND TERRAIN DAY - Long w/ race-effort (night)",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 13.5km with 2 x 10 min at race effort. Night run, head torch. ",
   "id": 240,
   "wu": {
    "mins": 5,
@@ -12681,7 +12687,7 @@ const SESSIONS = [
   "vert": 60,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 241,
   "wu": {
    "mins": 4,
@@ -13073,7 +13079,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 246,
   "wu": {
    "mins": 4,
@@ -13134,7 +13140,7 @@ const SESSIONS = [
   "vert": 330,
   "type": "terrain",
   "title": "Climb + descend (night)",
-  "prescription": "6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
+  "prescription": "NIGHT + TERRAIN - this one cannot be done on the treadmill or at 4am on the dark path. From late November these need a weekend evening. Flagged 24 Aug 2026, we plan the back half properly in November. || 6 x 2-3 min climb at effort + fast controlled descent. After dark, head torch. ",
   "id": 247,
   "wu": {
    "mins": 15,
@@ -13199,8 +13205,8 @@ const SESSIONS = [
   "km": 16.0,
   "vert": 480,
   "type": "long",
-  "title": "Long w/ race-effort",
-  "prescription": "16.0km with 2 x 10 min at race effort. ",
+  "title": "WEEKEND TERRAIN DAY - Long w/ race-effort",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 16.0km with 2 x 10 min at race effort. ",
   "id": 251,
   "wu": {
    "mins": 5,
@@ -13271,7 +13277,7 @@ const SESSIONS = [
   "vert": 100,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 252,
   "wu": {
    "mins": 4,
@@ -13658,7 +13664,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 257,
   "wu": {
    "mins": 4,
@@ -13719,7 +13725,7 @@ const SESSIONS = [
   "vert": 280,
   "type": "terrain",
   "title": "Race-effort climbs (night)",
-  "prescription": "5 x 2 min climb at race effort + descent. Night, head torch. ",
+  "prescription": "NIGHT + TERRAIN - this one cannot be done on the treadmill or at 4am on the dark path. From late November these need a weekend evening. Flagged 24 Aug 2026, we plan the back half properly in November. || 5 x 2 min climb at race effort + descent. Night, head torch. ",
   "id": 258,
   "wu": {
    "mins": 15,
@@ -13784,8 +13790,8 @@ const SESSIONS = [
   "km": 12,
   "vert": 400,
   "type": "long",
-  "title": "FULL COURSE REHEARSAL \u2014 Beerwah, night",
-  "prescription": "Full course at Beerwah, at night, full race kit: 500+ lumen dual-beam head torch (flood for footing, spot for descents) + backup, trail shoes, caffeine at 6pm, water only. Run the Dungeon at race effort, power-hike the steep walls, practise FAST descending in torchlight - that is where the field loses 30-90s/km. Rehearse the 4pm snack + 6pm caffeine timing too.",
+  "title": "WEEKEND TERRAIN DAY - FULL COURSE REHEARSAL \u2014 Beerwah, night",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || Full course at Beerwah, at night, full race kit: 500+ lumen dual-beam head torch (flood for footing, spot for descents) + backup, trail shoes, caffeine at 6pm, water only. Run the Dungeon at race effort, power-hike the steep walls, practise FAST descending in torchlight - that is where the field loses 30-90s/km. Rehearse the 4pm snack + 6pm caffeine timing too.",
   "id": 262,
   "wu": {
    "mins": 5,
@@ -13856,7 +13862,7 @@ const SESSIONS = [
   "vert": 80,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 263,
   "wu": {
    "mins": 4,
@@ -14243,7 +14249,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 268,
   "wu": {
    "mins": 4,
@@ -14304,7 +14310,7 @@ const SESSIONS = [
   "vert": 260,
   "type": "terrain",
   "title": "LAST hard descent session (night)",
-  "prescription": "5 x 2 min climb at race effort + hard descent. This is the final hard downhill of the block \u2014 nothing eccentric after this. ",
+  "prescription": "NIGHT + TERRAIN - this one cannot be done on the treadmill or at 4am on the dark path. From late November these need a weekend evening. Flagged 24 Aug 2026, we plan the back half properly in November. || 5 x 2 min climb at race effort + hard descent. This is the final hard downhill of the block \u2014 nothing eccentric after this. ",
   "id": 269,
   "wu": {
    "mins": 15,
@@ -14369,8 +14375,8 @@ const SESSIONS = [
   "km": 14,
   "vert": 380,
   "type": "long",
-  "title": "Long run w/ race-effort blocks",
-  "prescription": "14km with 2 x 10 min at race effort on trail. ",
+  "title": "WEEKEND TERRAIN DAY - Long run w/ race-effort blocks",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 14km with 2 x 10 min at race effort on trail. ",
   "id": 273,
   "wu": {
    "mins": 5,
@@ -14441,7 +14447,7 @@ const SESSIONS = [
   "vert": 80,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 274,
   "wu": {
    "mins": 4,
@@ -14664,7 +14670,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run (heat)",
-  "prescription": "HEAT TOP-UP: run in the heat of the day, easy only, and consider a 30 min hot bath (~40C) straight after. Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "HEAT TOP-UP: run in the heat of the day, easy only, and consider a 30 min hot bath (~40C) straight after. Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 278,
   "wu": {
    "mins": 4,
@@ -14725,7 +14731,7 @@ const SESSIONS = [
   "vert": 140,
   "type": "terrain",
   "title": "Race-effort touches (night)",
-  "prescription": "3 x 2 min at race effort, night, head torch. ",
+  "prescription": "NIGHT + TERRAIN - this one cannot be done on the treadmill or at 4am on the dark path. From late November these need a weekend evening. Flagged 24 Aug 2026, we plan the back half properly in November. || 3 x 2 min at race effort, night, head torch. ",
   "id": 279,
   "wu": {
    "mins": 15,
@@ -14851,8 +14857,8 @@ const SESSIONS = [
   "km": 12,
   "vert": 200,
   "type": "long",
-  "title": "Taper long run",
-  "prescription": "12km easy trail with 3-4 strides late. ",
+  "title": "WEEKEND TERRAIN DAY - Taper long run",
+  "prescription": "SATURDAY OR SUNDAY, whichever the weekend allows - use the day-swap if it lands on Sunday. THIS IS THE PROTECTED SESSION. If the weekend only gives you one run, it is this one. It is the only session in the week with real climbing, real descents and real footing, and Beerwah is won and lost on descents and technical ground. Run the descents deliberately: quick feet, short stride, eyes 3-4m ahead, let gravity do the work rather than braking. || 12km easy trail with 3-4 strides late. ",
   "id": 282,
   "wu": {
    "mins": 5,
@@ -14923,7 +14929,7 @@ const SESSIONS = [
   "vert": 40,
   "type": "easy",
   "title": "Recovery run",
-  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).",
+  "prescription": "Easy recovery, conversational, flat. 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s).  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 283,
   "wu": {
    "mins": 4,
@@ -15076,7 +15082,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 148 (recalibrated 5 Aug off measured max ~191; most km in the low 140s). Flat or gently rolling. NO grey zone.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 286,
   "wu": {
    "mins": 4,
@@ -15137,7 +15143,7 @@ const SESSIONS = [
   "vert": 70,
   "type": "terrain",
   "title": "Race-effort touches (night)",
-  "prescription": "3 x 2 min at race effort, night, head torch. ",
+  "prescription": "NIGHT + TERRAIN - this one cannot be done on the treadmill or at 4am on the dark path. From late November these need a weekend evening. Flagged 24 Aug 2026, we plan the back half properly in November. || 3 x 2 min at race effort, night, head torch. ",
   "id": 287,
   "wu": {
    "mins": 15,
@@ -15203,7 +15209,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run (optional)",
-  "prescription": "Optional recovery run, conversational. FIRST session to drop when fatigue accumulates.",
+  "prescription": "Optional recovery run, conversational. FIRST session to drop when fatigue accumulates.  ||  4am-friendly: flat road/path or treadmill. No hills needed on this one.",
   "id": 288,
   "wu": {
    "mins": 4,
@@ -15519,7 +15525,8 @@ function sessionCard(s, expanded){
   const l=store.logs[s.id]||{}; const done=l.completed||s.done; const act0=actsOn(s.date)[0];
   const pills = (done?'<span class="pill done">DONE</span>':"") + (s.is_night?'<span class="pill night">NIGHT</span>':"")
     + (s.is_test?'<span class="pill test">TEST</span>':"") + (s.is_race?'<span class="pill race">RACE</span>':"")
-    + (s.is_down?'<span class="pill down">DOWN WK</span>':"");
+    + (s.is_down?'<span class="pill down">DOWN WK</span>':"")
+    + (l.loc?'<span class="pill loc">'+(l.loc==="tm"?"TREADMILL":"OUTSIDE")+'</span>':"");
   const meta=[s.km?s.km+"km":null, s.vert?s.vert+"m vert":null].filter(Boolean).join(" · ");
   let logForm="";
   if(!s.exercises&&s.type!=="rest"&&!s.done){
@@ -15528,6 +15535,11 @@ function sessionCard(s, expanded){
       <label class="f">time (mm:ss)<input style="width:86px" id="lt${s.id}" value="${l.time? fmtT(l.time) : (act0? fmtT(act0.secs) : "")}"></label>
       <label class="f">avg HR<input type="number" id="lh${s.id}" value="${l.hr ?? (act0&&act0.hr? Math.round(act0.hr) : "")}"></label>
       <label class="f">RPE 1-10<input type="number" min="1" max="10" id="lr${s.id}" value="${l.rpe??""}"></label>
+    </div>
+    <div class="locwrap">
+      <span class="lbl">WHERE</span>
+      <button class="locbtn ${l.loc==="tm"?"on":""}" onclick="setLoc(${s.id},'tm')">Treadmill</button>
+      <button class="locbtn ${l.loc==="out"?"on":""}" onclick="setLoc(${s.id},'out')">Outside</button>
     </div>
     <div class="row" style="margin-top:6px">
       <input placeholder="notes / niggles" id="ln${s.id}" style="flex:1" value="${esc(l.notes||"")}">
@@ -15626,6 +15638,12 @@ function toast(msg){
   if(navigator.vibrate) navigator.vibrate(30);
   if(toastTm) clearTimeout(toastTm);
   toastTm=setTimeout(()=>el.classList.remove("show"),1600);
+}
+function setLoc(id,v){
+  const logs=store.logs; const l=logs[id]||{};
+  l.loc = (l.loc===v) ? null : v;
+  logs[id]=l; store.logs=logs; render();
+  toast(l.loc? (v==="tm"?"Treadmill":"Outside") : "Location cleared");
 }
 function saveLog(id){
   const logs=store.logs; const l=logs[id]||{};
@@ -15829,10 +15847,11 @@ function rWeek(wk){
     const done=all.some(x=>(store.logs[x.id]||{}).completed||x.done);
     const extra=(lifts2.length&&runs2.length)? ` <span class="small">+ ${lifts2.map(x=>esc(x.title.split(" - ")[0].split(" — ")[0])).join(" + ")}</span>`:"";
     const swapped=all.some(x=>MV[x.id]);
+    const mloc=(store.logs[main.id]||{}).loc||null;
     html+=`<div class="day" onclick="openDay('${d}')">
       <div class="d"><span>${dn}</span><b>${dt2.getDate()}</b></div>
       <div class="t"><b>${esc(main.title)}</b>${extra}
-      <p>${main.km?main.km+"km":""}${main.vert?" · "+main.vert+"m":""}${main.is_night?" · night":""}${swapped?" · ⇄ swapped":""}</p></div>
+      <p>${main.km?main.km+"km":""}${main.vert?" · "+main.vert+"m":""}${main.is_night?" · night":""}${swapped?" · ⇄ swapped":""}${mloc?" · "+(mloc==="tm"?"🏃 treadmill":"🌳 outside"):""}</p></div>
       <div class="st">${done?"✓":d<t?"·":""}</div></div>`;
   }
   html+=`</div>`;
