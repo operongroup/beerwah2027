@@ -69,6 +69,13 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .fullpres{margin-top:8px}
 .fullpres summary{cursor:pointer;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--muted)}
 .fullpres .pres{margin-top:8px}
+.hrnote{margin:8px 0 4px;padding:12px 14px;border-radius:12px;
+  background:rgba(229,72,77,.10);border:1px solid rgba(229,72,77,.32)}
+.hrnote .hrlbl{display:block;font-size:10px;font-weight:800;letter-spacing:.08em;color:#FF7B80;margin-bottom:6px}
+.hrnote p{margin:0;font-size:14px;line-height:1.45;color:var(--ink)}
+.hrwhy{margin-top:8px}
+.hrwhy summary{cursor:pointer;font-size:11px;font-weight:700;color:var(--muted)}
+.hrwhy p{margin-top:6px;font-size:12px;color:var(--ink2)}
 .pres{font-size:14px;color:var(--ink2);white-space:pre-wrap;margin:7px 0}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 button.btn{background:linear-gradient(135deg,#FF6A2F,#E8430E);color:#fff;border:0;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer;
@@ -2786,6 +2793,7 @@ const SESSIONS = [
   "id": 48,
   "opt_out": "Easy 4.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 31 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -2850,6 +2858,7 @@ const SESSIONS = [
   "hill_reps": 4,
   "opt_out": "10 min easy. Then 4 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 4 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -2918,6 +2927,7 @@ const SESSIONS = [
   "id": 53,
   "opt_out": "7.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -2991,6 +3001,7 @@ const SESSIONS = [
   "id": 54,
   "opt_out": "Easy 4.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 31 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -3162,6 +3173,7 @@ const SESSIONS = [
   "id": 57,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -3355,6 +3367,7 @@ const SESSIONS = [
   "id": 59,
   "opt_out": "Easy 5.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 34 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -3419,6 +3432,7 @@ const SESSIONS = [
   "hill_reps": 5,
   "opt_out": "10 min easy. Then 5 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -3487,6 +3501,7 @@ const SESSIONS = [
   "id": 64,
   "opt_out": "9.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -3560,6 +3575,7 @@ const SESSIONS = [
   "id": 65,
   "opt_out": "Easy 5.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 34 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -3731,6 +3747,7 @@ const SESSIONS = [
   "id": 68,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -3924,6 +3941,7 @@ const SESSIONS = [
   "id": 70,
   "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 38 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -3988,6 +4006,7 @@ const SESSIONS = [
   "hill_reps": 5,
   "opt_out": "10 min easy. Then 5 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -4056,6 +4075,7 @@ const SESSIONS = [
   "id": 75,
   "opt_out": "10.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -4129,6 +4149,7 @@ const SESSIONS = [
   "id": 76,
   "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 38 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -4300,6 +4321,7 @@ const SESSIONS = [
   "id": 79,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -4498,6 +4520,7 @@ const SESSIONS = [
   "id": 81,
   "opt_out": "Easy 4.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 28 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -4562,6 +4585,7 @@ const SESSIONS = [
   "hill_reps": 4,
   "opt_out": "10 min easy. Then 4 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 4 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -4630,6 +4654,7 @@ const SESSIONS = [
   "id": 86,
   "opt_out": "7.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -4703,6 +4728,7 @@ const SESSIONS = [
   "id": 87,
   "opt_out": "Easy 3.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 24 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -4874,6 +4900,7 @@ const SESSIONS = [
   "id": 90,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -5067,6 +5094,7 @@ const SESSIONS = [
   "id": 92,
   "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -5131,6 +5159,7 @@ const SESSIONS = [
   "hill_reps": 6,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -5199,6 +5228,7 @@ const SESSIONS = [
   "id": 97,
   "opt_out": "11.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -5272,6 +5302,7 @@ const SESSIONS = [
   "id": 98,
   "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -5443,6 +5474,7 @@ const SESSIONS = [
   "id": 101,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -5636,6 +5668,7 @@ const SESSIONS = [
   "id": 103,
   "opt_out": "Easy 7.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 48 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -5700,6 +5733,7 @@ const SESSIONS = [
   "hill_reps": 7,
   "opt_out": "10 min easy. Then 7 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 7 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -5768,6 +5802,7 @@ const SESSIONS = [
   "id": 108,
   "opt_out": "12.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -5841,6 +5876,7 @@ const SESSIONS = [
   "id": 109,
   "opt_out": "Easy 6.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 45 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -6012,6 +6048,7 @@ const SESSIONS = [
   "id": 112,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -6232,6 +6269,7 @@ const SESSIONS = [
   "id": 114,
   "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -6296,6 +6334,7 @@ const SESSIONS = [
   "hill_reps": 9,
   "opt_out": "10 min easy. Then 9 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 9 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -6364,6 +6403,7 @@ const SESSIONS = [
   "id": 119,
   "opt_out": "13.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -6437,6 +6477,7 @@ const SESSIONS = [
   "id": 120,
   "opt_out": "Easy 7.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 48 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -6608,6 +6649,7 @@ const SESSIONS = [
   "id": 123,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -6801,6 +6843,7 @@ const SESSIONS = [
   "id": 125,
   "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 38 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -6865,6 +6908,7 @@ const SESSIONS = [
   "hill_reps": 5,
   "opt_out": "10 min easy. Then 5 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -6933,6 +6977,7 @@ const SESSIONS = [
   "id": 130,
   "opt_out": "10.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -7006,6 +7051,7 @@ const SESSIONS = [
   "id": 131,
   "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 38 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -7177,6 +7223,7 @@ const SESSIONS = [
   "id": 134,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -7397,6 +7444,7 @@ const SESSIONS = [
   "id": 136,
   "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -7461,6 +7509,7 @@ const SESSIONS = [
   "hill_reps": 10,
   "opt_out": "10 min easy. Then 10 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 10 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -7529,6 +7578,7 @@ const SESSIONS = [
   "id": 141,
   "opt_out": "14.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -7602,6 +7652,7 @@ const SESSIONS = [
   "id": 142,
   "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -7773,6 +7824,7 @@ const SESSIONS = [
   "id": 145,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -7993,6 +8045,7 @@ const SESSIONS = [
   "id": 147,
   "opt_out": "Easy 8.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 55 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -8057,6 +8110,7 @@ const SESSIONS = [
   "hill_reps": 10,
   "opt_out": "10 min easy. Then 10 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 10 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -8125,6 +8179,7 @@ const SESSIONS = [
   "id": 152,
   "opt_out": "15.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -8198,6 +8253,7 @@ const SESSIONS = [
   "id": 153,
   "opt_out": "Easy 8.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 55 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -8369,6 +8425,7 @@ const SESSIONS = [
   "id": 156,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -8589,6 +8646,7 @@ const SESSIONS = [
   "id": 158,
   "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 59 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -8653,6 +8711,7 @@ const SESSIONS = [
   "hill_reps": 10,
   "opt_out": "10 min easy. Then 10 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 10 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -8721,6 +8780,7 @@ const SESSIONS = [
   "id": 163,
   "opt_out": "16.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -8794,6 +8854,7 @@ const SESSIONS = [
   "id": 164,
   "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 59 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -8965,6 +9026,7 @@ const SESSIONS = [
   "id": 167,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -9163,6 +9225,7 @@ const SESSIONS = [
   "id": 169,
   "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -9227,6 +9290,7 @@ const SESSIONS = [
   "hill_reps": 8,
   "opt_out": "10 min easy. Then 8 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 8 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -9295,6 +9359,7 @@ const SESSIONS = [
   "id": 174,
   "opt_out": "12.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -9368,6 +9433,7 @@ const SESSIONS = [
   "id": 175,
   "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -9539,6 +9605,7 @@ const SESSIONS = [
   "id": 178,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -9759,6 +9826,7 @@ const SESSIONS = [
   "id": 180,
   "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -9823,6 +9891,7 @@ const SESSIONS = [
   "hill_reps": 10,
   "opt_out": "10 min easy. Then 10 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 10 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -9891,6 +9960,7 @@ const SESSIONS = [
   "id": 185,
   "opt_out": "16.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -9964,6 +10034,7 @@ const SESSIONS = [
   "id": 186,
   "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 59 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -10135,6 +10206,7 @@ const SESSIONS = [
   "id": 189,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -10355,6 +10427,7 @@ const SESSIONS = [
   "id": 191,
   "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -10418,6 +10491,7 @@ const SESSIONS = [
   "id": 192,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -10486,6 +10560,7 @@ const SESSIONS = [
   "id": 196,
   "opt_out": "16.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -10559,6 +10634,7 @@ const SESSIONS = [
   "id": 197,
   "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 59 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -10730,6 +10806,7 @@ const SESSIONS = [
   "id": 200,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -10923,6 +11000,7 @@ const SESSIONS = [
   "id": 202,
   "opt_out": "Easy 9.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 66 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -10986,6 +11064,7 @@ const SESSIONS = [
   "id": 203,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -11054,6 +11133,7 @@ const SESSIONS = [
   "id": 207,
   "opt_out": "7.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -11127,6 +11207,7 @@ const SESSIONS = [
   "id": 208,
   "opt_out": "Race day. Outside, obviously.",
   "opt_tm": "Not a treadmill session.",
+  "hr_note": "Race day. No HR ceiling - run the race, not the watch. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 20,
    "items": [
@@ -11303,6 +11384,7 @@ const SESSIONS = [
   "id": 211,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -11523,6 +11605,7 @@ const SESSIONS = [
   "id": 213,
   "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -11586,6 +11669,7 @@ const SESSIONS = [
   "id": 214,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -11654,6 +11738,7 @@ const SESSIONS = [
   "id": 218,
   "opt_out": "16.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -11727,6 +11812,7 @@ const SESSIONS = [
   "id": 219,
   "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 59 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -11898,6 +11984,7 @@ const SESSIONS = [
   "id": 222,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -12118,6 +12205,7 @@ const SESSIONS = [
   "id": 224,
   "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -12181,6 +12269,7 @@ const SESSIONS = [
   "id": 225,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -12249,6 +12338,7 @@ const SESSIONS = [
   "id": 229,
   "opt_out": "16.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -12322,6 +12412,7 @@ const SESSIONS = [
   "id": 230,
   "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 59 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -12493,6 +12584,7 @@ const SESSIONS = [
   "id": 233,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -12686,6 +12778,7 @@ const SESSIONS = [
   "id": 235,
   "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -12749,6 +12842,7 @@ const SESSIONS = [
   "id": 236,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -12817,6 +12911,7 @@ const SESSIONS = [
   "id": 240,
   "opt_out": "13.5km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -12890,6 +12985,7 @@ const SESSIONS = [
   "id": 241,
   "opt_out": "Easy 7.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 48 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -13061,6 +13157,7 @@ const SESSIONS = [
   "id": 244,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -13286,6 +13383,7 @@ const SESSIONS = [
   "id": 246,
   "opt_out": "Easy 10.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 72 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -13349,6 +13447,7 @@ const SESSIONS = [
   "id": 247,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -13417,6 +13516,7 @@ const SESSIONS = [
   "id": 251,
   "opt_out": "16.0km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -13490,6 +13590,7 @@ const SESSIONS = [
   "id": 252,
   "opt_out": "Easy 10.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 72 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -13661,6 +13762,7 @@ const SESSIONS = [
   "id": 255,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -13881,6 +13983,7 @@ const SESSIONS = [
   "id": 257,
   "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -13944,6 +14047,7 @@ const SESSIONS = [
   "id": 258,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -14012,6 +14116,7 @@ const SESSIONS = [
   "id": 262,
   "opt_out": "12km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -14085,6 +14190,7 @@ const SESSIONS = [
   "id": 263,
   "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -14256,6 +14362,7 @@ const SESSIONS = [
   "id": 266,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -14476,6 +14583,7 @@ const SESSIONS = [
   "id": 268,
   "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -14539,6 +14647,7 @@ const SESSIONS = [
   "id": 269,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -14607,6 +14716,7 @@ const SESSIONS = [
   "id": 273,
   "opt_out": "14km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -14680,6 +14790,7 @@ const SESSIONS = [
   "id": 274,
   "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -14759,6 +14870,7 @@ const SESSIONS = [
   "id": 276,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -14907,6 +15019,7 @@ const SESSIONS = [
   "id": 278,
   "opt_out": "Easy 3.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 21 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -14970,6 +15083,7 @@ const SESSIONS = [
   "id": 279,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -15099,6 +15213,7 @@ const SESSIONS = [
   "id": 282,
   "opt_out": "12km trail, easy throughout. Walk the steep climbs, run descents controlled.",
   "opt_tm": "Not a treadmill session. This one has to be outside on real ground.",
+  "hr_note": "Under ~150 on the flat. Climbs by effort, not HR - let it drift up, walk if it will not settle. It should come back down within 60-90s of the ground levelling out. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 5,
    "items": [
@@ -15172,6 +15287,7 @@ const SESSIONS = [
   "id": 283,
   "opt_out": "Easy 3.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 24 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -15251,6 +15367,7 @@ const SESSIONS = [
   "id": 285,
   "opt_out": "10 min easy. Then 5 x 20s hard uphill, walk down + 3 min between. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 5 x 20s at 8-10% incline, 3 min walk between. 10 min easy.",
+  "hr_note": "Ignore HR on the sprints - 20s efforts finish before HR catches up, the number means nothing. Between reps, walk until you can talk in sentences again. Warm-up and cool-down under ~150. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 18,
    "items": [
@@ -15329,6 +15446,7 @@ const SESSIONS = [
   "id": 286,
   "opt_out": "Easy 4km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 28 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -15392,6 +15510,7 @@ const SESSIONS = [
   "id": 287,
   "opt_out": "10 min easy. Then 6 x 60s uphill effort, jog down easy. 10 min easy.",
   "opt_tm": "10 min at 8.7 km/h, 1%. Then 6 x 60s at 10-12% incline, 90s walk at incline. 10 min easy.",
+  "hr_note": "HR lags on 60s reps, so run them on effort. Aim to finish each one able to get 3-4 words out, no more. Walk the recovery until you are back under ~150 before the next rep. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 15,
    "items": [
@@ -15460,6 +15579,7 @@ const SESSIONS = [
   "id": 288,
   "opt_out": "Easy 3km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 21 min.",
+  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -15523,6 +15643,7 @@ const SESSIONS = [
   "id": 289,
   "opt_out": "Race day. Outside, obviously.",
   "opt_tm": "Not a treadmill session.",
+  "hr_note": "Race day. No HR ceiling - run the race, not the watch. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 20,
    "items": [
@@ -15843,11 +15964,16 @@ function sessionCard(s, expanded){
   let locBlock="";
   if(s.opt_out||s.opt_tm){
     const brief = l.loc==="tm" ? s.opt_tm : (l.loc==="out" ? s.opt_out : null);
+    const hrParts = (s.hr_note||"").split("||");
+    const hrMain = (hrParts[0]||"").trim();
+    const hrCaveat = (hrParts[1]||"").trim();
     locBlock = `<div class="locwrap">
       <button class="locbtn ${l.loc==="out"?"on":""}" onclick="setLoc(${s.id},'out')">🌳 Outside</button>
       <button class="locbtn ${l.loc==="tm"?"on":""}" onclick="setLoc(${s.id},'tm')">🏃 Treadmill</button>
     </div>` + (brief? `<div class="brief">${esc(brief)}</div>`
-                    : `<p class="small" style="margin:6px 2px 0">Pick one to see the short version.</p>`);
+                    : `<p class="small" style="margin:6px 2px 0">Pick one to see the short version.</p>`)
+      + (hrMain? `<div class="hrnote"><span class="hrlbl">\u2665 HEART RATE</span><p>${esc(hrMain)}</p>${
+          hrCaveat? `<details class="hrwhy"><summary>Why "~"?</summary><p>${esc(hrCaveat)}</p></details>`:""}</div>`:"");
   }
   return `<div class="card"><div>${pills}</div>
     <h3>${esc(s.title)}</h3>
