@@ -76,6 +76,23 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .hrwhy{margin-top:8px}
 .hrwhy summary{cursor:pointer;font-size:11px;font-weight:700;color:var(--muted)}
 .hrwhy p{margin-top:6px;font-size:12px;color:var(--ink2)}
+.cthead{margin:2px 2px 14px}
+.cthead h2{font-size:22px;margin:2px 0 4px;letter-spacing:-.01em}
+.cthead p{margin:0;font-size:13px;color:var(--muted)}
+.ctsec{margin:18px 0 0}
+.ctlbl{display:block;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brand2);margin:0 2px 9px}
+.ctshot{display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1px solid var(--border);
+  border-radius:11px;padding:11px 13px;margin-bottom:7px}
+.ctshot input{margin:3px 0 0;flex:none;width:17px;height:17px;accent-color:var(--brand2)}
+.ctshot span{font-size:14px;line-height:1.45}
+.ctshot.done span{color:var(--muted);text-decoration:line-through}
+.cttalk{background:var(--card);border-left:3px solid var(--brand2);border-radius:0 11px 11px 0;
+  padding:12px 15px;margin-bottom:8px;font-size:14px;line-height:1.5}
+.ctlog{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:13px 15px;margin-bottom:8px}
+.ctlog b{display:block;font-size:14px;margin-bottom:5px}
+.ctlog p{margin:0;font-size:13px;color:var(--ink2);line-height:1.5}
+.ctnone{color:var(--muted);font-size:14px;padding:20px 2px}
 .pres{font-size:14px;color:var(--ink2);white-space:pre-wrap;margin:7px 0}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 button.btn{background:linear-gradient(135deg,#FF6A2F,#E8430E);color:#fff;border:0;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer;
@@ -14703,18 +14720,76 @@ const SESSIONS = [
  }
 ];
 const WEEKS = {"1":{"phase":"0 Ramp","km":18,"vert":100,"down":false,"note":"BASELINE 5km TT"},"2":{"phase":"0 Ramp","km":22,"vert":200,"down":false,"note":"Rainbow Beach 11km Sat (easy, not raced)"},"3":{"phase":"0 Ramp","km":19,"vert":100,"down":true,"note":"Recovery week after the sand"},"4":{"phase":"0 Ramp","km":24,"vert":150,"down":false,"note":""},"5":{"phase":"1 Base","km":27,"vert":250,"down":false,"note":"Heavy lifting begins. Downhill work begins."},"6":{"phase":"1 Base","km":30,"vert":300,"down":false,"note":""},"7":{"phase":"1 Base","km":33,"vert":350,"down":false,"note":""},"8":{"phase":"1 Base","km":24,"vert":200,"down":true,"note":"Down week. 5km TT #2"},"9":{"phase":"1 Base","km":36,"vert":400,"down":false,"note":""},"10":{"phase":"1 Base","km":39,"vert":450,"down":false,"note":""},"11":{"phase":"2 Build","km":42,"vert":550,"down":false,"note":"Plyometrics begin"},"12":{"phase":"2 Build","km":32,"vert":350,"down":true,"note":"Down week"},"13":{"phase":"2 Build","km":44,"vert":650,"down":false,"note":""},"14":{"phase":"2 Build","km":47,"vert":700,"down":false,"note":""},"15":{"phase":"2 Build","km":50,"vert":800,"down":false,"note":""},"16":{"phase":"2 Build","km":38,"vert":500,"down":true,"note":"Down week. 5km TT #3. Head torch in use."},"17":{"phase":"2 Build","km":52,"vert":850,"down":false,"note":"Peak lifting load"},"18":{"phase":"3 Specific","km":52,"vert":900,"down":false,"note":"Night running begins. Head torch required."},"19":{"phase":"3 Specific","km":40,"vert":600,"down":true,"note":"Down week. RACE: Beerwah@Daybreak Sun 6 Dec"},"20":{"phase":"3 Specific","km":52,"vert":950,"down":false,"note":"SEQ summer = natural heat acclimation. Easy runs in daytime heat when convenient."},"21":{"phase":"3 Specific","km":52,"vert":1000,"down":false,"note":""},"22":{"phase":"3 Specific","km":42,"vert":650,"down":true,"note":"Down week"},"23":{"phase":"3 Specific","km":50,"vert":950,"down":false,"note":"5km TT #4. Final go/no-go on the A goal."},"24":{"phase":"4 Sharpen","km":46,"vert":800,"down":false,"note":"Full course rehearsal at Beerwah, at night"},"25":{"phase":"4 Sharpen","km":44,"vert":750,"down":false,"note":"Last hard descent session. Last heavy lift."},"26":{"phase":"5 Taper","km":28,"vert":400,"down":false,"note":"Taper: volume ~-45%, intensity + frequency retained. HEAT TOP-UP week: easy runs in the heat of the day + optional 30 min ~40C bath after."},"27":{"phase":"5 Taper","km":16,"vert":200,"down":false,"note":"RACE SAT 30 JAN 7:00PM. Last heat exposure Wed, nothing after."}};
+const CONTENT = {
+ "5": {
+  "range": "24 - 30 Aug 2026",
+  "headline": "The week the data turned out to be wrong",
+  "shots": [
+   "4am, head torch on, dark empty street. Hold it 5 seconds, say nothing. This is the signature image of the series.",
+   "Rolling power blocks: phone on a fence post, run through frame twice. 15s.",
+   "Screen record: tap between Outside and Treadmill on a session so the one-line brief swaps. Shows the app doing something real.",
+   "Screen record: the heart rate block, then open 'Why ~?'. This is the honesty angle on camera.",
+   "Garage: start the treadmill, let the mic catch the noise, close the door and walk out. No dialogue needed.",
+   "Garmin sleep screen showing the 7:59pm bed time. Point at it.",
+   "The course elevation profile on screen, your finger landing on kilometre 6.",
+   "Piece to camera, post-run: 'my coach was wrong about four things this week and told me every time.'"
+  ],
+  "talk": [
+   "For five weeks the plan was built around a course nobody had looked at. The official KML was on the race website the whole time.",
+   "Kilometre 6 is 800 metres at 9.8%. It has cost roughly the same two and a half minutes in every race, and it is the only kilometre that did not improve last year.",
+   "My max heart rate was set to 190. In the 2024 race I averaged 198 for a full kilometre. Every training zone I have used was built on a number about ten beats too low.",
+   "The garage treadmill is too loud at 4am. That one domestic fact restructured 22 weeks of training.",
+   "Two weekend slots means the belt is now the most race-specific session I own, because nothing outdoors near me does 800 metres at 10%."
+  ],
+  "log": [
+   [
+    "Course measured, finally",
+    "Parsed the organiser's official KML: 10.04km, 255m gain smoothed against their 294m raw. One decisive climb of 800m at 9.8% from the 4.6km mark, a third of the total gain in one hit. 20% of the course descends at -5% or steeper, 750m of it steeper than -10%."
+   ],
+   [
+    "Found the real 2024 race",
+    "It was on Strava titled 'First ever trail event. 10km', not 'Beerwah'. 1:08:14 elapsed, matching the official 1:08:31. The climb sat at kilometre 8 that year, so the course layout did change after February 2024. Confirmed what you remembered."
+   ],
+   [
+    "Max HR 190 to 200, threshold 172 to 182",
+    "Set off three years of race files. You averaged 198bpm for a full kilometre climbing in 2024 and spent 51 minutes above 181. All 39 activities in intervals.icu recalculated against the corrected zones."
+   ],
+   [
+    "Easy ceiling moved from 148 to 158",
+    "Direct consequence of the threshold correction. The early-block 'drifting too fast on easy runs' problem was partly a bad number, not bad discipline."
+   ],
+   [
+    "Climbing came off the weekdays",
+    "4am terrain tops out at 5-6% for thirty seconds. All climbing moved to a dedicated weekend treadmill session that can actually hold 10-12%. Thursday is now flat aerobic volume."
+   ],
+   [
+    "Weekend split into two sessions",
+    "TRAIL DAY outdoors for footing and descents, TREADMILL CLIMB for the km 6 rehearsal. Either day, your call."
+   ],
+   [
+    "Night work solved",
+    "From late November the weekend trail day runs in the dark with a head torch, instead of a weekday session that was never going to happen."
+   ],
+   [
+    "Four unverified claims deleted",
+    "'The Dungeon', the 10.4km distance, 'the final 3km is mostly uphill', and 'sustained climbing not short bursts' were all invented rather than sourced. Removed from the plan and the race-day card."
+   ]
+  ]
+ }
+};
 const START = "2026-07-27", RACE = "2027-01-30";
 const ICONS={
  Today:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>',
  Week:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
  Plan:'<rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/>',
  Strength:'<path d="M2 12h3M19 12h3M8 12h8"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="16" y="7" width="3" height="10" rx="1"/>',
+ Content:'<path d="M15 8l6-3v14l-6-3z"/><rect x="3" y="6" width="12" height="12" rx="2"/>',
  Progress:'<path d="M3 21h18"/><path d="M4 17l5-6 4 3 6-8"/>',
  Rules:'<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/>',
  Sync:'<path d="M20 8a8 8 0 0 0-14-2M4 16a8 8 0 0 0 14 2"/><path d="M20 3v5h-5M4 21v-5h5"/>'};
 function ringSVG(pct,center,sub){ const r=34,c=2*Math.PI*r,off=c*(1-Math.min(1,Math.max(0,pct)));
  return `<svg class="hr-ring" width="92" height="92" viewBox="0 0 92 92"><circle cx="46" cy="46" r="${r}" fill="none" stroke="var(--grid)" stroke-width="9"/><circle cx="46" cy="46" r="${r}" fill="none" stroke="url(#ringg)" stroke-width="9" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 46 46)"/><defs><linearGradient id="ringg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#E8430E"/></linearGradient></defs><text x="46" y="44" text-anchor="middle" font-size="17" font-weight="800" fill="var(--ink)">${center}</text><text x="46" y="60" text-anchor="middle" font-size="8.5" font-weight="700" fill="var(--muted)" letter-spacing=".08em">${sub}</text></svg>`; }
-const TABS = ["Today","Week","Plan","Strength","Progress","Rules","Sync"];
+const TABS = ["Today","Week","Plan","Strength","Content","Progress","Rules","Sync"];
 // ---------- state ----------
 const store = {
   get logs(){ try{return JSON.parse(localStorage.getItem("bw_logs")||"{}")}catch(e){return {}} },
@@ -14877,7 +14952,7 @@ function render(){
   $("#chips").innerHTML = `<span class="chip acc">Week ${Math.min(27,Math.max(1,wk))} of 27 · Phase ${wkm?esc(wkm.phase):""}</span>
     ${wkm&&wkm.down?'<span class="chip">DOWN WEEK · not optional</span>':""}
     <span class="chip">${wkm?wkm.km+"km · "+wkm.vert+"m vert this week":""}</span>`;
-  const R={Today:rToday,Week:rWeek,Plan:rPlan,Strength:rStrength,Progress:rProgress,Rules:rRules,Sync:rSync};
+  const R={Today:rToday,Week:rWeek,Plan:rPlan,Strength:rStrength,Content:rContent,Progress:rProgress,Rules:rRules,Sync:rSync};
   $("#main").innerHTML = (tab==="Today"&&dayView)? rDayView(dayView) : R[tab]();
   if(tab==="Progress") drawCharts();
 }
@@ -14972,6 +15047,27 @@ function sessionCard(s, expanded){
     <details class="fullpres"><summary>Full detail</summary><p class="pres">${esc(s.prescription)}</p></details>
     ${wucd(s.wu,"Warm-up","↗","wu")}${logForm}${wucd(s.cd,"Cool-down","↘","cdd")}${actHtml}</div>`;
 }
+function rContent(){
+  const wk=Math.min(27,Math.max(1,weekOf(todayISO())));
+  const c=CONTENT[wk];
+  if(!c) return `<div class="card"><p class="ctnone">No content pack written for week ${wk} yet. Ask Claude to add one.</p></div>`;
+  const done=store.shots||{};
+  const shots=c.shots.map((s,i)=>{
+    const k=wk+"_"+i, on=!!done[k];
+    return `<label class="ctshot ${on?"done":""}"><input type="checkbox" ${on?"checked":""} onchange="tickShot('${k}',this.checked)"><span>${esc(s)}</span></label>`;
+  }).join("");
+  const talk=c.talk.map(x=>`<div class="cttalk">${esc(x)}</div>`).join("");
+  const log=c.log.map(x=>`<div class="ctlog"><b>${esc(x[0])}</b><p>${esc(x[1])}</p></div>`).join("");
+  const n=c.shots.length, got=c.shots.filter((s,i)=>done[wk+"_"+i]).length;
+  return `<div class="card">
+    <div class="cthead"><span class="ctlbl" style="color:var(--muted)">WEEK ${wk} &middot; ${esc(c.range)}</span>
+      <h2>${esc(c.headline)}</h2><p>${got} of ${n} shots captured</p></div>
+    <div class="ctsec"><span class="ctlbl">Shots to get</span>${shots}</div>
+    <div class="ctsec"><span class="ctlbl">Talk about</span>${talk}</div>
+    <div class="ctsec"><span class="ctlbl">What changed this week</span>${log}</div>
+  </div>`;
+}
+function tickShot(k,v){ const s=store.shots||{}; if(v)s[k]=1; else delete s[k]; store.shots=s; render(); }
 function rToday(){
   const t=todayISO(); let list=sessionsOn(t);
   const wkN=Math.min(27,Math.max(1,weekOf(t))); const wm=WEEKS[wkN]; const wa=weekActual(wkN);
