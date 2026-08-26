@@ -55,6 +55,44 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .pill.race{background:rgba(229,72,77,.15);color:#FF7B80;border:1px solid rgba(229,72,77,.5)}
 .pill.down{background:rgba(255,255,255,.06);color:var(--ink2);border:1px solid var(--border)}
 .pill.done{background:rgba(47,194,79,.15);color:var(--goodtext);border:1px solid rgba(47,194,79,.45)}
+.pill.loc{background:rgba(255,255,255,.06);color:var(--ink2);border:1px solid var(--border)}
+.locwrap{display:flex;gap:6px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.locwrap .lbl{font-size:10px;font-weight:800;letter-spacing:.06em;color:var(--muted)}
+.locbtn{font-size:11px;font-weight:700;padding:6px 12px;border-radius:99px;cursor:pointer;
+  background:transparent;color:var(--ink2);border:1px solid var(--border)}
+.locbtn.on{background:var(--brand2);border-color:var(--brand2);color:#fff}
+.locwrap{margin:10px 0 0}
+.locbtn{font-size:13px;font-weight:700;padding:9px 16px}
+.brief{margin:10px 0 4px;padding:12px 14px;border-radius:12px;
+  background:rgba(255,90,36,.10);border:1px solid rgba(255,90,36,.35);
+  color:var(--ink);font-size:15px;font-weight:600;line-height:1.45}
+.fullpres{margin-top:8px}
+.fullpres summary{cursor:pointer;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--muted)}
+.fullpres .pres{margin-top:8px}
+.hrnote{margin:8px 0 4px;padding:12px 14px;border-radius:12px;
+  background:rgba(229,72,77,.10);border:1px solid rgba(229,72,77,.32)}
+.hrnote .hrlbl{display:block;font-size:10px;font-weight:800;letter-spacing:.08em;color:#FF7B80;margin-bottom:6px}
+.hrnote p{margin:0;font-size:14px;line-height:1.45;color:var(--ink)}
+.hrwhy{margin-top:8px}
+.hrwhy summary{cursor:pointer;font-size:11px;font-weight:700;color:var(--muted)}
+.hrwhy p{margin-top:6px;font-size:12px;color:var(--ink2)}
+.cthead{margin:2px 2px 14px}
+.cthead h2{font-size:22px;margin:2px 0 4px;letter-spacing:-.01em}
+.cthead p{margin:0;font-size:13px;color:var(--muted)}
+.ctsec{margin:18px 0 0}
+.ctlbl{display:block;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brand2);margin:0 2px 9px}
+.ctshot{display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1px solid var(--border);
+  border-radius:11px;padding:11px 13px;margin-bottom:7px}
+.ctshot input{margin:3px 0 0;flex:none;width:17px;height:17px;accent-color:var(--brand2)}
+.ctshot span{font-size:14px;line-height:1.45}
+.ctshot.done span{color:var(--muted);text-decoration:line-through}
+.cttalk{background:var(--card);border-left:3px solid var(--brand2);border-radius:0 11px 11px 0;
+  padding:12px 15px;margin-bottom:8px;font-size:14px;line-height:1.5}
+.ctlog{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:13px 15px;margin-bottom:8px}
+.ctlog b{display:block;font-size:14px;margin-bottom:5px}
+.ctlog p{margin:0;font-size:13px;color:var(--ink2);line-height:1.5}
+.ctnone{color:var(--muted);font-size:14px;padding:20px 2px}
 .pres{font-size:14px;color:var(--ink2);white-space:pre-wrap;margin:7px 0}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 button.btn{background:linear-gradient(135deg,#FF6A2F,#E8430E);color:#fff;border:0;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer;
@@ -114,7 +152,7 @@ details ul{padding-left:18px}
 .small{font-size:12px;color:var(--muted)}
 .ok{color:var(--goodtext);font-weight:700}
 .bad{color:var(--crit);font-weight:700}
-.hide{display:none}
+.hide{display:none!important}
 .exlist{margin-top:6px}
 .exrow{display:flex;align-items:center;gap:11px;padding:9px 0;border-top:1px solid var(--grid)}
 .exrow:first-child{border-top:0}
@@ -150,6 +188,31 @@ details.wucd summary{font-size:13px;font-weight:800;color:var(--ink2);letter-spa
 .wl input{width:18px;height:18px;accent-color:var(--brand);flex:none;margin-top:2px;cursor:pointer}
 .wuc{color:var(--brand2);font-weight:800}
 .wuc.ok{color:var(--goodtext)}
+.wurow.added{display:flex;align-items:flex-start;gap:6px}
+.wurow.added .wl{flex:1}
+.rmx{background:none;border:0;color:var(--muted);font-size:13px;cursor:pointer;padding:4px 6px;flex:none}
+.addpick{border-top:1px dashed var(--grid);margin-top:7px;padding:7px 0 0;border-left:0;border-right:0;border-bottom:0;border-radius:0;background:none}
+.addpick summary{font-size:12.5px;color:var(--brand2);font-weight:700;list-style:none;cursor:pointer}
+.libchips{display:flex;flex-wrap:wrap;gap:6px;padding-top:8px}
+button.lib{font-size:12px;padding:6px 10px;text-align:left}
+button.lib span{color:var(--muted);font-size:11px}
+.tmr{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--brand2);border-radius:8px;padding:5px 9px;font-size:11px;font-weight:800;cursor:pointer;flex:none;margin-top:2px;white-space:nowrap}
+.tmrrow{display:flex;align-items:flex-start;gap:6px}
+.tmrrow .wl{flex:1}
+.setcol{display:flex;flex-direction:column;gap:4px;align-items:stretch;flex:none}
+.setrow{display:flex;gap:4px;justify-content:center}
+.minib{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--ink2);border-radius:7px;padding:3px 7px;font-size:10.5px;font-weight:800;cursor:pointer;white-space:nowrap}
+.minib.won{border-color:rgba(255,90,36,.5);color:var(--brand2);background:rgba(255,90,36,.10)}
+.minib.tclr{color:var(--brand2)}
+.setbtn .dots em{font-style:normal;font-size:9px;color:var(--goodtext);font-weight:800;margin-left:2px}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%) translateY(14px);bottom:84px;z-index:60;
+  background:#1d2333;border:1px solid #FF5A24;color:#fff;font-weight:700;font-size:14px;
+  padding:10px 18px;border-radius:999px;box-shadow:0 6px 24px rgba(0,0,0,.5);
+  opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast b{color:#FF5A24;margin-right:6px}
+.btn.saved{background:var(--good);border-color:var(--good);color:#fff}
 </style>
 </head>
 <body>
@@ -159,21 +222,24 @@ details.wucd summary{font-size:13px;font-weight:800;color:var(--ink2);letter-spa
 <nav id="nav"></nav>
 <div class="tip" id="tip"></div>
 <div class="timerbar hide" id="timerbar"></div>
+<div class="toast" id="toast"></div>
 <script>
 const SESSIONS = /*__SESSIONS__*/;
 const WEEKS = /*__WEEKS__*/;
+const CONTENT = /*__CONTENT__*/;
 const START = "2026-07-27", RACE = "2027-01-30";
 const ICONS={
  Today:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>',
  Week:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
  Plan:'<rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/>',
  Strength:'<path d="M2 12h3M19 12h3M8 12h8"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="16" y="7" width="3" height="10" rx="1"/>',
+ Content:'<path d="M15 8l6-3v14l-6-3z"/><rect x="3" y="6" width="12" height="12" rx="2"/>',
  Progress:'<path d="M3 21h18"/><path d="M4 17l5-6 4 3 6-8"/>',
  Rules:'<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/>',
  Sync:'<path d="M20 8a8 8 0 0 0-14-2M4 16a8 8 0 0 0 14 2"/><path d="M20 3v5h-5M4 21v-5h5"/>'};
 function ringSVG(pct,center,sub){ const r=34,c=2*Math.PI*r,off=c*(1-Math.min(1,Math.max(0,pct)));
  return `<svg class="hr-ring" width="92" height="92" viewBox="0 0 92 92"><circle cx="46" cy="46" r="${r}" fill="none" stroke="var(--grid)" stroke-width="9"/><circle cx="46" cy="46" r="${r}" fill="none" stroke="url(#ringg)" stroke-width="9" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 46 46)"/><defs><linearGradient id="ringg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#E8430E"/></linearGradient></defs><text x="46" y="44" text-anchor="middle" font-size="17" font-weight="800" fill="var(--ink)">${center}</text><text x="46" y="60" text-anchor="middle" font-size="8.5" font-weight="700" fill="var(--muted)" letter-spacing=".08em">${sub}</text></svg>`; }
-const TABS = ["Today","Week","Plan","Strength","Progress","Rules","Sync"];
+const TABS = ["Today","Week","Plan","Strength","Content","Progress","Rules","Sync"];
 // ---------- state ----------
 const store = {
   get logs(){ try{return JSON.parse(localStorage.getItem("bw_logs")||"{}")}catch(e){return {}} },
@@ -336,7 +402,7 @@ function render(){
   $("#chips").innerHTML = `<span class="chip acc">Week ${Math.min(27,Math.max(1,wk))} of 27 · Phase ${wkm?esc(wkm.phase):""}</span>
     ${wkm&&wkm.down?'<span class="chip">DOWN WEEK · not optional</span>':""}
     <span class="chip">${wkm?wkm.km+"km · "+wkm.vert+"m vert this week":""}</span>`;
-  const R={Today:rToday,Week:rWeek,Plan:rPlan,Strength:rStrength,Progress:rProgress,Rules:rRules,Sync:rSync};
+  const R={Today:rToday,Week:rWeek,Plan:rPlan,Strength:rStrength,Content:rContent,Progress:rProgress,Rules:rRules,Sync:rSync};
   $("#main").innerHTML = (tab==="Today"&&dayView)? rDayView(dayView) : R[tab]();
   if(tab==="Progress") drawCharts();
 }
@@ -346,7 +412,8 @@ function sessionCard(s, expanded){
   const l=store.logs[s.id]||{}; const done=l.completed||s.done; const act0=actsOn(s.date)[0];
   const pills = (done?'<span class="pill done">DONE</span>':"") + (s.is_night?'<span class="pill night">NIGHT</span>':"")
     + (s.is_test?'<span class="pill test">TEST</span>':"") + (s.is_race?'<span class="pill race">RACE</span>':"")
-    + (s.is_down?'<span class="pill down">DOWN WK</span>':"");
+    + (s.is_down?'<span class="pill down">DOWN WK</span>':"")
+    + (l.loc?'<span class="pill loc">'+(l.loc==="tm"?"TREADMILL":"OUTSIDE")+'</span>':"");
   const meta=[s.km?s.km+"km":null, s.vert?s.vert+"m vert":null].filter(Boolean).join(" · ");
   let logForm="";
   if(!s.exercises&&s.type!=="rest"&&!s.done){
@@ -358,7 +425,7 @@ function sessionCard(s, expanded){
     </div>
     <div class="row" style="margin-top:6px">
       <input placeholder="notes / niggles" id="ln${s.id}" style="flex:1" value="${esc(l.notes||"")}">
-      <button class="btn" onclick="saveLog(${s.id})">${done?"Update":"Complete"}</button>
+      <button class="btn ${savedFlash===s.id?"saved":""}" onclick="saveLog(${s.id})">${savedFlash===s.id?"\u2713 Saved":(done?"Update":"Complete")}</button>
       ${done?`<button class="ghost" onclick="unLog(${s.id})">Undo</button>`:""}
     </div>`;
   }
@@ -368,36 +435,89 @@ function sessionCard(s, expanded){
       const sv=(l.ex&&l.ex[i])||{};
       const hist=(exh[e.k]||[]).filter(x=>x.load!=null);
       const last=hist.length? hist[hist.length-1] : null;
-      const nsets=e.sets||3, csets=sv.sets||0;
-      const dots=Array.from({length:nsets},(_,d)=>`<i class="${d<csets?"on":""}"></i>`).join("");
+      const nsets=e.sets||3, csets=sv.sets||0, wsets=sv.wsets||0;
+      const dots=Array.from({length:nsets},(_,d)=>`<i class="${d<Math.min(csets,nsets)?"on":""}"></i>`).join("")+(csets>nsets?`<em>+${csets-nsets}</em>`:"");
       return `<div class="exrow">
         <input type="checkbox" id="exd${s.id}_${i}" ${sv.done?"checked":""} onchange="toggleEx(${s.id},${i},this.checked)">
         <div class="exn"><b>${esc(e.name)}</b><span>${esc(e.scheme)}${e.note?" · "+esc(e.note):""}</span></div>
-        <button class="setbtn ${csets>=nsets?"fin":""}" onclick="doneSet(${s.id},${i})">
-          <span class="dots">${dots}</span>${csets>=nsets?"done":"set "+(csets+1)+"/"+nsets+" ✓"}</button>
+        <div class="setcol">
+          <button class="setbtn ${csets>=nsets?"fin":""}" onclick="doneSet(${s.id},${i})">
+            <span class="dots">${dots}</span>${csets>=nsets?"done · +1":"set "+(csets+1)+"/"+nsets+" ✓"}</button>
+          <div class="setrow">
+            <button class="minib ${wsets>0?"won":""}" onclick="wuSet(${s.id},${i})" title="log a warm-up set">${wsets>0?"W×"+wsets:"W+"}</button>
+            <button class="minib" onclick="decSet(${s.id},${i})" title="undo a set">−</button>
+            ${parseDur(e.scheme)?`<button class="minib tclr" onclick="startExTimer(${s.id},${i})">⏱${durLbl(parseDur(e.scheme))}</button>`:""}
+          </div>
+        </div>
         ${e.load?`<div class="exl"><input class="w" type="number" step="0.5" id="exw${s.id}_${i}" value="${sv.load ?? (last? last.load : "")}" placeholder="kg"><span class="exlast">${last?"last "+last.load+"kg":"first time"}</span></div>`:""}
       </div>`;
     }).join("") + `</div>
     <div class="row" style="margin-top:9px">
       <input placeholder="notes (form cues, niggles)" id="ln${s.id}" style="flex:1" value="${esc(l.notes||"")}">
       <label class="f">RPE 1-10<input type="number" min="1" max="10" id="lr${s.id}" value="${l.rpe??""}"></label>
-      <button class="btn" onclick="saveStr(${s.id})">${done?"Update":"Save session"}</button>
+      <button class="btn ${savedFlash===s.id?"saved":""}" onclick="saveStr(${s.id})">${savedFlash===s.id?"\u2713 Saved":(done?"Update":"Save session")}</button>
     </div>`;
   }
   const wucd = (sec,label,icon,key)=>{
     if(!sec) return "";
-    const st=(l[key]||[]); const n=sec.items.length, c=st.filter(Boolean).length;
-    return `<details class="wucd"${c>0&&c<n?" open":""}><summary>${icon} ${label} · ~${sec.mins} min · <span class="wuc${c>=n?" ok":""}" id="wuc${s.id}_${key}">${c}/${n}${c>=n?" ✓":""}</span></summary>${sec.items.map((x,i)=>
-    `<div class="wurow"><label class="wl"><input type="checkbox" ${st[i]?"checked":""} onchange="tickWU(${s.id},'${key}',${i},this.checked)"><div><b>${esc(x[0])}</b>${x[1]?` <span class="dose">${esc(x[1])}</span>`:""}<p>${esc(x[2])}</p></div></label></div>`).join("")}</details>`;
+    const st=(l[key]||[]); const ext=(l[key+"x"]||[]);
+    const LIB=key==="wu"? LIB_WU : LIB_CD;
+    const n=sec.items.length, c=st.filter(Boolean).length;
+    const tot=n+ext.length, ctot=c+ext.filter(x=>x&&x.done).length;
+    const open=openSec.has(s.id+key)||(ctot>0&&ctot<tot);
+    const baseRows=sec.items.map((x,i)=>
+      `<div class="wurow tmrrow"><label class="wl"><input type="checkbox" ${st[i]?"checked":""} onchange="tickWU(${s.id},'${key}',${i},this.checked)"><div><b>${esc(x[0])}</b>${x[1]?` <span class="dose">${esc(x[1])}</span>`:""}<p>${esc(x[2])}</p></div></label>${parseDur(x[1])?`<button class="tmr" onclick="startWuTimer(${s.id},'${key}',${i},false)">⏱ ${durLbl(parseDur(x[1]))}</button>`:""}</div>`).join("");
+    const extRows=ext.map((x,i)=>{ const e=LIB.find(z=>z[0]===x.k); if(!e) return "";
+      return `<div class="wurow added"><label class="wl"><input type="checkbox" ${x.done?"checked":""} onchange="tickWUX(${s.id},'${key}',${i},this.checked)"><div><b>${esc(e[1])}</b> <span class="dose">${esc(e[2])}</span><p>${esc(e[3])}</p></div></label>${parseDur(e[2])?`<button class="tmr" onclick="startWuTimer(${s.id},'${key}',${i},true)">⏱ ${durLbl(parseDur(e[2]))}</button>`:""}<button class="rmx" onclick="rmWUX(${s.id},'${key}',${i})">✕</button></div>`; }).join("");
+    const chips=LIB.filter(e=>!ext.some(x=>x.k===e[0])).map(e=>
+      `<button class="ghost lib" onclick="addWUX(${s.id},'${key}','${e[0]}')">${esc(e[1])} <span>${esc(e[2])}</span></button>`).join("");
+    return `<details class="wucd"${open?" open":""}><summary>${icon} ${label} · ~${sec.mins} min · <span class="wuc${ctot>=tot&&tot>0?" ok":""}" id="wuc${s.id}_${key}">${ctot}/${tot}${ctot>=tot&&tot>0?" ✓":""}</span></summary>${baseRows}${extRows}
+    <details class="addpick"><summary>＋ add exercise (felt cold? grab one)</summary><div class="libchips">${chips||'<span class="small">all added</span>'}</div></details></details>`;
   };
   const acts=actsOn(s.date);
   const actHtml = (s.type!=="strength"&&acts.length)? `<p class="small" style="margin-top:6px">Garmin: ${acts.map(a=>`${a.km.toFixed(1)}km · ${fmtT(a.secs)} · ${fmtPace(a.secs/a.km)}${a.hr?" · "+Math.round(a.hr)+"bpm":""}${a.vert?" · "+Math.round(a.vert)+"m":""}`).join(" | ")}</p>` : "";
+  let locBlock="";
+  if(s.opt_out||s.opt_tm){
+    const brief = l.loc==="tm" ? s.opt_tm : (l.loc==="out" ? s.opt_out : null);
+    const hrParts = (s.hr_note||"").split("||");
+    const hrMain = (hrParts[0]||"").trim();
+    const hrCaveat = (hrParts[1]||"").trim();
+    locBlock = `<div class="locwrap">
+      <button class="locbtn ${l.loc==="out"?"on":""}" onclick="setLoc(${s.id},'out')">🌳 Outside</button>
+      <button class="locbtn ${l.loc==="tm"?"on":""}" onclick="setLoc(${s.id},'tm')">🏃 Treadmill</button>
+    </div>` + (brief? `<div class="brief">${esc(brief)}</div>`
+                    : `<p class="small" style="margin:6px 2px 0">Pick one to see the short version.</p>`)
+      + (hrMain? `<div class="hrnote"><span class="hrlbl">\u2665 HEART RATE</span><p>${esc(hrMain)}</p>${
+          hrCaveat? `<details class="hrwhy"><summary>Why "~"?</summary><p>${esc(hrCaveat)}</p></details>`:""}</div>`:"");
+  }
   return `<div class="card"><div>${pills}</div>
     <h3>${esc(s.title)}</h3>
     ${meta?`<p class="small">${meta}${s.type!=="strength"?" planned":""}</p>`:""}
-    <p class="pres">${esc(s.prescription)}</p>
+    ${locBlock}
+    <details class="fullpres"><summary>Full detail</summary><p class="pres">${esc(s.prescription)}</p></details>
     ${wucd(s.wu,"Warm-up","↗","wu")}${logForm}${wucd(s.cd,"Cool-down","↘","cdd")}${actHtml}</div>`;
 }
+function rContent(){
+  const wk=Math.min(27,Math.max(1,weekOf(todayISO())));
+  const c=CONTENT[wk];
+  if(!c) return `<div class="card"><p class="ctnone">No content pack written for week ${wk} yet. Ask Claude to add one.</p></div>`;
+  const done=store.shots||{};
+  const shots=c.shots.map((s,i)=>{
+    const k=wk+"_"+i, on=!!done[k];
+    return `<label class="ctshot ${on?"done":""}"><input type="checkbox" ${on?"checked":""} onchange="tickShot('${k}',this.checked)"><span>${esc(s)}</span></label>`;
+  }).join("");
+  const talk=c.talk.map(x=>`<div class="cttalk">${esc(x)}</div>`).join("");
+  const log=c.log.map(x=>`<div class="ctlog"><b>${esc(x[0])}</b><p>${esc(x[1])}</p></div>`).join("");
+  const n=c.shots.length, got=c.shots.filter((s,i)=>done[wk+"_"+i]).length;
+  return `<div class="card">
+    <div class="cthead"><span class="ctlbl" style="color:var(--muted)">WEEK ${wk} &middot; ${esc(c.range)}</span>
+      <h2>${esc(c.headline)}</h2><p>${got} of ${n} shots captured</p></div>
+    <div class="ctsec"><span class="ctlbl">Shots to get</span>${shots}</div>
+    <div class="ctsec"><span class="ctlbl">Talk about</span>${talk}</div>
+    <div class="ctsec"><span class="ctlbl">What changed this week</span>${log}</div>
+  </div>`;
+}
+function tickShot(k,v){ const s=store.shots||{}; if(v)s[k]=1; else delete s[k]; store.shots=s; render(); }
 function rToday(){
   const t=todayISO(); let list=sessionsOn(t);
   const wkN=Math.min(27,Math.max(1,weekOf(t))); const wm=WEEKS[wkN]; const wa=weekActual(wkN);
@@ -427,19 +547,95 @@ function rToday(){
     `<div class="verdict"><span class="dot" style="background:var(--${v.lvl==="good"?"good":v.lvl==="warn"?"warn":v.lvl==="serious"?"serious":"crit"})"></span><div><b>${esc(v.t)}</b><p>${esc(v.p)}</p></div></div>`).join("")}</div>`;
   return html;
 }
+let savedFlash=null;
+function flashSaved(id){ savedFlash=id; render(); setTimeout(()=>{ if(savedFlash===id){ savedFlash=null; render(); } },1600); }
+let toastTm=null;
+function toast(msg){
+  const el=$("#toast"); el.innerHTML="<b>\u2713</b>"+msg;
+  el.classList.add("show");
+  if(navigator.vibrate) navigator.vibrate(30);
+  if(toastTm) clearTimeout(toastTm);
+  toastTm=setTimeout(()=>el.classList.remove("show"),1600);
+}
+function setLoc(id,v){
+  const logs=store.logs; const l=logs[id]||{};
+  l.loc = (l.loc===v) ? null : v;
+  logs[id]=l; store.logs=logs; render();
+  toast(l.loc? (v==="tm"?"Treadmill":"Outside") : "Location cleared");
+}
 function saveLog(id){
   const logs=store.logs; const l=logs[id]||{};
   l.completed=true; l.km=parseFloat($("#lk"+id).value)||null; l.time=parseT($("#lt"+id).value);
   l.hr=parseInt($("#lh"+id).value)||null; l.rpe=parseInt($("#lr"+id).value)||null; l.notes=$("#ln"+id).value;
-  l.at=new Date().toISOString(); logs[id]=l; store.logs=logs; render();
+  l.at=new Date().toISOString(); logs[id]=l; store.logs=logs; flashSaved(id); toast("Session saved");
+}
+const LIB_WU=[
+ ["walklunge","Walking lunges","10 each side","Big step forward, back knee kisses the ground, tall chest. The full lower-body wake-up."],
+ ["sweeps2","Hamstring sweeps","10 total","Heel forward, leg straight, sweep hands past the foot as you rock over it."],
+ ["swingfb2","Leg swings, front-back","10 each leg","Hold a wall, pendulum swings, bigger each rep."],
+ ["swingside2","Leg swings, side-to-side","10 each leg","Across the body and out wide, opens the hips."],
+ ["highknees2","High knees","2 x 20m","Quick steps, knees to hip height, tall posture."],
+ ["buttkick","Butt kicks","2 x 20m","Heels flick to your backside, quick and light."],
+ ["askip2","A-skips","2 x 20m","Rhythmic skip, one knee drives up tall each step."],
+ ["bridge2","Glute bridges","10 slow","Drive hips up, squeeze 2 seconds at the top."],
+ ["clam2","Clamshells","10 each side","Side-lying, knees bent, top knee opens without hips rolling back."],
+ ["bwsquat2","Bodyweight squats","10 slow","Full depth, controlled, arms out front."],
+ ["ankle2","Ankle wall rocks","10 each side","Knee to the wall, heel down."],
+ ["wgs","World's greatest stretch","5 each side","Long lunge, both hands inside the front foot, then rotate and reach up. Hips, hamstrings and back in one move."],
+ ["pogolight","Pogo bounces","2 x 15","Light double-leg bounces on the spot, springy ankles."],
+ ["sideshuffle","Side shuffles","2 x 15m","Low and lateral, wakes up glutes and groin."],
+ ["armcirc","Arm circles + torso twists","20s","For lifting days and cold mornings."]];
+const LIB_CD=[
+ ["figure4","Figure-4 glute stretch","30s each side","On your back, ankle over the opposite knee, pull the thigh toward you."],
+ ["groincd","Groin / adductor stretch","30s","Wide stance, sink to one side, feel the inner thigh."],
+ ["hamcd","Hamstring step stretch","30s each side","Heel on a low step, straight back, hinge at the hips."],
+ ["childs","Child's pose","45s","Knees wide, sit back to heels, arms long. Lower back release."],
+ ["doorway","Doorway chest stretch","30s","Forearm on the frame, step through. For after upper days."],
+ ["downdog","Down-dog calf pedal","30s","Hips high, pedal the heels one at a time."]];
+const openSec=new Set();
+function durLbl(d){ return d>=60? (Math.round(d/60)+"m") : (d+"s"); }
+function parseDur(str){ if(!str) return null;
+  let m=String(str).match(/(\d+)\s*min/); if(m) return +m[1]*60;
+  m=String(str).match(/(\d+)\s*s/); if(m) return +m[1]; return null; }
+function startWuTimer(id,key,i,isExt){
+  const s=SESSIONS.find(x=>x.id===id); const sec=key==="wu"? s.wu : s.cd; if(!sec) return;
+  let name,dose;
+  if(isExt){ const l=store.logs[id]||{}; const ext=l[key+"x"]||[]; const LIB=key==="wu"? LIB_WU : LIB_CD;
+    const e=LIB.find(z=>z[0]===(ext[i]||{}).k); if(!e) return; name=e[1]; dose=e[2]; }
+  else { const it=sec.items[i]; if(!it) return; name=it[0]; dose=it[1]; }
+  const d=parseDur(dose); if(!d) return;
+  startRest(d, name, /each/.test(dose)? "switch sides, start it again":"done, tick it off", "hold");
+}
+function startExTimer(id,i){
+  const s=SESSIONS.find(x=>x.id===id); const e=s.exercises[i]; const d=parseDur(e.scheme); if(!d) return;
+  startRest(d, e.name, /each/.test(e.scheme)? "switch sides":"hold done, tap set ✓", "hold");
+}
+function wucdCount(id,key){
+  const s=SESSIONS.find(x=>x.id===id); const sec=key==="wu"? s.wu : s.cd; if(!sec) return;
+  const l=store.logs[id]||{}; const st=l[key]||[]; const ext=l[key+"x"]||[];
+  const tot=sec.items.length+ext.length;
+  const c=st.filter(Boolean).length+ext.filter(x=>x&&x.done).length;
+  const el=$("#wuc"+id+"_"+key);
+  if(el){ el.textContent=c+"/"+tot+(c>=tot&&tot>0?" ✓":""); el.classList.toggle("ok",c>=tot&&tot>0); }
+}
+function addWUX(id,key,k){
+  const logs=store.logs; const l=logs[id]||{}; const ext=l[key+"x"]||[];
+  if(!ext.some(x=>x.k===k)) ext.push({k, done:false});
+  l[key+"x"]=ext; logs[id]=l; store.logs=logs; openSec.add(id+key); render();
+}
+function rmWUX(id,key,i){
+  const logs=store.logs; const l=logs[id]||{}; const ext=l[key+"x"]||[];
+  ext.splice(i,1); l[key+"x"]=ext; logs[id]=l; store.logs=logs; openSec.add(id+key); render();
+}
+function tickWUX(id,key,i,checked){
+  const logs=store.logs; const l=logs[id]||{}; const ext=l[key+"x"]||[];
+  if(ext[i]) ext[i].done=checked;
+  l[key+"x"]=ext; logs[id]=l; store.logs=logs; wucdCount(id,key);
 }
 function tickWU(id,key,i,checked){
   const logs=store.logs; const l=logs[id]||{}; const arr=l[key]||[];
   arr[i]=checked; l[key]=arr; logs[id]=l; store.logs=logs;
-  const s=SESSIONS.find(x=>x.id===id); const sec=key==="wu"? s.wu : s.cd;
-  const c=arr.filter(Boolean).length, n=sec.items.length;
-  const el=$("#wuc"+id+"_"+key);
-  if(el){ el.textContent=c+"/"+n+(c>=n?" ✓":""); el.classList.toggle("ok",c>=n); }
+  wucdCount(id,key);
 }
 let restTimer=null;
 function beep(){
@@ -451,10 +647,10 @@ function beep(){
   }catch(e){}
   if(navigator.vibrate) navigator.vibrate([250,120,250]);
 }
-function startRest(secs,label,goText){
+function startRest(secs,label,goText,mode){
   clearInterval(restTimer&&restTimer.iv);
   const bar=$("#timerbar");
-  restTimer={end:Date.now()+secs*1000,label,goText};
+  restTimer={end:Date.now()+secs*1000,label,goText,mode:mode||"rest"};
   bar.classList.remove("hide","go");
   const tick=()=>{
     const left=Math.ceil((restTimer.end-Date.now())/1000);
@@ -466,7 +662,7 @@ function startRest(secs,label,goText){
       return;
     }
     const m=Math.floor(left/60), x=left%60;
-    bar.innerHTML=`<b>${m}:${String(x).padStart(2,"0")}</b><span>rest · ${esc(restTimer.label)} · next: ${esc(restTimer.goText)}</span>
+    bar.innerHTML=`<b>${m}:${String(x).padStart(2,"0")}</b><span>${restTimer.mode==="hold"?"⏱ hold":"rest"} · ${esc(restTimer.label)} · ${restTimer.mode==="hold"?"then":"next"}: ${esc(restTimer.goText)}</span>
       <button class="tb" onclick="restTimer.end+=30000">+30s</button>
       <button class="tb" onclick="hideTimer()">skip</button>`;
   };
@@ -487,13 +683,29 @@ function doneSet(id,i){
   const logs=store.logs; const l=logs[id]||{}; l.ex=l.ex||[];
   const entry=l.ex[i]||{}; const nsets=e.sets||3;
   const wi0=$("#exw"+id+"_"+i); if(wi0&&wi0.value) entry.load=parseFloat(wi0.value)||entry.load;
-  if((entry.sets||0)>=nsets){ entry.sets=0; entry.done=false; }  // tap when finished = reset
-  else{
-    entry.sets=(entry.sets||0)+1;
-    if(entry.sets>=nsets){ entry.done=true; captureLoad(id,i,entry,e); }
-    const nextEx = entry.sets>=nsets ? (s.exercises[i+1]? s.exercises[i+1].name : "session done — hit Save") : `${e.name} set ${entry.sets+1} of ${nsets}`;
-    if(e.rest>0) startRest(e.rest, e.name, nextEx); else hideTimer();
-  }
+  entry.sets=(entry.sets||0)+1;
+  if(entry.sets>=nsets){ entry.done=true; captureLoad(id,i,entry,e); }
+  const nextEx = entry.sets>nsets ? "extra set banked — +1 for another"
+    : entry.sets===nsets ? (s.exercises[i+1]? s.exercises[i+1].name : "session done — hit Save")
+    : `${e.name} set ${entry.sets+1} of ${nsets}`;
+  if(e.rest>0) startRest(e.rest, e.name, nextEx); else hideTimer();
+  l.ex[i]=entry; l.completed=l.ex.some(x=>x&&x.done); logs[id]=l; store.logs=logs; render();
+}
+function wuSet(id,i){
+  const s=SESSIONS.find(x=>x.id===id); const e=s.exercises[i];
+  const logs=store.logs; const l=logs[id]||{}; l.ex=l.ex||[];
+  const entry=l.ex[i]||{}; entry.wsets=(entry.wsets||0)+1;
+  const wi0=$("#exw"+id+"_"+i); if(wi0&&wi0.value) entry.load=parseFloat(wi0.value)||entry.load;
+  l.ex[i]=entry; logs[id]=l; store.logs=logs;
+  startRest(60, e.name+" (warm-up set)", "another warm-up or first work set");
+  render();
+}
+function decSet(id,i){
+  const s=SESSIONS.find(x=>x.id===id); const e=s.exercises[i]; const nsets=e.sets||3;
+  const logs=store.logs; const l=logs[id]||{}; l.ex=l.ex||[];
+  const entry=l.ex[i]||{};
+  if((entry.sets||0)>0) entry.sets--; else if((entry.wsets||0)>0) entry.wsets--;
+  entry.done=(entry.sets||0)>=nsets;
   l.ex[i]=entry; l.completed=l.ex.some(x=>x&&x.done); logs[id]=l; store.logs=logs; render();
 }
 function toggleEx(id,i,checked){
@@ -512,15 +724,16 @@ function saveStr(id){
     const done=cb? cb.checked : false;
     const w=wi? (parseFloat(wi.value)||null) : null;
     const sets=(prev[i]&&prev[i].sets)|| (done? (e.sets||3):0);
+    const wsets=(prev[i]&&prev[i].wsets)||0;
     if(done){ const h=exh[e.k]||[]; const entry={date:s.date, load:e.load? w : null};
       const j=h.findIndex(x=>x.date===s.date);
       if(j>=0) h[j]=entry; else h.push(entry);
       h.sort((a,b)=>a.date<b.date?-1:1); exh[e.k]=h; }
-    return {done, load:w, sets};
+    return {done, load:w, sets, wsets};
   });
   l.completed=l.ex.some(x=>x.done);
   l.notes=$("#ln"+id)?$("#ln"+id).value:""; l.rpe=$("#lr"+id)? (parseInt($("#lr"+id).value)||null):null;
-  l.at=new Date().toISOString(); logs[id]=l; store.logs=logs; store.exh=exh; render();
+  l.at=new Date().toISOString(); logs[id]=l; store.logs=logs; store.exh=exh; flashSaved(id); toast("Session saved");
 }
 function sparkline(vals){
   if(vals.length<2) return "";
@@ -528,7 +741,7 @@ function sparkline(vals){
   const pts=vals.map((v,i)=>[(4+(w-8)*i/(vals.length-1)).toFixed(1),(h-5-(h-10)*(v-mn)/rg).toFixed(1)]);
   return `<svg class="spark" width="${w}" height="${h}"><polyline points="${pts.map(p=>p.join(",")).join(" ")}" fill="none" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/><circle cx="${pts[pts.length-1][0]}" cy="${pts[pts.length-1][1]}" r="3" fill="var(--s1)"/></svg>`;
 }
-function unLog(id){ const logs=store.logs; if(logs[id]) logs[id].completed=false; store.logs=logs; render(); }
+function unLog(id){ const logs=store.logs; if(logs[id]) logs[id].completed=false; store.logs=logs; render(); toast("Marked not done"); }
 // ---------- Week ----------
 function rWeek(wk){
   const t=todayISO(); wk = planWk || Math.min(27,Math.max(1,weekOf(t)));
@@ -552,10 +765,11 @@ function rWeek(wk){
     const done=all.some(x=>(store.logs[x.id]||{}).completed||x.done);
     const extra=(lifts2.length&&runs2.length)? ` <span class="small">+ ${lifts2.map(x=>esc(x.title.split(" - ")[0].split(" — ")[0])).join(" + ")}</span>`:"";
     const swapped=all.some(x=>MV[x.id]);
+    const mloc=(store.logs[main.id]||{}).loc||null;
     html+=`<div class="day" onclick="openDay('${d}')">
       <div class="d"><span>${dn}</span><b>${dt2.getDate()}</b></div>
       <div class="t"><b>${esc(main.title)}</b>${extra}
-      <p>${main.km?main.km+"km":""}${main.vert?" · "+main.vert+"m":""}${main.is_night?" · night":""}${swapped?" · ⇄ swapped":""}</p></div>
+      <p>${main.km?main.km+"km":""}${main.vert?" · "+main.vert+"m":""}${main.is_night?" · night":""}${swapped?" · ⇄ swapped":""}${mloc?" · "+(mloc==="tm"?"🏃 treadmill":"🌳 outside"):""}</p></div>
       <div class="st">${done?"✓":d<t?"·":""}</div></div>`;
   }
   html+=`</div>`;
@@ -794,7 +1008,7 @@ function rSync(){
   </div>
   <p class="small" style="margin-top:6px">Logs live in this browser. Export before moving devices; synced Garmin data re-pulls anywhere.</p></div>`;
 }
-function saveCfg(){ const c=store.cfg; c.aid=$("#aid").value.trim(); c.key=$("#akey").value.trim(); store.cfg=c; render(); }
+function saveCfg(){ const c=store.cfg; c.aid=$("#aid").value.trim(); c.key=$("#akey").value.trim(); store.cfg=c; render(); toast("Settings saved"); }
 async function syncNow(){
   const c=store.cfg; const msg=$("#syncmsg"); if(msg) msg.textContent="Syncing…";
   const auth="Basic "+btoa("API_KEY:"+c.key);

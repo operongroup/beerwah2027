@@ -1,0 +1,191 @@
+{
+ "1": {
+  "phase": "0 Ramp",
+  "km": 18,
+  "vert": 100,
+  "down": false,
+  "note": "BASELINE 5km TT"
+ },
+ "2": {
+  "phase": "0 Ramp",
+  "km": 22,
+  "vert": 200,
+  "down": false,
+  "note": "Rainbow Beach 11km Sat (easy, not raced)"
+ },
+ "3": {
+  "phase": "0 Ramp",
+  "km": 19,
+  "vert": 100,
+  "down": true,
+  "note": "Recovery week after the sand"
+ },
+ "4": {
+  "phase": "0 Ramp",
+  "km": 24,
+  "vert": 150,
+  "down": false,
+  "note": ""
+ },
+ "5": {
+  "phase": "1 Base",
+  "km": 27,
+  "vert": 250,
+  "down": false,
+  "note": "Heavy lifting begins. Downhill work begins."
+ },
+ "6": {
+  "phase": "1 Base",
+  "km": 30,
+  "vert": 300,
+  "down": false,
+  "note": ""
+ },
+ "7": {
+  "phase": "1 Base",
+  "km": 33,
+  "vert": 350,
+  "down": false,
+  "note": ""
+ },
+ "8": {
+  "phase": "1 Base",
+  "km": 24,
+  "vert": 200,
+  "down": true,
+  "note": "Down week. 5km TT #2"
+ },
+ "9": {
+  "phase": "1 Base",
+  "km": 36,
+  "vert": 400,
+  "down": false,
+  "note": ""
+ },
+ "10": {
+  "phase": "1 Base",
+  "km": 39,
+  "vert": 450,
+  "down": false,
+  "note": ""
+ },
+ "11": {
+  "phase": "2 Build",
+  "km": 42,
+  "vert": 550,
+  "down": false,
+  "note": "Plyometrics begin"
+ },
+ "12": {
+  "phase": "2 Build",
+  "km": 32,
+  "vert": 350,
+  "down": true,
+  "note": "Down week"
+ },
+ "13": {
+  "phase": "2 Build",
+  "km": 44,
+  "vert": 650,
+  "down": false,
+  "note": ""
+ },
+ "14": {
+  "phase": "2 Build",
+  "km": 47,
+  "vert": 700,
+  "down": false,
+  "note": ""
+ },
+ "15": {
+  "phase": "2 Build",
+  "km": 50,
+  "vert": 800,
+  "down": false,
+  "note": ""
+ },
+ "16": {
+  "phase": "2 Build",
+  "km": 38,
+  "vert": 500,
+  "down": true,
+  "note": "Down week. 5km TT #3. Head torch in use."
+ },
+ "17": {
+  "phase": "2 Build",
+  "km": 52,
+  "vert": 850,
+  "down": false,
+  "note": "Peak lifting load"
+ },
+ "18": {
+  "phase": "3 Specific",
+  "km": 52,
+  "vert": 900,
+  "down": false,
+  "note": "Night running begins. Head torch required."
+ },
+ "19": {
+  "phase": "3 Specific",
+  "km": 40,
+  "vert": 600,
+  "down": true,
+  "note": "Down week. RACE: Beerwah@Daybreak Sun 6 Dec"
+ },
+ "20": {
+  "phase": "3 Specific",
+  "km": 52,
+  "vert": 950,
+  "down": false,
+  "note": "SEQ summer = natural heat acclimation. Easy runs in daytime heat when convenient."
+ },
+ "21": {
+  "phase": "3 Specific",
+  "km": 52,
+  "vert": 1000,
+  "down": false,
+  "note": ""
+ },
+ "22": {
+  "phase": "3 Specific",
+  "km": 42,
+  "vert": 650,
+  "down": true,
+  "note": "Down week"
+ },
+ "23": {
+  "phase": "3 Specific",
+  "km": 50,
+  "vert": 950,
+  "down": false,
+  "note": "5km TT #4. Final go/no-go on the A goal."
+ },
+ "24": {
+  "phase": "4 Sharpen",
+  "km": 46,
+  "vert": 800,
+  "down": false,
+  "note": "Full course rehearsal at Beerwah, at night"
+ },
+ "25": {
+  "phase": "4 Sharpen",
+  "km": 44,
+  "vert": 750,
+  "down": false,
+  "note": "Last hard descent session. Last heavy lift."
+ },
+ "26": {
+  "phase": "5 Taper",
+  "km": 28,
+  "vert": 400,
+  "down": false,
+  "note": "Taper: volume ~-45%, intensity + frequency retained. HEAT TOP-UP week: easy runs in the heat of the day + optional 30 min ~40C bath after."
+ },
+ "27": {
+  "phase": "5 Taper",
+  "km": 16,
+  "vert": 200,
+  "down": false,
+  "note": "RACE SAT 30 JAN 7:00PM. Last heat exposure Wed, nothing after."
+ }
+}
