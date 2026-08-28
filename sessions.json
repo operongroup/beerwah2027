@@ -14,7 +14,9 @@
   "title": "Baseline 5km TT — DONE",
   "prescription": "Completed 27 Jul: 5.01km in 27:46 (5:33/km), avg HR 169, 90% effort. Est. max 26:40. Zones set from this.",
   "done": true,
-  "id": 1
+  "id": 1,
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 1,
@@ -90,7 +92,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 1,
@@ -257,7 +261,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 1,
@@ -323,7 +329,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "north",
+  "route_note": "North. Rolling ground is the point of this session. Do not chase an even pace on it."
  },
  {
   "week": 1,
@@ -595,7 +603,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 1,
@@ -868,7 +878,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 2,
@@ -929,7 +941,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 2,
@@ -995,7 +1009,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "north",
+  "route_note": "North. Rolling ground is the point of this session. Do not chase an even pace on it."
  },
  {
   "week": 2,
@@ -1174,7 +1190,8 @@
      "Heel on a low step, straight back, hinge at the hips. Gentle, never yanked."
     ]
    ]
-  }
+  },
+  "route": "race"
  },
  {
   "week": 2,
@@ -1462,7 +1479,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 3,
@@ -1629,7 +1648,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 3,
@@ -1826,7 +1847,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 4,
@@ -2010,7 +2033,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 4,
@@ -2193,7 +2218,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 4,
@@ -2264,7 +2291,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 5,
@@ -2450,7 +2479,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "north",
+  "route_note": "North. The rolling route already gives you enough rise for 20-second sprints, so no drive needed."
  },
  {
   "week": 5,
@@ -2566,7 +2597,7 @@
   "id": 48,
   "opt_out": "Easy 4.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 31 min.",
-  "hr_note": "Sit under ~150 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
+  "hr_note": "Sit under 158 and hold a full-sentence conversation. If that pace is costing you 10+ beats more than it normally does, cut the run short. || These numbers rest on a max HR of 190 that we have never actually measured, and the Rainbow Beach data says it is probably closer to 200. Every zone gets re-cut off the Week 8 time trial on 15 Sep. Until then the talk test beats the number.",
   "wu": {
    "mins": 4,
    "items": [
@@ -2611,7 +2642,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 5,
@@ -2681,7 +2714,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "north",
+  "route_note": "North. Rolling ground is the point of this session. Do not chase an even pace on it."
  },
  {
   "week": 5,
@@ -2695,12 +2730,12 @@
   "km": 6.0,
   "vert": 110,
   "type": "climb",
-  "title": "STEEP HILL - the km 6 session (outdoors)",
+  "title": "CLIMB SESSION - Point Cartwright (the km 6 session)",
   "prescription": "SATURDAY 29 AUG, PLAN CHANGE. The trail is a 30 minute drive and that drive is not happening today, so the trail moves to Sunday and the steep hill five minutes away takes this slot. That is the right swap, not a consolation. MEASURED FROM THE COURSE KML: Beerwah is decided by ONE climb, 800m at 9.8% average starting at the 4.6km mark, which is a third of the total gain in a single hit. Your rolling route is 5-6% and you already run it Tuesday and Thursday. A long steep hill is the closest thing you have to km 6, and it beats the treadmill on footing. So this is the km 6 session, arriving one week early and outdoors. ||  WE DO NOT KNOW THIS HILL'S NUMBERS. Record the run. Afterwards I will pull the length and the real gradient off the file and we prescribe from measurement instead of from the word 'steep'. ||  SESSION: 10-15 min easy on the flat sections around the base. Then 3 x 3 min uphill. Effort, not pace: controlled hard, the effort you could hold for about 10 minutes, breathing heavy but not ragged. Short stride, quick cadence, eyes up, drive from the hip. If the hill runs out before 3 minutes, start lower next rep. WALK the whole way down every time, no jogging down - the descent here is recovery, not training. Roughly 3-4 min between reps. Then 10 min easy on the flat to finish. Three reps not four because this is a week early on an unmeasured hill with a hamstring that spoke up on Thursday. ||  HAMSTRING: uphill running is quad and glute dominant, short stride, almost no eccentric hamstring load. This is the safe session of the weekend. If it does grumble, stop the reps, jog home easy, and Sunday's trail comes off too.",
   "id": 53,
   "opt_out": "10-15 min easy flat. Then 3 x 3 min uphill at controlled-hard effort, WALK down between (3-4 min). 10 min easy flat to finish. Record it.",
   "opt_tm": "Fallback only if the hill falls through: 10 min at 8.7 km/h at 1%. Then 3 x 3 min at 8-10% incline at 7.5-8.0 km/h, 3 min walking at 0% between. 10 min easy at 8.7 km/h.",
-  "hr_note": "Do not chase a number on rep 1 - HR lags roughly 45 seconds, so rep 1 reads low even when the effort is right. By the end of reps 2 and 3 expect Z4, 172-181. Touching 186 is fine at the top of the last rep; over 186 early means you went out too hard, back the next one off. Between reps walk until you are under 150 or until the 3 minutes is up, whichever comes first. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "hr_note": "Do not chase a number on rep 1 - HR lags roughly 45 seconds, so rep 1 reads low even when the effort is right. By the end of reps 2 and 3 expect Z4, 172-181. Touching 186 is fine at the top of the last rep; over 186 early means you went out too hard, back the next one off. Between reps walk until you are back under 165 or until the 3 minutes is up, whichever comes first. That matches the recovery bar used on every other climb session. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
    "mins": 5,
    "items": [
@@ -2755,7 +2790,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "cartwright",
+  "route_note": "Point Cartwright, the big hill five minutes away. First time we have used it, so it is unmeasured. Run it with the watch on and I will pull the real length and gradient off the file afterwards."
  },
  {
   "week": 5,
@@ -2829,7 +2866,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. Moved here from Saturday because the drive was not on yesterday."
  },
  {
   "week": 6,
@@ -3016,7 +3055,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "north",
+  "route_note": "North. The rolling route already gives you enough rise for 20-second sprints, so no drive needed."
  },
  {
   "week": 6,
@@ -3195,7 +3236,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 6,
@@ -3260,7 +3303,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 6,
@@ -3334,7 +3379,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 6,
@@ -3348,12 +3395,14 @@
   "km": 5.0,
   "vert": 180,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 3 min at 8-10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 3 min at 8-10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 65,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 4 x 3 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 4 x 3 min at 8-10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 7,
@@ -3540,7 +3589,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "north",
+  "route_note": "North. The rolling route already gives you enough rise for 20-second sprints, so no drive needed."
  },
  {
   "week": 7,
@@ -3719,7 +3770,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 7,
@@ -3784,7 +3837,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 7,
@@ -3858,7 +3913,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 7,
@@ -3872,12 +3929,14 @@
   "km": 5.5,
   "vert": 180,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 3 min at 8-10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 3 min at 8-10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 76,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 4 x 3 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 4 x 3 min at 8-10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 8,
@@ -4069,7 +4128,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 8,
@@ -4248,7 +4309,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 8,
@@ -4313,7 +4376,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 8,
@@ -4387,7 +4452,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 8,
@@ -4401,12 +4468,14 @@
   "km": 5.0,
   "vert": 180,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 3 min at 8-10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 3 min at 8-10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 87,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 4 x 3 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 4 x 3 min at 8-10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 9,
@@ -4593,7 +4662,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "north",
+  "route_note": "North. The rolling route already gives you enough rise for 20-second sprints, so no drive needed."
  },
  {
   "week": 9,
@@ -4772,7 +4843,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 9,
@@ -4837,7 +4910,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 9,
@@ -4911,7 +4986,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 9,
@@ -4925,12 +5002,14 @@
   "km": 6.0,
   "vert": 240,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 4 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 4 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 98,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 4 x 4 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 4 x 4 min at 10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 10,
@@ -5117,7 +5196,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "north",
+  "route_note": "North. The rolling route already gives you enough rise for 20-second sprints, so no drive needed."
  },
  {
   "week": 10,
@@ -5296,7 +5377,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 10,
@@ -5361,7 +5444,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 10,
@@ -5435,7 +5520,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 10,
@@ -5449,12 +5536,14 @@
   "km": 6.5,
   "vert": 240,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 4 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 4 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 109,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 4 x 4 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 4 x 4 min at 10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 11,
@@ -5641,7 +5730,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 11,
@@ -5847,7 +5938,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 11,
@@ -5912,7 +6005,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 11,
@@ -5986,7 +6081,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 11,
@@ -6000,12 +6097,14 @@
   "km": 7.0,
   "vert": 240,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 4 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 4 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 120,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 4 x 4 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 4 x 4 min at 10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 12,
@@ -6192,7 +6291,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 12,
@@ -6371,7 +6472,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 12,
@@ -6436,7 +6539,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 12,
@@ -6510,7 +6615,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 12,
@@ -6524,12 +6631,14 @@
   "km": 5.5,
   "vert": 240,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 4 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 4 x 4 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 131,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 4 x 4 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 4 x 4 min at 10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 13,
@@ -6716,7 +6825,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 13,
@@ -6922,7 +7033,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 13,
@@ -6987,7 +7100,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 13,
@@ -7061,7 +7176,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 13,
@@ -7075,12 +7192,14 @@
   "km": 7.5,
   "vert": 270,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 6 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 6 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 142,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 3 x 6 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 3 x 6 min at 10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 14,
@@ -7267,7 +7386,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 14,
@@ -7473,7 +7594,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 14,
@@ -7538,7 +7661,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 14,
@@ -7612,7 +7737,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 14,
@@ -7626,12 +7753,14 @@
   "km": 8.0,
   "vert": 270,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 6 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 6 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 153,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 3 x 6 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 3 x 6 min at 10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 15,
@@ -7818,7 +7947,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 15,
@@ -8024,7 +8155,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 15,
@@ -8089,7 +8222,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 15,
@@ -8163,7 +8298,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 15,
@@ -8177,12 +8314,14 @@
   "km": 8.5,
   "vert": 270,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 6 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 6 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 164,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 3 x 6 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 3 x 6 min at 10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 16,
@@ -8374,7 +8513,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 16,
@@ -8553,7 +8694,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 16,
@@ -8618,7 +8761,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 16,
@@ -8692,7 +8837,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 16,
@@ -8706,12 +8853,14 @@
   "km": 7.5,
   "vert": 270,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 6 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 6 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 175,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 3 x 6 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 3 x 6 min at 10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 17,
@@ -8898,7 +9047,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 17,
@@ -9104,7 +9255,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 17,
@@ -9169,7 +9322,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 17,
@@ -9243,7 +9398,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 17,
@@ -9257,12 +9414,14 @@
   "km": 8.5,
   "vert": 360,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 8 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 8 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 186,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 3 x 8 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 3 x 8 min at 10-12%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 18,
@@ -9449,7 +9608,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 18,
@@ -9655,7 +9816,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 18,
@@ -9719,7 +9882,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 18,
@@ -9793,7 +9958,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 18,
@@ -9807,12 +9974,14 @@
   "km": 8.5,
   "vert": 360,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 8 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 8 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 197,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 3 x 8 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 3 x 8 min at 10-12%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 19,
@@ -9999,7 +10168,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 19,
@@ -10178,7 +10349,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 19,
@@ -10242,7 +10415,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 19,
@@ -10316,7 +10491,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 19,
@@ -10385,7 +10562,8 @@
      "Heel on a low step, straight back, hinge at the hips. Gentle, never yanked."
     ]
    ]
-  }
+  },
+  "route": "race"
  },
  {
   "week": 20,
@@ -10572,7 +10750,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 20,
@@ -10778,7 +10958,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 20,
@@ -10842,7 +11024,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 20,
@@ -10916,7 +11100,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 20,
@@ -10930,12 +11116,14 @@
   "km": 8.5,
   "vert": 360,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 8 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 3 x 8 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 219,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 3 x 8 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 3 x 8 min at 10-12%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 21,
@@ -11122,7 +11310,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 21,
@@ -11328,7 +11518,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 21,
@@ -11392,7 +11584,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 21,
@@ -11466,7 +11660,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 21,
@@ -11480,12 +11676,14 @@
   "km": 8.5,
   "vert": 360,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 12 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 12 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 230,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 2 x 12 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 2 x 12 min at 10-12%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 22,
@@ -11672,7 +11870,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 22,
@@ -11851,7 +12051,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 22,
@@ -11915,7 +12117,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 22,
@@ -11989,7 +12193,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 22,
@@ -12003,12 +12209,14 @@
   "km": 7.0,
   "vert": 360,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 12 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 12 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 241,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 2 x 12 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 2 x 12 min at 10-12%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 23,
@@ -12200,7 +12408,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 23,
@@ -12406,7 +12616,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 23,
@@ -12470,7 +12682,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 23,
@@ -12544,7 +12758,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 23,
@@ -12558,12 +12774,14 @@
   "km": 10.5,
   "vert": 360,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 12 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 12 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 252,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 2 x 12 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 2 x 12 min at 10-12%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 24,
@@ -12750,7 +12968,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 24,
@@ -12956,7 +13176,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 24,
@@ -13020,7 +13242,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 24,
@@ -13094,7 +13318,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 24,
@@ -13108,12 +13334,14 @@
   "km": 9.0,
   "vert": 360,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 12 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 12 min at 10-12% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 263,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 2 x 12 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 2 x 12 min at 10-12%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 25,
@@ -13300,7 +13528,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 25,
@@ -13506,7 +13736,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 25,
@@ -13570,7 +13802,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 25,
@@ -13644,7 +13878,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 25,
@@ -13658,12 +13894,14 @@
   "km": 7.5,
   "vert": 240,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 8 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 8 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 274,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 2 x 8 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 2 x 8 min at 10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 26,
@@ -13758,7 +13996,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 26,
@@ -13892,7 +14132,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 26,
@@ -13956,7 +14198,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 26,
@@ -14091,7 +14335,9 @@
      "Half-kneel, tuck the tailbone, shift forward until the front of the back hip pulls."
     ]
    ]
-  }
+  },
+  "route": "trail",
+  "route_note": "The trail, 30 min drive. If the drive is not on this weekend, swap this with the climb session."
  },
  {
   "week": 26,
@@ -14105,12 +14351,14 @@
   "km": 5.0,
   "vert": 240,
   "type": "climb",
-  "title": "TREADMILL CLIMB - the km 6 session",
-  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 8 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. Nothing outdoors near you replicates it. This belt does. Garage noise is fine on a weekend daytime.",
+  "title": "CLIMB SESSION - the km 6 session",
+  "prescription": "THE OTHER WEEKEND SLOT, and the most race-specific session you own. Warm up 10 min at 8.7 km/h, 1%. Then 2 x 8 min at 10% incline, speed 6.5-7.5 km/h (adjust so the effort is hard but you could hold it another minute). Between blocks: 3 min walking at 4.5 km/h with the incline DROPPED to 1%. Cool down 10 min at 1%. WHY: Beerwah has one decisive climb, 800m at 9.8% from the 4.6km mark, which is 5-7 minutes of continuous climbing at your pace. It is the only kilometre of that race that has not improved in two years. VENUE, updated 28 Aug 2026: you have a big hill at Point Cartwright about five minutes away, so this stops being a treadmill-only session. Point Cartwright is the first choice because real ground, real footing and a real gradient beat a belt every time. The belt stays as the guaranteed-gradient fallback for wet weather, dark mornings, or a week where the drive does not happen, and garage noise is fine on a weekend daytime. WE HAVE NOT MEASURED THAT HILL YET. Once there is a GPS file of it, we will know whether it can hold a rep this long, and the venue for the rest of the block gets decided off that measurement rather than off the word 'big'.",
   "id": 283,
-  "opt_out": "Not an outdoor session - nothing local matches 800m at 10%. Swap it with your trail day instead.",
+  "opt_out": "Point Cartwright. 10-15 min easy on the flat around the base. Then 2 x 8 min uphill at controlled hard effort, WALK the whole way down between reps. 10 min easy flat to finish. If the climb runs out before the rep does, start lower down. Record it.",
   "opt_tm": "10 min at 8.7, 1%. Then 2 x 8 min at 10%, 3 min walk at 1% between. 10 min easy.",
-  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up."
+  "hr_note": "Blocks should settle in Z4 (172-181) and touch Z5 (182-186) by the end of each one. If you are in Z5 within the first minute the incline or speed is too high. Walk recovery until back under 165 before the next block. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "route": "cartwright",
+  "route_note": "Point Cartwright if you can make the five minute drive, garage belt if you cannot. The hill is unmeasured until you run it with the watch on."
  },
  {
   "week": 27,
@@ -14205,7 +14453,9 @@
      "Grab the ankle behind you, knees together, push the hips slightly forward."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. This session is judged on pace, so it needs flat ground. The rolling route makes the numbers meaningless."
  },
  {
   "week": 27,
@@ -14269,7 +14519,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 27,
@@ -14333,7 +14585,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 27,
@@ -14397,7 +14651,9 @@
      "Same position, bend the back knee. Moves the stretch to the soleus, the deep calf that trail running hammers."
     ]
    ]
-  }
+  },
+  "route": "south",
+  "route_note": "South. Flat and boring is correct for an easy run. Hills sneak the effort up without you noticing."
  },
  {
   "week": 27,
@@ -14466,7 +14722,8 @@
      "Heel on a low step, straight back, hinge at the hips. Gentle, never yanked."
     ]
    ]
-  }
+  },
+  "route": "race"
  },
  {
   "week": 27,

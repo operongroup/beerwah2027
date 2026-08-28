@@ -19,7 +19,8 @@
    "My max heart rate was set to 190. In the 2024 race I averaged 198 for a full kilometre. Every training zone I have used was built on a number about ten beats too low.",
    "The garage treadmill is too loud at 4am. That one domestic fact restructured 22 weeks of training.",
    "Two weekend slots means the belt is now the most race-specific session I own, because nothing outdoors near me does 800 metres at 10%.",
-   "The trail was a 30 minute drive I could not make, so the session got better instead of worse: the hill five minutes away is closer to the climb that actually decides this race than the trail is."
+   "The trail was a 30 minute drive I could not make, so the session got better instead of worse: the hill five minutes away is closer to the climb that actually decides this race than the trail is.",
+   "I had told him nothing near home could replicate the climb. Then he pointed out the big hill five minutes from his door. That is the second thing this week I asserted without checking."
   ],
   "log": [
    [
@@ -61,6 +62,14 @@
    [
     "Stale heart rate numbers cleaned out of 36 sessions",
     "The zone change on 26 Aug updated the heart rate box on every session but not the older prescription text underneath it, so 35 sessions were telling him under 158 in one panel and under 148 in the next. All of them now read off the current threshold of 182."
+   ],
+   [
+    "Routes named, and the treadmill lost its monopoly",
+    "He mapped his ground: north from the house is rolling hills, south is flat and easy, and Point Cartwright five minutes away is the big hill. Every session in the plan now names where to run it. The rule is flat for anything judged on pace, rolling for strength, the big hill for the climb that decides the race, the trail for descents. The bigger change: the km 6 session was built as a treadmill session on the claim that nothing outdoors nearby replicates 800m at 10%. That claim was mine and it was never checked. Point Cartwright exists. All 20 of those sessions are now 'CLIMB SESSION' rather than 'TREADMILL CLIMB', with the hill first and the belt as the wet-weather fallback. The hill is still unmeasured, and the plan says so rather than guessing."
+   ],
+   [
+    "Rules tab was still showing July's zones",
+    "The zone table on the Rules tab had never been updated after the 26 Aug recalibration. It was telling him easy meant under 138. It now reads off threshold 182 like everything else, and a routes card sits above it."
    ]
   ]
  }

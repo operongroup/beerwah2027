@@ -75,6 +75,17 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .hrnote p{margin:0;font-size:14px;line-height:1.45;color:var(--ink)}
 .hrwhy{margin-top:8px}
 .hrwhy summary{cursor:pointer;font-size:11px;font-weight:700;color:var(--muted)}
+.rtnote{margin:10px 0 4px;padding:12px 14px;border-radius:12px;display:flex;gap:12px;align-items:flex-start;
+  background:rgba(74,147,229,.10);border:1px solid rgba(74,147,229,.32)}
+.rtnote .rtico{font-size:20px;line-height:1.1}
+.rtnote .rtlbl{display:block;font-size:10px;font-weight:800;letter-spacing:.08em;color:#8FC0F2;margin-bottom:4px}
+.rtnote b{display:block;font-size:15px;color:var(--ink);margin-bottom:4px}
+.rtnote p{margin:0;font-size:14px;line-height:1.45;color:var(--ink2)}
+.rtcard{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--border)}
+.rtcard:first-of-type{border-top:0}
+.rtcard .rtico{font-size:22px;line-height:1.1}
+.rtcard b{display:block;font-size:14px;color:var(--ink)}
+.rtcard p{margin:2px 0 0;font-size:13px;line-height:1.45;color:var(--ink2)}
 .hrwhy p{margin-top:6px;font-size:12px;color:var(--ink2)}
 .cthead{margin:2px 2px 14px}
 .cthead h2{font-size:22px;margin:2px 0 4px;letter-spacing:-.01em}
@@ -228,6 +239,19 @@ const SESSIONS = /*__SESSIONS__*/;
 const WEEKS = /*__WEEKS__*/;
 const CONTENT = /*__CONTENT__*/;
 const START = "2026-07-27", RACE = "2027-01-30";
+const ROUTES = {
+ south:      {ico:"🛣️", name:"SOUTH - flat and easy",
+              desc:"From the house heading south. Sealed, familiar, no real rise. Anything judged on pace, and every easy run, belongs here."},
+ north:      {ico:"🌄", name:"NORTH - rolling hills",
+              desc:"From the house heading north. Constant up and down. Good for short hill work and rolling strength, useless for holding an even pace."},
+ cartwright: {ico:"⛰️", name:"POINT CARTWRIGHT - the big hill",
+              desc:"Five minute drive, with flat ground around the base for the warm-up. The steepest thing you can reach quickly, so this is where the km 6 climb gets rehearsed. Length and gradient still unmeasured."},
+ trail:      {ico:"🌲", name:"THE TRAIL - 30 minute drive",
+              desc:"Real climbing, real descents, real footing. The protected weekend session whenever the drive is possible."},
+ belt:       {ico:"🏃", name:"GARAGE TREADMILL",
+              desc:"Guaranteed gradient, no traffic, no dark. Belt speed off the console is the real number, not watch pace."},
+ race:       {ico:"🏁", name:"RACE DAY", desc:"Where the event takes you."}
+};
 const ICONS={
  Today:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>',
  Week:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
@@ -476,6 +500,14 @@ function sessionCard(s, expanded){
   };
   const acts=actsOn(s.date);
   const actHtml = (s.type!=="strength"&&acts.length)? `<p class="small" style="margin-top:6px">Garmin: ${acts.map(a=>`${a.km.toFixed(1)}km · ${fmtT(a.secs)} · ${fmtPace(a.secs/a.km)}${a.hr?" · "+Math.round(a.hr)+"bpm":""}${a.vert?" · "+Math.round(a.vert)+"m":""}`).join(" | ")}</p>` : "";
+  let rtBlock="";
+  const rt = ROUTES[s.route];
+  if(rt){
+    const shown = (l.loc==="tm" && s.route!=="race") ? ROUTES.belt : rt;
+    rtBlock = `<div class="rtnote"><span class="rtico">${shown.ico}</span><div>
+      <span class="rtlbl">WHERE</span><b>${esc(shown.name)}</b>
+      <p>${esc(s.route_note && shown===rt ? s.route_note : shown.desc)}</p></div></div>`;
+  }
   let locBlock="";
   if(s.opt_out||s.opt_tm){
     const brief = l.loc==="tm" ? s.opt_tm : (l.loc==="out" ? s.opt_out : null);
@@ -493,6 +525,7 @@ function sessionCard(s, expanded){
   return `<div class="card"><div>${pills}</div>
     <h3>${esc(s.title)}</h3>
     ${meta?`<p class="small">${meta}${s.type!=="strength"?" planned":""}</p>`:""}
+    ${rtBlock}
     ${locBlock}
     <details class="fullpres"><summary>Full detail</summary><p class="pres">${esc(s.prescription)}</p></details>
     ${wucd(s.wu,"Warm-up","↗","wu")}${logForm}${wucd(s.cd,"Cool-down","↘","cdd")}${actHtml}</div>`;
@@ -945,13 +978,23 @@ function zoneWeek(wk){
 }
 // ---------- Rules ----------
 function rRules(){
-  return `<div class="card"><h2>Zones (from 27 Jul baseline — reset at W8 TT)</h2>
-  <table><tr><th>Zone</th><th>Pace</th><th>HR</th><th>Feel</th></tr>
-  <tr><td><b>Z1 easy</b></td><td><b>6:35–6:55</b></td><td><b>&lt;138</b></td><td>Full sentences</td></tr>
-  <tr><td>Z2 steady</td><td>6:15–6:30</td><td>138–153</td><td>Comfortable</td></tr>
-  <tr><td>Threshold</td><td>5:40–5:50</td><td>155–170</td><td>Comfortably hard</td></tr>
-  <tr><td>Z3 hard</td><td>5:20–5:25</td><td>172+</td><td>3-word answers</td></tr></table>
-  <p class="small" style="margin-top:6px">Uphill is ALWAYS by effort/HR, never pace. Easy at 6:45 even though it feels absurd — grey zone (6:00–6:30) is fatigue without adaptation.</p></div>
+  const rtRows = ["south","north","cartwright","trail","belt"].map(k=>{
+    const r=ROUTES[k];
+    return `<div class="rtcard"><span class="rtico">${r.ico}</span><div><b>${esc(r.name)}</b><p>${esc(r.desc)}</p></div></div>`;
+  }).join("");
+  return `<div class="card"><h2>Your routes</h2>${rtRows}
+  <p class="small" style="margin-top:10px">The rule behind the picks: flat ground for anything judged on pace, rolling ground for strength, the big hill for the climb that decides the race, the trail for descents and footing. Point Cartwright has not been measured yet, so its numbers are still blank on purpose.</p></div>
+
+  <div class="card"><h2>Zones (set 26 Aug 2026 — reset at the W8 TT, 15 Sep)</h2>
+  <p class="small" style="margin-bottom:8px">Threshold HR 182, max 200. Taken off your 2024-2026 race files, not off a formula. Every zone below is a percentage of threshold, so threshold is the number that matters.</p>
+  <table><tr><th>Zone</th><th>HR</th><th>Feel</th></tr>
+  <tr><td><b>Z1 recovery</b></td><td><b>up to 153</b></td><td>Full sentences, no effort</td></tr>
+  <tr><td>Z2 aerobic</td><td>154–162</td><td>Easy running lives here</td></tr>
+  <tr><td>Z3 tempo</td><td>163–171</td><td>Comfortably hard</td></tr>
+  <tr><td>Z4 sub-threshold</td><td>172–181</td><td>Climb efforts, short answers</td></tr>
+  <tr><td>Z5 threshold</td><td>182–186</td><td>Race pace on the climb</td></tr>
+  <tr><td>Z6+</td><td>187 and up</td><td>Sprints only</td></tr></table>
+  <p class="small" style="margin-top:6px">Uphill is ALWAYS by effort or HR, never pace. Easy means under 158 even when it feels absurd, because the grey zone in between is fatigue without adaptation.</p></div>
 
   <div class="card"><h2>Injury decision rules — the traffic light</h2>
   <div class="verdict"><span class="dot" style="background:var(--good)"></span><div><b>0–2/10, gait unchanged</b><p>Continue. Note it in the session log so patterns show up.</p></div></div>
