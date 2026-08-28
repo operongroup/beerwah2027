@@ -10,14 +10,16 @@
    "Garage: start the treadmill, let the mic catch the noise, close the door and walk out. No dialogue needed.",
    "Garmin sleep screen showing the 7:59pm bed time. Point at it.",
    "The course elevation profile on screen, your finger landing on kilometre 6.",
-   "Piece to camera, post-run: 'my coach was wrong about four things this week and told me every time.'"
+   "Piece to camera, post-run: 'my coach was wrong about four things this week and told me every time.'",
+   "The steep hill from the bottom, before the first rep. Phone low, looking up it."
   ],
   "talk": [
    "For five weeks the plan was built around a course nobody had looked at. The official KML was on the race website the whole time.",
    "Kilometre 6 is 800 metres at 9.8%. It has cost roughly the same two and a half minutes in every race, and it is the only kilometre that did not improve last year.",
    "My max heart rate was set to 190. In the 2024 race I averaged 198 for a full kilometre. Every training zone I have used was built on a number about ten beats too low.",
    "The garage treadmill is too loud at 4am. That one domestic fact restructured 22 weeks of training.",
-   "Two weekend slots means the belt is now the most race-specific session I own, because nothing outdoors near me does 800 metres at 10%."
+   "Two weekend slots means the belt is now the most race-specific session I own, because nothing outdoors near me does 800 metres at 10%.",
+   "The trail was a 30 minute drive I could not make, so the session got better instead of worse: the hill five minutes away is closer to the climb that actually decides this race than the trail is."
   ],
   "log": [
    [
@@ -51,6 +53,14 @@
    [
     "Four unverified claims deleted",
     "'The Dungeon', the 10.4km distance, 'the final 3km is mostly uphill', and 'sustained climbing not short bursts' were all invented rather than sourced. Removed from the plan and the race-day card."
+   ],
+   [
+    "Weekend swapped, hill in front of trail",
+    "Sat 29 Aug: the trail is a 30 minute drive and the drive was not on, so the trail moved to Sunday and a steep hill five minutes from home took Saturday. That is an upgrade, not a fallback. The KML says Beerwah is decided by one climb, 800m at 9.8% from the 4.6km mark. The rolling route is 5-6% and gets run twice midweek already. A long steep hill is the closest thing available to km 6, so the km 6 session arrived a week early and outdoors: 3 x 3 min uphill, walk down, full recovery. Three reps not four, because the hill is unmeasured and the right hamstring spoke up on Thursday. Sunday's trail is gated on that hamstring, because descending is what turns tight into torn and this race is 20% descent."
+   ],
+   [
+    "Stale heart rate numbers cleaned out of 36 sessions",
+    "The zone change on 26 Aug updated the heart rate box on every session but not the older prescription text underneath it, so 35 sessions were telling him under 158 in one panel and under 148 in the next. All of them now read off the current threshold of 182."
    ]
   ]
  }
