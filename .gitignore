@@ -1,0 +1,4 @@
+__pycache__/
+.DS_Store
+# build output, identical to index.html
+beerwah-dashboard.html
