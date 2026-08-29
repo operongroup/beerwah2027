@@ -244,10 +244,14 @@ const ROUTES = {
               desc:"From the house heading south. Sealed, familiar, no real rise. Anything judged on pace, and every easy run, belongs here."},
  north:      {ico:"🌄", name:"NORTH - rolling hills",
               desc:"From the house heading north. Constant up and down. Good for short hill work and rolling strength, useless for holding an even pace."},
+ graveyard:  {ico:"🌲", name:"THE GRAVEYARD - 15 minute drive",
+              desc:"Measured 30 Aug 2026: 26m up to 95m, main climb 870m at 7.3% for 63m, descents at -6.5% and -7.2%. Beerwah's climb is 800m at 9.8% for 78m, so this is the closest thing you can reach to the kilometre that decides the race. One loop is about 2.4km and 63m. Worth the car; nothing else is."},
  cartwright: {ico:"⛰️", name:"POINT CARTWRIGHT - the big hill",
-              desc:"Five minute drive, with flat ground around the base for the warm-up. The steepest thing you can reach quickly, so this is where the km 6 climb gets rehearsed. Length and gradient still unmeasured."},
- trail:      {ico:"🌲", name:"THE TRAIL - 30 minute drive",
-              desc:"Real climbing, real descents, real footing. The protected weekend session whenever the drive is possible."},
+              desc:"Ten minute drive. Measured 29 Aug 2026: 9m up to 26m, the working line 205m at 8% in about 65 seconds, plus a steeper 117m at 14.7%. Honest gradient, quarter of the length. The substitute when the graveyard is out of reach."},
+ ewen:       {ico:"🏞️", name:"EWEN MADDOCK DAM - 30 minute drive",
+              desc:"The long trail he used to run often, and it sits close to Beerwah itself. Not measured yet: the history is on Strava, not in the training file. Occasional long-run and recce venue once we have a GPS file for it."},
+ trail:      {ico:"🌲", name:"TRAIL - drive required",
+              desc:"Real climbing, real descents, real footing. Use the graveyard unless a session names somewhere else."},
  belt:       {ico:"🏃", name:"GARAGE TREADMILL",
               desc:"Guaranteed gradient, no traffic, no dark. Belt speed off the console is the real number, not watch pace."},
  race:       {ico:"🏁", name:"RACE DAY", desc:"Where the event takes you."}
@@ -978,12 +982,12 @@ function zoneWeek(wk){
 }
 // ---------- Rules ----------
 function rRules(){
-  const rtRows = ["south","north","cartwright","trail","belt"].map(k=>{
+  const rtRows = ["south","north","graveyard","cartwright","ewen","belt"].map(k=>{
     const r=ROUTES[k];
     return `<div class="rtcard"><span class="rtico">${r.ico}</span><div><b>${esc(r.name)}</b><p>${esc(r.desc)}</p></div></div>`;
   }).join("");
   return `<div class="card"><h2>Your routes</h2>${rtRows}
-  <p class="small" style="margin-top:10px">The rule behind the picks: flat ground for anything judged on pace, rolling ground for strength, the big hill for the climb that decides the race, the trail for descents and footing. Point Cartwright has not been measured yet, so its numbers are still blank on purpose.</p></div>
+  <p class="small" style="margin-top:10px">The rule behind the picks: weekdays are out the door, no car, because a drive before 4:30am does not happen. Flat south for anything judged on pace and every easy run, rolling north for strength and the long easy weekend run. The car comes out once a weekend, for the graveyard, because that is the only ground nearby shaped like the kilometre that decides the race.</p></div>
 
   <div class="card"><h2>Zones (set 26 Aug 2026 — reset at the W8 TT, 15 Sep)</h2>
   <p class="small" style="margin-bottom:8px">Threshold HR 182, max 200. Taken off your 2024-2026 race files, not off a formula. Every zone below is a percentage of threshold, so threshold is the number that matters.</p>

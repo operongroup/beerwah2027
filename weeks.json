@@ -37,51 +37,51 @@
  "6": {
   "phase": "1 Base",
   "km": 30,
-  "vert": 300,
+  "vert": 280,
   "down": false,
-  "note": ""
+  "note": "Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "7": {
   "phase": "1 Base",
   "km": 33,
-  "vert": 350,
+  "vert": 280,
   "down": false,
-  "note": ""
+  "note": "Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "8": {
   "phase": "1 Base",
   "km": 24,
-  "vert": 200,
+  "vert": 210,
   "down": true,
-  "note": "Down week. 5km TT #2"
+  "note": "Down week. 5km TT #2 Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "9": {
   "phase": "1 Base",
   "km": 36,
-  "vert": 400,
+  "vert": 350,
   "down": false,
-  "note": ""
+  "note": "Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "10": {
   "phase": "1 Base",
   "km": 39,
-  "vert": 450,
+  "vert": 350,
   "down": false,
-  "note": ""
+  "note": "Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "11": {
   "phase": "2 Build",
   "km": 42,
-  "vert": 550,
+  "vert": 360,
   "down": false,
-  "note": "Plyometrics begin"
+  "note": "Plyometrics begin Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "12": {
   "phase": "2 Build",
   "km": 32,
-  "vert": 350,
+  "vert": 280,
   "down": true,
-  "note": "Down week"
+  "note": "Down week Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "13": {
   "phase": "2 Build",
