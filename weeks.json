@@ -36,155 +36,155 @@
  },
  "6": {
   "phase": "1 Base",
-  "km": 30,
-  "vert": 280,
+  "km": 29.6,
+  "vert": 340,
   "down": false,
   "note": "Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "7": {
   "phase": "1 Base",
-  "km": 33,
-  "vert": 280,
+  "km": 32.6,
+  "vert": 360,
   "down": false,
   "note": "Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "8": {
   "phase": "1 Base",
-  "km": 24,
-  "vert": 210,
+  "km": 28.4,
+  "vert": 190,
   "down": true,
   "note": "Down week. 5km TT #2 Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "9": {
   "phase": "1 Base",
-  "km": 36,
-  "vert": 350,
+  "km": 37.1,
+  "vert": 440,
   "down": false,
   "note": "Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "10": {
   "phase": "1 Base",
-  "km": 39,
-  "vert": 350,
+  "km": 39.2,
+  "vert": 460,
   "down": false,
   "note": "Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "11": {
   "phase": "2 Build",
-  "km": 42,
+  "km": 42.2,
   "vert": 360,
   "down": false,
   "note": "Plyometrics begin Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "12": {
   "phase": "2 Build",
-  "km": 32,
-  "vert": 280,
+  "km": 32.6,
+  "vert": 270,
   "down": true,
   "note": "Down week Vert target reset 30 Aug: one graveyard session replaces the trail day plus the belt climb."
  },
  "13": {
   "phase": "2 Build",
-  "km": 44,
-  "vert": 650,
+  "km": 43.0,
+  "vert": 550,
   "down": false,
   "note": ""
  },
  "14": {
   "phase": "2 Build",
-  "km": 47,
-  "vert": 700,
+  "km": 47.4,
+  "vert": 650,
   "down": false,
   "note": ""
  },
  "15": {
   "phase": "2 Build",
-  "km": 50,
-  "vert": 800,
+  "km": 51.5,
+  "vert": 740,
   "down": false,
   "note": ""
  },
  "16": {
   "phase": "2 Build",
-  "km": 38,
-  "vert": 500,
+  "km": 40.7,
+  "vert": 480,
   "down": true,
   "note": "Down week. 5km TT #3. Head torch in use."
  },
  "17": {
   "phase": "2 Build",
-  "km": 52,
-  "vert": 850,
+  "km": 52.3,
+  "vert": 720,
   "down": false,
   "note": "Peak lifting load"
  },
  "18": {
   "phase": "3 Specific",
-  "km": 52,
-  "vert": 900,
+  "km": 46.8,
+  "vert": 840,
   "down": false,
   "note": "Night running begins. Head torch required."
  },
  "19": {
   "phase": "3 Specific",
-  "km": 40,
-  "vert": 600,
+  "km": 32.9,
+  "vert": 260,
   "down": true,
   "note": "Down week. RACE: Beerwah@Daybreak Sun 6 Dec"
  },
  "20": {
   "phase": "3 Specific",
-  "km": 52,
-  "vert": 950,
+  "km": 41.1,
+  "vert": 780,
   "down": false,
   "note": "SEQ summer = natural heat acclimation. Easy runs in daytime heat when convenient."
  },
  "21": {
   "phase": "3 Specific",
-  "km": 52,
-  "vert": 1000,
+  "km": 47.6,
+  "vert": 940,
   "down": false,
   "note": ""
  },
  "22": {
   "phase": "3 Specific",
-  "km": 42,
-  "vert": 650,
+  "km": 40.7,
+  "vert": 680,
   "down": true,
   "note": "Down week"
  },
  "23": {
   "phase": "3 Specific",
-  "km": 50,
-  "vert": 950,
+  "km": 49.5,
+  "vert": 920,
   "down": false,
   "note": "5km TT #4. Final go/no-go on the A goal."
  },
  "24": {
   "phase": "4 Sharpen",
-  "km": 46,
-  "vert": 800,
+  "km": 39.3,
+  "vert": 660,
   "down": false,
   "note": "Full course rehearsal at Beerwah, at night"
  },
  "25": {
   "phase": "4 Sharpen",
-  "km": 44,
-  "vert": 750,
+  "km": 35.2,
+  "vert": 610,
   "down": false,
   "note": "Last hard descent session. Last heavy lift."
  },
  "26": {
   "phase": "5 Taper",
-  "km": 28,
+  "km": 30.3,
   "vert": 400,
   "down": false,
   "note": "Taper: volume ~-45%, intensity + frequency retained. HEAT TOP-UP week: easy runs in the heat of the day + optional 30 min ~40C bath after."
  },
  "27": {
   "phase": "5 Taper",
-  "km": 16,
-  "vert": 200,
+  "km": 26.5,
+  "vert": 260,
   "down": false,
   "note": "RACE SAT 30 JAN 7:00PM. Last heat exposure Wed, nothing after."
  }

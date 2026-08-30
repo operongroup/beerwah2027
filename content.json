@@ -25,7 +25,8 @@
    "I had told him nothing near home could replicate the climb. Then he pointed out the big hill five minutes from his door. That is the second thing this week I asserted without checking.",
    "The hill is 17 metres. The race climb is 78. That is not a failure of the hill, it is the reason the session had to change shape.",
    "The best session of the week was the one I did easy, talking to my dad the whole way, and it was best because of what it measured rather than what it trained.",
-   "He found a bug in his own training plan by reading it properly. Eighteen sessions were telling him to run hill sprints during a time trial. That is what happens when a plan gets generated instead of written."
+   "He found a bug in his own training plan by reading it properly. Eighteen sessions were telling him to run hill sprints during a time trial. That is what happens when a plan gets generated instead of written.",
+   "The plan had 86 mistakes in it and most of them came from the same place: it was generated, not written, and nobody opens a session card in November when the session is in January."
   ],
   "log": [
    [
@@ -95,6 +96,10 @@
    [
     "He caught a real bug: 18 quality sessions had the wrong instructions",
     "Opened the week 8 time trial and found it telling him to run five 20-second uphill sprints. It was not just that one. Every quality session from week 8 onward carried the hill-sprint brief regardless of what the session actually was: all three time trials, six sub-threshold sessions, five VO2 sessions, and four rep sessions. The short brief, the treadmill version and the heart-rate note were all copied from hill sprints by the original plan generator, and nobody had opened those cards to check. All 18 now carry their own instructions. The sub-threshold sessions were also still quoting a heart-rate band of 155-170, built on the old threshold of 172."
+   ],
+   [
+    "Full proof-read of all 198 sessions, 86 problems found",
+    "He asked for the whole plan to be checked after finding the time-trial bug. Four independent reviewers read every future session, plus a scripted structural pass. The worst of it: the race-day card still said the course profile had never been verified and quoted a distance and gain that matched nothing, five months after the KML was measured. The race-eve shakeout before the December tune-up race was a 7km night trail run with 300m of climbing. Two Tuesday sessions sent him to a trail 15 minutes away at 4:30am in the dark. The taper only tapered for two weeks instead of three, and there was no heat preparation anywhere for a humid 7pm January race. Every one of those is now fixed, and the weekly targets were recomputed from the sessions so the progress ring can actually reach 100%."
    ]
   ]
  }
