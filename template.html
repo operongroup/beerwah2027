@@ -104,7 +104,8 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .ctlog b{display:block;font-size:14px;margin-bottom:5px}
 .ctlog p{margin:0;font-size:13px;color:var(--ink2);line-height:1.5}
 .ctnone{color:var(--muted);font-size:14px;padding:20px 2px;line-height:1.55}
-.briefl{display:inline-block;font-size:14px;font-weight:700;color:#fff;text-decoration:none;background:var(--brand2);padding:11px 18px;border-radius:99px}
+.briefl{display:inline-block;font-size:14px;font-weight:700;color:#fff;text-decoration:none;background:var(--brand2);padding:11px 18px;border-radius:99px;margin:0 8px 8px 0}
+.briefl.alt{background:transparent;color:var(--brand2);border:1px solid var(--brand2)}
 .pres{font-size:14px;color:var(--ink2);white-space:pre-wrap;margin:7px 0}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 button.btn{background:linear-gradient(135deg,#FF6A2F,#E8430E);color:#fff;border:0;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer;
@@ -540,7 +541,8 @@ function rContent(){
   const c=CONTENT[wk];
   const brief = `<div class="card"><h2>The vlog brief</h2>
     <p class="small">The standing brief: the story, the kit, the weekly rhythm, the shots that carry an episode, and the arc through to race night. It does not change week to week, so read it once.</p>
-    <p style="margin-top:10px"><a class="briefl" href="vlog.html">Open the vlog brief &rarr;</a></p></div>`;
+    <p style="margin-top:10px"><a class="briefl" href="vlog.html">Open the vlog brief &rarr;</a>
+    <a class="briefl alt" href="catchup.html">Weeks 1-6 catch-up &rarr;</a></p></div>`;
   if(!c) return `<div class="card"><p class="ctnone">Week ${wk} has no content pack yet. They get written at the weekly review once the week has actually happened, so this fills in as you go. The standing brief below is always here.</p></div>` + brief;
   const done=store.shots||{};
   const shots=c.shots.map((s,i)=>{
@@ -552,7 +554,8 @@ function rContent(){
   const n=c.shots.length, got=c.shots.filter((s,i)=>done[wk+"_"+i]).length;
   const briefCard = `<div class="card"><h2>The vlog brief</h2>
     <p class="small">The standing brief: the story, the kit, the weekly rhythm, the shots that carry an episode, and the arc through to race night. Read it once, then live off the weekly pack above.</p>
-    <p style="margin-top:10px"><a class="briefl" href="vlog.html">Open the vlog brief &rarr;</a></p></div>`;
+    <p style="margin-top:10px"><a class="briefl" href="vlog.html">Open the vlog brief &rarr;</a>
+    <a class="briefl alt" href="catchup.html">Weeks 1-6 catch-up &rarr;</a></p></div>`;
   return `<div class="card">
     <div class="cthead"><span class="ctlbl" style="color:var(--muted)">WEEK ${wk} &middot; ${esc(c.range)}</span>
       <h2>${esc(c.headline)}</h2><p>${got} of ${n} shots captured</p></div>
