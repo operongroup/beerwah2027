@@ -103,6 +103,11 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .ctlog{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:13px 15px;margin-bottom:8px}
 .ctlog b{display:block;font-size:14px;margin-bottom:5px}
 .ctlog p{margin:0;font-size:13px;color:var(--ink2);line-height:1.5}
+.syncbar{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  margin:10px 0 0;padding:9px 12px;border-radius:11px;background:rgba(74,147,229,.10);
+  border:1px solid rgba(74,147,229,.30);font-size:12.5px;color:var(--ink2)}
+.syncbar.warn{background:rgba(224,168,58,.12);border-color:rgba(224,168,58,.40);color:#F0C877}
+.syncbar button{flex:0 0 auto;font-size:12px;padding:6px 12px}
 .ctnone{color:var(--muted);font-size:14px;padding:20px 2px;line-height:1.55}
 .briefl{display:inline-block;font-size:14px;font-weight:700;color:#fff;text-decoration:none;background:var(--brand2);padding:11px 18px;border-radius:99px;margin:0 8px 8px 0}
 .briefl.alt{background:transparent;color:var(--brand2);border:1px solid var(--brand2)}
@@ -569,10 +574,15 @@ function rToday(){
   const t=todayISO(); let list=sessionsOn(t);
   const wkN=Math.min(27,Math.max(1,weekOf(t))); const wm=WEEKS[wkN]; const wa=weekActual(wkN);
   const pct=wm? wa.km/wm.km : 0;
+  const cfgS=store.cfg;
+  const syncAge = cfgS.last? Math.round((Date.now()-cfgS.last)/60e3) : null;
+  const syncLine = (!cfgS.key||!cfgS.aid)
+    ? `<div class="syncbar warn"><span>Garmin data is not connected on this device. localStorage is per device, so the phone and the Mac each need setting up once.</span><button class="ghost" onclick="go('Sync')">Set up</button></div>`
+    : `<div class="syncbar"><span>Garmin${syncAge===null?" never synced":(syncAge<2?" synced just now":" synced "+(syncAge<60? syncAge+" min ago" : Math.round(syncAge/60)+"h ago"))}</span><button class="ghost" onclick="maybeSync(true)">Sync now</button></div>`;
   let head=`<div class="card hero">${ringSVG(pct, Math.round(pct*100)+"%", "WEEK VOL")}
     <div class="ht"><b>${wa.km.toFixed(1)} of ${wm?wm.km:0}km this week</b>
     <p>${Math.round(wa.vert)} of ${wm?wm.vert:0}m vert · ${wm?esc(wm.phase):""}${wm&&wm.down?" · DOWN WEEK":""}</p>
-    ${wm&&wm.note?`<p class="small">${esc(wm.note)}</p>`:""}</div></div>
+    ${wm&&wm.note?`<p class="small">${esc(wm.note)}</p>`:""}</div>${syncLine}</div>
   <h2 style="font-size:11px;color:var(--muted);margin:2px 2px 8px;letter-spacing:.09em">TODAY — ${new Date().toDateString().toUpperCase()}</h2>`;
   if(!list.length){
     const before = t<START;
@@ -1122,7 +1132,16 @@ function impData(ev){
 render();
 if(location.protocol.startsWith("http") && "serviceWorker" in navigator){ try{navigator.serviceWorker.register("sw.js");}catch(e){} }
 // auto-sync on open if configured and stale (>3h)
-(function(){ const c=store.cfg; if(c.key&&c.aid&&(!c.last||Date.now()-c.last>3*3600e3)){ try{syncNow();}catch(e){} } })();
+const SYNC_COOLDOWN = 20*60e3;   // 20 min. Garmin takes a few minutes to reach intervals.icu,
+                                 // so a 3h cooldown used to hide a run for the rest of the morning.
+function maybeSync(force){
+  const c=store.cfg;
+  if(!c.key||!c.aid) return;
+  if(force || !c.last || Date.now()-c.last > SYNC_COOLDOWN){ try{ syncNow(); }catch(e){} }
+}
+maybeSync();
+document.addEventListener("visibilitychange", ()=>{ if(!document.hidden) maybeSync(); });
+window.addEventListener("focus", ()=>maybeSync());
 </script>
 </body>
 </html>
