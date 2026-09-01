@@ -1001,7 +1001,13 @@ function rRules(){
     const r=ROUTES[k];
     return `<div class="rtcard"><span class="rtico">${r.ico}</span><div><b>${esc(r.name)}</b><p>${esc(r.desc)}</p></div></div>`;
   }).join("");
-  return `<div class="card"><h2>Your routes</h2>${rtRows}
+  return `<div class="card"><h2>What the numbers on a session mean</h2>
+  <div class="rtcard"><span class="rtico">&#128207;</span><div><b>The distance is always the TOTAL</b><p>Every km figure on a session card is the whole thing: warm-up jog, the work, and the cool-down. Nothing is added on top. On an easy run the first kilometre is run at shuffle pace, and it is kilometre one of that total, not an extra one.</p></div></div>
+  <div class="rtcard"><span class="rtico">&#9968;</span><div><b>The vert is climbing, not net</b><p>Metres gained over the session. Descending is not subtracted.</p></div></div>
+  <div class="rtcard"><span class="rtico">&#128337;</span><div><b>Warm-up and cool-down are stated once</b><p>If the brief says 15 min easy, that IS the warm-up jog. The drills below it come after, not instead. Two separate warm-ups is a bug, so tell me if you see one.</p></div></div>
+  </div>
+
+  <div class="card"><h2>Your routes</h2>${rtRows}
   <p class="small" style="margin-top:10px">The rule behind the picks: weekdays are out the door, no car, because a drive before 4:30am does not happen. Flat south for anything judged on pace and every easy run, rolling north for strength and the long easy weekend run. The car comes out once a weekend, for the graveyard, because that is the only ground nearby shaped like the kilometre that decides the race.</p></div>
 
   <div class="card"><h2>Zones (set 26 Aug 2026 — reset at the W8 TT, 15 Sep)</h2>

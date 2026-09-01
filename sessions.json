@@ -3354,7 +3354,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 59,
-  "opt_out": "Easy 5.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 5.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 34 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -3376,9 +3376,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -3436,7 +3436,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 60,
   "hill_reps": 5,
-  "opt_out": "Easy 5.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 5.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 34 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -3458,9 +3458,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -4092,7 +4092,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 70,
-  "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 5.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 38 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -4114,9 +4114,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -4174,7 +4174,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 71,
   "hill_reps": 5,
-  "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 5.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 38 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -4196,9 +4196,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -4835,7 +4835,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 81,
-  "opt_out": "Easy 4.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 4.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 28 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -4857,9 +4857,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -4917,7 +4917,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 82,
   "hill_reps": 4,
-  "opt_out": "Easy 4.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 4.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 28 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -4939,9 +4939,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -5573,7 +5573,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 92,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -5595,9 +5595,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -5655,7 +5655,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 93,
   "hill_reps": 6,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -5677,9 +5677,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -6311,7 +6311,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 103,
-  "opt_out": "Easy 7.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 7.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 48 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -6333,9 +6333,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -6393,7 +6393,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 104,
   "hill_reps": 7,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -6415,9 +6415,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -7076,7 +7076,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 114,
-  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 7.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -7098,9 +7098,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -7158,7 +7158,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 115,
   "hill_reps": 9,
-  "opt_out": "Easy 6.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 45 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -7180,9 +7180,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -7814,7 +7814,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 125,
-  "opt_out": "Easy 5.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 5.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 38 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -7836,9 +7836,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -7896,7 +7896,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 126,
   "hill_reps": 5,
-  "opt_out": "Easy 5.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 5.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 34 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -7918,9 +7918,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -8579,7 +8579,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 136,
-  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 7.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -8601,9 +8601,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -8661,7 +8661,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 137,
   "hill_reps": 10,
-  "opt_out": "Easy 7.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 7.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 48 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -8683,9 +8683,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -9344,7 +9344,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 147,
-  "opt_out": "Easy 8.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 8.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 55 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -9366,9 +9366,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -9426,7 +9426,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 148,
   "hill_reps": 10,
-  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 7.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -9448,9 +9448,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -10109,7 +10109,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 158,
-  "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 8.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 59 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -10131,9 +10131,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -10191,7 +10191,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 159,
   "hill_reps": 10,
-  "opt_out": "Easy 8.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 8.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 55 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -10213,9 +10213,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -10852,7 +10852,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 169,
-  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 7.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -10874,9 +10874,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -10934,7 +10934,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 170,
   "hill_reps": 8,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -10956,9 +10956,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -11617,7 +11617,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 180,
-  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 9.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -11639,9 +11639,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -11699,7 +11699,7 @@
   "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
   "id": 181,
   "hill_reps": 10,
-  "opt_out": "Easy 8.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 8.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 59 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -11721,9 +11721,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -12382,7 +12382,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 191,
-  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 9.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -12404,9 +12404,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -12463,7 +12463,7 @@
   "title": "Easy run (flat)",
   "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
   "id": 192,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158, full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -12485,9 +12485,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -13119,7 +13119,7 @@
   "title": "Easy run",
   "prescription": "RACE WEEK for Beerwah@Daybreak. Keep it short and easy. Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 202,
-  "opt_out": "Easy 9.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 9.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 66 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -13141,9 +13141,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -13200,7 +13200,7 @@
   "title": "Easy run (flat)",
   "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
   "id": 203,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158, full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -13222,9 +13222,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -13873,7 +13873,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 213,
-  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 9.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -13895,9 +13895,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -13954,7 +13954,7 @@
   "title": "Easy run (flat)",
   "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
   "id": 214,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158, full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -13976,9 +13976,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -14637,7 +14637,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 224,
-  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 9.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -14659,9 +14659,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -14718,7 +14718,7 @@
   "title": "Easy run (flat)",
   "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
   "id": 225,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158, full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -14740,9 +14740,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -15374,7 +15374,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 235,
-  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 7.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -15396,9 +15396,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -15455,7 +15455,7 @@
   "title": "Easy run (flat)",
   "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
   "id": 236,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158, full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -15477,9 +15477,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -16143,7 +16143,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 246,
-  "opt_out": "Easy 10.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 10.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 72 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -16165,9 +16165,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -16224,7 +16224,7 @@
   "title": "Easy run (flat)",
   "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
   "id": 247,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158, full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -16246,9 +16246,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -16907,7 +16907,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 257,
-  "opt_out": "Easy 9.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 9.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 62 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -16929,9 +16929,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -16988,7 +16988,7 @@
   "title": "Easy run (flat)",
   "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
   "id": 258,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158, full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -17010,9 +17010,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -17671,7 +17671,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 268,
-  "opt_out": "Easy 7.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 7.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 52 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -17693,9 +17693,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -17752,7 +17752,7 @@
   "title": "Easy run (flat)",
   "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
   "id": 269,
-  "opt_out": "Easy 6.0km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 41 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158, full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -17774,9 +17774,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -18236,7 +18236,7 @@
   "title": "Easy run (heat)",
   "prescription": "HEAT SESSION. Run this one in the afternoon or early evening, not at 4:30am. The race starts at 7:00pm on a humid Queensland night and every other run in this plan is at the coolest hour of the day, so this is one of the few chances to feel race conditions. Easy only: conversational, 6:35-6:55/km, HR under 158, flat and sealed. If the day gets away from you, run it at 4:30am as normal and take the heat exposure from a 30 min hot bath at about 40C instead - the adaptation comes from the core temperature, not the running.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 278,
-  "opt_out": "Easy 3.0km at 6:35-6:55/km, flat and sealed, run in the afternoon heat rather than at 4:30am.",
+  "opt_out": "Easy 3.0km TOTAL at 6:35-6:55/km, flat and sealed, run in the afternoon heat rather than at 4:30am.",
   "opt_tm": "8.7 km/h, 1% incline, 21 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -18258,9 +18258,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -18317,7 +18317,7 @@
   "title": "Easy run (flat)",
   "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
   "id": 279,
-  "opt_out": "Easy 4.5km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 4.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 31 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158, full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -18339,9 +18339,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -18792,7 +18792,7 @@
   "title": "Easy run",
   "prescription": "Conversational, 6:35-6:55/km, HR under 158 (recalibrated 26 Aug 2026 off your 2024-2026 race files: threshold 182, max 200). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 286,
-  "opt_out": "Easy 4km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 4km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 28 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -18814,9 +18814,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -18873,7 +18873,7 @@
   "title": "Easy run (flat)",
   "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
   "id": 287,
-  "opt_out": "Easy 4km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 4km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 28 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158, full-sentence conversation. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -18895,9 +18895,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
@@ -18954,7 +18954,7 @@
   "title": "Easy run (optional)",
   "prescription": "Optional recovery run, conversational. FIRST session to drop when fatigue accumulates.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 288,
-  "opt_out": "Easy 3km at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_out": "Easy 3km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "8.7 km/h, 1% incline, 21 min.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "wu": {
@@ -18976,9 +18976,9 @@
      "Foot about 10cm from a wall, drive the knee forward to touch the wall, heel stays down. Preps the ankle and calf for load."
     ],
     [
-     "First km at shuffle pace",
-     "",
-     "Slower than easy pace. This IS part of the warm-up, not wasted time."
+     "First km of the run, at shuffle pace",
+     "1km",
+     "This is kilometre one OF the run, not an extra one on top. The distance on this card is the total. Run it 30 to 60 seconds a kilometre slower than easy, then settle into pace."
     ],
     [
      "Lateral lunges",
