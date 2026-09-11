@@ -13,45 +13,70 @@
 <style>
 :root{
   color-scheme:dark;
-  --page:#0A0C15; --surface:#141927; --surface2:#0E1220;
-  --ink:#F5F3F0; --ink2:#A7ADBD; --muted:#6E7488;
-  --grid:#232A3C; --axis:#323A50; --border:rgba(255,255,255,.07);
-  --brand:#FF5A24; --brand2:#FF7A3D; --branddeep:#C23A10;
-  --s1:#F5551E; --s2:#3987E5; --s3:#199E70;
-  --z1:#FFC09B; --z2:#FF6B35; --z3:#B33409;
-  --good:#2FC24F; --warn:#FAB219; --serious:#EC835A; --crit:#E5484D; --goodtext:#35C759;
+  --page:#0A0C15;
+  --surface:#141927;
+  --surface2:#0E1220;
+  --ink:#F5F3F0;
+  --ink2:#A7ADBD;
+  --muted:#6E7488;
+  --grid:#232A3C;
+  --axis:#323A50;
+  --border:rgba(255,255,255,.07);
+  --brand:#FF5A24;
+  --brand2:#FF7A3D;
+  --branddeep:#C23A10;
+  --s1:#F5551E;
+  --s2:#3987E5;
+  --s3:#199E70;
+  --z1:#FFC09B;
+  --z2:#FF6B35;
+  --z3:#B33409;
+  --good:#2FC24F;
+  --warn:#FAB219;
+  --serious:#EC835A;
+  --crit:#E5484D;
+  --goodtext:#35C759;
   --night:#8E7CF0;
+  --brandrgb:255,90,36;
+  --glow:#1A2138;
+  --page2:#10141F;
+  --barend:#E8430E;
+  --navrgb:13,16,26;
+  --card1:#171C2D;
+  --card2:#131726;
+  --timer1:#1E2436;
+  --toastbg:#1d2333;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--page)}
 body{font-family:-apple-system,system-ui,"Segoe UI",sans-serif;color:var(--ink);font-size:15px;line-height:1.45;padding-bottom:78px;
-  background:radial-gradient(120% 60% at 50% -10%, #1A2138 0%, #10141F 45%, #0A0C15 100%) fixed}
+  background:radial-gradient(120% 60% at 50% -10%, var(--glow) 0%, var(--page2) 45%, var(--page) 100%) fixed}
 header{padding:18px 18px 6px;display:flex;gap:12px;align-items:center;max-width:880px;margin:0 auto}
-header .mark{width:42px;height:42px;border-radius:11px;flex:none;box-shadow:0 4px 16px rgba(255,90,36,.28)}
+header .mark{width:42px;height:42px;border-radius:11px;flex:none;box-shadow:0 4px 16px rgba(var(--brandrgb),.28)}
 header h1{font-size:15px;font-weight:800;letter-spacing:.14em}
 header h1 span{color:var(--brand)}
 header .tag{font-size:11px;color:var(--muted);letter-spacing:.04em;font-weight:600}
 header .count{margin-left:auto;text-align:right}
 header .count b{display:block;font-size:30px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;
-  background:linear-gradient(135deg,#FF7A3D,#FF5A24);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  background:linear-gradient(135deg,var(--brand2),var(--brand));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 header .count span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
 .chips{padding:8px 18px 10px;display:flex;gap:6px;flex-wrap:wrap;max-width:880px;margin:0 auto}
 .chip{font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:99px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--ink2)}
-.chip.acc{border-color:rgba(255,90,36,.5);color:var(--brand2);background:rgba(255,90,36,.10)}
-nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(13,16,26,.85);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+.chip.acc{border-color:rgba(var(--brandrgb),.5);color:var(--brand2);background:rgba(var(--brandrgb),.10)}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(var(--navrgb),.85);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
   border-top:1px solid var(--border);z-index:50;padding-bottom:env(safe-area-inset-bottom)}
 nav button{flex:1;padding:9px 0 7px;border:0;background:none;color:var(--muted);font-size:9.5px;font-weight:700;letter-spacing:.03em;cursor:pointer;
   display:flex;flex-direction:column;align-items:center;gap:3px}
 nav button svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 nav button.on{color:var(--brand)}
 main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
-.card{background:linear-gradient(180deg,#171C2D 0%,#131726 100%);border:1px solid var(--border);border-radius:20px;padding:17px;margin-bottom:13px;
+.card{background:linear-gradient(180deg,var(--card1) 0%,var(--card2) 100%);border:1px solid var(--border);border-radius:20px;padding:17px;margin-bottom:13px;
   box-shadow:0 10px 30px rgba(0,0,0,.32)}
 .card h2{font-size:11.5px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px}
 .card h3{font-size:17px;font-weight:700;margin-bottom:4px;letter-spacing:-.01em}
 .pill{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;padding:2px 9px;border-radius:99px;margin:0 6px 6px 0}
 .pill.night{background:rgba(142,124,240,.16);color:var(--night);border:1px solid rgba(142,124,240,.4)}
-.pill.test{background:rgba(255,90,36,.14);color:var(--brand2);border:1px solid rgba(255,90,36,.45)}
+.pill.test{background:rgba(var(--brandrgb),.14);color:var(--brand2);border:1px solid rgba(var(--brandrgb),.45)}
 .pill.race{background:rgba(229,72,77,.15);color:#FF7B80;border:1px solid rgba(229,72,77,.5)}
 .pill.down{background:rgba(255,255,255,.06);color:var(--ink2);border:1px solid var(--border)}
 .pill.done{background:rgba(47,194,79,.15);color:var(--goodtext);border:1px solid rgba(47,194,79,.45)}
@@ -64,7 +89,7 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .locwrap{margin:10px 0 0}
 .locbtn{font-size:13px;font-weight:700;padding:9px 16px}
 .brief{margin:10px 0 4px;padding:12px 14px;border-radius:12px;
-  background:rgba(255,90,36,.10);border:1px solid rgba(255,90,36,.35);
+  background:rgba(var(--brandrgb),.10);border:1px solid rgba(var(--brandrgb),.35);
   color:var(--ink);font-size:15px;font-weight:600;line-height:1.45}
 .fullpres{margin-top:8px}
 .fullpres summary{cursor:pointer;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--muted)}
@@ -115,17 +140,17 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .pres{font-size:14px;color:var(--ink2);white-space:pre-wrap;margin:7px 0}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 button.btn{background:linear-gradient(135deg,#FF6A2F,#E8430E);color:#fff;border:0;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:700;cursor:pointer;
-  box-shadow:0 4px 16px rgba(255,90,36,.30)}
+  box-shadow:0 4px 16px rgba(var(--brandrgb),.30)}
 button.btn:active{transform:scale(.97)}
 button.btn:disabled{opacity:.4;box-shadow:none}
 button.ghost,label.ghost{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--ink);border-radius:12px;padding:9px 14px;font-size:14px;font-weight:600;cursor:pointer}
 button.ghost.on{border-color:var(--brand);color:var(--brand)}
 input,textarea,select{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:9px;font-size:14px;color:var(--ink);font-family:inherit}
-input:focus{outline:none;border-color:rgba(255,90,36,.6)}
+input:focus{outline:none;border-color:rgba(var(--brandrgb),.6)}
 input[type=number]{width:76px}
 label.f{display:flex;flex-direction:column;gap:3px;font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.03em}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:13px}
-.tile{background:linear-gradient(180deg,#171C2D,#131726);border:1px solid var(--border);border-radius:16px;padding:12px 14px}
+.tile{background:linear-gradient(180deg,var(--card1),var(--card2));border:1px solid var(--border);border-radius:16px;padding:12px 14px}
 .tile .v{font-size:25px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .tile .l{font-size:10px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
 .hero{display:flex;align-items:center;gap:18px}
@@ -140,21 +165,21 @@ label.f{display:flex;flex-direction:column;gap:3px;font-size:11px;color:var(--mu
 .verdict b{font-size:14px}
 .verdict p{font-size:13px;color:var(--ink2)}
 .bar{height:7px;border-radius:4px;background:var(--grid);overflow:hidden;margin-top:6px}
-.bar i{display:block;height:100%;background:linear-gradient(90deg,#FF7A3D,#E8430E);border-radius:4px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brand2),var(--barend));border-radius:4px}
 .bar i.alt{background:linear-gradient(90deg,#5FA4F0,#2A6FC4)}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th{text-align:left;color:var(--muted);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;padding:5px 6px;border-bottom:1px solid var(--grid)}
 td{padding:7px 6px;border-bottom:1px solid var(--grid);font-variant-numeric:tabular-nums}
 .grid27{display:grid;grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:7px}
 .wk{border:1px solid var(--border);border-radius:13px;padding:8px 9px;cursor:pointer;background:rgba(255,255,255,.025)}
-.wk.cur{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand),0 4px 14px rgba(255,90,36,.25)}
+.wk.cur{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand),0 4px 14px rgba(var(--brandrgb),.25)}
 .wk .n{font-size:10px;color:var(--muted);font-weight:800;letter-spacing:.05em}
 .wk .p{font-size:11px;font-weight:800}
 .wk .k{font-size:12px;color:var(--ink2)}
 svg text{font-family:-apple-system,system-ui,"Segoe UI",sans-serif}
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink2);margin:2px 0 10px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
-.tip{position:fixed;pointer-events:none;background:#F5F3F0;color:#10141F;font-size:12px;font-weight:600;padding:6px 9px;border-radius:8px;z-index:99;display:none;max-width:240px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--page2);font-size:12px;font-weight:600;padding:6px 9px;border-radius:8px;z-index:99;display:none;max-width:240px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
 .day{display:flex;gap:11px;padding:10px 4px;border-top:1px solid var(--grid);cursor:pointer;border-radius:8px}
 .day:hover{background:rgba(255,255,255,.025)}
 .day .d{width:40px;flex:none;text-align:center}
@@ -184,12 +209,12 @@ details ul{padding-left:18px}
 .exlast{font-size:10.5px;color:var(--muted)}
 .spark{flex:none}
 details.exd summary{display:flex;align-items:center;gap:10px;list-style:none;flex-wrap:wrap}
-.setbtn{flex:none;display:flex;flex-direction:column;align-items:center;gap:3px;background:rgba(255,90,36,.12);border:1px solid rgba(255,90,36,.45);color:var(--brand2);border-radius:10px;padding:6px 10px;font-size:11px;font-weight:800;cursor:pointer;min-width:74px}
+.setbtn{flex:none;display:flex;flex-direction:column;align-items:center;gap:3px;background:rgba(var(--brandrgb),.12);border:1px solid rgba(var(--brandrgb),.45);color:var(--brand2);border-radius:10px;padding:6px 10px;font-size:11px;font-weight:800;cursor:pointer;min-width:74px}
 .setbtn.fin{background:rgba(47,194,79,.13);border-color:rgba(47,194,79,.45);color:var(--goodtext)}
 .setbtn .dots{display:flex;gap:3px}
 .setbtn .dots i{width:7px;height:7px;border-radius:50%;background:var(--grid);display:block}
 .setbtn .dots i.on{background:currentColor}
-.timerbar{position:fixed;left:10px;right:10px;bottom:calc(64px + env(safe-area-inset-bottom));z-index:60;background:linear-gradient(135deg,#1E2436,#171C2D);border:1px solid rgba(255,90,36,.5);border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);max-width:560px;margin:0 auto}
+.timerbar{position:fixed;left:10px;right:10px;bottom:calc(64px + env(safe-area-inset-bottom));z-index:60;background:linear-gradient(135deg,var(--timer1),var(--card1));border:1px solid rgba(var(--brandrgb),.5);border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);max-width:560px;margin:0 auto}
 .timerbar b{font-size:26px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--brand2);min-width:64px}
 .timerbar span{font-size:12px;color:var(--ink2);flex:1}
 .timerbar .tb{background:rgba(255,255,255,.07);border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:7px 11px;font-size:12px;font-weight:700;cursor:pointer}
@@ -221,21 +246,21 @@ button.lib span{color:var(--muted);font-size:11px}
 .setcol{display:flex;flex-direction:column;gap:4px;align-items:stretch;flex:none}
 .setrow{display:flex;gap:4px;justify-content:center}
 .minib{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--ink2);border-radius:7px;padding:3px 7px;font-size:10.5px;font-weight:800;cursor:pointer;white-space:nowrap}
-.minib.won{border-color:rgba(255,90,36,.5);color:var(--brand2);background:rgba(255,90,36,.10)}
+.minib.won{border-color:rgba(var(--brandrgb),.5);color:var(--brand2);background:rgba(var(--brandrgb),.10)}
 .minib.tclr{color:var(--brand2)}
 .setbtn .dots em{font-style:normal;font-size:9px;color:var(--goodtext);font-weight:800;margin-left:2px}
 
 .toast{position:fixed;left:50%;transform:translateX(-50%) translateY(14px);bottom:84px;z-index:60;
-  background:#1d2333;border:1px solid #FF5A24;color:#fff;font-weight:700;font-size:14px;
+  background:var(--toastbg);border:1px solid var(--brand);color:#fff;font-weight:700;font-size:14px;
   padding:10px 18px;border-radius:999px;box-shadow:0 6px 24px rgba(0,0,0,.5);
   opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.toast b{color:#FF5A24;margin-right:6px}
+.toast b{color:var(--brand);margin-right:6px}
 .btn.saved{background:var(--good);border-color:var(--good);color:#fff}
 </style>
 </head>
 <body>
-<header><svg class="mark" viewBox="0 0 512 512"><defs><radialGradient id="hsky" cx="50%" cy="30%" r="85%"><stop offset="0%" stop-color="#1A2138"/><stop offset="100%" stop-color="#0A0C18"/></radialGradient><linearGradient id="hmtn" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="45%" stop-color="#F0521C"/><stop offset="100%" stop-color="#9E2A08"/></linearGradient></defs><rect width="512" height="512" rx="112" fill="url(#hsky)"/><g fill="#F4E8DC"><circle cx="110" cy="110" r="7"/><circle cx="200" cy="80" r="4" opacity=".6"/><circle cx="330" cy="95" r="5" opacity=".7"/><circle cx="90" cy="200" r="4" opacity=".5"/></g><g transform="translate(392,108)"><circle r="40" fill="#FFE3C9"/><circle cx="-16" cy="-11" r="37" fill="url(#hsky)"/></g><path d="M84 408 C 120 404, 138 372, 158 322 C 178 270, 200 210, 228 172 C 242 152, 252 144, 262 144 C 274 144, 288 158, 302 180 C 330 226, 348 282, 368 330 C 388 376, 404 402, 430 408 Z" fill="url(#hmtn)"/><rect x="72" y="404" width="368" height="10" rx="5" fill="#FF6A2F"/></svg><div><h1>BEERWAH<span>@NIGHT</span></h1><p class="tag">SUB-50 · PODIUM · 30 JAN 2027</p></div><div class="count"><b id="cd">—</b><span>days to go</span></div></header>
+<header id="hdr"></header>
 <div class="chips" id="chips"></div>
 <main id="main"></main>
 <nav id="nav"></nav>
@@ -3015,9 +3040,9 @@ const SESSIONS = [
    "mins": 15,
    "items": [
     [
-     "Easy jog to the hill",
+     "Easy jog (outside: to the hill · belt: the 10 min in the treadmill brief)",
      "10-15 min",
-     "Use the run to the bottom of the hill as the warm-up. Arrive warm, not fresh off the car seat."
+     "OUTSIDE: this IS the warm-up run, flat ground, properly easy, full sentences, then the drills. TREADMILL: the easy 10 min at 8.7 km/h at 1% in the belt brief IS this warm-up. Do not do both. Hop off for the drills, then start the climb."
     ],
     [
      "Leg swings, front-back",
@@ -3403,7 +3428,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -3782,7 +3807,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Adductor isometric squeeze",
@@ -3858,14 +3883,14 @@ const SESSIONS = [
    "mins": 19,
    "items": [
     [
-     "Easy jog to the hill",
+     "Easy jog (outside: to the hill · belt: the 10 min in the treadmill brief)",
      "12-15 min",
-     "This IS the warm-up run. Do it before the drills below, not instead of them. Flat ground, properly easy, full sentences the whole way."
+     "OUTSIDE: this IS the warm-up run, flat ground, properly easy, full sentences, then the drills. TREADMILL: the easy 10 min at 8.7 km/h at 1% in the belt brief IS this warm-up. Do not do both. Hop off for the drills, then start the climb."
     ],
     [
      "Leg swings, front-back",
      "10 each leg",
-     "Hold a post, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
+     "Hold a post or the treadmill rail, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
     ],
     [
      "Ankle wall rocks",
@@ -3880,12 +3905,12 @@ const SESSIONS = [
     [
      "Strides on the grade",
      "2 x 15s",
-     "Two short accelerations up the bottom of the climb. Not hard, just tell the legs what is coming."
+     "OUTSIDE: two short accelerations up the bottom of the climb. TREADMILL: 2 x 15s at 8% at 8 km/h with a minute of walking between. Not hard, just tell the legs what is coming."
     ],
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Adductor isometric squeeze",
@@ -4132,7 +4157,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -4492,22 +4517,22 @@ const SESSIONS = [
   "title": "GRAVEYARD - one hard climb (TT week ahead)",
   "prescription": "MOVED TO SATURDAY AND CUT BACK, ON PURPOSE (changed 6 Sep 2026). Two reasons, and the first one is the important one.  ||  REASON 1, THE TIME TRIAL. The 5km TT is Tuesday 15 Sep. As originally written this session sat on the Sunday, 48 hours before it. Descending causes eccentric muscle damage that peaks at 24 to 48 hours, which is exactly where the TT would have landed. That TT resets every pace and every zone in the plan for the next 19 weeks, so a soft number there costs you far more than one climb session gains. Moving it to Saturday buys 72 hours instead of 48.  ||  REASON 2, THE CLIMB COUNT. Week 6 was your biggest week of the block and you have now done two graveyard sessions in eight days on legs that had never done one. ONE hard climb this week, not two.  ||  SESSION: jog in easy. 3 loops. Run ONE climb at controlled hard effort, the effort you could hold for about ten minutes. The other two climbs easy or walked. Descend every single one controlled, because the descents are the point of coming here as much as the climbs are. Jog out easy. About 8.3km and 150m of climbing.  ||  DESCENT TARGET: cadence above 170 on the steep stuff. On 30 Aug you descended at 147 and on 6 Sep at 153. Both are below your flat cadence, which means you are still braking. Quicker feet, shorter stride, land under yourself, eyes 3-4m ahead. If your descent cadence comes back higher than your flat cadence, that is the win regardless of pace.  ||  WHICH LOOP IS HARD: the hard climb is on loop 2. Loops 1 and 3 are easy or walked.  ||  LOOP 1 IS ALWAYS EASY, EVERY GRAVEYARD SESSION. The jog in warms your engine but it does not warm the climbing muscles or get your feet reading the ground. A cold hard effort on a 7 to 10 percent trail gradient is where people roll ankles and tweak calves, and you also simply climb better warm, so the effort is worth more. With only one hard climb, it goes on loop 2 rather than the last one: you get the best quality effort while fresh, and you finish on an easy loop so the last descent is done on legs that are not wrecked.",
   "opt_out": "3 loops of the graveyard. ONE climb hard, the other two easy or walked, every descent controlled. Jog in and out. Hard on loop 2, loop 1 always easy.",
-  "opt_tm": "Belt fallback only: 10 min at 8.7 km/h at 1%, then ONE x 6 min at 8-10% at 6.5-7.5 km/h, 10 min easy. It misses the descents entirely.",
-  "hr_note": "The hard climb: settle into Z4 (172-181) and touch Z5 (182-186) at the top. If you are in Z5 in the first minute you went out too hard. The two easy climbs: stay under 165, walk them if you need to. Descents and easy loops: let it fall.  ||  ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
+  "opt_tm": "Belt version: 10 min at 8.7 km/h at 1% (this is the warm-up jog, then hop off for the drills), then ONE x 6 min at 8-10% at 6.5-7.5 km/h, then 10 min easy at 8.7 km/h. About 26 min, about 3.8km. It misses the descents entirely; that is the trade you make for a dry run today.",
+  "hr_note": "TREADMILL VERSION (rain day): there is ONE climb and no descents. The 6 min at 8-10%: settle into Z4 (172-181) and touch Z5 (182-186) in the last minute. If you are in Z5 in the first minute you went out too hard. The 10 min before and after: Z1-Z2, under 162. OUTSIDE VERSION: The hard climb: settle into Z4 (172-181) and touch Z5 (182-186) at the top. If you are in Z5 in the first minute you went out too hard. The two easy climbs: stay under 165, walk them if you need to. Descents and easy loops: let it fall.  ||  ZONES (threshold HR 182, max 200 - set 26 Aug 2026 off your 2024-2026 race files, re-tested at the Week 8 TT on 15 Sep): Z1 recovery up to 153 | Z2 aerobic 154-162 | Z3 tempo 163-171 | Z4 sub-threshold 172-181 | Z5 threshold 182-186 | Z6+ 187 and up.",
   "route": "graveyard",
   "route_note": "The graveyard, 15 min drive. 3 loops, ONE climb run hard this week because the time trial is Tuesday. This is the one session in the week worth the car.",
   "wu": {
    "mins": 19,
    "items": [
     [
-     "Easy jog to the hill",
+     "Easy jog (outside: to the hill · belt: the 10 min in the treadmill brief)",
      "12-15 min",
-     "This IS the warm-up run. Do it before the drills below, not instead of them. Flat ground, properly easy, full sentences the whole way."
+     "OUTSIDE: this IS the warm-up run, flat ground, properly easy, full sentences, then the drills. TREADMILL: the easy 10 min at 8.7 km/h at 1% in the belt brief IS this warm-up. Do not do both. Hop off for the drills, then start the climb."
     ],
     [
      "Leg swings, front-back",
      "10 each leg",
-     "Hold a post, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
+     "Hold a post or the treadmill rail, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
     ],
     [
      "Ankle wall rocks",
@@ -4522,12 +4547,12 @@ const SESSIONS = [
     [
      "Strides on the grade",
      "2 x 15s",
-     "Two short accelerations up the bottom of the climb. Not hard, just tell the legs what is coming."
+     "OUTSIDE: two short accelerations up the bottom of the climb. TREADMILL: 2 x 15s at 8% at 8 km/h with a minute of walking between. Not hard, just tell the legs what is coming."
     ],
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -4621,7 +4646,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -4875,7 +4900,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -5263,7 +5288,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -5339,14 +5364,14 @@ const SESSIONS = [
    "mins": 19,
    "items": [
     [
-     "Easy jog to the hill",
+     "Easy jog (outside: to the hill · belt: the 10 min in the treadmill brief)",
      "12-15 min",
-     "This IS the warm-up run. Do it before the drills below, not instead of them. Flat ground, properly easy, full sentences the whole way."
+     "OUTSIDE: this IS the warm-up run, flat ground, properly easy, full sentences, then the drills. TREADMILL: the easy 10 min at 8.7 km/h at 1% in the belt brief IS this warm-up. Do not do both. Hop off for the drills, then start the climb."
     ],
     [
      "Leg swings, front-back",
      "10 each leg",
-     "Hold a post, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
+     "Hold a post or the treadmill rail, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
     ],
     [
      "Ankle wall rocks",
@@ -5361,12 +5386,12 @@ const SESSIONS = [
     [
      "Strides on the grade",
      "2 x 15s",
-     "Two short accelerations up the bottom of the climb. Not hard, just tell the legs what is coming."
+     "OUTSIDE: two short accelerations up the bottom of the climb. TREADMILL: 2 x 15s at 8% at 8 km/h with a minute of walking between. Not hard, just tell the legs what is coming."
     ],
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -5613,7 +5638,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -6001,7 +6026,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -6077,14 +6102,14 @@ const SESSIONS = [
    "mins": 19,
    "items": [
     [
-     "Easy jog to the hill",
+     "Easy jog (outside: to the hill · belt: the 10 min in the treadmill brief)",
      "12-15 min",
-     "This IS the warm-up run. Do it before the drills below, not instead of them. Flat ground, properly easy, full sentences the whole way."
+     "OUTSIDE: this IS the warm-up run, flat ground, properly easy, full sentences, then the drills. TREADMILL: the easy 10 min at 8.7 km/h at 1% in the belt brief IS this warm-up. Do not do both. Hop off for the drills, then start the climb."
     ],
     [
      "Leg swings, front-back",
      "10 each leg",
-     "Hold a post, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
+     "Hold a post or the treadmill rail, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
     ],
     [
      "Ankle wall rocks",
@@ -6099,12 +6124,12 @@ const SESSIONS = [
     [
      "Strides on the grade",
      "2 x 15s",
-     "Two short accelerations up the bottom of the climb. Not hard, just tell the legs what is coming."
+     "OUTSIDE: two short accelerations up the bottom of the climb. TREADMILL: 2 x 15s at 8% at 8 km/h with a minute of walking between. Not hard, just tell the legs what is coming."
     ],
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -6351,7 +6376,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -6739,7 +6764,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -6815,14 +6840,14 @@ const SESSIONS = [
    "mins": 19,
    "items": [
     [
-     "Easy jog to the hill",
+     "Easy jog (outside: to the hill · belt: the 10 min in the treadmill brief)",
      "12-15 min",
-     "This IS the warm-up run. Do it before the drills below, not instead of them. Flat ground, properly easy, full sentences the whole way."
+     "OUTSIDE: this IS the warm-up run, flat ground, properly easy, full sentences, then the drills. TREADMILL: the easy 10 min at 8.7 km/h at 1% in the belt brief IS this warm-up. Do not do both. Hop off for the drills, then start the climb."
     ],
     [
      "Leg swings, front-back",
      "10 each leg",
-     "Hold a post, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
+     "Hold a post or the treadmill rail, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
     ],
     [
      "Ankle wall rocks",
@@ -6837,12 +6862,12 @@ const SESSIONS = [
     [
      "Strides on the grade",
      "2 x 15s",
-     "Two short accelerations up the bottom of the climb. Not hard, just tell the legs what is coming."
+     "OUTSIDE: two short accelerations up the bottom of the climb. TREADMILL: 2 x 15s at 8% at 8 km/h with a minute of walking between. Not hard, just tell the legs what is coming."
     ],
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -7089,7 +7114,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -7504,7 +7529,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -7580,14 +7605,14 @@ const SESSIONS = [
    "mins": 19,
    "items": [
     [
-     "Easy jog to the hill",
+     "Easy jog (outside: to the hill · belt: the 10 min in the treadmill brief)",
      "12-15 min",
-     "This IS the warm-up run. Do it before the drills below, not instead of them. Flat ground, properly easy, full sentences the whole way."
+     "OUTSIDE: this IS the warm-up run, flat ground, properly easy, full sentences, then the drills. TREADMILL: the easy 10 min at 8.7 km/h at 1% in the belt brief IS this warm-up. Do not do both. Hop off for the drills, then start the climb."
     ],
     [
      "Leg swings, front-back",
      "10 each leg",
-     "Hold a post, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
+     "Hold a post or the treadmill rail, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
     ],
     [
      "Ankle wall rocks",
@@ -7602,12 +7627,12 @@ const SESSIONS = [
     [
      "Strides on the grade",
      "2 x 15s",
-     "Two short accelerations up the bottom of the climb. Not hard, just tell the legs what is coming."
+     "OUTSIDE: two short accelerations up the bottom of the climb. TREADMILL: 2 x 15s at 8% at 8 km/h with a minute of walking between. Not hard, just tell the legs what is coming."
     ],
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -7854,7 +7879,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -8242,7 +8267,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -8318,14 +8343,14 @@ const SESSIONS = [
    "mins": 19,
    "items": [
     [
-     "Easy jog to the hill",
+     "Easy jog (outside: to the hill · belt: the 10 min in the treadmill brief)",
      "12-15 min",
-     "This IS the warm-up run. Do it before the drills below, not instead of them. Flat ground, properly easy, full sentences the whole way."
+     "OUTSIDE: this IS the warm-up run, flat ground, properly easy, full sentences, then the drills. TREADMILL: the easy 10 min at 8.7 km/h at 1% in the belt brief IS this warm-up. Do not do both. Hop off for the drills, then start the climb."
     ],
     [
      "Leg swings, front-back",
      "10 each leg",
-     "Hold a post, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
+     "Hold a post or the treadmill rail, swing one leg forward and back like a pendulum. Relaxed, a little bigger each rep."
     ],
     [
      "Ankle wall rocks",
@@ -8340,12 +8365,12 @@ const SESSIONS = [
     [
      "Strides on the grade",
      "2 x 15s",
-     "Two short accelerations up the bottom of the climb. Not hard, just tell the legs what is coming."
+     "OUTSIDE: two short accelerations up the bottom of the climb. TREADMILL: 2 x 15s at 8% at 8 km/h with a minute of walking between. Not hard, just tell the legs what is coming."
     ],
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -8592,7 +8617,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -9007,7 +9032,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -9110,7 +9135,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -9357,7 +9382,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -9772,7 +9797,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -9875,7 +9900,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -10122,7 +10147,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -10537,7 +10562,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -10640,7 +10665,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -10892,7 +10917,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -11280,7 +11305,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -11383,7 +11408,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -11630,7 +11655,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -12045,7 +12070,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -12148,7 +12173,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -12395,7 +12420,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -12809,7 +12834,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -12912,7 +12937,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -13159,7 +13184,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -13546,7 +13571,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -13642,7 +13667,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -13886,7 +13911,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -14300,7 +14325,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -14403,7 +14428,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -14650,7 +14675,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -15064,7 +15089,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -15167,7 +15192,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -15414,7 +15439,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -15801,7 +15826,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -15904,7 +15929,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -16156,7 +16181,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -16570,7 +16595,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -16673,7 +16698,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -16920,7 +16945,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -17334,7 +17359,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -17437,7 +17462,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -17684,7 +17709,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -18098,7 +18123,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -18201,7 +18226,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -18321,7 +18346,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -18743,7 +18768,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -18846,7 +18871,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -18966,7 +18991,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -19300,7 +19325,7 @@ const SESSIONS = [
     [
      "Leg swings, side-to-side",
      "10 each leg",
-     "Face a wall or post, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
+     "Face a wall, post or the treadmill console, swing the leg across your body then out wide. This is the one that opens the groin, so do not skip it."
     ],
     [
      "Lateral lunges",
@@ -19713,24 +19738,233 @@ const CONTENT = {
   ]
  }
 };
-const START = "2026-07-27", RACE = "2027-01-30";
-const ROUTES = {
- south:      {ico:"🛣️", name:"SOUTH - flat and easy",
-              desc:"From the house heading south. Sealed, familiar, no real rise. Anything judged on pace, and every easy run, belongs here."},
- north:      {ico:"🌄", name:"NORTH - rolling hills",
-              desc:"From the house heading north. Constant up and down. Good for short hill work and rolling strength, useless for holding an even pace."},
- graveyard:  {ico:"🌲", name:"THE GRAVEYARD - 15 minute drive",
-              desc:"Measured 30 Aug 2026: 26m up to 95m, main climb 870m at 7.3% for 63m, descents at -6.5% and -7.2%. Beerwah's climb is 800m at 9.8% for 78m, so this is the closest thing you can reach to the kilometre that decides the race. One loop is about 2.4km and 63m. Worth the car; nothing else is."},
- cartwright: {ico:"⛰️", name:"POINT CARTWRIGHT - the big hill",
-              desc:"Ten minute drive. Measured 29 Aug 2026: 9m up to 26m, the working line 205m at 8% in about 65 seconds, plus a steeper 117m at 14.7%. Honest gradient, quarter of the length. The substitute when the graveyard is out of reach."},
- ewen:       {ico:"🏞️", name:"EWEN MADDOCK DAM - 30 minute drive",
-              desc:"The long trail he used to run often, and it sits close to Beerwah itself. Not measured yet: the history is on Strava, not in the training file. Occasional long-run and recce venue once we have a GPS file for it."},
- trail:      {ico:"🌲", name:"TRAIL - drive required",
-              desc:"Real climbing, real descents, real footing. Use the graveyard unless a session names somewhere else."},
- belt:       {ico:"🏃", name:"GARAGE TREADMILL",
-              desc:"Guaranteed gradient, no traffic, no dark. Belt speed off the console is the real number, not watch pace."},
- race:       {ico:"🏁", name:"RACE DAY", desc:"Where the event takes you."}
+const ATHLETE = {
+ "name": "Mitch Evans",
+ "first": "Mitch",
+ "slug": "mitch",
+ "store_prefix": "bw",
+ "title": "Beerwah@Night 2027 — Sub-50",
+ "theme_color": "#0A0C15",
+ "device": "Garmin",
+ "start": "2026-07-27",
+ "race": "2027-01-30",
+ "weeks": 27,
+ "race_short": "Beerwah",
+ "race_name": "Beerwah@Night",
+ "start_label": "Program starts Mon 27 Jul 2026",
+ "plan_title": "27-week block · Mon 27 Jul → race Sat 30 Jan, 7pm",
+ "tabs": [
+  "Today",
+  "Week",
+  "Plan",
+  "Strength",
+  "Content",
+  "Progress",
+  "Rules",
+  "Sync"
+ ],
+ "colors": {
+  "--page": "#0A0C15",
+  "--surface": "#141927",
+  "--surface2": "#0E1220",
+  "--ink": "#F5F3F0",
+  "--ink2": "#A7ADBD",
+  "--muted": "#6E7488",
+  "--grid": "#232A3C",
+  "--axis": "#323A50",
+  "--border": "rgba(255,255,255,.07)",
+  "--brand": "#FF5A24",
+  "--brand2": "#FF7A3D",
+  "--branddeep": "#C23A10",
+  "--s1": "#F5551E",
+  "--s2": "#3987E5",
+  "--s3": "#199E70",
+  "--z1": "#FFC09B",
+  "--z2": "#FF6B35",
+  "--z3": "#B33409",
+  "--good": "#2FC24F",
+  "--warn": "#FAB219",
+  "--serious": "#EC835A",
+  "--crit": "#E5484D",
+  "--goodtext": "#35C759",
+  "--night": "#8E7CF0",
+  "--brandrgb": "255,90,36",
+  "--glow": "#1A2138",
+  "--page2": "#10141F",
+  "--barend": "#E8430E",
+  "--navrgb": "13,16,26",
+  "--card1": "#171C2D",
+  "--card2": "#131726",
+  "--timer1": "#1E2436",
+  "--toastbg": "#1d2333"
+ },
+ "header_html": "<svg class=\"mark\" viewBox=\"0 0 512 512\"><defs><radialGradient id=\"hsky\" cx=\"50%\" cy=\"30%\" r=\"85%\"><stop offset=\"0%\" stop-color=\"#1A2138\"/><stop offset=\"100%\" stop-color=\"#0A0C18\"/></radialGradient><linearGradient id=\"hmtn\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#FF7A3D\"/><stop offset=\"45%\" stop-color=\"#F0521C\"/><stop offset=\"100%\" stop-color=\"#9E2A08\"/></linearGradient></defs><rect width=\"512\" height=\"512\" rx=\"112\" fill=\"url(#hsky)\"/><g fill=\"#F4E8DC\"><circle cx=\"110\" cy=\"110\" r=\"7\"/><circle cx=\"200\" cy=\"80\" r=\"4\" opacity=\".6\"/><circle cx=\"330\" cy=\"95\" r=\"5\" opacity=\".7\"/><circle cx=\"90\" cy=\"200\" r=\"4\" opacity=\".5\"/></g><g transform=\"translate(392,108)\"><circle r=\"40\" fill=\"#FFE3C9\"/><circle cx=\"-16\" cy=\"-11\" r=\"37\" fill=\"url(#hsky)\"/></g><path d=\"M84 408 C 120 404, 138 372, 158 322 C 178 270, 200 210, 228 172 C 242 152, 252 144, 262 144 C 274 144, 288 158, 302 180 C 330 226, 348 282, 368 330 C 388 376, 404 402, 430 408 Z\" fill=\"url(#hmtn)\"/><rect x=\"72\" y=\"404\" width=\"368\" height=\"10\" rx=\"5\" fill=\"#FF6A2F\"/></svg><div><h1>BEERWAH<span>@NIGHT</span></h1><p class=\"tag\">SUB-50 · PODIUM · 30 JAN 2027</p></div><div class=\"count\"><b id=\"cd\">—</b><span>days to go</span></div>",
+ "routes": {
+  "south": {
+   "ico": "🛣️",
+   "name": "SOUTH - flat and easy",
+   "desc": "From the house heading south. Sealed, familiar, no real rise. Anything judged on pace, and every easy run, belongs here."
+  },
+  "north": {
+   "ico": "🌄",
+   "name": "NORTH - rolling hills",
+   "desc": "From the house heading north. Constant up and down. Good for short hill work and rolling strength, useless for holding an even pace."
+  },
+  "graveyard": {
+   "ico": "🌲",
+   "name": "THE GRAVEYARD - 15 minute drive",
+   "desc": "Measured 30 Aug 2026: 26m up to 95m, main climb 870m at 7.3% for 63m, descents at -6.5% and -7.2%. Beerwah's climb is 800m at 9.8% for 78m, so this is the closest thing you can reach to the kilometre that decides the race. One loop is about 2.4km and 63m. Worth the car; nothing else is."
+  },
+  "cartwright": {
+   "ico": "⛰️",
+   "name": "POINT CARTWRIGHT - the big hill",
+   "desc": "Ten minute drive. Measured 29 Aug 2026: 9m up to 26m, the working line 205m at 8% in about 65 seconds, plus a steeper 117m at 14.7%. Honest gradient, quarter of the length. The substitute when the graveyard is out of reach."
+  },
+  "ewen": {
+   "ico": "🏞️",
+   "name": "EWEN MADDOCK DAM - 30 minute drive",
+   "desc": "The long trail he used to run often, and it sits close to Beerwah itself. Not measured yet: the history is on Strava, not in the training file. Occasional long-run and recce venue once we have a GPS file for it."
+  },
+  "trail": {
+   "ico": "🌲",
+   "name": "TRAIL - drive required",
+   "desc": "Real climbing, real descents, real footing. Use the graveyard unless a session names somewhere else."
+  },
+  "belt": {
+   "ico": "🏃",
+   "name": "GARAGE TREADMILL",
+   "desc": "Guaranteed gradient, no traffic, no dark. Belt speed off the console is the real number, not watch pace."
+  },
+  "race": {
+   "ico": "🏁",
+   "name": "RACE DAY",
+   "desc": "Where the event takes you."
+  }
+ },
+ "route_order": [
+  "south",
+  "north",
+  "graveyard",
+  "cartwright",
+  "ewen",
+  "belt"
+ ],
+ "chain": [
+  [
+   1600,
+   3335,
+   3720
+  ],
+  [
+   1440,
+   3000,
+   3345
+  ],
+  [
+   1350,
+   2815,
+   3140
+  ],
+  [
+   1290,
+   2690,
+   3000
+  ]
+ ],
+ "tt_markers": {
+  "1": 1600,
+  "8": 1485,
+  "16": 1370,
+  "23": 1305
+ },
+ "tt_chart": {
+  "title": "5km time trials vs the 21:30 chain",
+  "legend": "Marker chain to podium",
+  "wks": [
+   1,
+   8,
+   16,
+   23,
+   27
+  ],
+  "tmin": 1230,
+  "tmax": 1660,
+  "grid": [
+   1620,
+   1500,
+   1380,
+   1290
+  ],
+  "final": 1290
+ },
+ "predictor": {
+  "target_secs": 3022,
+  "needs_label": "Podium needs",
+  "needs_text": "sub-50:22 (2026) · safe: 48:30-49:00",
+  "inside_text": "Predicted inside the podium window. Execute.",
+  "gap_prefix": "Gap to podium: ",
+  "gap_suffix": ". The chain: 5km → flat 10km → +11-12% terrain/darkness. Move the 5km, everything follows."
+ },
+ "easy": {
+  "pace_spk": 385,
+  "hr": 138,
+  "drift_text": "Grey-zone drift detected (faster than 6:35/km with HR 138+). Every minute between 6:00-6:30/km is fatigue without adaptation. Slow down — 6:45/km."
+ },
+ "zone_est": {
+  "hr1": 143,
+  "hr2": 168,
+  "pace1": 385,
+  "pace2": 330
+ },
+ "milestones_html": "<div class=\"card\"><h2>Milestones</h2><table><tr><th>When</th><th>What</th></tr>\n  <tr><td>Sat 8 Aug</td><td>Rainbow Beach 11km — easy, walk the dunes</td></tr>\n  <tr><td>W8 · 15 Sep</td><td>5km TT #2 (marker 24:45)</td></tr>\n  <tr><td>Oct–Nov</td><td>Flat road 10km tune-up — find and enter one</td></tr>\n  <tr><td>W16 · 10 Nov</td><td>5km TT #3 (marker 22:50) · head torch in use</td></tr>\n  <tr><td>W18 · 23 Nov</td><td>Night running begins · polarized</td></tr>\n  <tr><td><b>Sun 6 Dec</b></td><td><b>Beerwah@Daybreak — target 50:00–51:30 · GO/NO-GO</b> (enter by 30 Nov)</td></tr>\n  <tr><td>Dec–Jan</td><td>SEQ summer training = natural heat acclimation (evidence: a block 7-8 wks out decays ~75% by race day)</td></tr>\n  <tr><td>W23 · 29 Dec</td><td>5km TT #4 (marker 21:45) — final go/no-go</td></tr>\n  <tr><td>W24</td><td>Full course rehearsal, night, race kit</td></tr>\n  <tr><td>W26</td><td>Taper (-45%) + HEAT TOP-UP week + last barbell session (10 days out). Enter the race by 24 Jan!</td></tr>\n  <tr><td><b>Sat 30 Jan, 7pm</b></td><td><b>BEERWAH@NIGHT — A: sub-50 (safe podium est. 48:30-49:00 in a strong year)</b></td></tr></table></div>",
+ "rules_html": "<div class=\"card\"><h2>What the numbers on a session mean</h2>\n  <div class=\"rtcard\"><span class=\"rtico\">&#128207;</span><div><b>The distance is always the TOTAL</b><p>Every km figure on a session card is the whole thing: warm-up jog, the work, and the cool-down. Nothing is added on top. On an easy run the first kilometre is run at shuffle pace, and it is kilometre one of that total, not an extra one.</p></div></div>\n  <div class=\"rtcard\"><span class=\"rtico\">&#9968;</span><div><b>The vert is climbing, not net</b><p>Metres gained over the session. Descending is not subtracted.</p></div></div>\n  <div class=\"rtcard\"><span class=\"rtico\">&#128337;</span><div><b>Warm-up and cool-down are stated once</b><p>If the brief says 15 min easy, that IS the warm-up jog. The drills below it come after, not instead. Two separate warm-ups is a bug, so tell me if you see one.</p></div></div>\n  </div>\n\n  <div class=\"card\"><h2>Your routes</h2>{{routes}}\n  <p class=\"small\" style=\"margin-top:10px\">The rule behind the picks: weekdays are out the door, no car, because a drive before 4:30am does not happen. Flat south for anything judged on pace and every easy run, rolling north for strength and the long easy weekend run. The car comes out once a weekend, for the graveyard, because that is the only ground nearby shaped like the kilometre that decides the race.</p></div>\n\n  <div class=\"card\"><h2>Zones (set 26 Aug 2026 — reset at the W8 TT, 15 Sep)</h2>\n  <p class=\"small\" style=\"margin-bottom:8px\">Threshold HR 182, max 200. Taken off your 2024-2026 race files, not off a formula. Every zone below is a percentage of threshold, so threshold is the number that matters.</p>\n  <table><tr><th>Zone</th><th>HR</th><th>Feel</th></tr>\n  <tr><td><b>Z1 recovery</b></td><td><b>up to 153</b></td><td>Full sentences, no effort</td></tr>\n  <tr><td>Z2 aerobic</td><td>154–162</td><td>Easy running lives here</td></tr>\n  <tr><td>Z3 tempo</td><td>163–171</td><td>Comfortably hard</td></tr>\n  <tr><td>Z4 sub-threshold</td><td>172–181</td><td>Climb efforts, short answers</td></tr>\n  <tr><td>Z5 threshold</td><td>182–186</td><td>Race pace on the climb</td></tr>\n  <tr><td>Z6+</td><td>187 and up</td><td>Sprints only</td></tr></table>\n  <p class=\"small\" style=\"margin-top:6px\">Uphill is ALWAYS by effort or HR, never pace. Easy means under 158 even when it feels absurd, because the grey zone in between is fatigue without adaptation.</p>\n  <p class=\"small\" style=\"margin-top:6px\"><b>158 is a CEILING, not a target.</b> Aim at it and you spend half the run above it. Easy runs should AVERAGE in the low 150s, with brief pokes into the 160s on rises that settle back within 60-90 seconds.</p></div>\n\n  <div class=\"card\"><h2>Chest strap (from 5 Sep 2026)</h2>\n  <div class=\"rtcard\"><span class=\"rtico\">&#10084;</span><div><b>Wear it every single session</b><p>The worst option is mixing. Some runs on the strap and some on the wrist means no two runs can be compared cleanly. Consistency from here matters more than matching the old data.</p></div></div>\n  <div class=\"rtcard\"><span class=\"rtico\">&#128167;</span><div><b>Wet the electrodes before you put it on</b><p>The two contact pads on the underside of the band. A dry strap is the number one cause of a garbage first five minutes, usually a fake reading up around 190. Lick them, spit on them, or use a bit of water.</p></div></div>\n  <div class=\"rtcard\"><span class=\"rtico\">&#128202;</span><div><b>Zones below are PROVISIONAL until the W8 TT</b><p>Threshold 182 and max 200 were derived from wrist-optical data. You are now on a better sensor. Keep training to these numbers as a working guide, then they get re-derived off the strap data from the 15 Sep time trial.</p></div></div>\n  <div class=\"rtcard\"><span class=\"rtico\">&#128260;</span><div><b>Where strap and wrist differ</b><p>At easy effort they usually agree within a few beats. At maximal effort they do not: wrist optical lags the rise and under-reads the peak. So expect the TT to show a higher and earlier peak than the July baseline. That is the sensor getting honest, not you getting unfit.</p></div></div>\n  <p class=\"small\" style=\"margin-top:10px\">Do not compare any run before 5 Sep 2026 against any run after it on heart rate alone. Within a single run the numbers are always fair game.</p></div>\n\n  <div class=\"card\"><h2>Injury decision rules — the traffic light</h2>\n  <div class=\"verdict\"><span class=\"dot\" style=\"background:var(--good)\"></span><div><b>0–2/10, gait unchanged</b><p>Continue. Note it in the session log so patterns show up.</p></div></div>\n  <div class=\"verdict\"><span class=\"dot\" style=\"background:var(--warn)\"></span><div><b>3–4/10 during, settles within 24h, no morning stiffness</b><p>Finish at reduced intensity and flag it. Two flags in a row = swap the next quality session for easy, and take the down week early if one is near.</p></div></div>\n  <div class=\"verdict\"><span class=\"dot\" style=\"background:var(--crit)\"></span><div><b>5+/10, sharp/sudden, or it changes your stride</b><p>Stop the session. Two days off running. Easy 20-min test run day 3 — pain-free means resume, otherwise book the physio.</p></div></div>\n  <details><summary>Achilles / calf red flags (the returning-runner pattern)</summary>\n  <ul><li>Morning stiffness &gt; 30 min → drop hills and strides until it's back under 10 min.</li>\n  <li>Pain that \"warms up\" mid-run then returns worse after → tendon warning, not soreness. Cut volume 30% for the week.</li>\n  <li>Localised tenderness you can press on the tendon → physio within 5 days. Keep strength (calf raises ARE the treatment).</li>\n  <li>Capacity benchmark: work toward 25 single-leg calf raises per side with under 10% left-right difference. Test monthly on a Monday.</li>\n  <li>Anything after sand or new-surface days gets 48h grace before judging.</li></ul></details>\n  <details><summary>Knee + back + elbow</summary>\n  <ul><li>Knee pain descending stairs next morning → skip the next descent session, keep everything else. Heavy leg work is the treatment, not the risk.</li>\n  <li>Back: no conventional deadlifts, ever. RDLs at moderate load.</li>\n  <li>Elbow: get it professionally assessed (action item). Skip DB press if it objects.</li></ul></details>\n  <details><summary>Warm-ups / cool-downs</summary>\n  <ul><li><b>Quality runs:</b> 15 min easy building + leg swings, A-skips, high knees + 4 x 20s strides. CD 10 min easy.</li>\n  <li><b>TTs / races:</b> 15 min easy + drills + 3 strides + 2 min at target pace, 3 min easy, start. CD 10 min.</li>\n  <li><b>Hills/terrain:</b> 15 min easy to the hill + 2 strides on the grade. CD 10 min.</li>\n  <li><b>Long runs:</b> first 2km slower than easy.</li>\n  <li><b>Strength:</b> after the run. 2 ramp-up sets (~50%, ~70%) before work sets.</li></ul></details></div>\n\n  <div class=\"card\"><h2>Non-negotiables</h2><details open><summary>The eight rules</summary>\n  <ul><li>Down weeks are mandatory. 12→52km/wk is where the injury lives.</li>\n  <li>Head torch by W16 — 500+ lumens, dual beam (flood for footing, spot for descents) + backup. TRAIN in it, especially fast descents.</li>\n  <li>Trail shoes with real grip (~1 min saved on its own).</li>\n  <li>Power-hike the Dungeon — train it as a skill.</li>\n  <li>Heat: SEQ summer training does the acclimating. Race-week top-up (W26): easy runs in the heat of day + optional 30 min hot bath after. Quality stays morning.</li>\n  <li>Gravl = upper body / mobility on easy days only.</li>\n  <li>Elbow assessed early.</li>\n  <li>Race fuel: carb lunch, light carb snack ~4pm, caffeine ~250-400mg at 6pm, water only on course. Practise the full timing at the W24 rehearsal.</li></ul></details>\n  <details><summary>Race day kit + entries checklist</summary>\n  <ul><li>☐ Enter Beerwah@Daybreak (closes 30 Nov)</li><li>☐ Enter flat road 10km (Oct/Nov)</li>\n  <li>☐ Enter Beerwah@Night (closes 24 Jan — no entries on the day)</li>\n  <li>☐ Head torch 500+ lm dual beam ☐ backup torch ☐ trail shoes ☐ caffeine ☐ electrolytes ☐ compression bandage (mandatory gear) ☐ phone</li></ul></details></div>",
+ "events": [
+  {
+   "name": "Beerwah@Daybreak",
+   "date": "2026-12-06",
+   "km": 10,
+   "where": "Glass House Mtns"
+  },
+  {
+   "name": "Beerwah@Night",
+   "date": "2027-01-30",
+   "km": 10,
+   "where": "Glass House Mtns",
+   "target": true
+  },
+  {
+   "name": "Takayna Trail",
+   "date": "2027-02-27",
+   "km": 22,
+   "where": "Waratah, TAS"
+  },
+  {
+   "name": "Noosa Ultra-Trail · Forest 15",
+   "date": "2027-03-20",
+   "km": 15,
+   "where": "Noosa Hinterland"
+  },
+  {
+   "name": "Mary Valley Ultra 10km",
+   "date": "2027-06-12",
+   "km": 10,
+   "where": "Imbil",
+   "note": "Graphic says Fri 11 Jun; timetable confirmed 7 Sep says Sat 12 Jun 8am. Using 12 Jun."
+  },
+  {
+   "name": "Rainbow Beach Trail Festival",
+   "date": "2027-07-31",
+   "km": 11,
+   "where": "Cooloola Coast",
+   "entered": false
+  }
+ ],
+ "intake": null,
+ "setup_html": null
 };
+const NW = ATHLETE.weeks, SP = ATHLETE.store_prefix;
+const START = ATHLETE.start, RACE = ATHLETE.race;
+const ROUTES = ATHLETE.routes;
 const ICONS={
  Today:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>',
  Week:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
@@ -19742,23 +19976,27 @@ const ICONS={
  Sync:'<path d="M20 8a8 8 0 0 0-14-2M4 16a8 8 0 0 0 14 2"/><path d="M20 3v5h-5M4 21v-5h5"/>'};
 function ringSVG(pct,center,sub){ const r=34,c=2*Math.PI*r,off=c*(1-Math.min(1,Math.max(0,pct)));
  return `<svg class="hr-ring" width="92" height="92" viewBox="0 0 92 92"><circle cx="46" cy="46" r="${r}" fill="none" stroke="var(--grid)" stroke-width="9"/><circle cx="46" cy="46" r="${r}" fill="none" stroke="url(#ringg)" stroke-width="9" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 46 46)"/><defs><linearGradient id="ringg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#E8430E"/></linearGradient></defs><text x="46" y="44" text-anchor="middle" font-size="17" font-weight="800" fill="var(--ink)">${center}</text><text x="46" y="60" text-anchor="middle" font-size="8.5" font-weight="700" fill="var(--muted)" letter-spacing=".08em">${sub}</text></svg>`; }
-const TABS = ["Today","Week","Plan","Strength","Content","Progress","Rules","Sync"];
+const TABS = ATHLETE.tabs;
 // ---------- state ----------
 const store = {
-  get logs(){ try{return JSON.parse(localStorage.getItem("bw_logs")||"{}")}catch(e){return {}} },
-  set logs(v){ localStorage.setItem("bw_logs", JSON.stringify(v)) },
-  get str(){ try{return JSON.parse(localStorage.getItem("bw_str")||"{}")}catch(e){return {}} },
-  set str(v){ localStorage.setItem("bw_str", JSON.stringify(v)) },
-  get acts(){ try{return JSON.parse(localStorage.getItem("bw_acts")||"[]")}catch(e){return []} },
-  set acts(v){ localStorage.setItem("bw_acts", JSON.stringify(v)) },
-  get well(){ try{return JSON.parse(localStorage.getItem("bw_well")||"[]")}catch(e){return []} },
-  set well(v){ localStorage.setItem("bw_well", JSON.stringify(v)) },
-  get exh(){ try{return JSON.parse(localStorage.getItem("bw_exh")||"{}")}catch(e){return {}} },
-  set exh(v){ localStorage.setItem("bw_exh", JSON.stringify(v)) },
-  get moves(){ try{return JSON.parse(localStorage.getItem("bw_moves")||"{}")}catch(e){return {}} },
-  set moves(v){ localStorage.setItem("bw_moves", JSON.stringify(v)) },
-  get cfg(){ try{return JSON.parse(localStorage.getItem("bw_cfg")||"{}")}catch(e){return {}} },
-  set cfg(v){ localStorage.setItem("bw_cfg", JSON.stringify(v)) },
+  get logs(){ try{return JSON.parse(localStorage.getItem(SP+"_logs")||"{}")}catch(e){return {}} },
+  set logs(v){ localStorage.setItem(SP+"_logs", JSON.stringify(v)) },
+  get str(){ try{return JSON.parse(localStorage.getItem(SP+"_str")||"{}")}catch(e){return {}} },
+  set str(v){ localStorage.setItem(SP+"_str", JSON.stringify(v)) },
+  get acts(){ try{return JSON.parse(localStorage.getItem(SP+"_acts")||"[]")}catch(e){return []} },
+  set acts(v){ localStorage.setItem(SP+"_acts", JSON.stringify(v)) },
+  get well(){ try{return JSON.parse(localStorage.getItem(SP+"_well")||"[]")}catch(e){return []} },
+  set well(v){ localStorage.setItem(SP+"_well", JSON.stringify(v)) },
+  get exh(){ try{return JSON.parse(localStorage.getItem(SP+"_exh")||"{}")}catch(e){return {}} },
+  set exh(v){ localStorage.setItem(SP+"_exh", JSON.stringify(v)) },
+  get moves(){ try{return JSON.parse(localStorage.getItem(SP+"_moves")||"{}")}catch(e){return {}} },
+  set moves(v){ localStorage.setItem(SP+"_moves", JSON.stringify(v)) },
+  get shots(){ try{return JSON.parse(localStorage.getItem(SP+"_shots")||"{}")}catch(e){return {}} },
+  set shots(v){ localStorage.setItem(SP+"_shots", JSON.stringify(v)) },
+  get intake(){ try{return JSON.parse(localStorage.getItem(SP+"_intake")||"{}")}catch(e){return {}} },
+  set intake(v){ localStorage.setItem(SP+"_intake", JSON.stringify(v)) },
+  get cfg(){ try{return JSON.parse(localStorage.getItem(SP+"_cfg")||"{}")}catch(e){return {}} },
+  set cfg(v){ localStorage.setItem(SP+"_cfg", JSON.stringify(v)) },
 };
 let tab = location.hash ? location.hash.slice(1) : "Today";
 if(!TABS.includes(tab)) tab = "Today";
@@ -19782,16 +20020,16 @@ function tipShow(e, html){ const t=$("#tip"); t.innerHTML=html; t.style.display=
 function tipHide(){ $("#tip").style.display="none"; }
 document.addEventListener("scroll", tipHide, true);
 // ---------- goal chain (from the program doc) ----------
-const CHAIN = [[1600,3335,3720],[1440,3000,3345],[1350,2815,3140],[1290,2690,3000]]; // [5k, flat10k, beerwah] seconds
+const CHAIN = ATHLETE.chain||null;
 function chain(fiveK){
-  const c=CHAIN; if(fiveK>=c[0][0]){ const r=fiveK/c[0][0]; return [c[0][1]*r, c[0][2]*r]; }
+  const c=CHAIN; if(!c) return [null,null]; if(fiveK>=c[0][0]){ const r=fiveK/c[0][0]; return [c[0][1]*r, c[0][2]*r]; }
   if(fiveK<=c[3][0]){ const r=fiveK/c[3][0]; return [c[3][1]*r, c[3][2]*r]; }
   for(let i=0;i<3;i++){ const a=c[i],b=c[i+1];
     if(fiveK<=a[0]&&fiveK>=b[0]){ const f=(a[0]-fiveK)/(a[0]-b[0]);
       return [a[1]+f*(b[1]-a[1]), a[2]+f*(b[2]-a[2])]; } }
   return [null,null];
 }
-const TT_MARKERS = {1:1600, 8:1485, 16:1370, 23:1305}; // 26:40 -> 24:45 -> 22:50 -> 21:45 -> race 21:30
+const TT_MARKERS = ATHLETE.tt_markers||{};
 // ---------- data joins ----------
 let MV = {};
 function sessionsOn(date){ return SESSIONS.filter(s=>(MV[s.id]||s.date)===date); }
@@ -19843,14 +20081,14 @@ function easyDiscipline(){
     for(const a of actsOn(s.date)){
       if(a.km<2) continue; tot++;
       const pace=a.secs&&a.km? a.secs/a.km : null;
-      const good=(pace!==null&&pace>=385)||(a.hr&&a.hr<138);
+      const good=(pace!==null&&pace>=ATHLETE.easy.pace_spk)||(a.hr&&a.hr<ATHLETE.easy.hr);
       if(good) ok++; else worst.push(s.date);
     }
   }
   return {ok,tot,worst:worst.slice(-3)};
 }
 function verdicts(){
-  const v=[]; const t=todayISO(); const wk=Math.min(27,Math.max(1,weekOf(t)));
+  const v=[]; const t=todayISO(); const wk=Math.min(NW,Math.max(1,weekOf(t)));
   // volume compliance, last 4 completed weeks
   let comp=[], target=0, actual=0;
   for(let w=Math.max(1,wk-4); w<wk; w++){ const a=weekActual(w); target+=WEEKS[w].km; actual+=a.km; }
@@ -19862,18 +20100,18 @@ function verdicts(){
        : pct>=90? "On the loading curve. Down weeks stay as written."
        : pct>=75? "A little under. Fine if it was a deliberate absorb; flag it if sessions are silently dropping."
        : "Well under plan. If two consecutive sessions felt wrong, take the down week early — otherwise re-anchor this week."});
-  } else v.push({lvl:"good",t:"Week 1 of 27",p:"Volume verdicts start once a full week is banked."});
+  } else v.push({lvl:"good",t:"Week 1 of "+NW,p:"Volume verdicts start once a full week is banked."});
   // easy discipline
   const e=easyDiscipline();
   if(e.tot>0){ const pct=Math.round(100*e.ok/e.tot);
     v.push({lvl:pct>=80?"good":pct>=60?"warn":"crit", t:`Easy-day discipline: ${pct}% truly easy (${e.ok}/${e.tot})`,
       p:pct>=80? "Easy days are actually easy. This is the single biggest determinant of the program working."
-        : "Grey-zone drift detected (faster than 6:35/km with HR 138+). Every minute between 6:00-6:30/km is fatigue without adaptation. Slow down — 6:45/km."});
+        : ATHLETE.easy.drift_text});
   } else v.push({lvl:"warn",t:"Easy-day discipline: no synced data yet",p:"Connect intervals.icu in Sync so easy-day pace/HR gets checked automatically."});
   // TT trajectory
   const tt=latest5k();
-  if(tt){ const mk=TT_MARKERS[tt.week]||null; const [f10,bw]=chain(tt.secs);
-    let s=`Current 5km ${fmtT(tt.secs)} → flat 10km ~${fmtT(f10)} → Beerwah ~${fmtT(bw)}`;
+  if(tt&&CHAIN){ const mk=TT_MARKERS[tt.week]||null; const [f10,bw]=chain(tt.secs);
+    let s=`Current 5km ${fmtT(tt.secs)} → flat 10km ~${fmtT(f10)} → ${ATHLETE.race_short} ~${fmtT(bw)}`;
     let lvl="good", p="";
     if(mk){ const d=tt.secs-mk;
       lvl = d<=10?"good": d<=45?"warn":"serious";
@@ -19901,8 +20139,8 @@ function render(){
   const t=todayISO();
   $("#cd").textContent = Math.max(0,dayDiff(t,RACE));
   const wk=weekOf(t);
-  const wkm = WEEKS[Math.min(27,Math.max(1,wk))];
-  $("#chips").innerHTML = `<span class="chip acc">Week ${Math.min(27,Math.max(1,wk))} of 27 · Phase ${wkm?esc(wkm.phase):""}</span>
+  const wkm = WEEKS[Math.min(NW,Math.max(1,wk))];
+  $("#chips").innerHTML = `<span class="chip acc">Week ${Math.min(NW,Math.max(1,wk))} of ${NW} · Phase ${wkm?esc(wkm.phase):""}</span>
     ${wkm&&wkm.down?'<span class="chip">DOWN WEEK · not optional</span>':""}
     <span class="chip">${wkm?wkm.km+"km · "+wkm.vert+"m vert this week":""}</span>`;
   const R={Today:rToday,Week:rWeek,Plan:rPlan,Strength:rStrength,Content:rContent,Progress:rProgress,Rules:rRules,Sync:rSync};
@@ -19978,7 +20216,7 @@ function sessionCard(s, expanded){
     <details class="addpick"><summary>＋ add exercise (felt cold? grab one)</summary><div class="libchips">${chips||'<span class="small">all added</span>'}</div></details></details>`;
   };
   const acts=actsOn(s.date);
-  const actHtml = (s.type!=="strength"&&acts.length)? `<p class="small" style="margin-top:6px">Garmin: ${acts.map(a=>`${a.km.toFixed(1)}km · ${fmtT(a.secs)} · ${fmtPace(a.secs/a.km)}${a.hr?" · "+Math.round(a.hr)+"bpm":""}${a.vert?" · "+Math.round(a.vert)+"m":""}`).join(" | ")}</p>` : "";
+  const actHtml = (s.type!=="strength"&&acts.length)? `<p class="small" style="margin-top:6px">${ATHLETE.device}: ${acts.map(a=>`${a.km.toFixed(1)}km · ${fmtT(a.secs)} · ${fmtPace(a.secs/a.km)}${a.hr?" · "+Math.round(a.hr)+"bpm":""}${a.vert?" · "+Math.round(a.vert)+"m":""}`).join(" | ")}</p>` : "";
   let rtBlock="";
   const rt = ROUTES[s.route];
   if(rt){
@@ -20010,7 +20248,7 @@ function sessionCard(s, expanded){
     ${wucd(s.wu,"Warm-up","↗","wu")}${logForm}${wucd(s.cd,"Cool-down","↘","cdd")}${actHtml}</div>`;
 }
 function rContent(){
-  const wk=Math.min(27,Math.max(1,weekOf(todayISO())));
+  const wk=Math.min(NW,Math.max(1,weekOf(todayISO())));
   const c=CONTENT[wk];
   const brief = `<div class="card"><h2>The vlog brief</h2>
     <p class="small">The standing brief: the story, the kit, the weekly rhythm, the shots that carry an episode, and the arc through to race night. It does not change week to week, so read it once.</p>
@@ -20039,14 +20277,15 @@ function rContent(){
 }
 function tickShot(k,v){ const s=store.shots||{}; if(v)s[k]=1; else delete s[k]; store.shots=s; render(); }
 function rToday(){
+  if(ATHLETE.intake && !store.intake.done) return rIntake();
   const t=todayISO(); let list=sessionsOn(t);
-  const wkN=Math.min(27,Math.max(1,weekOf(t))); const wm=WEEKS[wkN]; const wa=weekActual(wkN);
+  const wkN=Math.min(NW,Math.max(1,weekOf(t))); const wm=WEEKS[wkN]; const wa=weekActual(wkN);
   const pct=wm? wa.km/wm.km : 0;
   const cfgS=store.cfg;
   const syncAge = cfgS.last? Math.round((Date.now()-cfgS.last)/60e3) : null;
   const syncLine = (!cfgS.key||!cfgS.aid)
-    ? `<div class="syncbar warn"><span>Garmin data is not connected on this device. localStorage is per device, so the phone and the Mac each need setting up once.</span><button class="ghost" onclick="go('Sync')">Set up</button></div>`
-    : `<div class="syncbar"><span>Garmin${syncAge===null?" never synced":(syncAge<2?" synced just now":" synced "+(syncAge<60? syncAge+" min ago" : Math.round(syncAge/60)+"h ago"))}</span><button class="ghost" onclick="maybeSync(true)">Sync now</button></div>`;
+    ? `<div class="syncbar warn"><span>${ATHLETE.device} data is not connected on this device. localStorage is per device, so the phone and the Mac each need setting up once.</span><button class="ghost" onclick="go('Sync')">Set up</button></div>`
+    : `<div class="syncbar"><span>${ATHLETE.device}${syncAge===null?" never synced":(syncAge<2?" synced just now":" synced "+(syncAge<60? syncAge+" min ago" : Math.round(syncAge/60)+"h ago"))}</span><button class="ghost" onclick="maybeSync(true)">Sync now</button></div>`;
   let head=`<div class="card hero">${ringSVG(pct, Math.round(pct*100)+"%", "WEEK VOL")}
     <div class="ht"><b>${wa.km.toFixed(1)} of ${wm?wm.km:0}km this week</b>
     <p>${Math.round(wa.vert)} of ${wm?wm.vert:0}m vert · ${wm?esc(wm.phase):""}${wm&&wm.down?" · DOWN WEEK":""}</p>
@@ -20054,7 +20293,7 @@ function rToday(){
   <h2 style="font-size:11px;color:var(--muted);margin:2px 2px 8px;letter-spacing:.09em">TODAY — ${new Date().toDateString().toUpperCase()}</h2>`;
   if(!list.length){
     const before = t<START;
-    head+=`<div class="card"><h3>${before?"Program starts Mon 27 Jul 2026":"Outside the 27-week block"}</h3></div>`;
+    head+=`<div class="card"><h3>${before?ATHLETE.start_label:(t>RACE?"Outside the "+NW+"-week block":"Nothing scheduled today")}</h3></div>`;
   }
   let html=head+list.map(s=>sessionCard(s,true)).join("");
   // tomorrow preview
@@ -20274,13 +20513,13 @@ function sparkline(vals){
 function unLog(id){ const logs=store.logs; if(logs[id]) logs[id].completed=false; store.logs=logs; render(); toast("Marked not done"); }
 // ---------- Week ----------
 function rWeek(wk){
-  const t=todayISO(); wk = planWk || Math.min(27,Math.max(1,weekOf(t)));
+  const t=todayISO(); wk = planWk || Math.min(NW,Math.max(1,weekOf(t)));
   const m=WEEKS[wk]; const a=weekActual(wk);
   const monD=new Date(START+"T12:00"); monD.setDate(monD.getDate()+(wk-1)*7);
   let html=`<div class="row" style="margin:4px 0 10px">
     <button class="ghost" onclick="planWk=${Math.max(1,wk-1)};render()">‹</button>
     <b style="flex:1;text-align:center">Week ${wk} · ${esc(m.phase)}${m.down?" · DOWN":""}</b>
-    <button class="ghost" onclick="planWk=${Math.min(27,wk+1)};render()">›</button></div>`;
+    <button class="ghost" onclick="planWk=${Math.min(NW,wk+1)};render()">›</button></div>`;
   if(m.note) html+=`<p class="small" style="margin:0 2px 8px">${esc(m.note)}</p>`;
   html+=`<div class="card"><div class="row" style="justify-content:space-between"><span class="small">Volume: <b>${a.km.toFixed(1)}</b> / ${m.km}km target</span><span class="small">Vert: <b>${Math.round(a.vert)}</b> / ${m.vert}m</span></div>
     <div class="bar"><i style="width:${Math.min(100,100*a.km/m.km)}%"></i></div>
@@ -20315,7 +20554,7 @@ function rDayView(date){
     +`<button class="ghost" onclick="go('Week')">‹ Back to week</button>`;
 }
 function swapSection(date){
-  const wk=weekOf(date); if(wk<1||wk>27) return "";
+  const wk=weekOf(date); if(wk<1||wk>NW) return "";
   const monD=new Date(START+"T12:00"); monD.setDate(monD.getDate()+(wk-1)*7);
   let btns="";
   for(let i=0;i<7;i++){
@@ -20330,9 +20569,9 @@ function swapSection(date){
 }
 // ---------- Plan ----------
 function rPlan(){
-  const cur=Math.min(27,Math.max(1,weekOf(todayISO())));
-  let html=`<div class="card"><h2>27-week block · Mon 27 Jul → race Sat 30 Jan, 7pm</h2><div class="grid27">`;
-  for(let w=1;w<=27;w++){ const m=WEEKS[w]; const a=weekActual(w);
+  const cur=Math.min(NW,Math.max(1,weekOf(todayISO())));
+  let html=`<div class="card"><h2>${ATHLETE.plan_title}</h2><div class="grid27">`;
+  for(let w=1;w<=NW;w++){ const m=WEEKS[w]; const a=weekActual(w);
     html+=`<div class="wk ${w===cur?"cur":""}" onclick="planWk=${w};go('Week');planWk=${w};render()">
       <div class="n">W${w}${m.down?" ↓":""}</div>
       <div class="p" style="color:${phaseColor(m.phase)}">${esc(m.phase)}</div>
@@ -20341,18 +20580,7 @@ function rPlan(){
       ${m.note?`<div class="small" style="font-size:10px;margin-top:2px">${esc(m.note.slice(0,42))}</div>`:""}
     </div>`; }
   html+=`</div></div>`;
-  html+=`<div class="card"><h2>Milestones</h2><table><tr><th>When</th><th>What</th></tr>
-  <tr><td>Sat 8 Aug</td><td>Rainbow Beach 11km — easy, walk the dunes</td></tr>
-  <tr><td>W8 · 15 Sep</td><td>5km TT #2 (marker 24:45)</td></tr>
-  <tr><td>Oct–Nov</td><td>Flat road 10km tune-up — find and enter one</td></tr>
-  <tr><td>W16 · 10 Nov</td><td>5km TT #3 (marker 22:50) · head torch in use</td></tr>
-  <tr><td>W18 · 23 Nov</td><td>Night running begins · polarized</td></tr>
-  <tr><td><b>Sun 6 Dec</b></td><td><b>Beerwah@Daybreak — target 50:00–51:30 · GO/NO-GO</b> (enter by 30 Nov)</td></tr>
-  <tr><td>Dec–Jan</td><td>SEQ summer training = natural heat acclimation (evidence: a block 7-8 wks out decays ~75% by race day)</td></tr>
-  <tr><td>W23 · 29 Dec</td><td>5km TT #4 (marker 21:45) — final go/no-go</td></tr>
-  <tr><td>W24</td><td>Full course rehearsal, night, race kit</td></tr>
-  <tr><td>W26</td><td>Taper (-45%) + HEAT TOP-UP week + last barbell session (10 days out). Enter the race by 24 Jan!</td></tr>
-  <tr><td><b>Sat 30 Jan, 7pm</b></td><td><b>BEERWAH@NIGHT — A: sub-50 (safe podium est. 48:30-49:00 in a strong year)</b></td></tr></table></div>`;
+  html+=ATHLETE.milestones_html||"";
   return html;
 }
 // ---------- Strength ----------
@@ -20388,52 +20616,53 @@ function rProgress(){
   return `<div class="card"><h2>Weekly volume — planned vs actual</h2>
     <div class="legend"><span><i style="background:var(--s1)"></i>Actual km</span><span><i style="background:none;border:1.5px solid var(--axis)"></i>Planned km</span></div>
     <div id="chVol"></div></div>
-  <div class="card"><h2>5km time trials vs the 21:30 chain</h2>
-    <div class="legend"><span><i style="background:var(--s1)"></i>Your TTs</span><span><i style="background:none;border:1.5px dashed var(--muted)"></i>Marker chain to podium</span></div>
-    <div id="chTT"></div></div>
+  ${CHAIN?`<div class="card"><h2>${ATHLETE.tt_chart.title}</h2>
+    <div class="legend"><span><i style="background:var(--s1)"></i>Your TTs</span><span><i style="background:none;border:1.5px dashed var(--muted)"></i>${ATHLETE.tt_chart.legend}</span></div>
+    <div id="chTT"></div></div>`:""}
   <div class="card"><h2>Zone discipline — time by intensity</h2>
     <div class="legend"><span><i style="background:var(--z1)"></i>Z1 easy</span><span><i style="background:var(--z2)"></i>Z2 steady/threshold</span><span><i style="background:var(--z3)"></i>Z3 hard</span></div>
     <div id="chZone"></div><p class="small" id="zoneNote"></p></div>
-  <div class="card"><h2>Race predictor</h2><div id="chPred"></div></div>`;
+  ${CHAIN?`<div class="card"><h2>Race predictor</h2><div id="chPred"></div></div>`:""}`;
 }
 function svgOpen(w,h){ return `<svg viewBox="0 0 ${w} ${h}" width="100%" style="display:block">`; }
 function drawCharts(){
   const W=Math.min(820,$("#chVol").clientWidth||760), H=190, L=30, B=22;
-  const cur=Math.min(27,Math.max(1,weekOf(todayISO())));
+  const cur=Math.min(NW,Math.max(1,weekOf(todayISO())));
   // volume chart
-  let max=60; const bw=(W-L-6)/27;
+  let max=60; const bw=(W-L-6)/NW;
   let s=svgOpen(W,H);
   for(const g of [0,20,40,60]){ const y=(H-B)-(H-B-8)*g/max;
     s+=`<line x1="${L}" y1="${y}" x2="${W}" y2="${y}" stroke="var(--grid)" stroke-width="1"/><text x="${L-5}" y="${y+3}" font-size="9" fill="var(--muted)" text-anchor="end">${g}</text>`; }
-  for(let w=1;w<=27;w++){ const m=WEEKS[w]; const a=weekActual(w);
+  for(let w=1;w<=NW;w++){ const m=WEEKS[w]; const a=weekActual(w);
     const x=L+(w-1)*bw+1.5, wd=bw-3;
     const ph=(H-B-8)*m.km/max, py=(H-B)-ph;
     s+=`<rect x="${x}" y="${py}" width="${wd}" height="${ph}" rx="3" fill="none" stroke="var(--axis)" stroke-width="1" data-tip="W${w} planned ${m.km}km"/>`;
     if(a.km>0){ const ah=(H-B-8)*Math.min(max,a.km)/max, ay=(H-B)-ah;
       s+=`<rect x="${x+1.5}" y="${ay}" width="${Math.max(2,wd-3)}" height="${ah}" rx="3" fill="var(--s1)" data-tip="W${w} actual ${a.km.toFixed(1)}km / ${m.km} planned"/>`;
       if(w===cur) s+=`<text x="${x+wd/2}" y="${ay-5}" font-size="10" font-weight="800" fill="var(--s1)" text-anchor="middle">${a.km.toFixed(1)}</text>`; }
-    if(w%5===0||w===1||w===27) s+=`<text x="${x+wd/2}" y="${H-8}" font-size="9" fill="var(--muted)" text-anchor="middle">W${w}</text>`;
+    if(w%5===0||w===1||w===NW) s+=`<text x="${x+wd/2}" y="${H-8}" font-size="9" fill="var(--muted)" text-anchor="middle">W${w}</text>`;
     if(w===cur) s+=`<line x1="${x+wd/2}" y1="8" x2="${x+wd/2}" y2="14" stroke="var(--s2)" stroke-width="2"/>`;
   }
   s+=`<line x1="${L}" y1="${H-B}" x2="${W}" y2="${H-B}" stroke="var(--axis)"/></svg>`;
   const curA=weekActual(cur), curM=WEEKS[cur];
   $("#chVol").innerHTML=s+`<p class="small" style="margin-top:6px">Week ${cur} so far: <b style="color:var(--brand2)">${curA.km.toFixed(1)}</b> of ${curM.km}km (${Math.round(100*curA.km/curM.km)}%)${curA.vert?` · ${Math.round(curA.vert)}m vert`:""}</p>`;
   // TT chart
+  if(CHAIN){ const TC=ATHLETE.tt_chart;
   const tts=loggedTTs(); const mk=Object.entries(TT_MARKERS).map(([w,v])=>({w:+w,v}));
-  const wks=[1,8,16,23,27]; const x27=w=>L+ (W-L-14)*(w-1)/26;
-  const tmin=1230, tmax=1660; const yT=v=>14+(H-B-22)*(v-tmin)/(tmax-tmin);
+  const wks=TC.wks; const x27=w=>L+ (W-L-14)*(w-1)/(NW-1);
+  const tmin=TC.tmin, tmax=TC.tmax; const yT=v=>14+(H-B-22)*(v-tmin)/(tmax-tmin);
   let q=svgOpen(W,H);
-  for(const g of [1620,1500,1380,1290]){ const y=yT(g);
+  for(const g of TC.grid){ const y=yT(g);
     q+=`<line x1="${L}" y1="${y}" x2="${W}" y2="${y}" stroke="var(--grid)"/><text x="${L-5}" y="${y+3}" font-size="9" fill="var(--muted)" text-anchor="end">${fmtT(g)}</text>`; }
-  q+=`<path d="${mk.map((m,i)=>(i?"L":"M")+x27(m.w)+" "+yT(m.v)).join(" ")} L ${x27(27)} ${yT(1290)}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/>`;
-  q+=`<circle cx="${x27(27)}" cy="${yT(1290)}" r="5" fill="none" stroke="var(--muted)" stroke-width="1.5"/><text x="${x27(27)-8}" y="${yT(1290)-8}" font-size="10" fill="var(--ink2)" text-anchor="end">21:30 → podium</text>`;
+  q+=`<path d="${mk.map((m,i)=>(i?"L":"M")+x27(m.w)+" "+yT(m.v)).join(" ")} L ${x27(NW)} ${yT(TC.final)}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/>`;
+  q+=`<circle cx="${x27(NW)}" cy="${yT(TC.final)}" r="5" fill="none" stroke="var(--muted)" stroke-width="1.5"/><text x="${x27(NW)-8}" y="${yT(TC.final)-8}" font-size="10" fill="var(--ink2)" text-anchor="end">21:30 → podium</text>`;
   if(tts.length>1) q+=`<path d="${tts.map((t,i)=>(i?"L":"M")+x27(t.week)+" "+yT(t.secs)).join(" ")}" fill="none" stroke="var(--s1)" stroke-width="2"/>`;
   for(const t of tts) q+=`<circle cx="${x27(t.week)}" cy="${yT(t.secs)}" r="5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2" data-tip="W${t.week}: ${fmtT(t.secs)} (${t.label})"/><text x="${x27(t.week)}" y="${yT(t.secs)-10}" font-size="10" font-weight="600" fill="var(--ink)" text-anchor="middle">${fmtT(t.secs)}</text>`;
-  for(const w of wks) q+=`<text x="${x27(w)}" y="${H-6}" font-size="9" fill="var(--muted)" text-anchor="middle">${w===27?"RACE":"W"+w}</text>`;
+  for(const w of wks) q+=`<text x="${x27(w)}" y="${H-6}" font-size="9" fill="var(--muted)" text-anchor="middle">${w===NW?"RACE":"W"+w}</text>`;
   q+=`</svg>`;
-  $("#chTT").innerHTML=q;
+  $("#chTT").innerHTML=q; }
   // zone stacked bars (last 8 weeks with data)
-  const zw=[]; for(let w=1;w<=Math.min(27,cur);w++){ const z=zoneWeek(w); if(z.tot>0) zw.push({w,...z}); }
+  const zw=[]; for(let w=1;w<=Math.min(NW,cur);w++){ const z=zoneWeek(w); if(z.tot>0) zw.push({w,...z}); }
   const zshow=zw.slice(-8);
   if(zshow.length){
     const bw2=Math.min(70,(W-L-10)/zshow.length); let z=svgOpen(W,120);
@@ -20450,11 +20679,11 @@ function drawCharts(){
   } else $("#chZone").innerHTML=`<p class="small">Appears once synced runs are in. Estimated from pace/HR per activity.</p>`;
   // predictor
   const tt=latest5k();
-  if(tt){ const [f10,bw3]=chain(tt.secs);
-    const rows=[["Current 5km",fmtT(tt.secs)],["→ Flat 10km equivalent",fmtT(f10)],["→ Beerwah@Night predicted",fmtT(bw3)],["Podium needs","sub-50:22 (2026) · safe: 48:30-49:00"]];
+  if(CHAIN&&tt){ const [f10,bw3]=chain(tt.secs);
+    const rows=[["Current 5km",fmtT(tt.secs)],["→ Flat 10km equivalent",fmtT(f10)],["→ "+ATHLETE.race_name+" predicted",fmtT(bw3)],[ATHLETE.predictor.needs_label,ATHLETE.predictor.needs_text]];
     $("#chPred").innerHTML=`<table>${rows.map(r=>`<tr><td>${r[0]}</td><td style="text-align:right"><b>${r[1]}</b></td></tr>`).join("")}</table>
-    <p class="small" style="margin-top:6px">${bw3<=3022?"Predicted inside the podium window. Execute.":"Gap to podium: "+fmtT(bw3-3022)+". The chain: 5km → flat 10km → +11-12% terrain/darkness. Move the 5km, everything follows."}</p>`; }
-  else $("#chPred").innerHTML=`<p class="small">Log a 5km TT to activate the predictor.</p>`;
+    <p class="small" style="margin-top:6px">${bw3<=ATHLETE.predictor.target_secs?ATHLETE.predictor.inside_text:ATHLETE.predictor.gap_prefix+fmtT(bw3-ATHLETE.predictor.target_secs)+ATHLETE.predictor.gap_suffix}</p>`; }
+  else if(CHAIN) $("#chPred").innerHTML=`<p class="small">Log a 5km TT to activate the predictor.</p>`;
   // tooltips
   document.querySelectorAll("[data-tip]").forEach(el=>{
     el.addEventListener("mousemove",e=>tipShow(e,esc(el.dataset.tip)));
@@ -20469,84 +20698,62 @@ function zoneWeek(wk){
   for(let i=0;i<7;i++){ const d=iso(new Date(mon.getTime()+i*864e5));
     for(const a of actsOn(d)){ if(!a.secs||!a.km) continue;
       const pace=a.secs/a.km;
-      if(a.hr){ if(a.hr<143) z1+=a.secs; else if(a.hr<168) z2+=a.secs; else z3+=a.secs; }
-      else { if(pace>=385) z1+=a.secs; else if(pace>=330) z2+=a.secs; else z3+=a.secs; } } }
+      if(a.hr){ if(a.hr<ATHLETE.zone_est.hr1) z1+=a.secs; else if(a.hr<ATHLETE.zone_est.hr2) z2+=a.secs; else z3+=a.secs; }
+      else { if(pace>=ATHLETE.zone_est.pace1) z1+=a.secs; else if(pace>=ATHLETE.zone_est.pace2) z2+=a.secs; else z3+=a.secs; } } }
   return {z1,z2,z3,tot:z1+z2+z3};
 }
 // ---------- Rules ----------
 function rRules(){
-  const rtRows = ["south","north","graveyard","cartwright","ewen","belt"].map(k=>{
+  const rtRows = ATHLETE.route_order.map(k=>{
     const r=ROUTES[k];
     return `<div class="rtcard"><span class="rtico">${r.ico}</span><div><b>${esc(r.name)}</b><p>${esc(r.desc)}</p></div></div>`;
   }).join("");
-  return `<div class="card"><h2>What the numbers on a session mean</h2>
-  <div class="rtcard"><span class="rtico">&#128207;</span><div><b>The distance is always the TOTAL</b><p>Every km figure on a session card is the whole thing: warm-up jog, the work, and the cool-down. Nothing is added on top. On an easy run the first kilometre is run at shuffle pace, and it is kilometre one of that total, not an extra one.</p></div></div>
-  <div class="rtcard"><span class="rtico">&#9968;</span><div><b>The vert is climbing, not net</b><p>Metres gained over the session. Descending is not subtracted.</p></div></div>
-  <div class="rtcard"><span class="rtico">&#128337;</span><div><b>Warm-up and cool-down are stated once</b><p>If the brief says 15 min easy, that IS the warm-up jog. The drills below it come after, not instead. Two separate warm-ups is a bug, so tell me if you see one.</p></div></div>
-  </div>
+  return ATHLETE.rules_html.replace("{{routes}}", rtRows);
+}
 
-  <div class="card"><h2>Your routes</h2>${rtRows}
-  <p class="small" style="margin-top:10px">The rule behind the picks: weekdays are out the door, no car, because a drive before 4:30am does not happen. Flat south for anything judged on pace and every easy run, rolling north for strength and the long easy weekend run. The car comes out once a weekend, for the graveyard, because that is the only ground nearby shaped like the kilometre that decides the race.</p></div>
-
-  <div class="card"><h2>Zones (set 26 Aug 2026 — reset at the W8 TT, 15 Sep)</h2>
-  <p class="small" style="margin-bottom:8px">Threshold HR 182, max 200. Taken off your 2024-2026 race files, not off a formula. Every zone below is a percentage of threshold, so threshold is the number that matters.</p>
-  <table><tr><th>Zone</th><th>HR</th><th>Feel</th></tr>
-  <tr><td><b>Z1 recovery</b></td><td><b>up to 153</b></td><td>Full sentences, no effort</td></tr>
-  <tr><td>Z2 aerobic</td><td>154–162</td><td>Easy running lives here</td></tr>
-  <tr><td>Z3 tempo</td><td>163–171</td><td>Comfortably hard</td></tr>
-  <tr><td>Z4 sub-threshold</td><td>172–181</td><td>Climb efforts, short answers</td></tr>
-  <tr><td>Z5 threshold</td><td>182–186</td><td>Race pace on the climb</td></tr>
-  <tr><td>Z6+</td><td>187 and up</td><td>Sprints only</td></tr></table>
-  <p class="small" style="margin-top:6px">Uphill is ALWAYS by effort or HR, never pace. Easy means under 158 even when it feels absurd, because the grey zone in between is fatigue without adaptation.</p>
-  <p class="small" style="margin-top:6px"><b>158 is a CEILING, not a target.</b> Aim at it and you spend half the run above it. Easy runs should AVERAGE in the low 150s, with brief pokes into the 160s on rises that settle back within 60-90 seconds.</p></div>
-
-  <div class="card"><h2>Chest strap (from 5 Sep 2026)</h2>
-  <div class="rtcard"><span class="rtico">&#10084;</span><div><b>Wear it every single session</b><p>The worst option is mixing. Some runs on the strap and some on the wrist means no two runs can be compared cleanly. Consistency from here matters more than matching the old data.</p></div></div>
-  <div class="rtcard"><span class="rtico">&#128167;</span><div><b>Wet the electrodes before you put it on</b><p>The two contact pads on the underside of the band. A dry strap is the number one cause of a garbage first five minutes, usually a fake reading up around 190. Lick them, spit on them, or use a bit of water.</p></div></div>
-  <div class="rtcard"><span class="rtico">&#128202;</span><div><b>Zones below are PROVISIONAL until the W8 TT</b><p>Threshold 182 and max 200 were derived from wrist-optical data. You are now on a better sensor. Keep training to these numbers as a working guide, then they get re-derived off the strap data from the 15 Sep time trial.</p></div></div>
-  <div class="rtcard"><span class="rtico">&#128260;</span><div><b>Where strap and wrist differ</b><p>At easy effort they usually agree within a few beats. At maximal effort they do not: wrist optical lags the rise and under-reads the peak. So expect the TT to show a higher and earlier peak than the July baseline. That is the sensor getting honest, not you getting unfit.</p></div></div>
-  <p class="small" style="margin-top:10px">Do not compare any run before 5 Sep 2026 against any run after it on heart rate alone. Within a single run the numbers are always fair game.</p></div>
-
-  <div class="card"><h2>Injury decision rules — the traffic light</h2>
-  <div class="verdict"><span class="dot" style="background:var(--good)"></span><div><b>0–2/10, gait unchanged</b><p>Continue. Note it in the session log so patterns show up.</p></div></div>
-  <div class="verdict"><span class="dot" style="background:var(--warn)"></span><div><b>3–4/10 during, settles within 24h, no morning stiffness</b><p>Finish at reduced intensity and flag it. Two flags in a row = swap the next quality session for easy, and take the down week early if one is near.</p></div></div>
-  <div class="verdict"><span class="dot" style="background:var(--crit)"></span><div><b>5+/10, sharp/sudden, or it changes your stride</b><p>Stop the session. Two days off running. Easy 20-min test run day 3 — pain-free means resume, otherwise book the physio.</p></div></div>
-  <details><summary>Achilles / calf red flags (the returning-runner pattern)</summary>
-  <ul><li>Morning stiffness &gt; 30 min → drop hills and strides until it's back under 10 min.</li>
-  <li>Pain that "warms up" mid-run then returns worse after → tendon warning, not soreness. Cut volume 30% for the week.</li>
-  <li>Localised tenderness you can press on the tendon → physio within 5 days. Keep strength (calf raises ARE the treatment).</li>
-  <li>Capacity benchmark: work toward 25 single-leg calf raises per side with under 10% left-right difference. Test monthly on a Monday.</li>
-  <li>Anything after sand or new-surface days gets 48h grace before judging.</li></ul></details>
-  <details><summary>Knee + back + elbow</summary>
-  <ul><li>Knee pain descending stairs next morning → skip the next descent session, keep everything else. Heavy leg work is the treatment, not the risk.</li>
-  <li>Back: no conventional deadlifts, ever. RDLs at moderate load.</li>
-  <li>Elbow: get it professionally assessed (action item). Skip DB press if it objects.</li></ul></details>
-  <details><summary>Warm-ups / cool-downs</summary>
-  <ul><li><b>Quality runs:</b> 15 min easy building + leg swings, A-skips, high knees + 4 x 20s strides. CD 10 min easy.</li>
-  <li><b>TTs / races:</b> 15 min easy + drills + 3 strides + 2 min at target pace, 3 min easy, start. CD 10 min.</li>
-  <li><b>Hills/terrain:</b> 15 min easy to the hill + 2 strides on the grade. CD 10 min.</li>
-  <li><b>Long runs:</b> first 2km slower than easy.</li>
-  <li><b>Strength:</b> after the run. 2 ramp-up sets (~50%, ~70%) before work sets.</li></ul></details></div>
-
-  <div class="card"><h2>Non-negotiables</h2><details open><summary>The eight rules</summary>
-  <ul><li>Down weeks are mandatory. 12→52km/wk is where the injury lives.</li>
-  <li>Head torch by W16 — 500+ lumens, dual beam (flood for footing, spot for descents) + backup. TRAIN in it, especially fast descents.</li>
-  <li>Trail shoes with real grip (~1 min saved on its own).</li>
-  <li>Power-hike the Dungeon — train it as a skill.</li>
-  <li>Heat: SEQ summer training does the acclimating. Race-week top-up (W26): easy runs in the heat of day + optional 30 min hot bath after. Quality stays morning.</li>
-  <li>Gravl = upper body / mobility on easy days only.</li>
-  <li>Elbow assessed early.</li>
-  <li>Race fuel: carb lunch, light carb snack ~4pm, caffeine ~250-400mg at 6pm, water only on course. Practise the full timing at the W24 rehearsal.</li></ul></details>
-  <details><summary>Race day kit + entries checklist</summary>
-  <ul><li>☐ Enter Beerwah@Daybreak (closes 30 Nov)</li><li>☐ Enter flat road 10km (Oct/Nov)</li>
-  <li>☐ Enter Beerwah@Night (closes 24 Jan — no entries on the day)</li>
-  <li>☐ Head torch 500+ lm dual beam ☐ backup torch ☐ trail shoes ☐ caffeine ☐ electrolytes ☐ compression bandage (mandatory gear) ☐ phone</li></ul></details></div>`;
+// ---------- Intake (first open) ----------
+function rIntake(){
+  const q=ATHLETE.intake, a=store.intake.answers||{};
+  const field=(f)=>{
+    const v=esc(a[f.k]??"");
+    if(f.type==="textarea") return `<textarea id="iq_${f.k}" rows="3" style="width:100%">${v}</textarea>`;
+    if(f.type==="select") return `<select id="iq_${f.k}" style="width:100%">${["",...f.options].map(o=>`<option ${o===(a[f.k]??"")?"selected":""}>${esc(o)}</option>`).join("")}</select>`;
+    return `<input id="iq_${f.k}" style="width:100%" value="${v}" placeholder="${esc(f.ph||"")}">`;
+  };
+  return `<div class="card"><h2>${esc(q.title)}</h2><p class="small">${q.intro}</p></div>
+  ${q.sections.map(s=>`<div class="card"><h2>${esc(s.title)}</h2>${s.fields.map(f=>`<label class="f" style="display:block;margin-top:10px"><span style="display:block;margin-bottom:4px">${esc(f.label)}</span>${f.hint?`<span style="display:block;font-weight:500;letter-spacing:0;margin:-2px 0 4px;color:var(--muted)">${esc(f.hint)}</span>`:""}${field(f)}</label>`).join("")}</div>`).join("")}
+  <div class="card"><button class="btn" onclick="saveIntake()">${esc(q.submit||"Save my answers")}</button>
+  <p class="small" style="margin-top:8px">${q.after||""}</p></div>`;
+}
+function saveIntake(){
+  const q=ATHLETE.intake; const ans={};
+  for(const s of q.sections) for(const f of s.fields){ const el=$("#iq_"+f.k); if(el) ans[f.k]=el.value.trim(); }
+  const missing=q.sections.flatMap(s=>s.fields).filter(f=>f.req&&!ans[f.k]);
+  if(missing.length){ toast("Missing: "+missing.map(f=>f.label).join(", ")); return; }
+  store.intake={done:true,answers:ans,at:Date.now()}; render(); toast("Saved. Now send it to your coach."); shareIntake();
+}
+function intakeText(){
+  const q=ATHLETE.intake, a=store.intake.answers||{};
+  return `INTAKE — ${ATHLETE.name}\n`+q.sections.map(s=>`\n## ${s.title}\n`+s.fields.map(f=>`${f.label}: ${a[f.k]||"-"}`).join("\n")).join("\n");
+}
+async function shareIntake(){
+  const text=intakeText();
+  if(navigator.share){ try{ await navigator.share({title:"Intake — "+ATHLETE.name, text}); return; }catch(e){} }
+  try{ await navigator.clipboard.writeText(text); toast("Copied. Paste it to your coach."); }catch(e){ alert(text); }
+}
+function editIntake(){ const i=store.intake; i.done=false; store.intake=i; go("Today"); }
+function intakeSummaryCard(){
+  if(!ATHLETE.intake) return "";
+  const i=store.intake;
+  if(!i.done) return `<div class="card"><h2>Your intake</h2><p class="small">Not filled in yet. It is on the Today tab.</p></div>`;
+  return `<div class="card"><h2>Your intake</h2><p class="small">Saved ${new Date(i.at).toLocaleDateString()}.</p>
+  <div class="row" style="margin-top:8px"><button class="btn" onclick="shareIntake()">Send to coach</button><button class="ghost" onclick="editIntake()">Edit answers</button></div></div>`;
 }
 // ---------- Sync ----------
 function rSync(){
   const c=store.cfg;
   return `<div class="card"><h2>intervals.icu sync</h2>
-  <p class="small">One-time setup: create a free <b>intervals.icu</b> account → Settings → connect <b>Garmin</b> → scroll to <b>Developer Settings</b> → copy your <b>API key</b> and <b>Athlete ID</b> (looks like i123456).</p>
+  <p class="small">One-time setup: create a free <b>intervals.icu</b> account → Settings → connect <b>${ATHLETE.device}</b> → scroll to <b>Developer Settings</b> → copy your <b>API key</b> and <b>Athlete ID</b> (looks like i123456).</p>
   <div class="row" style="margin-top:8px">
     <label class="f">Athlete ID<input id="aid" value="${esc(c.aid||"")}" placeholder="i123456"></label>
     <label class="f">API key<input id="akey" type="password" value="${esc(c.key||"")}"></label>
@@ -20556,11 +20763,11 @@ function rSync(){
     <button class="btn" onclick="syncNow()" ${c.key?"":"disabled"}>Sync now</button>
     <span class="small" id="syncmsg">${c.last?("Last sync: "+new Date(c.last).toLocaleString()+" · "+store.acts.length+" runs"):"Never synced"}</span>
   </div></div>
-  <div class="card"><h2>Backup / move devices</h2>
+  ${ATHLETE.setup_html||""}${intakeSummaryCard()}<div class="card"><h2>Backup / move devices</h2>
   <div class="row"><button class="ghost" onclick="expData()">Export logs (JSON)</button>
   <label class="ghost" style="cursor:pointer">Import<input type="file" class="hide" onchange="impData(event)"></label>
   </div>
-  <p class="small" style="margin-top:6px">Logs live in this browser. Export before moving devices; synced Garmin data re-pulls anywhere.</p></div>`;
+  <p class="small" style="margin-top:6px">Logs live in this browser. Export before moving devices; synced ${ATHLETE.device} data re-pulls anywhere.</p></div>`;
 }
 function saveCfg(){ const c=store.cfg; c.aid=$("#aid").value.trim(); c.key=$("#akey").value.trim(); store.cfg=c; render(); toast("Settings saved"); }
 async function syncNow(){
@@ -20598,13 +20805,14 @@ async function syncNow(){
 }
 function expData(){
   const blob=new Blob([JSON.stringify({logs:store.logs,str:store.str,cfg:{aid:store.cfg.aid}},null,1)],{type:"application/json"});
-  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="beerwah-logs.json"; a.click();
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=ATHLETE.slug+"-logs.json"; a.click();
 }
 function impData(ev){
   const f=ev.target.files[0]; if(!f)return; const rd=new FileReader();
   rd.onload=()=>{ try{ const d=JSON.parse(rd.result); if(d.logs) store.logs=d.logs; if(d.str) store.str=d.str; render(); }catch(e){ alert("Bad file"); } };
   rd.readAsText(f);
 }
+$("#hdr").innerHTML=ATHLETE.header_html;
 render();
 if(location.protocol.startsWith("http") && "serviceWorker" in navigator){ try{navigator.serviceWorker.register("sw.js");}catch(e){} }
 // auto-sync on open if configured and stale (>3h)
