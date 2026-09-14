@@ -19903,7 +19903,9 @@ const ATHLETE = {
   "needs_text": "sub-50:22 (2026) · safe: 48:30-49:00",
   "inside_text": "Predicted inside the podium window. Execute.",
   "gap_prefix": "Gap to podium: ",
-  "gap_suffix": ". The chain: 5km → flat 10km → +11-12% terrain/darkness. Move the 5km, everything follows."
+  "gap_suffix": ". The chain: 5km → flat 10km → terrain and darkness. Move the 5km, everything follows.",
+  "terrain_adj": 1.024,
+  "terrain_note": "The range is the terrain penalty. The chain assumes +11.5% for the climb and the dark. Checked against your own 31 Jan 2026 race (1:04:24) it was +14.2%, so the slower end is the more honest one until Beerwah@Daybreak on 6 Dec measures it properly on the same course."
  },
  "easy": {
   "pace_spk": 385,
@@ -20686,9 +20688,14 @@ function drawCharts(){
   // predictor
   const tt=latest5k();
   if(CHAIN&&tt){ const [f10,bw3]=chain(tt.secs);
-    const rows=[["Current 5km",fmtT(tt.secs)],["→ Flat 10km equivalent",fmtT(f10)],["→ "+ATHLETE.race_name+" predicted",fmtT(bw3)],[ATHLETE.predictor.needs_label,ATHLETE.predictor.needs_text]];
+    const adj=ATHLETE.predictor.terrain_adj||1;
+    const bwHi=bw3*adj;
+    const rows=[["Current 5km",fmtT(tt.secs)],["→ Flat 10km equivalent",fmtT(f10)],
+      ["→ "+ATHLETE.race_name+" predicted", adj>1.005? fmtT(bw3)+" to "+fmtT(bwHi) : fmtT(bw3)],
+      [ATHLETE.predictor.needs_label,ATHLETE.predictor.needs_text]];
     $("#chPred").innerHTML=`<table>${rows.map(r=>`<tr><td>${r[0]}</td><td style="text-align:right"><b>${r[1]}</b></td></tr>`).join("")}</table>
-    <p class="small" style="margin-top:6px">${bw3<=ATHLETE.predictor.target_secs?ATHLETE.predictor.inside_text:ATHLETE.predictor.gap_prefix+fmtT(bw3-ATHLETE.predictor.target_secs)+ATHLETE.predictor.gap_suffix}</p>`; }
+    <p class="small" style="margin-top:6px">${bwHi<=ATHLETE.predictor.target_secs?ATHLETE.predictor.inside_text:ATHLETE.predictor.gap_prefix+fmtT(bw3-ATHLETE.predictor.target_secs)+" to "+fmtT(bwHi-ATHLETE.predictor.target_secs)+ATHLETE.predictor.gap_suffix}</p>
+    ${ATHLETE.predictor.terrain_note?`<p class="small" style="margin-top:6px;color:var(--warn)">${ATHLETE.predictor.terrain_note}</p>`:""}`; }
   else if(CHAIN) $("#chPred").innerHTML=`<p class="small">Log a 5km TT to activate the predictor.</p>`;
   // tooltips
   document.querySelectorAll("[data-tip]").forEach(el=>{
