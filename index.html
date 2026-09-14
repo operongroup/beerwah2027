@@ -20664,11 +20664,34 @@ function drawCharts(){
     q+=`<line x1="${L}" y1="${y}" x2="${W}" y2="${y}" stroke="var(--grid)"/><text x="${L-5}" y="${y+3}" font-size="9" fill="var(--muted)" text-anchor="end">${fmtT(g)}</text>`; }
   q+=`<path d="${mk.map((m,i)=>(i?"L":"M")+x27(m.w)+" "+yT(m.v)).join(" ")} L ${x27(NW)} ${yT(TC.final)}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/>`;
   q+=`<circle cx="${x27(NW)}" cy="${yT(TC.final)}" r="5" fill="none" stroke="var(--muted)" stroke-width="1.5"/><text x="${x27(NW)-8}" y="${yT(TC.final)-8}" font-size="10" fill="var(--ink2)" text-anchor="end">${fmtT(TC.final)} → podium</text>`;
+  // marker dots + the planned time under each one
+  for(const m of mk){ const my=yT(m.v); const act=tts.find(t=>t.week===m.w);
+    const same = act && Math.abs(act.secs-m.v)<3;
+    q+=`<circle cx="${x27(m.w)}" cy="${my}" r="3" fill="var(--surface)" stroke="var(--muted)" stroke-width="1.5" data-tip="W${m.w} marker: ${fmtT(m.v)}"/>`;
+    if(!same) q+=`<text x="${x27(m.w)}" y="${my+14}" font-size="9" fill="var(--muted)" text-anchor="middle">${fmtT(m.v)}</text>`; }
   if(tts.length>1) q+=`<path d="${tts.map((t,i)=>(i?"L":"M")+x27(t.week)+" "+yT(t.secs)).join(" ")}" fill="none" stroke="var(--s1)" stroke-width="2"/>`;
   for(const t of tts) q+=`<circle cx="${x27(t.week)}" cy="${yT(t.secs)}" r="5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2" data-tip="W${t.week}: ${fmtT(t.secs)} (${t.label})"/><text x="${x27(t.week)}" y="${yT(t.secs)-10}" font-size="10" font-weight="600" fill="var(--ink)" text-anchor="middle">${fmtT(t.secs)}</text>`;
+  // the gap between where you are and where the marker said you'd be
+  for(const t of tts){ const mv=TT_MARKERS[t.week]; if(mv==null) continue;
+    const d=mv-t.secs; if(Math.abs(d)<3) continue;
+    const ay=yT(t.secs), my=yT(mv), midY=(ay+my)/2+3;
+    const col=d>0?"var(--goodtext)":"var(--crit)";
+    q+=`<line x1="${x27(t.week)}" y1="${ay+6}" x2="${x27(t.week)}" y2="${my-4}" stroke="${col}" stroke-width="1" stroke-dasharray="2 2" opacity=".7"/>`;
+    const lbl=(d>0?"−":"+")+fmtT(Math.abs(d)), lw=8+lbl.length*5.9, lx=x27(t.week)+7;
+    q+=`<rect x="${lx-3}" y="${midY-10}" width="${lw}" height="14" rx="4" fill="var(--surface)" opacity=".92"/>`;
+    q+=`<text x="${lx+1}" y="${midY}" font-size="10" font-weight="700" fill="${col}" text-anchor="start">${lbl}</text>`; }
   for(const w of wks) q+=`<text x="${x27(w)}" y="${H-6}" font-size="9" fill="var(--muted)" text-anchor="middle">${w===NW?"RACE":"W"+w}</text>`;
   q+=`</svg>`;
-  $("#chTT").innerHTML=q; }
+  // plain-language line under the chart
+  const lastT=tts.length?tts[tts.length-1]:null;
+  let note="";
+  if(lastT && TT_MARKERS[lastT.week]!=null){
+    const d=TT_MARKERS[lastT.week]-lastT.secs;
+    note=`<b>W${lastT.week}</b> marker ${fmtT(TT_MARKERS[lastT.week])} · you ran <b style="color:var(--s1)">${fmtT(lastT.secs)}</b> · <b style="color:${d>=0?"var(--goodtext)":"var(--crit)"}">${fmtT(Math.abs(d))} ${d>=0?"ahead of the marker":"behind the marker"}</b>`; }
+  const nextM=mk.filter(m=>!tts.some(t=>t.week===m.w)).sort((a,b)=>a.w-b.w)[0];
+  if(nextM && lastT){ const need=lastT.secs-nextM.v;
+    note+=`${note?"<br>":""}Next up <b>W${nextM.w}</b> marker <b>${fmtT(nextM.v)}</b> · ${need>0?`<b>${fmtT(need)}</b> still to find`:`already inside it by <b>${fmtT(-need)}</b>`}`; }
+  $("#chTT").innerHTML=q+(note?`<p class="small" style="margin-top:6px;line-height:1.5">${note}</p>`:""); }
   // zone stacked bars (last 8 weeks with data)
   const zw=[]; for(let w=1;w<=Math.min(NW,cur);w++){ const z=zoneWeek(w); if(z.tot>0) zw.push({w,...z}); }
   const zshow=zw.slice(-8);
