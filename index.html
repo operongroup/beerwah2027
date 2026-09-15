@@ -52,18 +52,18 @@ html{background:var(--page)}
 body{font-family:-apple-system,system-ui,"Segoe UI",sans-serif;color:var(--ink);font-size:15px;line-height:1.45;padding-bottom:78px;
   background:radial-gradient(120% 60% at 50% -10%, var(--glow) 0%, var(--page2) 45%, var(--page) 100%) fixed}
 header{padding:calc(12px + env(safe-area-inset-top)) 18px 4px;display:flex;gap:12px;align-items:center;max-width:880px;margin:0 auto}
-.evgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px 18px 2px;max-width:880px;margin:0 auto}
-@media(min-width:720px){.evgrid{grid-template-columns:repeat(6,1fr)}}
-.ev{background:var(--card2);border:1px solid var(--border);border-radius:14px;padding:10px 6px 8px;text-align:center;min-width:0}
+.evgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;padding:6px 12px 2px;max-width:880px;margin:0 auto}
+.ev{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:8px 2px 6px;text-align:center;min-width:0}
 .ev.target{border-color:rgba(var(--brandrgb),.55);background:linear-gradient(160deg,rgba(var(--brandrgb),.18),var(--card2));box-shadow:0 4px 18px rgba(var(--brandrgb),.18)}
 .ev.done{opacity:.45}
-.ev .evlogo{width:38px;height:38px;border-radius:10px;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;font-size:21px;background:rgba(255,255,255,.05);overflow:hidden}
-.ev .evlogo img{width:100%;height:100%;object-fit:contain}
-.ev b{display:block;font-size:22px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink)}
+.ev .evlogo{width:40px;height:40px;border-radius:50%;margin:0 auto 5px;display:flex;align-items:center;justify-content:center;font-size:21px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.45)}
+.ev .evlogo img{width:100%;height:100%;object-fit:cover;display:block}
+.ev b{display:block;font-size:17px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink)}
 .ev.target b{background:linear-gradient(135deg,var(--brand2),var(--brand));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.ev .evu{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-top:2px}
-.ev .evn{font-size:10.5px;font-weight:700;color:var(--ink2);margin-top:5px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ev .evd{font-size:9.5px;color:var(--muted);margin-top:1px}
+.ev .evu{font-size:7.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-top:2px}
+.ev .evn{display:none;font-size:10.5px;font-weight:700;color:var(--ink2);margin-top:5px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev .evd{font-size:8.5px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(min-width:600px){.evgrid{gap:8px;padding:8px 18px 2px}.ev{padding:10px 6px 8px;border-radius:14px}.ev .evlogo{width:48px;height:48px}.ev b{font-size:22px}.ev .evu{font-size:8.5px}.ev .evn{display:block}.ev .evd{font-size:9.5px}}
 header .mark{width:42px;height:42px;border-radius:11px;flex:none;box-shadow:0 4px 16px rgba(var(--brandrgb),.28)}
 header h1{font-size:15px;font-weight:800;letter-spacing:.14em}
 header h1 span{color:var(--brand)}
@@ -19940,7 +19940,8 @@ const ATHLETE = {
    "km": 10,
    "where": "Glass House Mtns",
    "short": "Daybreak",
-   "ico": "🌅"
+   "ico": "🌅",
+   "logo": "events/daybreak.png"
   },
   {
    "name": "Beerwah@Night",
@@ -19949,7 +19950,8 @@ const ATHLETE = {
    "where": "Glass House Mtns",
    "target": true,
    "short": "Beerwah@Night",
-   "ico": "🌙"
+   "ico": "🌙",
+   "logo": "events/night.png"
   },
   {
    "name": "Takayna Trail",
@@ -19957,7 +19959,8 @@ const ATHLETE = {
    "km": 22,
    "where": "Waratah, TAS",
    "short": "takayna 22",
-   "ico": "🌲"
+   "ico": "🌲",
+   "logo": "events/takayna.png"
   },
   {
    "name": "Noosa Ultra-Trail · Forest 15",
@@ -19965,7 +19968,8 @@ const ATHLETE = {
    "km": 15,
    "where": "Noosa Hinterland",
    "short": "Noosa F15",
-   "ico": "🌿"
+   "ico": "🌿",
+   "logo": "events/noosa.png"
   },
   {
    "name": "Mary Valley Ultra 10km",
@@ -19974,7 +19978,8 @@ const ATHLETE = {
    "where": "Imbil",
    "note": "Graphic says Fri 11 Jun; timetable confirmed 7 Sep says Sat 12 Jun 8am. Using 12 Jun.",
    "short": "Mary Valley",
-   "ico": "⛰️"
+   "ico": "⛰️",
+   "logo": "events/maryvalley.png"
   },
   {
    "name": "Rainbow Beach Trail Festival",
@@ -19983,7 +19988,8 @@ const ATHLETE = {
    "where": "Cooloola Coast",
    "entered": false,
    "short": "Rainbow Beach",
-   "ico": "🏖️"
+   "ico": "🏖️",
+   "logo": "events/rainbow.png"
   }
  ],
  "intake": null,
@@ -20174,7 +20180,7 @@ function renderEvents(t){
     const unit=done?"done":(days===1?"day":"days");
     return `<div class="ev${e.target?" target":""}${done?" done":""}" data-tip="${esc(e.name)} · ${esc(e.date)}${e.km?" · "+e.km+"km":""}${e.where?" · "+esc(e.where):""}">
       <div class="evlogo">${logo}</div><b>${big}</b><div class="evu">${unit}</div>
-      <div class="evn">${esc(e.short||e.name)}</div><div class="evd">${fmtD(e.date)}${e.km?" · "+e.km+"km":""}</div></div>`; }).join("");
+      <div class="evn">${esc(e.short||e.name)}${e.km?" · "+e.km+"km":""}</div><div class="evd">${fmtD(e.date)}</div></div>`; }).join("");
   el.hidden=false;
 }
 // ---------- render ----------
