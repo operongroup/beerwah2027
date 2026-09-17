@@ -63,6 +63,17 @@ header{padding:calc(12px + env(safe-area-inset-top)) 18px 4px;display:flex;gap:1
 .ev .evu{font-size:7.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-top:2px}
 .ev .evn{display:none;font-size:10.5px;font-weight:700;color:var(--ink2);margin-top:5px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ev .evd{font-size:8.5px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev{cursor:pointer}
+.evsh{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:80;display:none;align-items:flex-end;justify-content:center}
+.evsh.on{display:flex}
+.evsh-card{background:var(--surface);border:1px solid var(--border);border-radius:22px 22px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom));width:100%;max-width:640px;max-height:88vh;overflow-y:auto}
+@media(min-width:700px){.evsh{align-items:center}.evsh-card{border-radius:22px}}
+.evsh-head{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.evsh-head h3{font-size:17px;font-weight:800;margin:0}
+.evsh-head .evlogo.big{width:52px;height:52px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.45)}
+.evsh-head .evlogo.big img{width:100%;height:100%;object-fit:cover}
+.evsh-x{margin-left:auto;border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--ink2);border-radius:99px;width:32px;height:32px;font-size:14px;cursor:pointer}
+.evsh-card h2{font-size:11.5px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;margin-bottom:8px}
 @media(min-width:600px){.evgrid{gap:8px;padding:8px 18px 2px}.ev{padding:10px 6px 8px;border-radius:14px}.ev .evlogo{width:48px;height:48px}.ev b{font-size:22px}.ev .evu{font-size:8.5px}.ev .evn{display:block}.ev .evd{font-size:9.5px}}
 header .mark{width:42px;height:42px;border-radius:11px;flex:none;box-shadow:0 4px 16px rgba(var(--brandrgb),.28)}
 header h1{font-size:15px;font-weight:800;letter-spacing:.14em}
@@ -19941,7 +19952,44 @@ const ATHLETE = {
    "where": "Glass House Mtns",
    "short": "Daybreak",
    "ico": "🌅",
-   "logo": "events/daybreak.png"
+   "logo": "events/daybreak.png",
+   "results": [
+    {
+     "year": 2022,
+     "m": [
+      2963,
+      3093,
+      3282
+     ]
+    },
+    {
+     "year": 2023,
+     "m": [
+      2729,
+      3022,
+      3146
+     ]
+    },
+    {
+     "year": 2024,
+     "m": [
+      2865,
+      3103,
+      3358
+     ]
+    },
+    {
+     "year": 2025,
+     "m": [
+      3018,
+      3043,
+      3296
+     ]
+    }
+   ],
+   "podium": "Top three male. Same course as Beerwah@Night, so the predictor applies here directly.",
+   "chain_secs": true,
+   "source": "results.sportseventservices.com.au and onetime.sport, official"
   },
   {
    "name": "Beerwah@Night",
@@ -19951,7 +19999,55 @@ const ATHLETE = {
    "target": true,
    "short": "Beerwah@Night",
    "ico": "🌙",
-   "logo": "events/night.png"
+   "logo": "events/night.png",
+   "results": [
+    {
+     "year": 2022,
+     "m": [
+      2880,
+      3225,
+      3505
+     ]
+    },
+    {
+     "year": 2023,
+     "m": [
+      2778,
+      2793,
+      3208
+     ]
+    },
+    {
+     "year": 2024,
+     "m": [
+      3246,
+      3246,
+      3369
+     ],
+     "you": 4111
+    },
+    {
+     "year": 2025,
+     "m": [
+      2880,
+      3218,
+      3580
+     ],
+     "you": 4024
+    },
+    {
+     "year": 2026,
+     "m": [
+      2840,
+      2929,
+      3023
+     ],
+     "you": 3879
+    }
+   ],
+   "podium": "Trophies go to the top three male and top three female only. No age categories. Sub-50 has taken a trophy every year on record.",
+   "chain_secs": true,
+   "source": "Run Queensland official results"
   },
   {
    "name": "Takayna Trail",
@@ -19960,7 +20056,20 @@ const ATHLETE = {
    "where": "Waratah, TAS",
    "short": "takayna 22",
    "ico": "🌲",
-   "logo": "events/takayna.png"
+   "logo": "events/takayna.png",
+   "results": [
+    {
+     "year": 2026,
+     "m": [
+      7633,
+      null,
+      null
+     ],
+     "note": "Overall winner was female, 2:02:30. 47 male finishers."
+    }
+   ],
+   "podium": "Fun run with Jess. Not a race for you. Shown for context only.",
+   "source": "webscorer.com official results"
   },
   {
    "name": "Noosa Ultra-Trail · Forest 15",
@@ -19969,7 +20078,54 @@ const ATHLETE = {
    "where": "Noosa Hinterland",
    "short": "Noosa F15",
    "ico": "🌿",
-   "logo": "events/noosa.png"
+   "logo": "events/noosa.png",
+   "results": [
+    {
+     "year": 2022,
+     "m": [
+      3840,
+      3960,
+      4200
+     ],
+     "approx": true
+    },
+    {
+     "year": 2023,
+     "m": [
+      3660,
+      4380,
+      4440
+     ],
+     "approx": true
+    },
+    {
+     "year": 2024,
+     "m": [
+      3900,
+      4020,
+      4080
+     ],
+     "approx": true
+    },
+    {
+     "year": 2025,
+     "m": [
+      3605,
+      3750,
+      4084
+     ]
+    },
+    {
+     "year": 2026,
+     "m": [
+      3647,
+      3724,
+      3977
+     ]
+    }
+   ],
+   "podium": "Top three male by finish time. 2022 to 2024 are published to the minute only. 15km with 191m of climb, 36% paved. Podium structure not verified with the organiser.",
+   "source": "noosaultratrail.com.au official results"
   },
   {
    "name": "Mary Valley Ultra 10km",
@@ -19979,7 +20135,10 @@ const ATHLETE = {
    "note": "Graphic says Fri 11 Jun; timetable confirmed 7 Sep says Sat 12 Jun 8am. Using 12 Jun.",
    "short": "Mary Valley",
    "ico": "⛰️",
-   "logo": "events/maryvalley.png"
+   "logo": "events/maryvalley.png",
+   "results": [],
+   "podium": "First edition in June 2027. No history to measure against. Out and back on the rail trail from Imbil to Brooloo, so the flattest course of the six.",
+   "source": "runqld.com.au"
   },
   {
    "name": "Rainbow Beach Trail Festival",
@@ -19989,7 +20148,45 @@ const ATHLETE = {
    "entered": false,
    "short": "Rainbow Beach",
    "ico": "🏖️",
-   "logo": "events/rainbow.png"
+   "logo": "events/rainbow.png",
+   "results": [
+    {
+     "year": 2023,
+     "m": [
+      3738,
+      3774,
+      3791
+     ]
+    },
+    {
+     "year": 2024,
+     "m": [
+      3486,
+      3947,
+      3996
+     ]
+    },
+    {
+     "year": 2025,
+     "m": [
+      3434,
+      3443,
+      3475
+     ]
+    },
+    {
+     "year": 2026,
+     "m": [
+      3086,
+      3281,
+      3367
+     ],
+     "you": 4477
+    }
+   ],
+   "podium": "Top three male by finish time. Course record 46:06 (2022). The front of this race has got faster every year. Podium structure not verified with the organiser.",
+   "record": 2766,
+   "source": "results.sportseventservices.com.au official results"
   }
  ],
  "intake": null,
@@ -20178,11 +20375,57 @@ function renderEvents(t){
     const logo=e.logo?`<img src="${esc(e.logo)}" alt="">`:(e.ico||"🏁");
     const big=done?"✓":(days===0?"GO":String(days));
     const unit=done?"done":(days===1?"day":"days");
-    return `<div class="ev${e.target?" target":""}${done?" done":""}" data-tip="${esc(e.name)} · ${esc(e.date)}${e.km?" · "+e.km+"km":""}${e.where?" · "+esc(e.where):""}">
+    return `<div class="ev${e.target?" target":""}${done?" done":""}" onclick="showEvent(${(ATHLETE.events||[]).indexOf(e)})" data-tip="${esc(e.name)} · ${esc(e.date)}${e.km?" · "+e.km+"km":""}${e.where?" · "+esc(e.where):""}">
       <div class="evlogo">${logo}</div><b>${big}</b><div class="evu">${unit}</div>
       <div class="evn">${esc(e.short||e.name)}${e.km?" · "+e.km+"km":""}</div><div class="evd">${fmtD(e.date)}</div></div>`; }).join("");
   el.hidden=false;
 }
+// ---------- event sheet: past results and what it takes ----------
+function showEvent(i){
+  const e=(ATHLETE.events||[])[i]; if(!e) return;
+  const km=e.km||0; const res=(e.results||[]).slice().sort((a,b)=>a.year-b.year);
+  const paceOf=s=>fmtPace(s/km); const kmh=s=>(km/(s/3600)).toFixed(1)+" km/h";
+  const trio=s=>`<b>${fmtT(s)}</b> <span class="small">${paceOf(s)} · ${kmh(s)}</span>`;
+  const med=a=>{ const x=a.slice().sort((p,q)=>p-q); const n=x.length; return n? (n%2? x[(n-1)/2] : Math.round((x[n/2-1]+x[n/2])/2)) : null; };
+  const firsts=res.map(r=>r.m[0]).filter(Boolean), thirds=res.map(r=>r.m[2]).filter(Boolean);
+  let h=`<div class="evsh-head"><div class="evlogo big">${e.logo?`<img src="${esc(e.logo)}" alt="">`:(e.ico||"🏁")}</div>
+    <div><h3>${esc(e.name)}</h3><p class="small">${esc(e.date)}${km?" · "+km+"km":""}${e.where?" · "+esc(e.where):""}</p></div>
+    <button class="evsh-x" onclick="closeEvent()">✕</button></div>`;
+  if(res.length){
+    h+=`<h2>Past results · top three male</h2><table><tr><th>Year</th><th>1st</th><th>2nd</th><th>3rd</th>${res.some(r=>r.you)?"<th>You</th>":""}</tr>`;
+    for(const r of res){ h+=`<tr><td>${r.year}${r.approx?"*":""}</td>${r.m.map(s=>`<td>${s?fmtT(s):"—"}</td>`).join("")}${res.some(x=>x.you)?`<td style="color:var(--brand2);font-weight:700">${r.you?fmtT(r.you):""}</td>`:""}</tr>`; }
+    h+=`</table>`;
+    if(res.some(r=>r.approx)) h+=`<p class="small" style="margin-top:4px">* published to the minute only</p>`;
+    for(const r of res) if(r.note) h+=`<p class="small" style="margin-top:4px">${r.year}: ${esc(r.note)}</p>`;
+    if(km && firsts.length){
+      const rows=[];
+      rows.push(["To win, typical year", trio(med(firsts))]);
+      rows.push(["To win, fastest year", trio(Math.min(...firsts))]);
+      if(thirds.length){
+        rows.push(["Podium, typical year", trio(med(thirds))]);
+        rows.push(["Podium, easiest year", trio(Math.max(...thirds))]);
+        rows.push(["Podium, hardest year", trio(Math.min(...thirds))]);
+      }
+      if(e.record) rows.push(["Course record", trio(e.record)]);
+      h+=`<h2 style="margin-top:14px">What it takes</h2><table>${rows.map(r=>`<tr><td>${r[0]}</td><td style="text-align:right">${r[1]}</td></tr>`).join("")}</table>`;
+      // where you sit now
+      const tt=latest5k();
+      if(e.chain_secs && CHAIN && tt){
+        const [,bw]=chain(tt.secs); const adj=ATHLETE.predictor.terrain_adj||1; const hi=bw*adj;
+        const t3=thirds.length?med(thirds):null;
+        h+=`<h2 style="margin-top:14px">You, right now</h2><p class="small">Off your latest 5km (${fmtT(tt.secs)}) this course predicts <b>${fmtT(bw)} to ${fmtT(hi)}</b>, ${paceOf(bw)} to ${paceOf(hi)}.`;
+        if(t3){ const side=v=>v<=t3?`<b>${fmtT(t3-v)} inside</b>`:`<b>${fmtT(v-t3)} outside</b>`;
+          h+=` A typical podium here is ${fmtT(t3)}. Today the fast end of that range is ${side(bw)} it and the slow end is ${side(hi)}.`; }
+        h+=`</p>`;
+      }
+    }
+  } else h+=`<p class="small">No past results to show.</p>`;
+  if(e.podium) h+=`<p class="small" style="margin-top:12px;color:var(--warn)">${esc(e.podium)}</p>`;
+  if(e.source) h+=`<p class="small" style="margin-top:6px;opacity:.7">Source: ${esc(e.source)}</p>`;
+  let ov=$("#evsh"); if(!ov){ ov=document.createElement("div"); ov.id="evsh"; ov.className="evsh"; ov.onclick=ev=>{ if(ev.target===ov) closeEvent(); }; document.body.appendChild(ov); }
+  ov.innerHTML=`<div class="evsh-card">${h}</div>`; ov.classList.add("on"); document.body.style.overflow="hidden";
+}
+function closeEvent(){ const ov=$("#evsh"); if(ov) ov.classList.remove("on"); document.body.style.overflow=""; }
 // ---------- render ----------
 function render(){
   MV=store.moves;
