@@ -5721,8 +5721,8 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "squat",
@@ -5743,28 +5743,37 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "3 x 8 each leg",
-    "note": "22.5kg dumbbells",
+    "k": "calf_str",
+    "name": "Calf raise, straight knee",
+    "scheme": "3 x 12",
+    "note": "3-second slow lower, loaded",
     "load": true,
     "sets": 3,
     "rest": 90
    },
    {
-    "k": "calf_str",
-    "name": "Calf raise, straight knee",
-    "scheme": "4 x 12",
-    "note": "3-second slow lower, loaded",
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
     "load": true,
-    "sets": 4,
+    "sets": 3,
     "rest": 90
    },
    {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -5773,7 +5782,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "3 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -5782,7 +5791,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "3 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -5791,19 +5800,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 91,
@@ -5936,8 +5936,8 @@ const SESSIONS = [
   "km": 6.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 93,
   "hill_reps": 6,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
@@ -6469,8 +6469,8 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "squat",
@@ -6491,28 +6491,37 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "3 x 8 each leg",
-    "note": "22.5kg dumbbells",
+    "k": "calf_str",
+    "name": "Calf raise, straight knee",
+    "scheme": "3 x 12",
+    "note": "3-second slow lower, loaded",
     "load": true,
     "sets": 3,
     "rest": 90
    },
    {
-    "k": "calf_str",
-    "name": "Calf raise, straight knee",
-    "scheme": "4 x 12",
-    "note": "3-second slow lower, loaded",
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
     "load": true,
-    "sets": 4,
+    "sets": 3,
     "rest": 90
    },
    {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -6521,7 +6530,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "3 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -6530,7 +6539,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "3 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -6539,19 +6548,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 102,
@@ -6684,8 +6684,8 @@ const SESSIONS = [
   "km": 6.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 104,
   "hill_reps": 7,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
@@ -7207,35 +7207,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -7256,28 +7238,55 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "3 x 8 each leg",
-    "note": "22.5kg dumbbells",
+    "k": "calf_str",
+    "name": "Calf raise, straight knee",
+    "scheme": "3 x 12",
+    "note": "3-second slow lower, loaded",
     "load": true,
     "sets": 3,
     "rest": 90
    },
    {
-    "k": "calf_str",
-    "name": "Calf raise, straight knee",
-    "scheme": "4 x 12",
-    "note": "3-second slow lower, loaded",
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
     "load": true,
-    "sets": 4,
+    "sets": 3,
     "rest": 90
    },
    {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -7286,7 +7295,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "3 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -7295,7 +7304,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "3 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -7304,19 +7313,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 113,
@@ -7449,8 +7449,8 @@ const SESSIONS = [
   "km": 6.5,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 115,
   "hill_reps": 9,
   "opt_out": "Easy 6.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
@@ -7972,8 +7972,8 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session (deload)",
-  "prescription": "DELOAD WEEK. Same movements, roughly half the sets, about 80% of last week's load, and leave three or four reps in reserve on everything. The point is to keep the pattern and shed the fatigue, so if you finish feeling like you could do it all again, that was correct.  ||  The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up) (deload)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "squat",
@@ -7994,15 +7994,6 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "2 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "calf_str",
     "name": "Calf raise, straight knee",
     "scheme": "2 x 12",
@@ -8012,10 +8003,28 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "2 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
+    "load": true,
+    "sets": 2,
+    "rest": 90
+   },
+   {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "2 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 60
@@ -8024,7 +8033,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "2 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -8033,7 +8042,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "2 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -8042,19 +8051,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 124,
@@ -8187,8 +8187,8 @@ const SESSIONS = [
   "km": 5.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 126,
   "hill_reps": 5,
   "opt_out": "Easy 5.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
@@ -8710,35 +8710,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -8759,28 +8741,55 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "3 x 8 each leg",
-    "note": "22.5kg dumbbells",
+    "k": "calf_str",
+    "name": "Calf raise, straight knee",
+    "scheme": "3 x 12",
+    "note": "3-second slow lower, loaded",
     "load": true,
     "sets": 3,
     "rest": 90
    },
    {
-    "k": "calf_str",
-    "name": "Calf raise, straight knee",
-    "scheme": "4 x 12",
-    "note": "3-second slow lower, loaded",
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
     "load": true,
-    "sets": 4,
+    "sets": 3,
     "rest": 90
    },
    {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -8789,7 +8798,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "3 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -8798,7 +8807,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "3 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -8807,19 +8816,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 135,
@@ -8868,14 +8868,14 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 7.0,
+  "km": 9.5,
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 158 (threshold 178, measured at the Week 8 time trial on 15 Sep 2026; max 200 still an estimate). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 158. Flat or gently rolling. NO grey zone. Kept short this week on purpose: Tuesday and Saturday are both big, so the mid-week kilometres come back down.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 136,
-  "opt_out": "Easy 7.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
-  "opt_tm": "BELT VERSION - 49 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 7.5km all up. One pace the whole way, conversational.",
+  "opt_out": "Easy 9.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "BELT VERSION - 64 min at 8.7 km/h at 1%, one pace the whole way, conversational. Then walk it off, about 0.3km. That is 9.5km all up.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 6,
@@ -8952,8 +8952,8 @@ const SESSIONS = [
   "km": 6.5,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 137,
   "hill_reps": 10,
   "opt_out": "Easy 7.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
@@ -9475,35 +9475,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -9524,28 +9506,55 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "3 x 8 each leg",
-    "note": "22.5kg dumbbells",
+    "k": "calf_str",
+    "name": "Calf raise, straight knee",
+    "scheme": "3 x 12",
+    "note": "3-second slow lower, loaded",
     "load": true,
     "sets": 3,
     "rest": 90
    },
    {
-    "k": "calf_str",
-    "name": "Calf raise, straight knee",
-    "scheme": "4 x 12",
-    "note": "3-second slow lower, loaded",
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
     "load": true,
-    "sets": 4,
+    "sets": 3,
     "rest": 90
    },
    {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -9554,7 +9563,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "3 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -9563,7 +9572,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "3 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -9572,19 +9581,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 146,
@@ -9633,14 +9633,14 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 8.0,
+  "km": 10.5,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 158 (threshold 178, measured at the Week 8 time trial on 15 Sep 2026; max 200 still an estimate). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Mid-week medium-long",
+  "prescription": "MID-WEEK MEDIUM-LONG. Added 21 Sep 2026 and this is the volume lever for the whole block: a sixth running day does not fit, so the kilometres go here instead. Run it EASY, under 158, the whole way. It is long, not hard - the moment it starts feeling like a session rather than a run, you are doing it wrong. Flat or gently rolling, sealed and familiar, 6:35-6:55/km.  ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 147,
-  "opt_out": "Easy 8.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
-  "opt_tm": "BELT VERSION - 53 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 8km all up. One pace the whole way, conversational.",
+  "opt_out": "Easy 10.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "BELT VERSION - 71 min at 8.7 km/h at 1%, one pace the whole way, conversational. Then walk it off, about 0.3km. That is 10.5km all up.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 6,
@@ -9717,8 +9717,8 @@ const SESSIONS = [
   "km": 7.5,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 148,
   "hill_reps": 10,
   "opt_out": "Easy 7.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
@@ -10136,15 +10136,15 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 10.0,
+  "km": 12.0,
   "vert": 0,
   "type": "quality",
-  "title": "Sub-threshold",
-  "prescription": "2 x 16 min at sub-threshold (Z4, 168-177), 3 min jog. Two blocks only. Sixteen minutes is longer than the decisive climb at Beerwah takes, and that is deliberate. ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: south, flat. This session is judged on holding an even controlled effort, and rolling ground makes that impossible.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Sub-threshold + goal pace",
+  "prescription": "16 min at sub-threshold (Z4, 168-177), 3 min jog, then 5 x 800m at GOAL 5km PACE with 90s jog. Goal pace off the Week 16 marker is 4:28/km, so 3:34 per rep. FIRST GOAL-PACE SESSION OF THE BLOCK - in 198 sessions you have never run at the pace you are chasing.  ||  GOAL PACE means the pace your NEXT time trial marker is set at, not the pace you ran last time. This is deliberately faster than you can currently race a 5km, which is the entire point: your legs have never once been asked to turn over at the speed the goal needs. Short reps, full jog recoveries, and if the last rep is slower than the first the pace was wrong. ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: south, flat. This session is judged on holding an even controlled effort, and rolling ground makes that impossible.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 156,
-  "opt_out": "15 min easy + drills. Then 2 x 16 min at sub-threshold, 3 min jog between. 10 min easy to finish.",
-  "opt_tm": "BELT VERSION - full session, 10.0km all up. Warm-up jog: 15 min at 8.7 km/h at 1%. Then the reps exactly as the prescription above sets them out, on the belt, with the jog recoveries at 7.5 km/h at 1%. Then easy at 8.7 km/h at 1% until the session total reaches 10.0km. Then the COOL-DOWN block below, which is the wind-down: 10 min stepping down, 8.7 then 8.0 then 7.0 then a walk, about 1.3km. The reps are by effort, not by a set belt speed. Read the prescription above and run to that.",
-  "hr_note": "Sit in Z4, 168-177, and no higher. Drifting to 178+ turns a sub-threshold session into a threshold session and loses the whole point of it: sub-threshold repeated beats threshold exceeded. You should still be able to get a short sentence out. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
+  "opt_out": "15 min easy + drills. Then the reps as prescribed above. 10 min easy to finish.",
+  "opt_tm": "BELT VERSION - full session, 12.0km all up. Warm-up jog 15 min at 8.7 km/h at 1%. Then the blocks and reps exactly as above, jog recoveries at 7.5 km/h. Goal-pace reps ARE a set belt speed: 4:28/km is 13.4 km/h, 4:18/km is 14.0 km/h. Easy at 8.7 km/h until the total reaches 12.0km, then the COOL-DOWN block below.",
+  "hr_note": "The threshold block sits in Z4, 168-177. The goal-pace reps are not judged on heart rate at all - they are judged on the clock and on even splits. Expect Z5 by the end of each rep and do not chase the number early, HR lags about 45 seconds. Jog until you are back under 161 before the next one. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 20,
    "items": [
@@ -10240,35 +10240,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -10289,28 +10271,55 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "3 x 8 each leg",
-    "note": "22.5kg dumbbells",
+    "k": "calf_str",
+    "name": "Calf raise, straight knee",
+    "scheme": "3 x 12",
+    "note": "3-second slow lower, loaded",
     "load": true,
     "sets": 3,
     "rest": 90
    },
    {
-    "k": "calf_str",
-    "name": "Calf raise, straight knee",
-    "scheme": "4 x 12",
-    "note": "3-second slow lower, loaded",
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
     "load": true,
-    "sets": 4,
+    "sets": 3,
     "rest": 90
    },
    {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -10319,7 +10328,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "3 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -10328,7 +10337,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "3 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -10337,19 +10346,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 157,
@@ -10398,14 +10398,14 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 9.5,
+  "km": 8.5,
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 158 (threshold 178, measured at the Week 8 time trial on 15 Sep 2026; max 200 still an estimate). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 158. Flat or gently rolling. NO grey zone. Kept short this week on purpose: Tuesday and Saturday are both big, so the mid-week kilometres come back down.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 158,
   "opt_out": "Easy 8.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
-  "opt_tm": "BELT VERSION - 56 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 8.5km all up. One pace the whole way, conversational.",
+  "opt_tm": "BELT VERSION - 57 min at 8.7 km/h at 1%, one pace the whole way, conversational. Then walk it off, about 0.3km. That is 8.5km all up.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 6,
@@ -10482,8 +10482,8 @@ const SESSIONS = [
   "km": 9.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 159,
   "hill_reps": 10,
   "opt_out": "Easy 8.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
@@ -10905,7 +10905,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "quality",
   "title": "5km Time Trial #3",
-  "prescription": "5km TIME TRIAL, FLAT, MAXIMAL. This is a race against the clock, not a workout. There are no intervals in it and there are no hills in it. You run 5km as hard as you can hold, evenly, and the number resets every zone in the plan.  ||  PROGRESS GATE: this needs meaningful movement toward 21:30, which is what a sub-50 at Beerwah actually demands. For context that is a minute faster than your lifetime PB of 22:29.  ||  HOW TO RUN IT: warm up 15 min easy, then the drills, then 3 strides, then 2 min at the pace you intend to hold, 3 min easy, and go. The fastest 5km is an evenly paced 5km, so do not blast the first kilometre. If anything, run km 1 two or three seconds slower than target and take it back over the last two. Cool down 10 min easy.  ||  WHERE: south, flat and measured. If you would rather race it at a Saturday parkrun that week, use the day-swap to move it there and make this Tuesday an easy run instead. Real competition is worth a few seconds.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "prescription": "5km TIME TRIAL, FLAT, MAXIMAL. This is a race against the clock, not a workout. There are no intervals in it and there are no hills in it. You run 5km as hard as you can hold, evenly, and the number resets every zone in the plan.  ||  PROGRESS GATE: this needs meaningful movement toward 21:30, which is what a sub-50 at Beerwah actually demands. For context that is a minute faster than your lifetime PB of 22:29.  ||  HOW TO RUN IT: warm up 15 min easy, then the drills, then 3 strides, then 2 min at the pace you intend to hold, 3 min easy, and go. The fastest 5km is an evenly paced 5km, so do not blast the first kilometre. If anything, run km 1 two or three seconds slower than target and take it back over the last two. Cool down 10 min easy.  ||  WHERE: south, flat and measured. If you would rather race it at a Saturday parkrun that week, use the day-swap to move it there and make this Tuesday an easy run instead. Real competition is worth a few seconds.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.  ||  THE WEEK 16 GATE, set 21 Sep 2026 when the volume went up. Three checks, and Claude runs them off your intervals.icu data on the morning of this test. (1) Resting heart rate trend over the previous four weeks - rising is the warning. (2) The heart-rate-to-pace relationship on your easy runs - if it costs more beats to run the same pace, you are carrying fatigue you have not cleared. (3) Anything you have reported as sore, stiff or niggling. IF TWO OF THE THREE ARE TRENDING WRONG, the added volume comes back out: Wednesday drops to 9km and stays there. That is the deal you agreed to, and it gets honoured whatever this time trial says.",
   "id": 167,
   "opt_out": "15 min easy + drills + 3 strides + 2 min at target pace, 3 min easy. Then 5km flat, maximal, evenly paced. 10 min easy to finish.",
   "opt_tm": "BELT VERSION - about 55 min, 9.6km. Warm-up jog: 15 min at 8.7 km/h at 1%. Strides: 4 x 20s at 12 km/h with a walk between. 2 min at your target TT speed. 3 min easy. THE TEST: 5km at 1%, set the speed and do not touch it. Then the COOL-DOWN block below, which is the wind-down: 10 min stepping down, 8.7 then 8.0 then 7.0 then a walk, about 1.3km. The belt flatters you: no wind, no corners, no pacing decisions. Outside on a flat measured route is always first choice for a test, so only use this if the weather genuinely rules the road out.",
@@ -11010,8 +11010,8 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session (deload)",
-  "prescription": "DELOAD WEEK. Same movements, roughly half the sets, about 80% of last week's load, and leave three or four reps in reserve on everything. The point is to keep the pattern and shed the fatigue, so if you finish feeling like you could do it all again, that was correct.  ||  The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up) (deload)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "squat",
@@ -11032,15 +11032,6 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "2 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "calf_str",
     "name": "Calf raise, straight knee",
     "scheme": "2 x 12",
@@ -11050,10 +11041,28 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "2 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
+    "load": true,
+    "sets": 2,
+    "rest": 90
+   },
+   {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "2 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 60
@@ -11062,7 +11071,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "2 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -11071,7 +11080,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "2 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -11080,19 +11089,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 168,
@@ -11145,10 +11145,10 @@ const SESSIONS = [
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 158 (threshold 178, measured at the Week 8 time trial on 15 Sep 2026; max 200 still an estimate). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 158. Flat or gently rolling. NO grey zone. Kept short this week on purpose: Tuesday and Saturday are both big, so the mid-week kilometres come back down.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 169,
   "opt_out": "Easy 7.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
-  "opt_tm": "BELT VERSION - 49 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 7.5km all up. One pace the whole way, conversational.",
+  "opt_tm": "BELT VERSION - 51 min at 8.7 km/h at 1%, one pace the whole way, conversational. Then walk it off, about 0.3km. That is 7.5km all up.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 6,
@@ -11225,8 +11225,8 @@ const SESSIONS = [
   "km": 6.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 170,
   "hill_reps": 8,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
@@ -11644,15 +11644,15 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 10.5,
+  "km": 12.0,
   "vert": 0,
   "type": "quality",
-  "title": "Sub-threshold",
-  "prescription": "BIGGEST THRESHOLD SESSION OF THE BUILD BLOCK. 2 x 18 min at sub-threshold (Z4, 168-177), 3 min jog. Thirty six minutes of work. If the second block is more than 5 sec/km slower than the first, the first one was too fast. ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: south, flat. This session is judged on holding an even controlled effort, and rolling ground makes that impossible.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Sub-threshold + goal pace",
+  "prescription": "18 min at sub-threshold (Z4, 168-177), 3 min jog, then 4 x 1000m at GOAL 5km PACE with 2 min jog. Re-derive goal pace off the Week 16 time trial you just ran, not off the old marker.  ||  GOAL PACE means the pace your NEXT time trial marker is set at, not the pace you ran last time. This is deliberately faster than you can currently race a 5km, which is the entire point: your legs have never once been asked to turn over at the speed the goal needs. Short reps, full jog recoveries, and if the last rep is slower than the first the pace was wrong. ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: south, flat. This session is judged on holding an even controlled effort, and rolling ground makes that impossible.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 178,
-  "opt_out": "15 min easy + drills. Then 2 x 18 min at sub-threshold, 3 min jog between. 10 min easy to finish.",
-  "opt_tm": "BELT VERSION - full session, 10.5km all up. Warm-up jog: 15 min at 8.7 km/h at 1%. Then the reps exactly as the prescription above sets them out, on the belt, with the jog recoveries at 7.5 km/h at 1%. Then easy at 8.7 km/h at 1% until the session total reaches 10.5km. Then the COOL-DOWN block below, which is the wind-down: 10 min stepping down, 8.7 then 8.0 then 7.0 then a walk, about 1.3km. The reps are by effort, not by a set belt speed. Read the prescription above and run to that.",
-  "hr_note": "Sit in Z4, 168-177, and no higher. Drifting to 178+ turns a sub-threshold session into a threshold session and loses the whole point of it: sub-threshold repeated beats threshold exceeded. You should still be able to get a short sentence out. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
+  "opt_out": "15 min easy + drills. Then the reps as prescribed above. 10 min easy to finish.",
+  "opt_tm": "BELT VERSION - full session, 12.0km all up. Warm-up jog 15 min at 8.7 km/h at 1%. Then the blocks and reps exactly as above, jog recoveries at 7.5 km/h. Goal-pace reps ARE a set belt speed: 4:28/km is 13.4 km/h, 4:18/km is 14.0 km/h. Easy at 8.7 km/h until the total reaches 12.0km, then the COOL-DOWN block below.",
+  "hr_note": "The threshold block sits in Z4, 168-177. The goal-pace reps are not judged on heart rate at all - they are judged on the clock and on even splits. Expect Z5 by the end of each rep and do not chase the number early, HR lags about 45 seconds. Jog until you are back under 161 before the next one. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 20,
    "items": [
@@ -11748,35 +11748,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -11797,28 +11779,55 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "3 x 8 each leg",
-    "note": "22.5kg dumbbells",
+    "k": "calf_str",
+    "name": "Calf raise, straight knee",
+    "scheme": "3 x 12",
+    "note": "3-second slow lower, loaded",
     "load": true,
     "sets": 3,
     "rest": 90
    },
    {
-    "k": "calf_str",
-    "name": "Calf raise, straight knee",
-    "scheme": "4 x 12",
-    "note": "3-second slow lower, loaded",
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
     "load": true,
-    "sets": 4,
+    "sets": 3,
     "rest": 90
    },
    {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -11827,7 +11836,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "3 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -11836,7 +11845,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "3 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 45
@@ -11845,19 +11854,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 179,
@@ -11906,14 +11906,14 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 9.5,
+  "km": 12.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 158 (threshold 178, measured at the Week 8 time trial on 15 Sep 2026; max 200 still an estimate). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Mid-week medium-long",
+  "prescription": "MID-WEEK MEDIUM-LONG. Added 21 Sep 2026 and this is the volume lever for the whole block: a sixth running day does not fit, so the kilometres go here instead. Run it EASY, under 158, the whole way. It is long, not hard - the moment it starts feeling like a session rather than a run, you are doing it wrong. Flat or gently rolling, sealed and familiar, 6:35-6:55/km.  ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 180,
-  "opt_out": "Easy 9.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
-  "opt_tm": "BELT VERSION - 60 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 9km all up. One pace the whole way, conversational.",
+  "opt_out": "Easy 12.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "BELT VERSION - 81 min at 8.7 km/h at 1%, one pace the whole way, conversational. Then walk it off, about 0.3km. That is 12.0km all up.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 6,
@@ -11990,8 +11990,8 @@ const SESSIONS = [
   "km": 9.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. Climbing has moved to the weekend climb session, where you get the real gradient and the descents with it. This day now exists to add aerobic volume without cost. If your legs are still heavy from Tuesday, shorten it rather than skip it. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 181,
   "hill_reps": 10,
   "opt_out": "Easy 8.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
@@ -12513,35 +12513,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -12562,15 +12544,6 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "2 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "calf_str",
     "name": "Calf raise, straight knee",
     "scheme": "3 x 12",
@@ -12580,10 +12553,46 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "2 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
+    "load": true,
+    "sets": 2,
+    "rest": 90
+   },
+   {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -12592,7 +12601,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "2 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -12601,7 +12610,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "2 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -12610,19 +12619,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 190,
@@ -12671,14 +12671,14 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 7.5,
+  "km": 13.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 158 (threshold 178, measured at the Week 8 time trial on 15 Sep 2026; max 200 still an estimate). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Mid-week medium-long",
+  "prescription": "MID-WEEK MEDIUM-LONG. Added 21 Sep 2026 and this is the volume lever for the whole block: a sixth running day does not fit, so the kilometres go here instead. Run it EASY, under 158, the whole way. It is long, not hard - the moment it starts feeling like a session rather than a run, you are doing it wrong. Flat or gently rolling, sealed and familiar, 6:35-6:55/km.  ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 191,
-  "opt_out": "Easy 9.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
-  "opt_tm": "BELT VERSION - 60 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 9km all up. One pace the whole way, conversational.",
+  "opt_out": "Easy 13.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "BELT VERSION - 88 min at 8.7 km/h at 1%, one pace the whole way, conversational. Then walk it off, about 0.3km. That is 13.0km all up.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 6,
@@ -12755,8 +12755,8 @@ const SESSIONS = [
   "km": 5.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 192,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "BELT VERSION - 39 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 6km all up. One pace the whole way, conversational.",
@@ -13277,8 +13277,8 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session (deload)",
-  "prescription": "DELOAD WEEK. Same movements, roughly half the sets, about 80% of last week's load, and leave three or four reps in reserve on everything. The point is to keep the pattern and shed the fatigue, so if you finish feeling like you could do it all again, that was correct.  ||  The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up) (deload)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "squat",
@@ -13299,15 +13299,6 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "2 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "calf_str",
     "name": "Calf raise, straight knee",
     "scheme": "2 x 12",
@@ -13317,10 +13308,28 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "2 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
+    "load": true,
+    "sets": 2,
+    "rest": 90
+   },
+   {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "2 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 60
@@ -13329,7 +13338,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "2 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -13338,7 +13347,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "2 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -13347,19 +13356,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 201,
@@ -13492,8 +13492,8 @@ const SESSIONS = [
   "km": 6.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 203,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "BELT VERSION - 39 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 6km all up. One pace the whole way, conversational.",
@@ -14004,35 +14004,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -14053,15 +14035,6 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "2 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "calf_str",
     "name": "Calf raise, straight knee",
     "scheme": "3 x 12",
@@ -14071,10 +14044,46 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "2 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
+    "load": true,
+    "sets": 2,
+    "rest": 90
+   },
+   {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -14083,7 +14092,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "2 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -14092,7 +14101,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "2 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -14101,19 +14110,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 212,
@@ -14246,8 +14246,8 @@ const SESSIONS = [
   "km": 6.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 214,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "BELT VERSION - 39 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 6km all up. One pace the whole way, conversational.",
@@ -14768,35 +14768,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -14817,15 +14799,6 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "2 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "calf_str",
     "name": "Calf raise, straight knee",
     "scheme": "3 x 12",
@@ -14835,10 +14808,46 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "2 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
+    "load": true,
+    "sets": 2,
+    "rest": 90
+   },
+   {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -14847,7 +14856,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "2 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -14856,7 +14865,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "2 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -14865,19 +14874,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 223,
@@ -14926,14 +14926,14 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 7.5,
+  "km": 14.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 158 (threshold 178, measured at the Week 8 time trial on 15 Sep 2026; max 200 still an estimate). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Mid-week medium-long",
+  "prescription": "MID-WEEK MEDIUM-LONG. Added 21 Sep 2026 and this is the volume lever for the whole block: a sixth running day does not fit, so the kilometres go here instead. Run it EASY, under 158, the whole way. It is long, not hard - the moment it starts feeling like a session rather than a run, you are doing it wrong. Flat or gently rolling, sealed and familiar, 6:35-6:55/km.  ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 224,
-  "opt_out": "Easy 9.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
-  "opt_tm": "BELT VERSION - 60 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 9km all up. One pace the whole way, conversational.",
+  "opt_out": "Easy 14.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "BELT VERSION - 94 min at 8.7 km/h at 1%, one pace the whole way, conversational. Then walk it off, about 0.3km. That is 14.0km all up.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 6,
@@ -15010,8 +15010,8 @@ const SESSIONS = [
   "km": 5.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 225,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "BELT VERSION - 39 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 6km all up. One pace the whole way, conversational.",
@@ -15428,15 +15428,15 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 7.5,
+  "km": 8.5,
   "vert": 0,
   "type": "quality",
-  "title": "VO2 intervals",
-  "prescription": "DOWN WEEK, AND TIME TRIAL #4 IS NEXT TUESDAY. This one sharpens into the test rather than adding more threshold, which is why it is the one VO2 session left in the Specific block. 5 x 3 min hard (Z5 and above, 178-182+), 2 min jog. ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: south, flat. Reps are judged on effort held evenly, so the ground has to be honest.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Goal-pace sharpener",
+  "prescription": "DOWN WEEK, AND TIME TRIAL #4 IS NEXT TUESDAY. 5 x 3 min at GOAL 5km PACE (4:18/km off the Week 23 marker), 2 min jog. This sharpens into the test rather than adding more threshold.  ||  GOAL PACE means the pace your NEXT time trial marker is set at, not the pace you ran last time. This is deliberately faster than you can currently race a 5km, which is the entire point: your legs have never once been asked to turn over at the speed the goal needs. Short reps, full jog recoveries, and if the last rep is slower than the first the pace was wrong. ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: south, flat. Reps are judged on effort held evenly, so the ground has to be honest.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 233,
-  "opt_out": "15 min easy + drills. Then 5 x 3 min hard, 2 min jog between. 10 min easy to finish.",
-  "opt_tm": "BELT VERSION - full session, 7.5km all up. Warm-up jog: 15 min at 8.7 km/h at 1%. Then the reps exactly as the prescription above sets them out, on the belt, with the jog recoveries at 7.5 km/h at 1%. Then easy at 8.7 km/h at 1% until the session total reaches 7.5km. Then the COOL-DOWN block below, which is the wind-down: 10 min stepping down, 8.7 then 8.0 then 7.0 then a walk, about 1.3km. The reps are by effort, not by a set belt speed. Read the prescription above and run to that.",
-  "hr_note": "Reps should climb into Z5 (178-182) by the end of each one and may go above. Rep 1 will read low because HR lags about 45 seconds, so do not chase the number early. On the jog recoveries get back under 161 before the next rep starts. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
+  "opt_out": "15 min easy + drills. Then the reps as prescribed above. 10 min easy to finish.",
+  "opt_tm": "BELT VERSION - full session, 8.5km all up. Warm-up jog 15 min at 8.7 km/h at 1%. Then the blocks and reps exactly as above, jog recoveries at 7.5 km/h. Goal-pace reps ARE a set belt speed: 4:28/km is 13.4 km/h, 4:18/km is 14.0 km/h. Easy at 8.7 km/h until the total reaches 8.5km, then the COOL-DOWN block below.",
+  "hr_note": "The threshold block sits in Z4, 168-177. The goal-pace reps are not judged on heart rate at all - they are judged on the clock and on even splits. Expect Z5 by the end of each rep and do not chase the number early, HR lags about 45 seconds. Jog until you are back under 161 before the next one. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 20,
    "items": [
@@ -15532,8 +15532,8 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session (deload)",
-  "prescription": "DELOAD WEEK. Same movements, roughly half the sets, about 80% of last week's load, and leave three or four reps in reserve on everything. The point is to keep the pattern and shed the fatigue, so if you finish feeling like you could do it all again, that was correct.  ||  The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up) (deload)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "squat",
@@ -15554,15 +15554,6 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "2 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "calf_str",
     "name": "Calf raise, straight knee",
     "scheme": "2 x 12",
@@ -15572,10 +15563,28 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "2 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
+    "load": true,
+    "sets": 2,
+    "rest": 90
+   },
+   {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "2 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 60
@@ -15584,7 +15593,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "2 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -15593,7 +15602,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "2 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -15602,19 +15611,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 234,
@@ -15663,14 +15663,14 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 7.0,
+  "km": 8.0,
   "vert": 0,
   "type": "easy",
   "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 158 (threshold 178, measured at the Week 8 time trial on 15 Sep 2026; max 200 still an estimate). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "prescription": "Conversational, 6:35-6:55/km, HR under 158. Flat or gently rolling. NO grey zone. Kept short this week on purpose: Tuesday and Saturday are both big, so the mid-week kilometres come back down.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 235,
-  "opt_out": "Easy 7.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
-  "opt_tm": "BELT VERSION - 49 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 7.5km all up. One pace the whole way, conversational.",
+  "opt_out": "Easy 8.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "BELT VERSION - 54 min at 8.7 km/h at 1%, one pace the whole way, conversational. Then walk it off, about 0.3km. That is 8.0km all up.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 6,
@@ -15747,8 +15747,8 @@ const SESSIONS = [
   "km": 5.5,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 236,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "BELT VERSION - 39 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 6km all up. One pace the whole way, conversational.",
@@ -16274,35 +16274,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -16323,15 +16305,6 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "2 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "calf_str",
     "name": "Calf raise, straight knee",
     "scheme": "3 x 12",
@@ -16341,10 +16314,46 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "2 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
+    "load": true,
+    "sets": 2,
+    "rest": 90
+   },
+   {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -16353,7 +16362,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "2 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -16362,7 +16371,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "2 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -16371,19 +16380,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 245,
@@ -16432,14 +16432,14 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 10.5,
+  "km": 14.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 158 (threshold 178, measured at the Week 8 time trial on 15 Sep 2026; max 200 still an estimate). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Mid-week medium-long",
+  "prescription": "MID-WEEK MEDIUM-LONG. Added 21 Sep 2026 and this is the volume lever for the whole block: a sixth running day does not fit, so the kilometres go here instead. Run it EASY, under 158, the whole way. It is long, not hard - the moment it starts feeling like a session rather than a run, you are doing it wrong. Flat or gently rolling, sealed and familiar, 6:35-6:55/km.  ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 246,
-  "opt_out": "Easy 10.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
-  "opt_tm": "BELT VERSION - 70 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 10.5km all up. One pace the whole way, conversational.",
+  "opt_out": "Easy 14.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "BELT VERSION - 94 min at 8.7 km/h at 1%, one pace the whole way, conversational. Then walk it off, about 0.3km. That is 14.0km all up.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 6,
@@ -16516,8 +16516,8 @@ const SESSIONS = [
   "km": 6.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 247,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "BELT VERSION - 39 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 6km all up. One pace the whole way, conversational.",
@@ -16934,15 +16934,15 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 9.0,
+  "km": 9.5,
   "vert": 40,
   "type": "quality",
-  "title": "Threshold + trail reps",
-  "prescription": "12 min at sub-threshold (Z4, 168-177) on the rolling ground, 3 min jog, then 6 x 90s hard with 90s jog. The block first, the reps second, and in that order - arriving at the reps already working is the point. ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: north, rolling. Real footing at the graveyard would be better, but not at 4:30am in the dark on a 15 minute drive. Run the reps on the rolling rises instead and take the terrain work on the weekend.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Threshold + goal-pace reps",
+  "prescription": "12 min at sub-threshold (Z4, 168-177) on the rolling ground, 3 min jog, then 6 x 90s at GOAL 5km PACE with 90s jog. The block first, the reps second, and in that order - arriving at the reps already working is the point.  ||  GOAL PACE means the pace your NEXT time trial marker is set at, not the pace you ran last time. This is deliberately faster than you can currently race a 5km, which is the entire point: your legs have never once been asked to turn over at the speed the goal needs. Short reps, full jog recoveries, and if the last rep is slower than the first the pace was wrong. ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: north, rolling. Real footing at the graveyard would be better, but not at 4:30am in the dark on a 15 minute drive. Run the reps on the rolling rises instead and take the terrain work on the weekend.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 255,
-  "opt_out": "15 min easy + drills. Then 12 min at sub-threshold, 3 min jog, then 6 x 90s hard w/ 90s jog. 10 min easy to finish.",
-  "opt_tm": "BELT VERSION - full session, 9.0km all up. Warm-up jog: 15 min at 8.7 km/h at 1%. Then the reps exactly as the prescription above sets them out, on the belt, with the jog recoveries at 7.5 km/h at 1%. Then easy at 8.7 km/h at 1% until the session total reaches 9.0km. Then the COOL-DOWN block below, which is the wind-down: 10 min stepping down, 8.7 then 8.0 then 7.0 then a walk, about 1.3km. The reps are by effort, not by a set belt speed. Read the prescription above and run to that.",
-  "hr_note": "The long block sits in Z4, 168-177. The short efforts on the end are allowed into Z5, 178-182, and no further - they are there for leg speed, not for a second hard session. Jog recoveries until you are back under 161. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
+  "opt_out": "15 min easy + drills. Then the reps as prescribed above. 10 min easy to finish.",
+  "opt_tm": "BELT VERSION - full session, 9.5km all up. Warm-up jog 15 min at 8.7 km/h at 1%. Then the blocks and reps exactly as above, jog recoveries at 7.5 km/h. Goal-pace reps ARE a set belt speed: 4:28/km is 13.4 km/h, 4:18/km is 14.0 km/h. Easy at 8.7 km/h until the total reaches 9.5km, then the COOL-DOWN block below.",
+  "hr_note": "The threshold block sits in Z4, 168-177. The goal-pace reps are not judged on heart rate at all - they are judged on the clock and on even splits. Expect Z5 by the end of each rep and do not chase the number early, HR lags about 45 seconds. Jog until you are back under 161 before the next one. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 20,
    "items": [
@@ -17038,35 +17038,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -17087,15 +17069,6 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "2 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "calf_str",
     "name": "Calf raise, straight knee",
     "scheme": "3 x 12",
@@ -17105,10 +17078,46 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "2 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
+    "load": true,
+    "sets": 2,
+    "rest": 90
+   },
+   {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -17117,7 +17126,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "2 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -17126,7 +17135,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "2 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -17135,19 +17144,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 256,
@@ -17196,14 +17196,14 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 8.0,
+  "km": 10.0,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run",
-  "prescription": "Conversational, 6:35-6:55/km, HR under 158 (threshold 178, measured at the Week 8 time trial on 15 Sep 2026; max 200 still an estimate). Flat or gently rolling. NO grey zone.  ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Mid-week medium-long",
+  "prescription": "MID-WEEK MEDIUM-LONG. Added 21 Sep 2026 and this is the volume lever for the whole block: a sixth running day does not fit, so the kilometres go here instead. Run it EASY, under 158, the whole way. It is long, not hard - the moment it starts feeling like a session rather than a run, you are doing it wrong. Flat or gently rolling, sealed and familiar, 6:35-6:55/km.  ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  IF THE MORNING RUNS SHORT: cut the distance, do not lift the pace. A short easy run is worth something. A rushed fast one costs you Saturday. ||  Flat or gently rolling, sealed and familiar.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 257,
-  "opt_out": "Easy 9.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
-  "opt_tm": "BELT VERSION - 60 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 9km all up. One pace the whole way, conversational.",
+  "opt_out": "Easy 10.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
+  "opt_tm": "BELT VERSION - 68 min at 8.7 km/h at 1%, one pace the whole way, conversational. Then walk it off, about 0.3km. That is 10.0km all up.",
   "hr_note": "Easy means Z1 to low Z2: sit UNDER 158 and hold a full-sentence conversation. If the pace costs 10+ beats more than usual, cut it short. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 6,
@@ -17280,8 +17280,8 @@ const SESSIONS = [
   "km": 5.5,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 258,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "BELT VERSION - 39 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 6km all up. One pace the whole way, conversational.",
@@ -17698,15 +17698,15 @@ const SESSIONS = [
   "is_night": false,
   "is_test": false,
   "is_race": false,
-  "km": 8.5,
+  "km": 9.0,
   "vert": 40,
   "type": "quality",
-  "title": "Threshold + trail reps",
-  "prescription": "10 min at sub-threshold (Z4, 168-177), 3 min jog, then 6 x 90s hard with 90s jog. Last week of Sharpen, so the block comes down but the reps stay. ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: north, rolling. Real footing at the graveyard would be better, but not at 4:30am in the dark on a 15 minute drive. Run the reps on the rolling rises instead and take the terrain work on the weekend.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "title": "Threshold + goal-pace reps",
+  "prescription": "10 min at sub-threshold (Z4, 168-177), 3 min jog, then 6 x 90s at GOAL 5km PACE with 90s jog. Last week of Sharpen, so the block comes down but the reps stay.  ||  GOAL PACE means the pace your NEXT time trial marker is set at, not the pace you ran last time. This is deliberately faster than you can currently race a 5km, which is the entire point: your legs have never once been asked to turn over at the speed the goal needs. Short reps, full jog recoveries, and if the last rep is slower than the first the pace was wrong. ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: north, rolling. Real footing at the graveyard would be better, but not at 4:30am in the dark on a 15 minute drive. Run the reps on the rolling rises instead and take the terrain work on the weekend.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 266,
-  "opt_out": "15 min easy + drills. Then 10 min at sub-threshold, 3 min jog, then 6 x 90s hard w/ 90s jog. 10 min easy to finish.",
-  "opt_tm": "BELT VERSION - full session, 8.5km all up. Warm-up jog: 15 min at 8.7 km/h at 1%. Then the reps exactly as the prescription above sets them out, on the belt, with the jog recoveries at 7.5 km/h at 1%. Then easy at 8.7 km/h at 1% until the session total reaches 8.5km. Then the COOL-DOWN block below, which is the wind-down: 10 min stepping down, 8.7 then 8.0 then 7.0 then a walk, about 1.3km. The reps are by effort, not by a set belt speed. Read the prescription above and run to that.",
-  "hr_note": "The long block sits in Z4, 168-177. The short efforts on the end are allowed into Z5, 178-182, and no further - they are there for leg speed, not for a second hard session. Jog recoveries until you are back under 161. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
+  "opt_out": "15 min easy + drills. Then the reps as prescribed above. 10 min easy to finish.",
+  "opt_tm": "BELT VERSION - full session, 9.0km all up. Warm-up jog 15 min at 8.7 km/h at 1%. Then the blocks and reps exactly as above, jog recoveries at 7.5 km/h. Goal-pace reps ARE a set belt speed: 4:28/km is 13.4 km/h, 4:18/km is 14.0 km/h. Easy at 8.7 km/h until the total reaches 9.0km, then the COOL-DOWN block below.",
+  "hr_note": "The threshold block sits in Z4, 168-177. The goal-pace reps are not judged on heart rate at all - they are judged on the clock and on even splits. Expect Z5 by the end of each rep and do not chase the number early, HR lags about 45 seconds. Jog until you are back under 161 before the next one. || ZONES (threshold HR 178, MEASURED at the Week 8 time trial on 15 Sep 2026 off the chest strap; max 200 is still an estimate): Z1 recovery up to 149 | Z2 aerobic 150-158 | Z3 tempo 159-167 | Z4 sub-threshold 168-177 | Z5 threshold 178-182 | Z6+ 183 and up.",
   "wu": {
    "mins": 20,
    "items": [
@@ -17802,35 +17802,17 @@ const SESSIONS = [
   "km": 0,
   "vert": 0,
   "type": "strength",
-  "title": "Strength — weekly lower session",
-  "prescription": "The one strength session of the week, own time slot, no run today. Covers everything: heavy lower, single-leg, calves, core. 2 ramp-up sets before the big lifts. Placed here deliberately: the hard weekend session is two days away, not one.",
+  "title": "Strength — 30 min core (+ optional top-up)",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
     "name": "Pogo hops",
-    "scheme": "3 x 20",
+    "scheme": "2 x 20",
     "note": "do these FIRST, straight after warm-up",
     "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "splitjump",
-    "name": "Split jumps",
-    "scheme": "3 x 10 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
-   },
-   {
-    "k": "slhop",
-    "name": "Single-leg hops",
-    "scheme": "3 x 8 each leg",
-    "note": "",
-    "load": false,
-    "sets": 3,
-    "rest": 90
+    "sets": 2,
+    "rest": 60
    },
    {
     "k": "squat",
@@ -17851,15 +17833,6 @@ const SESSIONS = [
     "rest": 120
    },
    {
-    "k": "bss",
-    "name": "Bulgarian split squat",
-    "scheme": "2 x 8 each leg",
-    "note": "22.5kg dumbbells",
-    "load": true,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "calf_str",
     "name": "Calf raise, straight knee",
     "scheme": "3 x 12",
@@ -17869,10 +17842,46 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
+    "k": "splitjump",
+    "name": "Split jumps",
+    "scheme": "3 x 10 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "slhop",
+    "name": "Single-leg hops",
+    "scheme": "3 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
+    "load": false,
+    "sets": 3,
+    "rest": 90
+   },
+   {
+    "k": "bss",
+    "name": "Bulgarian split squat",
+    "scheme": "2 x 8 each leg",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. 22.5kg dumbbells",
+    "load": true,
+    "sets": 2,
+    "rest": 90
+   },
+   {
     "k": "calf_bent",
     "name": "Calf raise, bent knee (soleus)",
     "scheme": "3 x 15",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 3,
     "rest": 60
@@ -17881,7 +17890,7 @@ const SESSIONS = [
     "k": "deadbug",
     "name": "Dead bug",
     "scheme": "2 x 10",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -17890,7 +17899,7 @@ const SESSIONS = [
     "k": "plank",
     "name": "Side plank",
     "scheme": "2 x 40s each side",
-    "note": "",
+    "note": "TOP-UP ONLY, not part of the 30 minute core.",
     "load": false,
     "sets": 2,
     "rest": 45
@@ -17899,19 +17908,10 @@ const SESSIONS = [
     "k": "hipthrust",
     "name": "Hip thrust (shoulders on bench)",
     "scheme": "2 x 12",
-    "note": "from the old B day - glute drive for the climbs",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. from the old B day - glute drive for the climbs",
     "load": true,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 267,
@@ -18044,8 +18044,8 @@ const SESSIONS = [
   "km": 4.5,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 269,
   "opt_out": "Easy 6.0km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "BELT VERSION - 32 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 5km all up. One pace the whole way, conversational.",
@@ -18339,7 +18339,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "quality",
   "title": "Taper reps",
-  "prescription": "4 x 90s hard w/ 90s jog. Same effort as Sharpen, half the volume.  ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: south, flat. Taper work is about sharpness, not terrain.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "prescription": "4 x 90s at GOAL 5km PACE (4:18/km) w/ 90s jog. Same pace as Sharpen, half the volume. Taper reps are about sharpness: hit the pace exactly, then stop.  ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: south, flat. Taper work is about sharpness, not terrain.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 276,
   "opt_out": "15 min easy + drills. Then 4 x 90s hard with 90s jog between. 10 min easy to finish.",
   "opt_tm": "BELT VERSION - full session, 5.5km. Warm-up jog: 15 min at 8.7 km/h at 1%. 4 x 90s hard, 90s jog at 7.5 km/h at 1% between. Easy to finish the volume: 1 min at 8.7 km/h at 1%. Then the COOL-DOWN block below, which is the wind-down: 10 min stepping down, 8.7 then 8.0 then 7.0 then a walk, about 1.3km. The reps are by effort, not by a set belt speed. Read the prescription above, pick the speed that matches it, and hold it.",
@@ -18440,8 +18440,17 @@ const SESSIONS = [
   "vert": 0,
   "type": "strength",
   "title": "Strength taper - neuromuscular maintenance",
-  "prescription": "LAST BARBELL SESSION OF THE BLOCK. Fri 22 Jan, 8 days out. Intensity stays, volume halves: this keeps the economy and the stiffness you have built without leaving any fatigue behind. After today there is no more loaded lifting before the race.",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
+   {
+    "k": "pogo",
+    "name": "Pogo hops",
+    "scheme": "2 x 15",
+    "note": "springy, low effort",
+    "load": false,
+    "sets": 2,
+    "rest": 90
+   },
    {
     "k": "squat",
     "name": "Back squat (high bar, wide grip)",
@@ -18461,21 +18470,12 @@ const SESSIONS = [
     "rest": 90
    },
    {
-    "k": "pogo",
-    "name": "Pogo hops",
-    "scheme": "2 x 15",
-    "note": "springy, low effort",
-    "load": false,
-    "sets": 2,
-    "rest": 90
-   },
-   {
     "k": "copen",
     "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
+    "scheme": "2 x 20s each side",
     "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
     "load": false,
-    "sets": 3,
+    "sets": 2,
     "rest": 45
    }
   ],
@@ -18609,8 +18609,8 @@ const SESSIONS = [
   "km": 4.5,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 279,
   "opt_out": "Easy 4.5km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "BELT VERSION - 29 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 4.5km all up. One pace the whole way, conversational.",
@@ -18691,7 +18691,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "strength",
   "title": "Plyo touch (5 min)",
-  "prescription": "PLYO TOUCH, 5 minutes, and this is the last strength contact of the block. Four days out. Light spring only: a few easy pogo hops and two or three short bounds to remind the legs what elastic feels like. No weights, no depth, no fatigue. If anything feels heavy, stop.",
+  "prescription": "THE CORE IS THE SESSION. The first five movements are what counts as done and they take under 30 minutes. Everything below them is a top-up for the weeks you have the time, and skipping the top-up is not skipping the session.  ||  REBUILT 21 Sep 2026. The old version was twelve exercises and thirty-six sets, which is an hour and a half at 4:30am, which is why it was not happening. A thirty minute session done every week beats a ninety minute session done never. Heavy lower work and plyometrics are among the best-evidenced things in distance running for economy and for staying uninjured, so the cost of missing this session is real.  ||  IF YOU ARE REALLY PRESSED: squat, Romanian deadlift and calf raises alone is about 22 minutes and still worth doing. Do not skip the whole thing because you cannot do all of it.  ||  Own time slot, no run today. Two ramp-up sets before the big lifts (about 50% then about 70% of your working weight). Placed on Friday deliberately: the hard weekend session is two days away, not one.",
   "exercises": [
    {
     "k": "pogo",
@@ -18703,22 +18703,22 @@ const SESSIONS = [
     "rest": 90
    },
    {
+    "k": "copen",
+    "name": "Copenhagen plank (short lever)",
+    "scheme": "2 x 20s each side",
+    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
+    "load": false,
+    "sets": 2,
+    "rest": 45
+   },
+   {
     "k": "slhop",
     "name": "Single-leg hops",
     "scheme": "2 x 6 each leg",
-    "note": "springy, effortless",
+    "note": "TOP-UP ONLY, not part of the 30 minute core. springy, effortless",
     "load": false,
     "sets": 2,
     "rest": 90
-   },
-   {
-    "k": "copen",
-    "name": "Copenhagen plank (short lever)",
-    "scheme": "3 x 20s each side",
-    "note": "Side plank on your forearm with the TOP leg resting on a bench or chair at knee height, bottom leg hanging. Squeeze the top leg down into the bench and lift your hips. Short lever means knee on the bench, not ankle. This is the single best guard against groin strains in runners. Added 1 Sep.",
-    "load": false,
-    "sets": 3,
-    "rest": 45
    }
   ],
   "id": 280,
@@ -18984,7 +18984,7 @@ const SESSIONS = [
   "vert": 0,
   "type": "quality",
   "title": "Taper reps",
-  "prescription": "4 x 90s hard w/ 90s jog. Same effort as Sharpen, half the volume.  ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: south, flat. Taper work is about sharpness, not terrain.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
+  "prescription": "4 x 90s at GOAL 5km PACE (4:18/km) w/ 90s jog. Same pace as Sharpen, half the volume. Taper reps are about sharpness: hit the pace exactly, then stop.  ||  PACE: run this on EFFORT and heart rate first, pace second. Every pace in the plan gets re-derived at each time trial (15 Sep, 10 Nov, 29 Dec), so if the last TT has happened use the number it gave you and treat anything written here as the older guess.  ||  WHERE: south, flat. Taper work is about sharpness, not terrain.  ||  4:30am DARK-RUN KIT: headtorch on before you leave, light or reflective top, a route you already know in daylight, phone on you. Hold or wear the light high enough to pick up spiderwebs strung across the path at head height - that is what catches people out.",
   "id": 285,
   "opt_out": "15 min easy + drills. Then 4 x 90s hard with 90s jog between. 10 min easy to finish.",
   "opt_tm": "BELT VERSION - full session, 5.5km. Warm-up jog: 15 min at 8.7 km/h at 1%. 4 x 90s hard, 90s jog at 7.5 km/h at 1% between. Easy to finish the volume: 1 min at 8.7 km/h at 1%. Then the COOL-DOWN block below, which is the wind-down: 10 min stepping down, 8.7 then 8.0 then 7.0 then a walk, about 1.3km. The reps are by effort, not by a set belt speed. Read the prescription above, pick the speed that matches it, and hold it.",
@@ -19165,8 +19165,8 @@ const SESSIONS = [
   "km": 4,
   "vert": 0,
   "type": "easy",
-  "title": "Easy run (flat)",
-  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway.",
+  "title": "Easy run + strides",
+  "prescription": "Flat, easy, 4:30am-friendly. The night terrain work this day used to hold has moved onto the weekend TRAIL DAY, which from here is run in the dark with a head torch. Four hard days a week does not fit your life and would not survive to January anyway. ||  STRIDES, every Thursday from here: after the run, 6 x 20 seconds at about mile effort with a full walk back between each. Not sprints. Relaxed, tall, quick feet, and stop each one while it still feels easy. Ninety seconds of work that buys turnover and running economy for free. Added 21 Sep 2026.",
   "id": 287,
   "opt_out": "Easy 4km TOTAL at 6:35-6:55/km. Flat, sealed, familiar route.",
   "opt_tm": "BELT VERSION - 25 min at 8.7 km/h at 1%. Then the COOL-DOWN block below: walk it off, about 0.3km. That is 4km all up. One pace the whole way, conversational.",
@@ -19433,28 +19433,28 @@ const WEEKS = {
  },
  "2": {
   "phase": "0 Ramp",
-  "km": 22,
+  "km": 22.0,
   "vert": 200,
   "down": false,
   "note": "Rainbow Beach 11km Sat (easy, not raced)"
  },
  "3": {
   "phase": "0 Ramp",
-  "km": 19,
+  "km": 12.5,
   "vert": 100,
   "down": true,
   "note": "Recovery week after the sand"
  },
  "4": {
   "phase": "0 Ramp",
-  "km": 24,
+  "km": 14,
   "vert": 150,
   "down": false,
   "note": ""
  },
  "5": {
   "phase": "1 Base",
-  "km": 27,
+  "km": 25.5,
   "vert": 250,
   "down": false,
   "note": "Heavy lifting begins. Downhill work begins."
@@ -19482,7 +19482,7 @@ const WEEKS = {
  },
  "9": {
   "phase": "1 Base",
-  "km": 37.1,
+  "km": 36.4,
   "vert": 440,
   "down": false,
   "note": "Sunday is the ACTUAL Beerwah@Night course this week, in daylight, replacing the graveyard. 10.0km and 282m off Run Queensland's own GPX. Same load, real ground, and it measures the terrain penalty ten weeks before Daybreak was going to."
@@ -19496,7 +19496,7 @@ const WEEKS = {
  },
  "11": {
   "phase": "2 Build",
-  "km": 42.2,
+  "km": 42.1,
   "vert": 360,
   "down": false,
   "note": "Plyometrics begin. Threshold progression starts here: 4 x 5 min, and from now on the reps get LONGER rather than more numerous."
@@ -19510,49 +19510,49 @@ const WEEKS = {
  },
  "13": {
   "phase": "2 Build",
-  "km": 43.0,
+  "km": 45.2,
   "vert": 550,
   "down": false,
-  "note": ""
+  "note": "Threshold reps go to 4 x 7 min. Wednesday becomes the mid-week medium-long, which is where the extra volume lives from here."
  },
  "14": {
   "phase": "2 Build",
-  "km": 47.4,
+  "km": 49.7,
   "vert": 650,
   "down": false,
   "note": "First double-digit threshold rep: 3 x 10 min."
  },
  "15": {
   "phase": "2 Build",
-  "km": 51.5,
+  "km": 52.6,
   "vert": 740,
   "down": false,
-  "note": "Threshold goes to 2 x 16 min. Two blocks, not five."
+  "note": "Threshold goes to 16 min plus the FIRST GOAL-PACE SESSION of the block: 5 x 800m at the pace you are actually chasing. Wednesday stays short this week on purpose, Tuesday and Saturday are both big."
  },
  "16": {
   "phase": "2 Build",
   "km": 40.7,
   "vert": 480,
   "down": true,
-  "note": "Down week. 5km TT #3. Head torch in use."
+  "note": "Down week. 5km TT #3. Head torch in use. THE GATE: resting HR trend, easy-run HR-to-pace, and any niggles get checked this morning. Two of three trending wrong and the added Wednesday volume comes back out."
  },
  "17": {
   "phase": "2 Build",
-  "km": 52.3,
+  "km": 55.9,
   "vert": 720,
   "down": false,
-  "note": "Peak lifting load, and the biggest threshold session of the Build block at 2 x 18 min."
+  "note": "Peak lifting load, 18 min threshold plus 4 x 1000m at goal pace, and the first week that goes past the old plan's ceiling. Nothing before the gate exceeded 52.3km. This is 55.9 and it had to be earned."
  },
  "18": {
   "phase": "3 Specific",
-  "km": 46.8,
+  "km": 52.1,
   "vert": 840,
   "down": false,
   "note": "Night running begins. Head torch required. Threshold turns continuous: 25 min unbroken. Roughly 28% of this week is at Z4 or above, which is a deliberate step up from the Base block."
  },
  "19": {
   "phase": "3 Specific",
-  "km": 32.9,
+  "km": 33.0,
   "vert": 260,
   "down": true,
   "note": "Down week. RACE: Beerwah@Daybreak Sun 6 Dec"
@@ -19566,35 +19566,35 @@ const WEEKS = {
  },
  "21": {
   "phase": "3 Specific",
-  "km": 47.6,
+  "km": 54.0,
   "vert": 940,
   "down": false,
   "note": "BIGGEST WEEK OF THE BLOCK and a deliberate overload: 2 x 20 min threshold on Tuesday, 2 x 10 min race effort Saturday, 3 x 11 min climbing Sunday. That is about 31% of the week at Z4 or above, which is above the usual ceiling on purpose. W22 is a down week straight after. If anything is still sore on the Tuesday, cut the second 20 to a 12."
  },
  "22": {
   "phase": "3 Specific",
-  "km": 40.7,
+  "km": 42.3,
   "vert": 680,
   "down": true,
-  "note": "Down week, and the one VO2 session left in the Specific block. It sharpens into TT #4 next Tuesday rather than adding more threshold."
+  "note": "Down week. Goal-pace sharpener into TT #4 next Tuesday rather than more threshold."
  },
  "23": {
   "phase": "3 Specific",
-  "km": 49.5,
+  "km": 53.0,
   "vert": 920,
   "down": false,
   "note": "5km TT #4. Final go/no-go on the A goal."
  },
  "24": {
   "phase": "4 Sharpen",
-  "km": 39.3,
+  "km": 41.8,
   "vert": 660,
   "down": false,
   "note": "Full course rehearsal at Beerwah, at night. Tuesday keeps a 12 min threshold block ahead of the trail reps."
  },
  "25": {
   "phase": "4 Sharpen",
-  "km": 35.2,
+  "km": 35.7,
   "vert": 610,
   "down": false,
   "note": "Last hard descent session. Last heavy lift."
