@@ -20207,7 +20207,29 @@ const ATHLETE = {
  ],
  "intake": null,
  "setup_html": null,
- "test_km": 5
+ "test_km": 5,
+ "aero": {
+  "title": "Weekly aerobic marker — are you getting fitter between time trials?",
+  "hr_cap": 158,
+  "mhr_cap": 172,
+  "vert_cap": 45,
+  "min_km": 3,
+  "min_runs": 2,
+  "target_week": 23,
+  "cal": [
+   [
+    0.9217,
+    1666
+   ],
+   [
+    1.0944,
+    1433
+   ]
+  ],
+  "seed_note": "Seeded off two points: the week of your 27 Jul trial (27:46) and the week of your 15 Sep trial (23:53). Two points is a thin calibration, so treat the estimated 5km as a direction of travel rather than a prediction. It re-fits itself on your own trials from TT #3 onwards.",
+  "method": "Read off easy runs only: outdoor, 3km or longer, average HR 158 or under, nothing above 172 in it, and under 45m of climb. Hard days, trails and the treadmill are excluded because terrain and effort both distort the number. Two qualifying runs make a solid dot, one makes a hollow one.",
+  "empty": "No qualifying easy runs synced yet. This fills in automatically once Sync has a week of easy runs to read."
+ }
 };
 const NW = ATHLETE.weeks, SP = ATHLETE.store_prefix;
 const START = ATHLETE.start, RACE = ATHLETE.race;
@@ -20322,6 +20344,54 @@ function loggedTTs(){
   return out;
 }
 function latest5k(){ const t=loggedTTs(); return t.length? t[t.length-1] : null; }
+// ---------- weekly aerobic marker ----------
+// Metres covered per heartbeat on easy runs. Rises as the aerobic engine improves, and unlike
+// a time trial it can be read every week off runs already in the plan. Only genuinely easy,
+// flat, outdoor runs qualify, because terrain and hard efforts both wreck the number.
+function aeroRuns(wk){
+  const A=ATHLETE.aero; if(!A) return [];
+  const mon=new Date(START+"T12:00"); mon.setDate(mon.getDate()+(wk-1)*7);
+  const out=[];
+  for(let i=0;i<7;i++){ const d=iso(new Date(mon.getTime()+i*864e5));
+    for(const a of actsOn(d)){
+      if(!a.hr||!a.km||!a.secs) continue;
+      if(a.atype&&/virtual|trail/i.test(a.atype)) continue; // belt distance is wrist-derived; trail is terrain
+      if(a.hr>A.hr_cap) continue;                     // not actually easy
+      if((a.vert||0)>A.vert_cap) continue;            // hills distort it
+      if(a.km<A.min_km) continue;
+      // no hard effort buried in it. Older synced runs predate the max-HR field, so for those
+      // fall back to trusting the plan: only a prescribed easy day counts.
+      if(a.mhr!=null){ if(a.mhr>A.mhr_cap) continue; }
+      else if(!sessionsOn(d).some(s=>s.type==="easy")) continue;
+      out.push({date:d, mpb:(a.km*1000)/((a.secs/60)*a.hr), km:a.km, hr:a.hr,
+                pace:a.secs/a.km});
+    }
+  }
+  return out;
+}
+function aeroWeek(wk){
+  const r=aeroRuns(wk); if(!r.length) return null;
+  return {wk, n:r.length, mpb:r.reduce((s,x)=>s+x.mpb,0)/r.length, runs:r};
+}
+function aeroSeries(){
+  const cur=Math.min(NW,Math.max(1,weekOf(todayISO()))); const out=[];
+  for(let w=1;w<=cur;w++){ const a=aeroWeek(w); if(a) out.push(a); }
+  return out;
+}
+// Fit marker -> 5km time on the athlete's OWN time trials, so it sharpens with every TT run.
+// Falls back to the seeded two-point calibration until two TT weeks have usable easy runs.
+function aeroFit(){
+  const A=ATHLETE.aero; if(!A) return null;
+  const pts=[];
+  for(const t of loggedTTs()){ const a=aeroWeek(t.week); if(a&&a.n>=1) pts.push([a.mpb,t.secs]); }
+  const use = pts.length>=2 ? pts : (A.cal||[]);
+  if(use.length<2) return null;
+  const n=use.length, sx=use.reduce((s,p)=>s+p[0],0), sy=use.reduce((s,p)=>s+p[1],0);
+  const sxy=use.reduce((s,p)=>s+p[0]*p[1],0), sxx=use.reduce((s,p)=>s+p[0]*p[0],0);
+  const den=n*sxx-sx*sx; if(Math.abs(den)<1e-9) return null;
+  const b=(n*sxy-sx*sy)/den, a=(sy-b*sx)/n;
+  return {a,b,n:use.length,own:pts.length>=2, secsAt:m=>a+b*m, mpbAt:s=>(s-a)/b};
+}
 // ---------- analysis ----------
 function easyDiscipline(){
   // check synced activities matched to easy/recovery days: pace >= 6:35/km OR HR < 138
@@ -20933,6 +21003,9 @@ function rProgress(){
   ${CHAIN?`<div class="card"><h2>${ATHLETE.tt_chart.title}</h2>
     <div class="legend"><span><i style="background:var(--s1)"></i>Your TTs</span><span><i style="background:none;border:1.5px dashed var(--muted)"></i>${ATHLETE.tt_chart.legend}</span></div>
     <div id="chTT"></div></div>`:""}
+  ${ATHLETE.aero?`<div class="card"><h2>${ATHLETE.aero.title}</h2>
+    <div class="legend"><span><i style="background:var(--s2)"></i>Your weekly marker</span><span><i style="background:none;border:1.5px dashed var(--muted)"></i>Where it needs to go</span></div>
+    <div id="chAero"></div></div>`:""}
   <div class="card"><h2>Zone discipline — time by intensity</h2>
     <div class="legend"><span><i style="background:var(--z1)"></i>Z1 easy</span><span><i style="background:var(--z2)"></i>Z2 steady/threshold</span><span><i style="background:var(--z3)"></i>Z3 hard</span></div>
     <div id="chZone"></div><p class="small" id="zoneNote"></p></div>
@@ -20998,6 +21071,64 @@ function drawCharts(){
   if(nextM && lastT){ const need=lastT.secs-nextM.v;
     note+=`${note?"<br>":""}Next up <b>W${nextM.w}</b> marker <b>${fmtT(nextM.v)}</b> · ${need>0?`<b>${fmtT(need)}</b> still to find`:`already inside it by <b>${fmtT(-need)}</b>`}`; }
   $("#chTT").innerHTML=q+(note?`<p class="small" style="margin-top:6px;line-height:1.5">${note}</p>`:""); }
+  // weekly aerobic marker
+  if(ATHLETE.aero && $("#chAero")){
+    const A=ATHLETE.aero, ser=aeroSeries(), fit=aeroFit();
+    const x27=w=>L+(W-L-14)*(w-1)/(NW-1);
+    if(!ser.length){
+      $("#chAero").innerHTML=`<p class="small">${A.empty}</p>`;
+    } else {
+      const solid=ser.filter(p=>p.n>=A.min_runs);
+      const target = fit ? fit.mpbAt(TT_MARKERS[A.target_week]) : null;
+      const vals=ser.map(p=>p.mpb).concat(target?[target]:[]);
+      const lo=Math.min(...vals)-0.02, hi=Math.max(...vals)+0.02;
+      const yA=v=>14+(H-B-22)*(hi-v)/(hi-lo);
+      let z=svgOpen(W,H);
+      for(let g=Math.ceil(lo*20)/20; g<=hi; g+=0.05){ const y=yA(g);
+        z+=`<line x1="${L}" y1="${y}" x2="${W}" y2="${y}" stroke="var(--grid)"/><text x="${L-5}" y="${y+3}" font-size="9" fill="var(--muted)" text-anchor="end">${g.toFixed(2)}</text>`; }
+      // where it needs to go: from the last time trial week to the marker the W23 test demands
+      if(target!=null){
+        const anchor=solid.length?solid[solid.length-1]:ser[ser.length-1];
+        z+=`<path d="M ${x27(anchor.wk)} ${yA(anchor.mpb)} L ${x27(A.target_week)} ${yA(target)}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/>`;
+        z+=`<circle cx="${x27(A.target_week)}" cy="${yA(target)}" r="5" fill="none" stroke="var(--muted)" stroke-width="1.5"/>`;
+        z+=`<text x="${x27(A.target_week)-8}" y="${yA(target)-8}" font-size="10" fill="var(--ink2)" text-anchor="end">${target.toFixed(2)} → ${fmtT(TT_MARKERS[A.target_week])} 5km</text>`;
+      }
+      if(ser.length>1) z+=`<path d="${ser.map((p,i)=>(i?"L":"M")+x27(p.wk)+" "+yA(p.mpb)).join(" ")}" fill="none" stroke="var(--s2)" stroke-width="2"/>`;
+      for(const p of ser){
+        const solidPt=p.n>=A.min_runs;
+        const tip=`W${p.wk}: ${p.mpb.toFixed(3)} m per beat from ${p.n} easy run${p.n>1?"s":""}${solidPt?"":" — only one run, treat it lightly"}`;
+        z+=`<circle cx="${x27(p.wk)}" cy="${yA(p.mpb)}" r="${solidPt?4.5:3.5}" fill="${solidPt?"var(--s2)":"var(--surface)"}" stroke="${solidPt?"var(--surface)":"var(--s2)"}" stroke-width="2" data-tip="${esc(tip)}"/>`;
+      }
+      for(const w of ATHLETE.tt_chart.wks) z+=`<text x="${x27(w)}" y="${H-6}" font-size="9" fill="var(--muted)" text-anchor="middle">${w===NW?"RACE":"W"+w}</text>`;
+      z+=`</svg>`;
+      // the verdict, in words
+      const last=ser[ser.length-1];
+      const prior=ser.filter(p=>p.wk<last.wk).slice(-4);
+      let v="";
+      if(last.n<A.min_runs){
+        v=`<b>W${last.wk} is still only ${last.n} qualifying run</b>, so this week's dot is provisional. It firms up once a second easy run lands.`;
+      } else if(prior.length){
+        const base=prior.reduce((s,p)=>s+p.mpb,0)/prior.length;
+        const d=last.mpb-base, pct=100*d/base;
+        const col = d>0.005?"var(--goodtext)" : d<-0.005?"var(--crit)" : "var(--ink2)";
+        const word = d>0.005?"ahead of" : d<-0.005?"behind" : "level with";
+        v=`<b>W${last.wk}: ${last.mpb.toFixed(3)} metres per heartbeat</b> from ${last.n} easy runs · <b style="color:${col}">${pct>=0?"+":""}${pct.toFixed(1)}% ${word}</b> your last ${prior.length} week average of ${base.toFixed(3)}.`;
+      } else {
+        v=`<b>W${last.wk}: ${last.mpb.toFixed(3)} metres per heartbeat</b> from ${last.n} easy runs. Comparisons start once there are two weeks of data.`;
+      }
+      // the 5km estimate only ever comes off a settled week, never off a single run
+      const ref = solid.length ? solid[solid.length-1] : null;
+      if(fit && ref){
+        const est=fit.secsAt(ref.mpb);
+        const mk=TT_MARKERS[A.target_week];
+        const need=fit.mpbAt(mk)-ref.mpb;
+        v+=`<br>W${ref.wk} is the last settled week, and it is worth roughly a <b>${fmtT(Math.round(est))}</b> 5km. The W${A.target_week} marker of ${fmtT(mk)} wants <b>${fit.mpbAt(mk).toFixed(3)}</b>, so <b>${need>0?`${need.toFixed(3)} still to find`:`you are already past it by ${(-need).toFixed(3)}`}</b>.`;
+        v+=`<br><span style="color:var(--muted)">${fit.own?`Calibrated on your own ${fit.n} time trials, and it re-fits itself after each new one.`:A.seed_note}</span>`;
+      }
+      v+=`<br><span style="color:var(--muted)">${A.method}</span>`;
+      $("#chAero").innerHTML=z+`<p class="small" style="margin-top:6px;line-height:1.55">${v}</p>`;
+    }
+  }
   // zone stacked bars (last 8 weeks with data)
   const zw=[]; for(let w=1;w<=Math.min(NW,cur);w++){ const z=zoneWeek(w); if(z.tot>0) zw.push({w,...z}); }
   const zshow=zw.slice(-8);
@@ -21123,7 +21254,8 @@ async function syncNow(){
     const mapped = acts.filter(a=>a.type&&/run/i.test(a.type)).map(a=>({
       id:a.id, date:(a.start_date_local||"").slice(0,10), run:true,
       km:(a.distance||0)/1000, secs:a.moving_time||a.elapsed_time||0,
-      vert:a.total_elevation_gain||a.icu_climb||0, hr:a.average_heartrate||null, name:a.name||"Run"}));
+      vert:a.total_elevation_gain||a.icu_climb||0, hr:a.average_heartrate||null,
+      mhr:a.max_heartrate||null, atype:a.type||"", name:a.name||"Run"}));
     // guard: Garmin + Strava can both deliver the same run — drop same-day near-identical duplicates
     const kept=[];
     for(const a of mapped){
