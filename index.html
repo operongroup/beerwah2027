@@ -21095,9 +21095,12 @@ function drawCharts(){
       }
       if(ser.length>1) z+=`<path d="${ser.map((p,i)=>(i?"L":"M")+x27(p.wk)+" "+yA(p.mpb)).join(" ")}" fill="none" stroke="var(--s2)" stroke-width="2"/>`;
       for(const p of ser){
-        const solidPt=p.n>=A.min_runs;
-        const tip=`W${p.wk}: ${p.mpb.toFixed(3)} m per beat from ${p.n} easy run${p.n>1?"s":""}${solidPt?"":" — only one run, treat it lightly"}`;
+        const solidPt=p.n>=A.min_runs, down=WEEKS[p.wk]&&WEEKS[p.wk].down;
+        const tip=`W${p.wk}: ${p.mpb.toFixed(3)} m per beat from ${p.n} easy run${p.n>1?"s":""}`
+          +(down?" · DOWN WEEK, so this reads high — you were fresh":" · load week, so this reads low — you were carrying fatigue")
+          +(solidPt?"":" · only one run, treat it lightly");
         z+=`<circle cx="${x27(p.wk)}" cy="${yA(p.mpb)}" r="${solidPt?4.5:3.5}" fill="${solidPt?"var(--s2)":"var(--surface)"}" stroke="${solidPt?"var(--surface)":"var(--s2)"}" stroke-width="2" data-tip="${esc(tip)}"/>`;
+        if(down&&solidPt) z+=`<circle cx="${x27(p.wk)}" cy="${yA(p.mpb)}" r="8" fill="none" stroke="var(--s2)" stroke-width="1" opacity=".5"/>`;
       }
       for(const w of ATHLETE.tt_chart.wks) z+=`<text x="${x27(w)}" y="${H-6}" font-size="9" fill="var(--muted)" text-anchor="middle">${w===NW?"RACE":"W"+w}</text>`;
       z+=`</svg>`;
@@ -21116,13 +21119,18 @@ function drawCharts(){
       } else {
         v=`<b>W${last.wk}: ${last.mpb.toFixed(3)} metres per heartbeat</b> from ${last.n} easy runs. Comparisons start once there are two weeks of data.`;
       }
-      // the 5km estimate only ever comes off a settled week, never off a single run
-      const ref = solid.length ? solid[solid.length-1] : null;
+      // The 5km estimate comes off your BEST settled week in the recent block, never off a
+      // single run and never off whichever week happened to be a loading week. A time trial is
+      // run fresh, so the fresh-week reading is the fair comparison. Load weeks sit lower by
+      // design: that is fatigue showing up, not fitness going backwards.
+      const recent = solid.filter(p=>p.wk>=last.wk-4);
+      const ref = recent.length ? recent.reduce((b,p)=>p.mpb>b.mpb?p:b) : null;
       if(fit && ref){
         const est=fit.secsAt(ref.mpb);
         const mk=TT_MARKERS[A.target_week];
         const need=fit.mpbAt(mk)-ref.mpb;
-        v+=`<br>W${ref.wk} is the last settled week, and it is worth roughly a <b>${fmtT(Math.round(est))}</b> 5km. The W${A.target_week} marker of ${fmtT(mk)} wants <b>${fit.mpbAt(mk).toFixed(3)}</b>, so <b>${need>0?`${need.toFixed(3)} still to find`:`you are already past it by ${(-need).toFixed(3)}`}</b>.`;
+        v+=`<br>Your best settled week in the last five is <b>W${ref.wk}</b> at ${ref.mpb.toFixed(3)}, worth roughly a <b>${fmtT(Math.round(est))}</b> 5km run fresh. The W${A.target_week} marker of ${fmtT(mk)} wants <b>${fit.mpbAt(mk).toFixed(3)}</b>, so <b>${need>0?`${need.toFixed(3)} still to find`:`you are already past it by ${(-need).toFixed(3)}`}</b>.`;
+        if(ref.wk!==last.wk) v+=` W${last.wk} reads lower because ${WEEKS[last.wk]&&WEEKS[last.wk].down?"of the runs that qualified, not the load":"it is a loading week and W"+ref.wk+" was not. Expect this number to sawtooth: down weeks high, build weeks low. The trend across down weeks is the one that matters"}.`;
         v+=`<br><span style="color:var(--muted)">${fit.own?`Calibrated on your own ${fit.n} time trials, and it re-fits itself after each new one.`:A.seed_note}</span>`;
       }
       v+=`<br><span style="color:var(--muted)">${A.method}</span>`;
