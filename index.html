@@ -1364,18 +1364,29 @@ function showEvent(i){
       }
       if(e.record) rows.push(["Course record", trio(e.record)]);
       h+=`<h2 style="margin-top:14px">What it takes</h2><table>${rows.map(r=>`<tr><td>${r[0]}</td><td style="text-align:right">${r[1]}</td></tr>`).join("")}</table>`;
-      // where you sit now
-      const tt=latest5k();
-      if(e.chain_secs && CHAIN && tt){
-        const [,bw]=chain(tt.secs); const adj=ATHLETE.predictor.terrain_adj||1; const hi=bw*adj;
-        const t3=thirds.length?med(thirds):null;
-        h+=`<h2 style="margin-top:14px">You, right now</h2><p class="small">Off your latest 5km (${fmtT(tt.secs)}) this course predicts <b>${fmtT(bw)} to ${fmtT(hi)}</b>, ${paceOf(bw)} to ${paceOf(hi)}.`;
-        if(t3){ const side=v=>v<=t3?`<b>${fmtT(t3-v)} inside</b>`:`<b>${fmtT(v-t3)} outside</b>`;
-          h+=` A typical podium here is ${fmtT(t3)}. Today the fast end of that range is ${side(bw)} it and the slow end is ${side(hi)}.`; }
-        h+=`</p>`;
-      }
     }
   } else h+=`<p class="small">No past results to show.</p>`;
+  // ---------- you, right now: shown on EVERY event, not just the Beerwah courses ----------
+  {
+    const tt=latest5k();
+    if(km && tt && CHAIN){
+      const [f10,bw]=chain(tt.secs); const adj=(ATHLETE.predictor&&ATHLETE.predictor.terrain_adj)||1;
+      const t3=thirds.length?med(thirds):null;
+      const side=v=>t3==null?"":(v<=t3?`<b>${fmtT(t3-v)} inside</b>`:`<b>${fmtT(v-t3)} outside</b>`);
+      if(e.chain_secs && bw){
+        const hi=bw*adj;
+        h+=`<h2 style="margin-top:14px">You, right now</h2><p class="small">Off your latest 5km (${fmtT(tt.secs)}) this course predicts <b>${fmtT(bw)} to ${fmtT(hi)}</b>, ${paceOf(bw)} to ${paceOf(hi)}.`;
+        if(t3) h+=` A typical podium here is ${fmtT(t3)}. Today the fast end of that range is ${side(bw)} it and the slow end is ${side(hi)}.`;
+        h+=`</p>`;
+      } else if(f10){
+        const flat=f10*Math.pow(km/10,1.06);
+        const hi=flat*(bw/f10)*adj;
+        h+=`<h2 style="margin-top:14px">You, right now</h2><p class="small">Off your latest 5km (${fmtT(tt.secs)}), ${km}km on FLAT ground would take you about <b>${fmtT(flat)}</b>, ${paceOf(flat)}. Nobody has ever measured what THIS course costs you, so the terrain penalty is unknown. If it cost you what Beerwah costs you, it would be <b>${fmtT(hi)}</b>, ${paceOf(hi)}. The real number sits between those two, nearer the fast end on flatter ground and nearer the slow end on technical trail.`;
+        if(t3) h+=` A typical podium here is ${fmtT(t3)}: flat-equivalent you are ${side(flat)} it, and at Beerwah's terrain cost ${side(hi)} it.`;
+        h+=` <b>This is a range, not a prediction.</b> It scales your own 5km to 10km through your measured chain, then to ${km}km with the standard Riegel exponent, and the further that is from 10km the softer it gets.</p>`;
+      }
+    }
+  }
   if(e.podium) h+=`<p class="small" style="margin-top:12px;color:var(--warn)">${esc(e.podium)}</p>`;
   if(e.source) h+=`<p class="small" style="margin-top:6px;opacity:.7">Source: ${esc(e.source)}</p>`;
   let ov=$("#evsh"); if(!ov){ ov=document.createElement("div"); ov.id="evsh"; ov.className="evsh"; ov.onclick=ev=>{ if(ev.target===ov) closeEvent(); }; document.body.appendChild(ov); }
