@@ -941,6 +941,7 @@ const ATHLETE = {
    "km": 22,
    "flat_eq_km": 24.533,
    "corr": 1.061,
+   "corr_note": "On top of that sits 1.061 for footing and braking, your own figure measured on Beerwah. Treat this as a FLOOR: Beerwah is ground you know and this is Tasmanian wilderness, so it is almost certainly dearer.",
    "where": "Waratah, TAS",
    "short": "takayna 22",
    "ico": "🌲",
@@ -1019,19 +1020,25 @@ const ATHLETE = {
    "name": "Mary Valley Ultra 10km",
    "date": "2027-06-12",
    "km": 10,
+   "flat_eq_km": 9.78,
+   "corr": 1.0,
+   "corr_note": "NO surface penalty is applied at all, so this is a best case. A compacted rail trail is slower than bitumen but nowhere near trail, and nobody has measured what gravel costs you, so rather than invent a figure the card leaves it at zero. Expect a percent or two behind this, not more.",
    "where": "Imbil",
    "note": "Graphic says Fri 11 Jun; timetable confirmed 7 Sep says Sat 12 Jun 8am. Using 12 Jun.",
    "short": "Mary Valley",
    "ico": "⛰️",
    "logo": "events/maryvalley.png",
    "results": [],
-   "podium": "First edition in June 2027. No history to measure against. Out and back on the rail trail from Imbil to Brooloo, so the flattest course of the six.",
+   "podium": "First edition in June 2027. No history to measure against, so there is no podium time to aim at and the field is the whole unknown.  ||  MEASURED 14 Oct 2026 off the public Imbil to Brooloo rail trail GPX, run out and back: 9,709m with 49m of climb and 49m of descent, sitting between 134m and 162m the whole way. Flat-equivalent 9,776m, a gradient cost of +0.69%. That is not a trail race, it is a road race on gravel. By a distance the flattest of everything on your calendar.  ||  THE NUMBER ON THIS CARD CARRIES NO SURFACE PENALTY AT ALL, which makes it a best case. A compacted rail trail is slower than bitumen but nowhere near trail, so the truth is probably a percent or two behind what you see, not more. Nobody has measured what gravel costs you, so rather than invent a figure the card leaves it at zero and tells you it is doing that.  ||  ONE CAVEAT ON THE LINE ITSELF: that GPX is the public rail trail and the race starts at the Imbil Showgrounds, so the official 10km may differ from this by a few hundred metres at the start.  ||  WHAT IT MEANS: this is the one race all year where your flat 5km speed converts almost straight into the result. No climbing to blunt it, no footing to lose it on. If you want to win a race on raw speed, this is the one.",
    "source": "runqld.com.au"
   },
   {
    "name": "Rainbow Beach Trail Festival",
    "date": "2027-07-31",
    "km": 11,
+   "flat_eq_km": 10.86,
+   "corr": 1.17,
+   "corr_note": "On top of that sits 1.17 for the surface, and unlike every other course here that number was measured on THIS one, off your own 2026 run. It is sand, which no gradient model can see. Range was 1.15 to 1.20 and the card takes the middle.",
    "where": "Cooloola Coast",
    "entered": false,
    "short": "Rainbow Beach",
@@ -1072,7 +1079,7 @@ const ATHLETE = {
      "you": 4477
     }
    ],
-   "podium": "Top three male by finish time. Course record 46:06 (2022). The front of this race has got faster every year. Podium structure not verified with the organiser.",
+   "podium": "Top three male by finish time. Course record 46:06 (2022). The front of this race has got faster every year. Podium structure not verified with the organiser.  ||  MEASURED 14 Oct 2026 OFF YOUR OWN GPS FILE from 8 Aug 2026, which is literally this course rather than a published figure: 10,421m, 254m of ascent and 283m of descent, running from 181m down to 17m at the finish. Flat-equivalent 10,860m, so the gradient costs only +4.2%, the mildest of the four courses measured. Beerwah is +7.2% and takayna +12.4%.  ||  YOU ARE RIGHT ABOUT THE SECOND HALF. Km 1 to 5 climb 192m and drop 66m, and you ran them at 8:17, 8:40, 7:11, 6:56 and 7:16. Km 7 to 11 climb 60m and drop 179m, and you ran them at 7:37, 6:19, 6:20, 5:46 and 6:01. The last two kilometres fall 66m then 36m. Front-load nothing: this course gives the time back at the end if you are still standing.  ||  THE CATCH, AND IT IS A BIG ONE. The hills are mild but your actual time was 20 to 25 percent slower than flat-equivalent. Take the gradient out and there is still a 15 to 20 percent penalty with nowhere to go except the surface. This is sand country and a gradient model cannot see sand. The card carries 1.17, the middle of that measured range. Two things pull against each other in it: your 27 Jul 2026 baseline 5km was run at about 90% effort so it understates your flat speed, which makes 1.17 a touch low; and you have this filed as a fun run you did not race, which would make it a touch high. Your heart rate that day averaged 178, your threshold, and touched 190 in the last kilometre, so it was closer to a race than you remember.  ||  THE SHORT VERSION: this course reads easy and is not. Mild hills, expensive ground, and a second half that pays you back.",
    "record": 2766,
    "source": "results.sportseventservices.com.au official results"
   }
@@ -1386,7 +1393,7 @@ function showEvent(i){
       } else if(f10 && e.flat_eq_km){
         const t=f10*Math.pow(e.flat_eq_km/10,1.06)*(e.corr||1);
         h+=`<h2 style="margin-top:14px">You, right now</h2><table><tr><th>When</th><th>5km</th><th>Here</th></tr>${row("Today",tt.secs,t,t)}</table>`;
-        h+=`<p class="small">${paceOf(t)}. MEASURED, not borrowed: this course's own elevation profile run through the gradient model gives a flat-equivalent of ${e.flat_eq_km}km, and your own non-gradient penalty of ${e.corr} is applied on top. Treat it as a FLOOR, because that penalty was measured on Beerwah and this ground is rougher.`;
+        h+=`<p class="small">${paceOf(t)}. MEASURED, not borrowed: this course's own elevation profile run through the gradient model gives a flat-equivalent of ${e.flat_eq_km}km. ${e.corr_note||`A non-gradient penalty of ${e.corr} is applied on top for footing and braking.`}`;
         if(t3) h+=` A typical winning time here is ${fmtT(t3)}: you are ${side(t)} it.`;
         h+=`</p>`;
       } else if(f10){
