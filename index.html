@@ -939,6 +939,8 @@ const ATHLETE = {
    "name": "Takayna Trail",
    "date": "2027-02-27",
    "km": 22,
+   "flat_eq_km": 24.533,
+   "corr": 1.061,
    "where": "Waratah, TAS",
    "short": "takayna 22",
    "ico": "🌲",
@@ -954,7 +956,7 @@ const ATHLETE = {
      "note": "Overall winner was female, 2:02:30. 47 male finishers."
     }
    ],
-   "podium": "STATUS CHANGED 14 Oct 2026. This is now the next race you want to WIN, not a fun run you happen to be entered in. Nothing about Beerwah@Night changes: it stays the A race and the whole build still points at 30 Jan. Takayna is 4 weeks after it, which is enough to recover and sharpen but not enough to build anything new.  ||  WHAT WINNING LOOKS LIKE, on the one year on file: the 2026 male winner ran 2:07:13 for the 22km, the overall winner was female in 2:02:30, and there were 47 male finishers. One year is not a trend and a 47-man field can be won or lost on who turns up.  ||  ANCHORED ON YOUR OWN LONG TRAIL RACE, checked 14 Oct 2026 against your full Strava history back to 2022, not borrowed from Beerwah. You have run 19km or further seven times, including 30.02km in Mar 2024 and, the one that matters here, the NOOSA ULTRA TRAIL on 22 Mar 2024: 25.52km in 2:38:08 with 265m of climb, 6:12/km. That is 3.5km LONGER than takayna. Your fastest flat 10km on record is 50:49 for 10.16km in Jun 2024, 5:00/km, and today you project a flat 10km of 49:46, so you are already back at that fitness with the whole build still ahead of you. Run takayna at your 2024 trail pace and 22km takes 2:16:24, about 9 minutes off the 2026 winner. The honest unknowns: nobody knows how hard you raced Noosa, and takayna is Tasmanian wilderness where the footing is probably slower than Noosa's 10m of climb per kilometre.  ||  THE THING YOU HAVE NOT DECIDED: you cannot race this and run it with Jess at the same time. That is a call for after Beerwah@Night. No course work, pacing or strategy gets built until Beerwah is done, which is your own standing rule.",
+   "podium": "STATUS CHANGED 14 Oct 2026. This is now the next race you want to WIN, not a fun run you happen to be entered in. Beerwah@Night stays the A race and the build still points at 30 Jan. Takayna is 4 weeks after it.  ||  THE COURSE, MEASURED 14 Oct 2026 off the official Terrainium GPX (Takayna 22 2025 V2.0), not guessed: 22,224m nominal with 662.9m of ascent and 726.2m of descent, so it is net downhill. It runs between 367m and 678m above sea level. Put through the same Minetti gradient model used on Beerwah, the flat-equivalent distance is 24,533m, a pure gradient cost of +12.45%. Beerwah is +7.2%. PER KILOMETRE THIS IS HILLIER THAN BEERWAH: 29.8m of climb per km against Beerwah's 28.1, held for more than twice the distance.  ||  WHAT THAT MEANS FOR YOU. Applying your own measured non-gradient penalty of 1.061, the one taken off your 31 Jan 2026 Beerwah race for footing, braking and technical descending: today you project 2:16:41 (6:16/km), at the 10 Nov marker 2:07:55, at the 29 Dec marker 2:03:09. The 2026 male winner ran 2:07:13. So the December marker wins that race by four minutes and today's fitness is about nine minutes short.  ||  THE HONEST HEALTH WARNING. That 1.061 is a FLOOR here, not a fair estimate. It was measured on Beerwah, on a course you know, and the Takayna event guide describes off-trail sections with natural obstacles, navigation by flagging tape and a very steep descent into Magnet. Tasmanian wilderness footing is almost certainly dearer than Beerwah footing, which pushes every number above slower. Also worth knowing: your 25.52km Noosa Ultra Trail in Mar 2024 at 6:12/km is NOT a fair guide to this, because that course carried only 10.4m of climb per km, a third of this one.  ||  THE THING YOU HAVE NOT DECIDED: you cannot race this and run it with Jess at the same time. That is a call for after Beerwah@Night. No pacing or strategy gets built until Beerwah is done, which is your own standing rule.",
    "source": "webscorer.com official results"
   },
   {
@@ -1373,15 +1375,25 @@ function showEvent(i){
       const [f10,bw]=chain(tt.secs); const adj=(ATHLETE.predictor&&ATHLETE.predictor.terrain_adj)||1;
       const t3=thirds.length?med(thirds):null;
       const side=v=>t3==null?"":(v<=t3?`<b>${fmtT(t3-v)} inside</b>`:`<b>${fmtT(v-t3)} outside</b>`);
+      const span=(lo,hi)=>Math.round(lo)===Math.round(hi)?fmtT(lo):fmtT(lo)+" to "+fmtT(hi);
+      const row=(when,five,lo,hi)=>`<tr><td>${when}</td><td>${fmtT(five)}</td><td style="text-align:right">${span(lo,hi)}</td></tr>`;
       if(e.chain_secs && bw){
         const hi=bw*adj;
-        h+=`<h2 style="margin-top:14px">You, right now</h2><p class="small">Off your latest 5km (${fmtT(tt.secs)}) this course predicts <b>${fmtT(bw)} to ${fmtT(hi)}</b>, ${paceOf(bw)} to ${paceOf(hi)}.`;
+        h+=`<h2 style="margin-top:14px">You, right now</h2><table><tr><th>When</th><th>5km</th><th>Here</th></tr>${row("Today",tt.secs,bw,hi)}</table>`;
+        h+=`<p class="small">${paceOf(bw)} to ${paceOf(hi)}.`;
         if(t3) h+=` A typical podium here is ${fmtT(t3)}. Today the fast end of that range is ${side(bw)} it and the slow end is ${side(hi)}.`;
+        h+=`</p>`;
+      } else if(f10 && e.flat_eq_km){
+        const t=f10*Math.pow(e.flat_eq_km/10,1.06)*(e.corr||1);
+        h+=`<h2 style="margin-top:14px">You, right now</h2><table><tr><th>When</th><th>5km</th><th>Here</th></tr>${row("Today",tt.secs,t,t)}</table>`;
+        h+=`<p class="small">${paceOf(t)}. MEASURED, not borrowed: this course's own elevation profile run through the gradient model gives a flat-equivalent of ${e.flat_eq_km}km, and your own non-gradient penalty of ${e.corr} is applied on top. Treat it as a FLOOR, because that penalty was measured on Beerwah and this ground is rougher.`;
+        if(t3) h+=` A typical winning time here is ${fmtT(t3)}: you are ${side(t)} it.`;
         h+=`</p>`;
       } else if(f10){
         const flat=f10*Math.pow(km/10,1.06);
         const hi=flat*(bw/f10)*adj;
-        h+=`<h2 style="margin-top:14px">You, right now</h2><p class="small">Off your latest 5km (${fmtT(tt.secs)}), ${km}km on FLAT ground would take you about <b>${fmtT(flat)}</b>, ${paceOf(flat)}. Nobody has ever measured what THIS course costs you, so the terrain penalty is unknown. If it cost you what Beerwah costs you, it would be <b>${fmtT(hi)}</b>, ${paceOf(hi)}. The real number sits between those two, nearer the fast end on flatter ground and nearer the slow end on technical trail.`;
+        h+=`<h2 style="margin-top:14px">You, right now</h2><table><tr><th>When</th><th>5km</th><th>Here</th></tr>${row("Today",tt.secs,flat,hi)}</table>`;
+        h+=`<p class="small">${paceOf(flat)} to ${paceOf(hi)}. The fast end is ${km}km on FLAT ground. The slow end is what it would cost if this course cost you what Beerwah costs you.`;
         if(t3) h+=` A typical podium here is ${fmtT(t3)}: flat-equivalent you are ${side(flat)} it, and at Beerwah's terrain cost ${side(hi)} it.`;
         h+=` <b>This is a range, not a prediction.</b> It scales your own 5km to 10km through your measured chain, then to ${km}km with the standard Riegel exponent, and the further that is from 10km the softer it gets.</p>`;
       }
@@ -1399,12 +1411,13 @@ function showEvent(i){
       const [f10,bw]=chain(MK[w]); if(!f10||!bw||!km) continue;
       let lo,hi;
       if(e.chain_secs){ lo=bw; hi=bw*adj; }
+      else if(e.flat_eq_km){ lo=f10*Math.pow(e.flat_eq_km/10,1.06)*(e.corr||1); hi=lo; }
       else { lo=f10*Math.pow(km/10,1.06); hi=lo*(bw/f10)*adj; }
       rows.push([d,MK[w],lo,hi]);
     }
     if(rows.length){
-      h+=`<h2 style="margin-top:14px">Potentially you</h2><table><tr><th>If you hit the marker</th><th>5km</th><th>Here</th></tr>`;
-      for(const r of rows) h+=`<tr><td>${r[0]}</td><td>${fmtT(r[1])}</td><td style="text-align:right">${fmtT(r[2])} to ${fmtT(r[3])}</td></tr>`;
+      h+=`<h2 style="margin-top:14px">Potentially you</h2><table><tr><th>When</th><th>5km</th><th>Here</th></tr>`;
+      for(const r of rows) h+=`<tr><td>If you hit ${r[0]}</td><td>${fmtT(r[1])}</td><td style="text-align:right">${Math.round(r[2])===Math.round(r[3])?fmtT(r[2]):fmtT(r[2])+" to "+fmtT(r[3])}</td></tr>`;
       h+=`</table><p class="small">These are the time-trial TARGETS written into the plan, not forecasts. Hitting them is the whole job, and the next time trial is the only thing that tells you whether you are on track. Everything above is today's fitness; this is the plan's fitness.</p>`;
     }
   }
