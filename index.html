@@ -88,7 +88,7 @@ header .count span{font-size:10px;color:var(--muted);text-transform:uppercase;le
 .chip.acc{border-color:rgba(var(--brandrgb),.5);color:var(--brand2);background:rgba(var(--brandrgb),.10)}
 nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(var(--navrgb),.85);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
   border-top:1px solid var(--border);z-index:50;padding-bottom:env(safe-area-inset-bottom)}
-nav button{flex:1;padding:9px 0 7px;border:0;background:none;color:var(--muted);font-size:9.5px;font-weight:700;letter-spacing:.03em;cursor:pointer;
+nav button{flex:1;min-width:0;padding:9px 1px 7px;border:0;background:none;color:var(--muted);font-size:8.8px;font-weight:700;letter-spacing:0;cursor:pointer;
   display:flex;flex-direction:column;align-items:center;gap:3px}
 nav button svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 nav button.on{color:var(--brand)}
@@ -662,6 +662,7 @@ const ATHLETE = {
   "Week",
   "Plan",
   "Strength",
+  "Food",
   "Content",
   "Progress",
   "Rules",
@@ -1118,6 +1119,7 @@ const ICONS={
  Week:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
  Plan:'<rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/>',
  Strength:'<path d="M2 12h3M19 12h3M8 12h8"/><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="16" y="7" width="3" height="10" rx="1"/>',
+ Food:'<path d="M12 8c-1.6-2.1-4.2-2.6-5.8-1C4.6 8.6 4.6 11.2 5.7 13.3c1.1 2.1 2.7 4.3 4.2 5.3 1.3.9 2.9.9 4.2 0 1.5-1 3.1-3.2 4.2-5.3 1.1-2.1 1.1-4.7-.5-6.3C16.2 5.4 13.6 5.9 12 8z"/><path d="M12 8V4.6M12 4.6c.9-1.6 2.6-2.1 3.7-1.6"/>',
  Content:'<path d="M15 8l6-3v14l-6-3z"/><rect x="3" y="6" width="12" height="12" rx="2"/>',
  Progress:'<path d="M3 21h18"/><path d="M4 17l5-6 4 3 6-8"/>',
  Rules:'<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/>',
@@ -1143,6 +1145,10 @@ const store = {
   set shots(v){ localStorage.setItem(SP+"_shots", JSON.stringify(v)) },
   get intake(){ try{return JSON.parse(localStorage.getItem(SP+"_intake")||"{}")}catch(e){return {}} },
   set intake(v){ localStorage.setItem(SP+"_intake", JSON.stringify(v)) },
+  get nut(){ try{return JSON.parse(localStorage.getItem(SP+"_nut")||"{}")}catch(e){return {}} },
+  set nut(v){ localStorage.setItem(SP+"_nut", JSON.stringify(v)) },
+  get wt(){ try{return JSON.parse(localStorage.getItem(SP+"_wt")||"{}")}catch(e){return {}} },
+  set wt(v){ localStorage.setItem(SP+"_wt", JSON.stringify(v)) },
   get cfg(){ try{return JSON.parse(localStorage.getItem(SP+"_cfg")||"{}")}catch(e){return {}} },
   set cfg(v){ localStorage.setItem(SP+"_cfg", JSON.stringify(v)) },
 };
@@ -1447,7 +1453,7 @@ function render(){
   $("#chips").innerHTML = `<span class="chip acc">Week ${Math.min(NW,Math.max(1,wk))} of ${NW} · Phase ${wkm?esc(wkm.phase):""}</span>
     ${wkm&&wkm.down?'<span class="chip">DOWN WEEK · not optional</span>':""}
     <span class="chip">${wkm?wkm.km+"km · "+wkm.vert+"m vert this week":""}</span>`;
-  const R={Today:rToday,Week:rWeek,Plan:rPlan,Strength:rStrength,Content:rContent,Progress:rProgress,Rules:rRules,Sync:rSync};
+  const R={Today:rToday,Week:rWeek,Plan:rPlan,Strength:rStrength,Food:rFood,Content:rContent,Progress:rProgress,Rules:rRules,Sync:rSync};
   $("#main").innerHTML = (tab==="Today"&&dayView)? rDayView(dayView) : R[tab]();
   if(tab==="Progress") drawCharts();
 }
@@ -2153,6 +2159,161 @@ function intakeSummaryCard(){
   <div class="row" style="margin-top:8px"><button class="btn" onclick="shareIntake()">Send to coach</button><button class="ghost" onclick="editIntake()">Edit answers</button></div></div>`;
 }
 // ---------- Sync ----------
+// ---------- Food / nutrition ----------
+const NUT = {
+  target: 130, kcal_budget: 1400,
+  start_kg: 82.0, start_date: "2026-10-15", rate: 0.5,
+  foods: [
+    {id:"gy",   g:"Breakfast", n:"Greek yoghurt, 170g",            p:16, k:110},
+    {id:"pp",   g:"Breakfast", n:"Scoop of protein powder",        p:24, k:120},
+    {id:"hpy",  g:"Breakfast", n:"High-protein yoghurt pouch",     p:13, k:110},
+    {id:"ber",  g:"Breakfast", n:"Berries + HALF a muesli serve",  p:5,  k:135},
+    {id:"egg2", g:"Breakfast", n:"2 eggs",                         p:12, k:140},
+    {id:"egg3", g:"Breakfast", n:"3 eggs",                         p:18, k:210},
+    {id:"wrap", g:"Lunch",     n:"Chicken wrap, 120g grilled",     p:42, k:410},
+    {id:"chk",  g:"Lunch",     n:"Grilled chicken 100g on salad",  p:30, k:205},
+    {id:"tun1", g:"Lunch",     n:"Tuna, 95g tin",                  p:22, k:100},
+    {id:"tun2", g:"Lunch",     n:"Tuna, 185g tin",                 p:42, k:190},
+    {id:"rice", g:"Lunch",     n:"Brown rice pouch, 250g",         p:5,  k:320},
+    {id:"jerk", g:"3pm",       n:"Beef jerky, 50g",                p:25, k:150},
+    {id:"pbar", g:"3pm",       n:"Protein bar",                    p:20, k:200},
+    {id:"cc",   g:"3pm",       n:"Cottage cheese, 100g",           p:12, k:100},
+    {id:"crus", g:"3pm",       n:"4 Cruskits + 2 protein cheese",  p:12, k:190},
+    {id:"edam", g:"3pm",       n:"Edamame, 100g",                  p:11, k:120},
+    {id:"appl", g:"3pm",       n:"Apple",                          p:0,  k:80},
+    {id:"lb",   g:"Anytime",   n:"Long black",                     p:0,  k:0},
+    {id:"pod",  g:"Anytime",   n:"Pod shot + dash of oat milk",    p:0,  k:15},
+    {id:"ban",  g:"Anytime",   n:"Banana",                         p:1,  k:105},
+    {id:"mbar", g:"Anytime",   n:"Muesli bar (the one to drop)",   p:3,  k:190},
+    {id:"milk", g:"Anytime",   n:"Milk, 250ml",                    p:8,  k:110}
+  ],
+  shop: [
+    "Greek yoghurt, 1kg tub (cheaper than single tubs)",
+    "High-protein yoghurt pouches x5",
+    "Protein powder (only when the tub is nearly out)",
+    "Eggs, 1 dozen",
+    "Chicken breast, 1kg, plain not crumbed",
+    "Tuna in springwater, 185g x5",
+    "Cottage cheese, 1 tub",
+    "High-protein cheese slices",
+    "Cruskits",
+    "Wholemeal wraps",
+    "Frozen mixed berries, 1kg",
+    "Salad leaves + capsicum",
+    "Apples",
+    "Beef jerky or protein bars x5",
+    "Edamame, frozen, 1 bag"
+  ]
+};
+function nutSum(d){ const l=(store.nut[d]||[]); let p=0,k=0;
+  for(const id of l){ const f=NUT.foods.find(x=>x.id===id); if(f){ p+=f.p; k+=f.k; } } return {p:p,k:k}; }
+function nutAdd(id){ const d=todayISO(), n=store.nut; (n[d]=n[d]||[]).push(id); store.nut=n; render(); }
+function nutUndo(){ const d=todayISO(), n=store.nut; if(n[d]&&n[d].length){ n[d].pop(); store.nut=n; render(); } }
+function nutReset(){ const d=todayISO(), n=store.nut; delete n[d]; store.nut=n; render(); toast("Cleared"); }
+function nutStreak(){ let c=0, dt=new Date();
+  for(let i=0;i<400;i++){ const d=iso(dt);
+    if(i===0 && nutSum(d).p<NUT.target){ dt.setDate(dt.getDate()-1); continue; }
+    if(nutSum(d).p>=NUT.target) c++; else break; dt.setDate(dt.getDate()-1); } return c; }
+function saveWt(){ const v=parseFloat($("#wtin").value);
+  if(!v||v<40||v>200){ toast("Enter a weight in kg"); return; }
+  const w=store.wt; w[todayISO()]=Math.round(v*10)/10; store.wt=w; render(); toast("Weight saved"); }
+function shopText(){ return "Mitch's bits for the shop:\n\n" + NUT.shop.map(s=>"- "+s).join("\n"); }
+async function shopCopy(){ try{ await navigator.clipboard.writeText(shopText()); toast("Copied"); }catch(e){ alert(shopText()); } }
+async function shopShare(){ const text=shopText();
+  if(navigator.share){ try{ await navigator.share({title:"Shopping list", text}); return; }catch(e){} }
+  shopCopy(); }
+function wtChart(){
+  const w=store.wt, keys=Object.keys(w).sort();
+  const pts=[[NUT.start_date,NUT.start_kg]].concat(keys.filter(k=>k!==NUT.start_date).map(k=>[k,w[k]]));
+  if(pts.length<2) return '<p class="small" style="margin-top:8px">One point on file so far. The line starts once there are two.</p>';
+  const W=320,H=120,L=34,B=18,T=8,R=6;
+  const d0=pts[0][0], dl=pts[pts.length-1][0];
+  const span=Math.max(7,dayDiff(d0,dl));
+  const vals=pts.map(p=>p[1]);
+  const guide=pts[0][1]-NUT.rate*(span/7);
+  const lo=Math.min.apply(null,vals.concat([guide]))-0.6, hi=Math.max.apply(null,vals)+0.6;
+  const X=d=>L+(W-L-R)*(dayDiff(d0,d)/span), Y=v=>T+(H-T-B)*(1-(v-lo)/(hi-lo));
+  const line=pts.map((p,i)=>(i?"L":"M")+X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)).join(" ");
+  const gl="M"+X(d0).toFixed(1)+" "+Y(pts[0][1]).toFixed(1)+"L"+X(dl).toFixed(1)+" "+Y(guide).toFixed(1);
+  const dots=pts.map(p=>'<circle cx="'+X(p[0]).toFixed(1)+'" cy="'+Y(p[1]).toFixed(1)+'" r="3" fill="var(--brand)"/>').join("");
+  return '<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;margin-top:10px">'
+   +'<line x1="'+L+'" y1="'+(H-B)+'" x2="'+(W-R)+'" y2="'+(H-B)+'" stroke="var(--grid)"/>'
+   +'<path d="'+gl+'" stroke="var(--muted)" stroke-width="1.4" fill="none" stroke-dasharray="4 4"/>'
+   +'<path d="'+line+'" stroke="var(--brand)" stroke-width="2.4" fill="none" stroke-linejoin="round"/>'+dots
+   +'<text x="2" y="'+(Y(hi-0.6)+4).toFixed(1)+'" font-size="9" fill="var(--muted)">'+hi.toFixed(1)+'</text>'
+   +'<text x="2" y="'+(Y(lo+0.6)+4).toFixed(1)+'" font-size="9" fill="var(--muted)">'+lo.toFixed(1)+'</text>'
+   +'</svg><p class="small">Solid line is you. Dotted line is half a kilo a week from 82.0. On it or just above it is right. Well below it means the deficit is too big and the shin and the training will pay for it.</p>';
+}
+function rFood(){
+  const d=todayISO(), s=nutSum(d), pct=Math.min(1,s.p/NUT.target), left=Math.max(0,NUT.target-s.p);
+  const log=(store.nut[d]||[]);
+  const kleft=NUT.kcal_budget-s.k;
+  const groups=["Breakfast","Lunch","3pm","Anytime"];
+  const chips=groups.map(g=>'<p class="small" style="margin:12px 2px 5px;font-weight:800;letter-spacing:.06em">'+g.toUpperCase()+'</p><div style="display:flex;flex-wrap:wrap;gap:6px">'
+    + NUT.foods.filter(f=>f.g===g).map(f=>'<button class="locbtn" style="flex:0 0 auto;padding:7px 10px;font-size:11.5px" onclick="nutAdd(\''+f.id+'\')">'+esc(f.n)+' <b style="color:var(--brand)">'+f.p+'g</b> <span style="opacity:.6">'+f.k+'</span></button>').join("")
+    + '</div>').join("");
+  const w=store.wt, wk=Object.keys(w).sort(), last=wk.length?w[wk[wk.length-1]]:NUT.start_kg;
+  const diff=NUT.start_kg-last;
+  const lostTxt = wk.length? (Math.abs(diff)<0.05? "level with 82.0" : (diff>0? diff.toFixed(1)+"kg down from 82.0" : (-diff).toFixed(1)+"kg up from 82.0")) : "No weigh-in yet";
+  return `<div class="card"><h2>One number: ${NUT.target}g of protein before dinner</h2>
+  <div style="display:flex;align-items:center;gap:14px;margin-top:6px">
+    ${ringSVG(pct, s.p+"g", "OF "+NUT.target)}
+    <div style="flex:1"><p class="small" style="margin:0"><b style="color:var(--brand);font-size:15px">${left?left+"g to go":"Done. Go and eat dinner."}</b></p>
+    <p class="small" style="margin:6px 0 0">Dinner is whatever Jess cooks. Not counted, not weighed, not negotiated. Everything on this card happens before you sit down.</p>
+    <p class="small" style="margin:6px 0 0">Streak <b>${nutStreak()}</b> day${nutStreak()===1?"":"s"} &middot; roughly <b>${s.k}</b> cal so far, ${kleft>=0?"about <b>"+kleft+"</b> left before dinner":"<b style=\"color:var(--brand)\">"+(-kleft)+" over</b> the pre-dinner budget"}</p></div>
+  </div>
+  ${chips}
+  <div class="row" style="margin-top:12px">
+    <button class="ghost" onclick="nutUndo()">Undo last</button>
+    <button class="ghost" onclick="nutReset()">Clear today</button>
+    <span class="small">${log.length} item${log.length===1?"":"s"} logged</span>
+  </div>
+  <p class="small" style="margin-top:10px">Protein in orange, rough calories in grey. Both are typical Australian supermarket label values rounded to something sensible. Good enough to run a day on, not a laboratory.</p></div>
+
+  <div class="card"><h2>About the calories, because you asked</h2>
+  <p class="small">You get them, but read this once and then stop thinking about it.</p>
+  <p class="small" style="margin-top:8px">Calorie counting genuinely works. It is the most reliable fat-loss tool there is, because a deficit is the actual mechanism and counting is the only way to see one directly. The catch in YOUR situation is specific and it is not about willpower. People under-report what they eat by twenty to fifty percent without meaning to, and that error is worst in exactly the rough-estimate mode you described. On top of that, the single biggest meal of your day is cooked by someone else and is the one thing you will not measure. So a full tracker would give you a confident-looking daily number with an unknowable hole in the middle of it, and the risk is that you trust that number over the scale.</p>
+  <p class="small" style="margin-top:8px"><b>So here is what the tab does instead.</b> The same taps that count your protein also add up a rough calorie total for the part of the day you actually control. No extra work, no separate logging, no weighing. Your pre-dinner budget is about <b>${NUT.kcal_budget}</b>.</p>
+  <p class="small" style="margin-top:8px"><b>Where that number comes from, so you can judge it.</b> At 82kg and 167cm your resting burn works out near 1,680 calories. With a 4:30am run and a twelve hour day on your feet, a reasonable all-in estimate is around 2,700. Take 550 off for half a kilo a week and you land near 2,150 for the day. Allow roughly 750 for a carby vego dinner and about 1,400 is what is left for everything before it. Every one of those steps carries real error, so treat 1,400 as a starting estimate rather than a fact.</p>
+  <p class="small" style="margin-top:8px"><b>The scale is the referee, not the calorie number.</b> Weigh in weekly for three weeks. If you are dropping half a kilo a week, the budget is right and you can ignore it from then on. If nothing is moving, the budget comes down by 150. If you are dropping faster than three quarters of a kilo, it goes up by 150. The scale already includes the dinner you cannot measure, which is exactly why it beats counting.</p></div>
+
+  <div class="card"><h2>A normal day that hits it</h2>
+  <table><tr><th>When</th><th>What</th><th style="text-align:right">Protein</th></tr>
+  <tr><td>4:30am</td><td>Pod shot, dash of oat milk</td><td style="text-align:right">0g</td></tr>
+  <tr><td>After the run</td><td>Greek yoghurt 170g, berries, half muesli, scoop of protein</td><td style="text-align:right">45g</td></tr>
+  <tr><td>At work</td><td>Long black</td><td style="text-align:right">0g</td></tr>
+  <tr><td>10am</td><td>Cruskits with protein cheese</td><td style="text-align:right">12g</td></tr>
+  <tr><td>Lunch</td><td>Chicken wrap with salad, plus a 95g tuna</td><td style="text-align:right">64g</td></tr>
+  <tr><td>3pm</td><td>High-protein yoghurt pouch</td><td style="text-align:right">13g</td></tr>
+  <tr><td><b>Before dinner</b></td><td><b>About 1,190 calories</b></td><td style="text-align:right"><b>134g</b></td></tr>
+  <tr><td>Dinner</td><td>Whatever Jess cooks</td><td style="text-align:right">not counted</td></tr></table>
+  <p class="small" style="margin-top:8px">That is your own food, rearranged. Nothing on that list is new to you, and it comes in about 200 under the pre-dinner budget, so there is room in it. This is not meant to feel like a diet.</p></div>
+
+  <div class="card"><h2>The four swaps, and that is the whole thing</h2>
+  <table><tr><th>Stop</th><th>Start</th><th>Why</th></tr>
+  <tr><td>Carman's muesli bar</td><td>Beef jerky or a protein bar</td><td>Same convenience, same pocket, same price. About 3g of protein for 190 calories becomes 20 to 25g for roughly the same, and it is the single change most likely to kill the snacky middle of your day.</td></tr>
+  <tr><td>A full serve of muesli on the yoghurt</td><td>Half the muesli, keep the berries, keep the powder</td><td>The muesli is where the calories are. The yoghurt and the powder are where the protein is. You give up very little and save a lot.</td></tr>
+  <tr><td>Crumbed or pre-made chicken tenders</td><td>Plain breast, grilled and sliced Sunday for the week</td><td>If your tenders are crumbed that is a large hidden cost for the same protein. If they are already plain grilled, ignore this row.</td></tr>
+  <tr><td>Grazing between lunch and dinner</td><td>One planned 3pm thing, then nothing</td><td>Snacky is usually a protein problem rather than a willpower problem. Hit the number at breakfast and lunch and the grazing mostly stops on its own.</td></tr></table>
+  <p class="small" style="margin-top:8px"><b>Not on the list and deliberately so:</b> dinner, your long black, and weighing anything. If this ever needs a set of kitchen scales it has already failed.</p></div>
+
+  <div class="card"><h2>The weekly shop</h2>
+  <p class="small">Your bits only, not the household shop. Jess orders Thursday, so this goes to her Wednesday night. The same list every week, which is the entire point of it.</p>
+  <div class="row" style="margin-top:8px"><button class="btn" onclick="shopShare()">Send list</button><button class="ghost" onclick="shopCopy()">Copy list</button></div>
+  <ul style="margin:10px 0 0;padding-left:18px;line-height:1.75">${NUT.shop.map(x=>"<li>"+esc(x)+"</li>").join("")}</ul></div>
+
+  <div class="card"><h2>The number that tells the truth</h2>
+  <p class="small">Same morning each week, after the run, before breakfast, same amount of clothing. One number and nothing else.</p>
+  <div class="row" style="margin-top:8px">
+    <label class="f">Weight (kg)<input type="number" step="0.1" id="wtin" placeholder="${last.toFixed(1)}"></label>
+    <button class="btn" onclick="saveWt()">Save</button>
+    <span class="small">${esc(lostTxt)}</span>
+  </div>
+  ${wtChart()}
+  <p class="small" style="margin-top:10px"><b>THE GUARDRAIL, and it is already built.</b> The weekly aerobic marker on your Progress tab is metres covered per heartbeat. If the deficit gets too big it stalls or falls there before you feel a thing. Two flat weeks in a row, or the right shin scoring 3 or more, and you eat more that week. That is a number, not a judgement call.</p>
+  <p class="small" style="margin-top:8px"><b>THE PACE.</b> Half a kilo a week, no faster, from 82.0kg on 15 Oct 2026. About 5kg by Christmas and 7kg by Beerwah. Faster than that while running 50km a week is how people buy a stress fracture, and you already have a shin worth watching. The upside is real though: 7kg off 82kg is 8.5% of your body mass, which on the usual rule of thumb is worth somewhere in the region of two to four minutes over 10km. That is a bigger lever on sub-50 than anything left in the training plan.</p>
+  <p class="small" style="margin-top:8px"><b>RACE WEEKS ARE NOT DIET WEEKS.</b> From the Monday of Beerwah@Daybreak week and of Beerwah@Night week you eat at maintenance. You cannot taper and cut at the same time.</p></div>`;
+}
 function rSync(){
   const c=store.cfg;
   return `<div class="card"><h2>intervals.icu sync</h2>
@@ -2224,12 +2385,12 @@ async function syncNow(){
   }
 }
 function expData(){
-  const blob=new Blob([JSON.stringify({logs:store.logs,str:store.str,cfg:{aid:store.cfg.aid}},null,1)],{type:"application/json"});
+  const blob=new Blob([JSON.stringify({logs:store.logs,str:store.str,nut:store.nut,wt:store.wt,cfg:{aid:store.cfg.aid}},null,1)],{type:"application/json"});
   const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=ATHLETE.slug+"-logs.json"; a.click();
 }
 function impData(ev){
   const f=ev.target.files[0]; if(!f)return; const rd=new FileReader();
-  rd.onload=()=>{ try{ const d=JSON.parse(rd.result); if(d.logs) store.logs=d.logs; if(d.str) store.str=d.str; render(); }catch(e){ alert("Bad file"); } };
+  rd.onload=()=>{ try{ const d=JSON.parse(rd.result); if(d.logs) store.logs=d.logs; if(d.str) store.str=d.str; if(d.nut) store.nut=d.nut; if(d.wt) store.wt=d.wt; render(); }catch(e){ alert("Bad file"); } };
   rd.readAsText(f);
 }
 $("#hdr").innerHTML=ATHLETE.header_html;
