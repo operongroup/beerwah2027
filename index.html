@@ -2209,19 +2209,19 @@ const NUT = {
     {id:"wine", g:"Anytime",   n:"Glass of wine",                  p:0,  k:120}
   ],
   prep: [
-    ["Boil 10 eggs","Into already boiling water, 8 minutes, then straight into cold water. Leave them IN THEIR SHELLS in a container in the fridge. They peel easier and last longer that way.","10 min"],
+    ["Boil 12 eggs","Ten for the week and two spare for the weekend. Into already boiling water, 8 minutes, then straight into cold water. Leave them IN THEIR SHELLS in a container in the fridge. They peel easier and last longer that way.","10 min"],
     ["Grill 1kg of chicken breast","Slice the thick fillets through the middle so they are an even thickness, or they burn outside and stay raw inside. Salt, pepper, a smear of oil. Hot pan or BBQ, about 5 to 6 minutes a side. <b>Cook it to 74 degrees inside</b>, that is the poultry number and it is not negotiable. Rest 5 minutes, then slice and into a container.","25 min"],
-    ["Salad box","Wash and properly DRY the leaves, slice two capsicums, both into one container with a sheet of paper towel on top. The paper towel is why it is still good on Thursday.","10 min"],
+    ["Salad box","Wash and properly DRY the leaves, slice the capsicum, both into one container with a sheet of paper towel on top. The paper towel is why it is still good on Thursday.","10 min"],
     ["Bag the jerky and this week's snack","Five lots of 50g jerky, and portion the snack into five too. If you portion it you eat the portion. If you take the big bag to work you eat the big bag.","5 min"]
   ],
   shop: [
     ["Greek yoghurt, plain, 1kg tub","200g x 5 mornings"],
     ["Frozen mixed berries, 500g bag","80g x 5 mornings"],
-    ["Eggs, 1 dozen","2 each morning at 10, plus spares"],
-    ["Chicken breast, 1kg raw","Cooks down to about 750g, which is 150g x 5 wraps"],
-    ["Wholemeal wraps, 1 pack","5 lunches"],
-    ["Salad leaves, 1 large bag","5 wraps"],
-    ["Capsicum x2","5 wraps"],
+    ["Eggs, 1 dozen","10 for the weekday mornings, 2 spare for the weekend"],
+    ["Chicken breast, 1kg raw","Cooks to about 750g, which is 150g x 5 weekday wraps. Leftovers are the weekend bonus"],
+    ["Wholemeal wraps, 1 pack","5 weekday lunches"],
+    ["Salad leaves, 1 large bag","5 wraps, plus whatever you throw together at the weekend"],
+    ["Capsicum x1","Enough for the five wraps"],
     ["Bananas, 1 small bunch","Half a banana before Tuesday and Saturday"],
     ["Jerky x5 packs, OR 1kg beef topside","5 x 50g at 3pm. Topside is the make-your-own version, every second week"],
     ["Light mayo","Only when out"],
@@ -2267,16 +2267,21 @@ function saveWt(){ const v=parseFloat($("#wtin").value);
 // ---------- today's actions ----------
 function todayActs(){
   const d=todayISO(), dow=new Date(d+"T12:00").getDay();
+  const wknd=(dow===0||dow===6);
   const A=[];
   if(dow===2||dow===6) A.push(["pre","Half a banana before you go out","Hard session today, and running it empty costs you the session. <b>No bananas in the house?</b> A slice of toast with honey, or a muesli bar, or a spoon of jam. The point is 20 to 30g of carbs in you, not the banana specifically."]);
   A.push(["pod","Pod shot with a dash of oat milk",""]);
-  A.push(["bfast","200g Greek yoghurt, 1 scoop protein, handful of frozen berries","Same time run or no run. Forty seconds, no cooking."]);
+  A.push(["bfast","200g Greek yoghurt, 1 scoop protein, handful of frozen berries","Same time run or no run, weekday or weekend. This one does not move. It is the anchor the rest of the day hangs off."]);
   A.push(["cre","Creatine, 3 to 5g","Stir it into the same yoghurt. One action, not two."]);
   if(dow===6) A.push(["xtra","One extra slice of toast, or a whole banana","Long run day. You eat MORE today, not less. Cutting on long run day costs you Sunday and Tuesday."]);
-  A.push(["hyd","Dr Hydrate in the work bottle","Long blacks on top of that, as many as you like."]);
-  A.push(["ten","Two boiled eggs at 10","Out of the Sunday batch."]);
-  A.push(["lun","The wrap: 150g chicken, salad leaves, capsicum, light mayo",""]);
-  A.push(["three","50g of jerky at 3pm","Not optional. This is the one thing standing between you and 5pm."]);
+  A.push(["hyd","Dr Hydrate","<b>"+(wknd?"Before AND after the long run, and through the day.":"In the work bottle. Long blacks on top of that, as many as you like.")+"</b>"]);
+  if(wknd){
+    A.push(["wknd","Eat on the spot, but protein in every meal","<b>No prep at the weekend and no menu.</b> Two rules and that is it. ONE: something with protein in it at every meal, because a meal without protein will not hold you and you will graze all afternoon. TWO: the weekend leak is almost never the meals, it is the drinks and the picking. <b>Easy ones needing zero prep:</b> eggs on toast, a tin of tuna with a rice pouch, leftover chicken on a salad, or just another Greek yoghurt."]);
+  } else {
+    A.push(["ten","Two boiled eggs at 10","Out of the Sunday batch."]);
+    A.push(["lun","The wrap: 150g chicken, salad leaves, capsicum, light mayo",""]);
+    A.push(["three","50g of jerky at 3pm","Not optional. This is the one thing standing between you and 5pm."]);
+  }
   if(dow===4) A.push(["thu","Weigh in, and send Jess the shopping list","Thursday. The order goes in tomorrow."]);
   if(dow===0) A.push(["sun","45 minutes of prep tonight","Open the Sunday night section below."]);
   return A;
@@ -2352,7 +2357,7 @@ function rFood(){
    +'<div class="row" style="margin-top:8px"><button class="btn" onclick="shopShare()">Send to Jess</button><button class="ghost" onclick="shopCopy()">Copy list</button></div>'
    +'<table style="margin-top:10px"><tr><th>Buy</th><th>Why</th></tr>'
    + shopRows().map(r=>'<tr><td><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td></tr>').join("")
-   +'</table><p class="small" style="margin-top:8px">The last line is the <b>work snack</b> and it rotates every week on its own, so you are not eating almonds for nine months. Keep it in your desk drawer.</p>';
+   +'</table><p class="small" style="margin-top:8px">The last line is the <b>work snack</b> and it rotates every week on its own, so you are not eating almonds for nine months. Keep it in your desk drawer.</p><p class="small" style="margin-top:8px"><b>THE PLAN IS MONDAY TO FRIDAY.</b> Weekends you eat on the spot and nothing is prepped, so these quantities carry a bit of slack for it: a dozen eggs rather than ten, and enough leaves and chicken that Saturday lunch is a salad rather than a decision.</p>';
 
   const prepBody = '<p class="small">Do this and the week runs itself. Skip it and you buy lunch five times.</p>'
    +'<table style="margin-top:8px"><tr><th>Do</th><th>How</th><th style="text-align:right">Time</th></tr>'
