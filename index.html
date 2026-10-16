@@ -1589,17 +1589,6 @@ function rContent(){
   </div>` + briefCard;
 }
 function tickShot(k,v){ const s=store.shots||{}; if(v)s[k]=1; else delete s[k]; store.shots=s; render(); }
-const SUPS=[["cre","Creatine","3 to 5g, stirred into the yoghurt"],["pro","Protein","1 scoop, same yoghurt"],["hyd","Dr Hydrate","1 serve in the work bottle"]];
-function supToggle(id){ const d=todayISO(), s=store.sup; const a=(s[d]=s[d]||[]); const i=a.indexOf(id); if(i<0) a.push(id); else a.splice(i,1); store.sup=s; render(); }
-function supCard(){
-  const d=todayISO(), done=(store.sup[d]||[]), n=done.length;
-  return '<div class="card"><h2>Supplements today'+(n===3?' <span class="pill done">DONE</span>':'')+'</h2>'
-   +'<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">'
-   + SUPS.map(s=>'<button class="locbtn'+(done.indexOf(s[0])>=0?' on':'')+'" style="flex:1 1 30%;padding:9px 10px;font-size:12px;text-align:left" onclick="supToggle(\''+s[0]+'\')">'+(done.indexOf(s[0])>=0?'&#10003; ':'')+'<b>'+s[1]+'</b><br><span style="opacity:.7;font-size:10.5px">'+s[2]+'</span></button>').join("")
-   +'</div>'
-   +(n<3?'<p class="small" style="margin-top:8px">Creatine and protein go in the same yoghurt after the run, so that is one action and not two.</p>':'')
-   +'</div>';
-}
 function rToday(){
   if(ATHLETE.intake && !store.intake.done) return rIntake();
   const t=todayISO(); let list=sessionsOn(t);
@@ -1619,7 +1608,7 @@ function rToday(){
     const before = t<START;
     head+=`<div class="card"><h3>${before?ATHLETE.start_label:(t>RACE?"Outside the "+NW+"-week block":"Nothing scheduled today")}</h3></div>`;
   }
-  let html=head+list.map(s=>sessionCard(s,true)).join("")+supCard();
+  let html=head+list.map(s=>sessionCard(s,true)).join("")+actCard(true);
   // tomorrow preview
   const tm=iso(new Date(Date.now()+864e5)); const nx=sessionsOn(tm);
   if(nx.length) html+=`<div class="card"><h2>Tomorrow</h2>${nx.map(s=>`<p style="margin:3px 0"><b>${esc(s.title)}</b>${s.km?` <span class="small">${s.km}km</span>`:""}</p>`).join("")}</div>`;
@@ -2176,7 +2165,7 @@ function intakeSummaryCard(){
 // ---------- Food / nutrition ----------
 const NUT = {
   target: 130, kcal_budget: 1450,
-  start_kg: 82.0, start_date: "2026-10-15", hold_until: "2026-10-26", rate: 0.5,
+  start_kg: 82.0, start_date: "2026-10-15", hold_until: "2026-10-26", rate: 0.5, goal_kg: 75,
   foods: [
     {id:"gy",   g:"Breakfast", n:"Greek yoghurt, 200g",            p:19, k:130},
     {id:"pp",   g:"Breakfast", n:"Scoop of protein powder",        p:24, k:120},
@@ -2217,33 +2206,15 @@ const NUT = {
     {id:"pod",  g:"Anytime",   n:"Pod shot + dash of oat milk",    p:0,  k:15},
     {id:"fw",   g:"Anytime",   n:"Flat white",                     p:6,  k:110},
     {id:"ban",  g:"Anytime",   n:"Banana",                         p:1,  k:105},
+    {id:"hban", g:"Anytime",   n:"Half a banana",                  p:1,  k:53},
     {id:"beer", g:"Anytime",   n:"Beer, schooner",                 p:1,  k:140},
     {id:"wine", g:"Anytime",   n:"Glass of wine",                  p:0,  k:120}
   ],
-  week: [
-    [1,"Mon","Rest day","Nothing changes, and that is the trap. No run means no rush, and this is the easiest day of the week to let slide. Hit the number anyway."],
-    [2,"Tue","Quality session","<b>Half a banana before you go out.</b> This is the hardest session of the week and running it empty costs you the session. Everything else as normal."],
-    [3,"Wed","Easy run","Standard day. Nothing changes."],
-    [4,"Thu","Easy + strides","<b>WEIGH IN this morning</b>, after the run, before breakfast. And <b>send Jess the shopping list tonight</b>, because the order goes in tomorrow."],
-    [5,"Fri","Strength, no run","No run means no post-run breakfast window. Eat it at the same time anyway or the whole day slides. Groceries get ordered today."],
-    [6,"Sat","Long run","<b>The big one.</b> Half a banana before. After it, add a second slice of toast or a banana to the usual breakfast. <b>DO NOT cut on long run day</b>, you will pay for it on Sunday and again on Tuesday."],
-    [0,"Sun","Climb or easy, then prep","Normal day, then <b>45 minutes of prep in the evening</b>. That is the card below and it is the one thing that makes the rest of the week happen."]
-  ],
-  day: [
-    ["4:30am","Pod shot with a dash of oat milk. Nothing else.","0g"],
-    ["Back from the run","<b>200g Greek yoghurt, one scoop of protein stirred through, a handful of frozen berries.</b> Forty seconds. No cooking.","44g"],
-    ["At work","Long black. Free, have as many as you want.","0g"],
-    ["10am","<b>Two boiled eggs</b> out of the Sunday batch.","12g"],
-    ["Lunch","<b>THE WRAP: one wrap, 150g of the Sunday chicken, a big handful of salad leaves, sliced capsicum, light mayo.</b> Build it in the morning, not on Sunday, or it goes soggy.","50g"],
-    ["3pm","<b>50g of jerky.</b> Not optional. This is the one that stops 5pm going wrong.","25g"],
-    ["<b>Before dinner</b>","<b>About 1055 calories, leaving roughly 395 spare for a peckish day</b>","<b>131g</b>"],
-    ["Dinner","Whatever Jess cooks. Eat it, enjoy it, do not count it. Measured at about 695 cal and 27g, see below.","about 27g"]
-  ],
   prep: [
     ["Boil 10 eggs","Into already boiling water, 8 minutes, then straight into cold water. Leave them IN THEIR SHELLS in a container in the fridge. They peel easier and last longer that way.","10 min"],
-    ["Grill 1kg of chicken breast","Slice the thick fillets through the middle so they are an even thickness, or they burn outside and stay raw inside. Salt, pepper, a smear of oil. Hot pan or BBQ, about 5 to 6 minutes a side. <b>Cook it to 74 degrees inside</b>, that is the poultry number and it is not negotiable. Rest it 5 minutes, then slice and into a container.","25 min"],
+    ["Grill 1kg of chicken breast","Slice the thick fillets through the middle so they are an even thickness, or they burn outside and stay raw inside. Salt, pepper, a smear of oil. Hot pan or BBQ, about 5 to 6 minutes a side. <b>Cook it to 74 degrees inside</b>, that is the poultry number and it is not negotiable. Rest 5 minutes, then slice and into a container.","25 min"],
     ["Salad box","Wash and properly DRY the leaves, slice two capsicums, both into one container with a sheet of paper towel on top. The paper towel is why it is still good on Thursday.","10 min"],
-    ["Bag the jerky","Five lots of 50g into five small bags or one container. If you portion it you eat 50g. If you take the big bag to work you eat the big bag.","5 min"]
+    ["Bag the jerky and this week's snack","Five lots of 50g jerky, and portion the snack into five too. If you portion it you eat the portion. If you take the big bag to work you eat the big bag.","5 min"]
   ],
   shop: [
     ["Greek yoghurt, plain, 1kg tub","200g x 5 mornings"],
@@ -2253,16 +2224,21 @@ const NUT = {
     ["Wholemeal wraps, 1 pack","5 lunches"],
     ["Salad leaves, 1 large bag","5 wraps"],
     ["Capsicum x2","5 wraps"],
-    ["Light mayo or similar, 1 bottle","Lasts a month, only buy when out"],
-    ["Jerky x5 packs, OR 1kg beef topside","5 x 50g at 3pm. The topside is the make-your-own version, every second week"],
-    ["Almonds, 1 bag","Peckish days. Lasts weeks"],
-    ["Cottage cheese, 1 tub","Peckish days"],
-    ["Apples x5","Peckish days"],
-    ["Cruskits + high-protein cheese slices","Peckish days. Only when out"],
-    ["Protein powder","ONLY when the tub is nearly out. One scoop a day"],
-    ["Creatine, Dr Hydrate","ONLY when either is nearly out"]
+    ["Bananas, 1 small bunch","Half a banana before Tuesday and Saturday"],
+    ["Jerky x5 packs, OR 1kg beef topside","5 x 50g at 3pm. Topside is the make-your-own version, every second week"],
+    ["Light mayo","Only when out"],
+    ["Protein powder, creatine, Dr Hydrate","Only when one is nearly out"]
+  ],
+  snackrot: [
+    ["Almonds, 1 bag","Ten is a serve. Count them out and put the bag away"],
+    ["Carrot and celery sticks","Cut them Sunday, they live in the salad box"],
+    ["Cottage cheese, 2 tubs","100g is 12g of protein for 100 calories"],
+    ["Apples x5","The zero effort one"],
+    ["Beef jerky, 1 extra pack","20g is 10g of protein for 60 calories"],
+    ["Cruskits + high-protein cheese slices","2 and 1 is 7g for 95 calories"]
   ]
 };
+function snackWeek(){ const w=Math.max(1,weekOf(todayISO())); return NUT.snackrot[w % NUT.snackrot.length]; }
 function allFoods(){ return NUT.foods.concat(store.myf||[]); }
 function nutSum(d){ const l=(store.nut[d]||[]); let p=0,k=0;
   for(const e of l){
@@ -2272,10 +2248,6 @@ function nutSum(d){ const l=(store.nut[d]||[]); let p=0,k=0;
 function nutAdd(id){ const d=todayISO(), n=store.nut; (n[d]=n[d]||[]).push(id); store.nut=n; render(); }
 function nutUndo(){ const d=todayISO(), n=store.nut; if(n[d]&&n[d].length){ n[d].pop(); store.nut=n; render(); } }
 function nutReset(){ const d=todayISO(), n=store.nut; delete n[d]; store.nut=n; render(); toast("Cleared"); }
-function nutStreak(){ let c=0, dt=new Date();
-  for(let i=0;i<400;i++){ const d=iso(dt);
-    if(i===0 && nutSum(d).p<NUT.target){ dt.setDate(dt.getDate()-1); continue; }
-    if(nutSum(d).p>=NUT.target) c++; else break; dt.setDate(dt.getDate()-1); } return c; }
 function nutAddCustom(){
   const n=($("#cfn").value||"").trim(), p=Math.round(+$("#cfp").value||0), k=Math.round(+$("#cfk").value||0);
   if(!n){ toast("Give it a name"); return; }
@@ -2283,7 +2255,7 @@ function nutAddCustom(){
   const id="c"+Date.now().toString(36);
   const m=store.myf||[]; m.push({id:id,g:"Yours",n:n,p:p,k:k}); store.myf=m;
   const d=todayISO(), lg=store.nut; (lg[d]=lg[d]||[]).push(id); store.nut=lg;
-  render(); toast("Added, and saved for next time");
+  render(); toast("Added "+p+"g and about "+k+" cal");
 }
 function myfDel(id,ev){
   if(ev) ev.stopPropagation();
@@ -2294,16 +2266,47 @@ function myfDel(id,ev){
 function saveWt(){ const v=parseFloat($("#wtin").value);
   if(!v||v<40||v>200){ toast("Enter a weight in kg"); return; }
   const w=store.wt; w[todayISO()]=Math.round(v*10)/10; store.wt=w; render(); toast("Weight saved"); }
-function shopText(){ return "Mitch's bits for the shop:\n\n" + NUT.shop.map(s=>"- "+s[0]).join("\n") + "\n\n(That is one week exactly, nothing spare.)"; }
-async function shopCopy(){ try{ await navigator.clipboard.writeText(shopText()); toast("Copied"); }catch(e){ alert(shopText()); } }
-async function shopShare(){ const text=shopText();
-  if(navigator.share){ try{ await navigator.share({title:"Shopping list", text}); return; }catch(e){} }
-  shopCopy(); }
+// ---------- today's actions ----------
+function todayActs(){
+  const d=todayISO(), dow=new Date(d+"T12:00").getDay();
+  const A=[];
+  if(dow===2||dow===6) A.push(["pre","Half a banana before you go out","Hard session today, and running it empty costs you the session. <b>No bananas in the house?</b> A slice of toast with honey, or a muesli bar, or a spoon of jam. The point is 20 to 30g of carbs in you, not the banana specifically."]);
+  A.push(["pod","Pod shot with a dash of oat milk",""]);
+  A.push(["bfast","200g Greek yoghurt, 1 scoop protein, handful of frozen berries","Same time run or no run. Forty seconds, no cooking."]);
+  A.push(["cre","Creatine, 3 to 5g","Stir it into the same yoghurt. One action, not two."]);
+  if(dow===6) A.push(["xtra","One extra slice of toast, or a whole banana","Long run day. You eat MORE today, not less. Cutting on long run day costs you Sunday and Tuesday."]);
+  A.push(["hyd","Dr Hydrate in the work bottle","Long blacks on top of that, as many as you like."]);
+  A.push(["ten","Two boiled eggs at 10","Out of the Sunday batch."]);
+  A.push(["lun","The wrap: 150g chicken, salad leaves, capsicum, light mayo",""]);
+  A.push(["three","50g of jerky at 3pm","Not optional. This is the one thing standing between you and 5pm."]);
+  if(dow===4) A.push(["thu","Weigh in, and send Jess the shopping list","Thursday. The order goes in tomorrow."]);
+  if(dow===0) A.push(["sun","45 minutes of prep tonight","Open the Sunday night section below."]);
+  return A;
+}
+function actToggle(id){ const d=todayISO(), s=store.sup; const a=(s[d]=s[d]||[]); const i=a.indexOf(id); if(i<0) a.push(id); else a.splice(i,1); store.sup=s; render(); }
+function actCard(compact){
+  const d=todayISO(), done=(store.sup[d]||[]), A=todayActs();
+  const n=A.filter(a=>done.indexOf(a[0])>=0).length;
+  const dayName=new Date(d+"T12:00").toDateString().split(" ")[0];
+  let h='<div class="card"><h2>Today'+(n===A.length?' <span class="pill done">DONE</span>':'')+'</h2>'
+   +'<p class="small" style="margin:2px 0 10px">'+dayName+' &middot; <b>'+n+' of '+A.length+'</b> ticked off</p>';
+  for(const a of A){
+    const on=done.indexOf(a[0])>=0;
+    h+='<div onclick="actToggle(\''+a[0]+'\')" style="display:flex;gap:10px;align-items:flex-start;padding:9px 2px;border-top:1px solid var(--grid);cursor:pointer;opacity:'+(on?'.5':'1')+'">'
+     +'<span style="flex:0 0 18px;height:18px;margin-top:1px;border-radius:5px;border:2px solid '+(on?'var(--brand)':'var(--grid)')+';background:'+(on?'var(--brand)':'transparent')+';color:#fff;font-size:12px;line-height:15px;text-align:center">'+(on?'&#10003;':'')+'</span>'
+     +'<span style="flex:1"><b style="'+(on?'text-decoration:line-through':'')+'">'+a[1]+'</b>'
+     +(a[2]&&!compact?'<br><span class="small" style="opacity:.8">'+a[2]+'</span>':'')+'</span></div>';
+  }
+  return h+'</div>';
+}
+function roll(title,body,open){
+  return '<div class="card"><details'+(open?' open':'')+'><summary style="cursor:pointer;list-style:none;outline:none"><h2 style="display:inline-block;margin:0">'+title+' <span style="opacity:.45;font-size:12px">&#9662;</span></h2></summary><div style="margin-top:12px">'+body+'</div></details></div>';
+}
 function wtChart(){
   const w=store.wt, keys=Object.keys(w).sort();
   const pts=[[NUT.start_date,NUT.start_kg]].concat(keys.filter(k=>k!==NUT.start_date).map(k=>[k,w[k]]));
-  if(pts.length<2) return '<p class="small" style="margin-top:8px">One point on file so far. The line starts once there are two.</p>';
-  const W=320,H=120,L=34,B=18,T=8,R=6;
+  if(pts.length<2) return '<p class="small">One point on file. The line starts once there are two, so get on the scales Thursday.</p>';
+  const W=320,H=130,L=34,B=18,T=8,R=6;
   const d0=pts[0][0], dl=pts[pts.length-1][0];
   const span=Math.max(7,dayDiff(d0,dl));
   const vals=pts.map(p=>p[1]);
@@ -2314,20 +2317,25 @@ function wtChart(){
   const line=pts.map((p,i)=>(i?"L":"M")+X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)).join(" ");
   const hd=(hold>=span)?dl:NUT.hold_until;
   const gl="M"+X(d0).toFixed(1)+" "+Y(pts[0][1]).toFixed(1)+"L"+X(hd).toFixed(1)+" "+Y(pts[0][1]).toFixed(1)+"L"+X(dl).toFixed(1)+" "+Y(guide).toFixed(1);
-  const dots=pts.map(p=>'<circle cx="'+X(p[0]).toFixed(1)+'" cy="'+Y(p[1]).toFixed(1)+'" r="3" fill="var(--brand)"/>').join("");
-  return '<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;margin-top:10px">'
+  const dots=pts.map(p=>'<circle cx="'+X(p[0]).toFixed(1)+'" cy="'+Y(p[1]).toFixed(1)+'" r="3.5" fill="var(--brand)"/>').join("");
+  return '<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto">'
    +'<line x1="'+L+'" y1="'+(H-B)+'" x2="'+(W-R)+'" y2="'+(H-B)+'" stroke="var(--grid)"/>'
    +'<path d="'+gl+'" stroke="var(--muted)" stroke-width="1.4" fill="none" stroke-dasharray="4 4"/>'
-   +'<path d="'+line+'" stroke="var(--brand)" stroke-width="2.4" fill="none" stroke-linejoin="round"/>'+dots
+   +'<path d="'+line+'" stroke="var(--brand)" stroke-width="2.6" fill="none" stroke-linejoin="round"/>'+dots
    +'<text x="2" y="'+(Y(hi-0.6)+4).toFixed(1)+'" font-size="9" fill="var(--muted)">'+hi.toFixed(1)+'</text>'
    +'<text x="2" y="'+(Y(lo+0.6)+4).toFixed(1)+'" font-size="9" fill="var(--muted)">'+lo.toFixed(1)+'</text>'
-   +'</svg><p class="small">Solid line is you. Dotted line is the target: flat until Mon 26 Oct because you are away, then half a kilo a week.</p>';
+   +'</svg>';
 }
+function shopRows(){ return NUT.shop.concat([["THIS WEEK: "+snackWeek()[0], snackWeek()[1]]]); }
+function shopText(){ return "Mitch's bits for the shop:\n\n" + shopRows().map(s=>"- "+s[0]).join("\n") + "\n\n(One week exactly, nothing spare.)"; }
+async function shopCopy(){ try{ await navigator.clipboard.writeText(shopText()); toast("Copied"); }catch(e){ alert(shopText()); } }
+async function shopShare(){ const text=shopText();
+  if(navigator.share){ try{ await navigator.share({title:"Shopping list", text}); return; }catch(e){} }
+  shopCopy(); }
 function rFood(){
   const d=todayISO(), s=nutSum(d), pct=Math.min(1,s.p/NUT.target), left=Math.max(0,NUT.target-s.p);
   const log=(store.nut[d]||[]), kleft=NUT.kcal_budget-s.k;
-  const today3=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][new Date(d+"T12:00").getDay()];
-  const groups=[["Breakfast","BREAKFAST"],["Lunch","LUNCH"],["3pm","3PM"],["Peckish","IF YOU ARE PECKISH"],["Out","OUT, OR YOU FORGOT BREAKFAST"],["Anytime","DRINKS AND ODDS"],["Yours","YOURS"]];
+  const groups=[["Breakfast","BREAKFAST"],["Lunch","LUNCH"],["3pm","3PM"],["Peckish","PECKISH"],["Out","OUT, OR YOU FORGOT BREAKFAST"],["Anytime","DRINKS AND ODDS"],["Yours","YOURS"]];
   const af=allFoods();
   const face=f=>esc(f.n)+' <b style="color:var(--brand)">'+f.p+'g</b> <span style="opacity:.6">'+f.k+'</span>';
   const chips=groups.map(gp=>{
@@ -2339,124 +2347,66 @@ function rFood(){
      + '</div>';
   }).join("");
   const w=store.wt, wk=Object.keys(w).sort(), last=wk.length?w[wk[wk.length-1]]:NUT.start_kg;
-  const diff=NUT.start_kg-last;
-  const lostTxt = wk.length? (Math.abs(diff)<0.05? "level with 82.0" : (diff>0? diff.toFixed(1)+"kg down from 82.0" : (-diff).toFixed(1)+"kg up from 82.0")) : "No weigh-in yet";
-  return `<div class="card"><h2>The week</h2>
-  <table><tr><th>Day</th><th>Training</th><th>What changes</th></tr>
-  ${NUT.week.map(r=>`<tr${r[1]===today3?' style="background:rgba(232,67,14,.10)"':''}><td><b>${r[1]}</b></td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join("")}</table>
+  const diff=NUT.start_kg-last, togo=last-NUT.goal_kg;
+  const lostTxt = wk.length? (Math.abs(diff)<0.05? "level with 82.0" : (diff>0? diff.toFixed(1)+"kg down" : (-diff).toFixed(1)+"kg up")) : "No weigh-in yet";
 
-  <h2 style="margin-top:16px">Every day, same times</h2>
-  <table><tr><th>When</th><th>Eat</th><th style="text-align:right">Protein</th></tr>
-  ${NUT.day.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td style="text-align:right">${r[2]}</td></tr>`).join("")}</table>
-  <p class="small" style="margin-top:8px">Same every day on purpose. The thing that fails at 4am is deciding, not willpower. The week above only tells you what is different.</p></div>
+  const shopBody = '<p class="small">Send it <b>Thursday night</b>, the order goes in Friday. One week exactly.</p>'
+   +'<div class="row" style="margin-top:8px"><button class="btn" onclick="shopShare()">Send to Jess</button><button class="ghost" onclick="shopCopy()">Copy list</button></div>'
+   +'<table style="margin-top:10px"><tr><th>Buy</th><th>Why</th></tr>'
+   + shopRows().map(r=>'<tr><td><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td></tr>').join("")
+   +'</table><p class="small" style="margin-top:8px">The last line is the <b>work snack</b> and it rotates every week on its own, so you are not eating almonds for nine months. Keep it in your desk drawer.</p>';
 
-  <div class="card"><h2>Dinner, measured</h2>
-  <p class="small">You asked what a standard one actually is, so I pulled the nutrition panels off six HelloFresh Australia vegetarian dinners instead of guessing.</p>
-  <table style="margin-top:8px"><tr><th>Meal</th><th style="text-align:right">Cal</th><th style="text-align:right">Protein</th></tr>
-  <tr><td>Thai Veggie Curry with Rice</td><td style="text-align:right">796</td><td style="text-align:right">17g</td></tr>
-  <tr><td>Thai Plant-Based Chick'n &amp; Veggie Curry</td><td style="text-align:right">751</td><td style="text-align:right">42g</td></tr>
-  <tr><td>Cheat's Loaded Veggie Jacket Potatoes</td><td style="text-align:right">696</td><td style="text-align:right">27g</td></tr>
-  <tr><td>Haloumi &amp; Spiced Roast Veggie Bowl</td><td style="text-align:right">694</td><td style="text-align:right">34g</td></tr>
-  <tr><td>Mediterranean Haloumi &amp; Roast Veggie Toss</td><td style="text-align:right">563</td><td style="text-align:right">27g</td></tr>
-  <tr><td>Cauliflower &amp; Chickpea Curry</td><td style="text-align:right">306</td><td style="text-align:right">14g</td></tr>
-  <tr><td><b>Typical</b></td><td style="text-align:right"><b>about 695</b></td><td style="text-align:right"><b>about 27g</b></td></tr></table>
-  <p class="small" style="margin-top:8px">Median of the six, and five of the six sit between 563 and 796. Figures are per serve off the HelloFresh AU recipe pages, read 16 Oct 2026.</p>
-  <p class="small" style="margin-top:10px"><b>THREE THINGS THAT FOLLOW.</b></p>
-  <p class="small" style="margin-top:6px"><b>One.</b> Your pre-dinner budget is <b>1,450</b>, not the 1,400 I guessed at. Slightly more room than I gave you.</p>
-  <p class="small" style="margin-top:6px"><b>Two.</b> Dinner brings about 27g of protein, so your real daily total is around <b>158g</b>. At 82kg that is 1.9g per kilo, which is exactly where it should be for someone running 50km a week in a deficit. You do not need to do anything about it.</p>
-  <p class="small" style="margin-top:6px"><b>Three, and this is the one to actually know about: the salt.</b> Those six run from 1,130 to 2,264mg of sodium a serve, and the Australian daily target for an adult is around 2,000mg. So one dinner can be the whole day's worth. That is not a health emergency on the odd night, but it IS why the scale can read half a kilo up the next morning. That is water, not fat. Weigh in Thursday regardless and never react to one number.</p>
-  <p class="small" style="margin-top:8px">And if a serve ever looks small to you, it is the carbs doing the work: those six run 24 to 86g a serve. That is fine. You are running 50km a week and you train at 4:30 the next morning off exactly those carbs.</p></div>
+  const prepBody = '<p class="small">Do this and the week runs itself. Skip it and you buy lunch five times.</p>'
+   +'<table style="margin-top:8px"><tr><th>Do</th><th>How</th><th style="text-align:right">Time</th></tr>'
+   + NUT.prep.map(r=>'<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td style="text-align:right">'+r[2]+'</td></tr>').join("")
+   +'</table><p class="small" style="margin-top:8px"><b>NOT on Sunday: the wraps.</b> Build each one the morning you eat it. A wrap built on Sunday is a wet paper bag by Wednesday.</p>';
 
-  <div class="card"><h2>The shopping list</h2>
-  <p class="small">Send it <b>Thursday night</b>, because the order goes in Friday. These quantities ARE the week above. Nothing spare, nothing missing.</p>
-  <div class="row" style="margin-top:8px"><button class="btn" onclick="shopShare()">Send to Jess</button><button class="ghost" onclick="shopCopy()">Copy list</button></div>
-  <table style="margin-top:10px"><tr><th>Buy</th><th>Why that much</th></tr>
-  ${NUT.shop.map(r=>`<tr><td><b>${esc(r[0])}</b></td><td>${esc(r[1])}</td></tr>`).join("")}</table></div>
+  const logBody = '<div style="display:flex;align-items:center;gap:14px">'
+   + ringSVG(pct, s.p+"g", "OF "+NUT.target)
+   + '<div style="flex:1"><p class="small" style="margin:0"><b style="color:var(--brand);font-size:15px">'+(left?left+"g to go":"Done.")+'</b></p>'
+   + '<p class="small" style="margin:6px 0 0">Roughly <b>'+s.k+'</b> cal, '+(kleft>=0?"about <b>"+kleft+"</b> left before dinner":"<b style=\"color:var(--brand)\">"+(-kleft)+" over</b>")+'. Dinner is not counted.</p></div></div>'
+   + chips
+   + '<div style="margin-top:14px;padding:11px;border:1px solid var(--grid);border-radius:12px">'
+   + '<p class="small" style="margin:0 0 8px;font-weight:800;letter-spacing:.06em">ADD YOUR OWN</p>'
+   + '<div class="row"><label class="f" style="flex:2 1 150px">What<input id="cfn" placeholder="e.g. Vegemite toast"></label>'
+   + '<label class="f" style="flex:0 0 76px">Protein g<input type="number" id="cfp" placeholder="0"></label>'
+   + '<label class="f" style="flex:0 0 68px">Cal<input type="number" id="cfk" placeholder="0"></label>'
+   + '<button class="btn" onclick="nutAddCustom()">Add</button></div>'
+   + '<p class="small" style="margin-top:8px">It confirms the numbers back at you when you save, logs today, and keeps itself as a button under YOURS. No idea? <b>Guess high.</b> Cafe breakfast 700 to 1,000, pub meal the same, schooner 140, wine 120.</p></div>'
+   + '<div class="row" style="margin-top:12px"><button class="ghost" onclick="nutUndo()">Undo last</button>'
+   + '<button class="ghost" onclick="nutReset()">Clear today</button><span class="small">'+log.length+' logged</span></div>';
 
-  <div class="card"><h2>Sunday night. 45 minutes, once.</h2>
-  <p class="small">Do this and the week runs itself. Skip it and you will buy lunch five times.</p>
-  <table style="margin-top:8px"><tr><th>Do</th><th>How</th><th style="text-align:right">Time</th></tr>
-  ${NUT.prep.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td style="text-align:right">${r[2]}</td></tr>`).join("")}</table>
-  <p class="small" style="margin-top:8px"><b>NOT on Sunday:</b> the wraps. Build each one the morning you eat it, or the night before. A wrap built on Sunday is a wet paper bag by Wednesday.</p></div>
+  const scaleBody = '<p class="small">Thursday mornings, after the run, before breakfast, same clothes.</p>'
+   +'<div class="row" style="margin-top:8px"><label class="f">Weight (kg)<input type="number" step="0.1" id="wtin" placeholder="'+last.toFixed(1)+'"></label>'
+   +'<button class="btn" onclick="saveWt()">Save</button><span class="small">'+esc(lostTxt)+'</span></div>'
+   +'<p class="small" style="margin-top:10px">Never react to one number. A salty dinner reads half a kilo heavier the next morning and that is water.</p>';
 
-  <div class="card"><h2>Peckish days</h2>
-  <p class="small">Some days you will be hungry and that is fine, it is not a failure. Two rules before you eat anything.</p>
-  <p class="small" style="margin-top:8px"><b>One.</b> Have a long black or a big glass of water and wait ten minutes. Most 3pm hunger is thirst or boredom and it goes.</p>
-  <p class="small" style="margin-top:6px"><b>Two.</b> If it is still there, eat PROTEIN, not carbs. Protein turns hunger off, a biscuit turns it up.</p>
-  <table style="margin-top:10px"><tr><th>Eat</th><th style="text-align:right">Protein</th><th style="text-align:right">Cal</th></tr>
-  <tr><td>Greek yoghurt, 150g plain</td><td style="text-align:right">14g</td><td style="text-align:right">90</td></tr>
-  <tr><td>Cottage cheese, 100g</td><td style="text-align:right">12g</td><td style="text-align:right">100</td></tr>
-  <tr><td>20g of jerky</td><td style="text-align:right">10g</td><td style="text-align:right">60</td></tr>
-  <tr><td>2 Cruskits + 1 protein cheese</td><td style="text-align:right">7g</td><td style="text-align:right">95</td></tr>
-  <tr><td>1 boiled egg</td><td style="text-align:right">6g</td><td style="text-align:right">70</td></tr>
-  <tr><td><b>10 almonds.</b> Ten. Count them out and put the bag away</td><td style="text-align:right">3g</td><td style="text-align:right">70</td></tr>
-  <tr><td>An apple</td><td style="text-align:right">0g</td><td style="text-align:right">80</td></tr>
-  <tr><td>Carrot or celery sticks</td><td style="text-align:right">1g</td><td style="text-align:right">40</td></tr></table>
-  <p class="small" style="margin-top:8px">Any one of those is fine. Two is fine. It is the handful of nuts eaten out of the bag at the pantry, which is 400 calories and nobody ever counts, that does the damage.</p></div>
+  const progBody = '<div style="display:flex;gap:12px;margin-bottom:10px">'
+   +'<div style="flex:1;text-align:center;padding:9px 4px;background:var(--grid);border-radius:10px"><div style="font-size:19px;font-weight:800;color:var(--brand)">'+last.toFixed(1)+'</div><div class="small">now</div></div>'
+   +'<div style="flex:1;text-align:center;padding:9px 4px;background:var(--grid);border-radius:10px"><div style="font-size:19px;font-weight:800">'+(diff>0?diff.toFixed(1):"0.0")+'</div><div class="small">kg off</div></div>'
+   +'<div style="flex:1;text-align:center;padding:9px 4px;background:var(--grid);border-radius:10px"><div style="font-size:19px;font-weight:800">'+(togo>0?togo.toFixed(1):"0.0")+'</div><div class="small">kg to go</div></div></div>'
+   + wtChart()
+   +'<p class="small" style="margin-top:8px">Solid line is you. Dotted line is the target: flat until Mon 26 Oct because you are away, then half a kilo a week down to 75kg.</p>'
+   +'<p class="small" style="margin-top:12px"><b>THE POINT OF ALL THIS: shirt off at the beach this summer.</b></p>'
+   +'<p class="small" style="margin-top:6px">Two things worth knowing so you do not get disheartened at the wrong moment. <b>You cannot spot reduce.</b> There is no food and no exercise that takes fat off the chest specifically. What takes it off the chest is taking it off everywhere, which is exactly what that line above is. And chest fat is often one of the LAST places to go, so the scale and your waistband will move well before the mirror does. That is normal and it is not the plan failing.</p>'
+   +'<p class="small" style="margin-top:6px"><b>The other thing, and do it early rather than late.</b> Get a GP to check whether what you are feeling is fat or glandular tissue. It is a two minute examination. If it is fat, everything on this tab works on it. If it is glandular it will not shift no matter how lean you get, and that is worth knowing now rather than after another six months of doing everything right.</p>'
+   +'<p class="small" style="margin-top:10px">The other reason this matters: 7kg off 82kg is 8.5% of your body mass, which on the usual rule of thumb is worth roughly two to four minutes over 10km. Bigger than anything left in the training plan.</p>';
 
-  <div class="card"><h2>Supplements. Five things, and that is the lot.</h2>
-  <table><tr><th>Take</th><th>When</th><th>How much</th></tr>
-  <tr><td><b>Protein powder</b></td><td>Stirred through the yoghurt after the run</td><td>1 scoop</td></tr>
-  <tr><td><b>Creatine</b></td><td>Any time. Easiest in the same yoghurt. Every day INCLUDING rest days</td><td>3 to 5g</td></tr>
-  <tr><td><b>Dr Hydrate</b></td><td>Work bottle any day. Before AND after the long run and the graveyard. Every hot day from November</td><td>1 serve</td></tr>
-  <tr><td><b>Caffeine</b></td><td>The 4:30 pod shot, and the race protocol already in the plan</td><td>As you do now</td></tr>
-  <tr><td><b>Calcium and vitamin D</b></td><td>Daily, from food first</td><td>About 1,000mg calcium</td></tr></table>
+  const jerkyBody = '<p class="small">Cheaper by a long way and you control the sugar. A kilo of topside dries to roughly 350 to 400g and shop packs are 50 to 60g, so one kilo is six or seven packets. Plain and original are usually low sugar, teriyaki and honey and barbecue are where it hides, so read the panel and want under about 5g per 100g.</p>'
+   +'<p class="small" style="margin-top:8px"><b>MEAT.</b> Topside, round, rump or silverside. LEAN IS NOT OPTIONAL: fat does not dry, it goes rancid, and it is the single reason home jerky spoils.</p>'
+   +'<p class="small" style="margin-top:8px"><b>SLICING.</b> Freeze it an hour until firm but not solid, then slice 3 to 5mm. With the grain for chewy, across for tender.</p>'
+   +'<p class="small" style="margin-top:8px"><b>MARINADE, 1kg, no sugar.</b> 125ml soy, 60ml Worcestershire, 2 tsp cracked pepper, 2 tsp garlic powder, 1 tsp onion powder, 1 tsp smoked paprika, chilli if you want. Fridge 6 to 24 hours, then pat every strip dry.</p>'
+   +'<p class="small" style="margin-top:8px"><b>DEHYDRATOR.</b> 70 to 75 degrees, single layer, not touching, 4 to 8 hours. Done when a strip cracks and bends but does not snap clean.</p>'
+   +'<p class="small" style="margin-top:8px"><b>THE SAFETY STEP, DO NOT SKIP.</b> It has to reach 71 degrees inside and most home dehydrators top out near 70. Once dried, 10 minutes in the oven at 135. Verified against ThermoWorks jerky food-safety guidance, Oct 2026.</p>'
+   +'<p class="small" style="margin-top:8px"><b>STORING.</b> Cool completely or it sweats. No nitrites in yours, so fridge two to three weeks or freezer, never the pantry.</p>';
 
-  <p class="small" style="margin-top:12px"><b>DR HYDRATE, since you asked.</b> 19 calories a serve and no added sugar, so it costs you nothing and you can have it whenever you want. Being straight with you though: on a 30 minute belt run or sitting at your desk it is doing very little that water would not. Where it genuinely earns its place is anything over an hour, anything in real heat, and race day. Two things worth doing with it. One, from November start using it on every long run, because SEQ summer is coming and Beerwah@Night starts at 7pm in January. Two, use exactly the same flavour and strength on race day that you have been using all build. Race day is not the day to find out something does not agree with you.</p>
-
-  <p class="small" style="margin-top:10px"><b>ONE WARNING ABOUT CREATINE AND THE SCALES.</b> Creatine pulls water into the muscle and that shows up as a kilo or two on the scale within a few weeks of starting it. You are already on it and steady, so it is not a problem. But do NOT start, stop or change the dose once the weigh-ins begin on 26 Oct, because the scale will move for reasons that have nothing to do with fat and you will not know which is which.</p>
-
-  <p class="small" style="margin-top:10px"><b>THE ONE THAT ACTUALLY MATTERS RIGHT NOW IS THE BORING ONE.</b> You have a sore spot on the inside of your tibia and you are about to run a deficit on 50km a week. The three things most associated with bone stress problems in runners are not eating enough, low calcium and low vitamin D. Food first and you are most of the way there already: 200g of Greek yoghurt is roughly 200mg of calcium, and the cottage cheese and the protein cheese slices add more. Vitamin D is the one to actually TEST rather than guess at, and 4:30am sun does not count, because the UV is too low that early to make any.</p>
-
-  <p class="small" style="margin-top:10px"><b>WHAT TO SKIP.</b> BCAAs and amino blends, which do nothing once your protein is where yours now is. Fat burners. Testosterone boosters, and you were already right about those. And do not take iron on a hunch: if you ever feel flat in a way the training does not explain, get ferritin tested, because guessing at iron is one of the few supplement mistakes that can actually hurt you.</p>
-
-  <p class="small" style="margin-top:10px"><b>ONE TO TRIAL LATER, NOT NOW.</b> Beetroot or nitrate shots have reasonable evidence behind them for endurance, taken a couple of hours before. If you want to try it, try it before Beerwah@Daybreak on 6 Dec, never for the first time before Beerwah@Night.</p></div>
-
-  <div class="card"><h2>Today</h2>
-  <div style="display:flex;align-items:center;gap:14px;margin-top:6px">
-    ${ringSVG(pct, s.p+"g", "OF "+NUT.target)}
-    <div style="flex:1"><p class="small" style="margin:0"><b style="color:var(--brand);font-size:15px">${left?left+"g to go":"Done. Go and eat dinner."}</b></p>
-    <p class="small" style="margin:6px 0 0">Streak <b>${nutStreak()}</b> day${nutStreak()===1?"":"s"} &middot; roughly <b>${s.k}</b> cal, ${kleft>=0?"about <b>"+kleft+"</b> left before dinner":"<b style=\"color:var(--brand)\">"+(-kleft)+" over</b>"}</p>
-    <p class="small" style="margin:6px 0 0">Calories are a rough guide for the part of the day you control. Dinner is not in them. The scales are the referee, not this number.</p></div>
-  </div>
-  ${chips}
-  <div style="margin-top:14px;padding:11px;border:1px solid var(--grid);border-radius:12px">
-    <p class="small" style="margin:0 0 8px;font-weight:800;letter-spacing:.06em">ADD YOUR OWN</p>
-    <div class="row">
-      <label class="f" style="flex:2 1 150px">What<input id="cfn" placeholder="e.g. Vegemite toast"></label>
-      <label class="f" style="flex:0 0 76px">Protein g<input type="number" id="cfp" placeholder="0"></label>
-      <label class="f" style="flex:0 0 68px">Cal<input type="number" id="cfk" placeholder="0"></label>
-      <button class="btn" onclick="nutAddCustom()">Add</button>
-    </div>
-    <p class="small" style="margin-top:8px">Logs today and saves itself as a button under YOURS. Tap the cross to drop one. No idea of the numbers? <b>Guess high.</b> Cafe breakfast 700 to 1,000, pub meal about the same, schooner 140, wine 120.</p>
-  </div>
-  <div class="row" style="margin-top:12px">
-    <button class="ghost" onclick="nutUndo()">Undo last</button>
-    <button class="ghost" onclick="nutReset()">Clear today</button>
-    <span class="small">${log.length} item${log.length===1?"":"s"} logged</span>
-  </div></div>
-
-  <div class="card"><h2>The scales</h2>
-  <p class="small">Thursday mornings, after the run, before breakfast, same clothes. One number.</p>
-  <div class="row" style="margin-top:8px">
-    <label class="f">Weight (kg)<input type="number" step="0.1" id="wtin" placeholder="${last.toFixed(1)}"></label>
-    <button class="btn" onclick="saveWt()">Save</button>
-    <span class="small">${esc(lostTxt)}</span>
-  </div>
-  ${wtChart()}
-  <p class="small" style="margin-top:10px"><b>THE THREE RULES.</b> Half a kilo a week, no faster, starting Mon 26 Oct. If the weekly aerobic marker on your Progress tab goes flat two weeks running, or the right shin hits 3, you eat more that week. And race weeks are not diet weeks: from the Monday of Daybreak week and of Beerwah@Night week you eat at maintenance.</p>
-  <p class="small" style="margin-top:8px">7kg off 82kg is 8.5% of your body mass, which on the usual rule of thumb is worth somewhere around two to four minutes over 10km. Bigger than anything left in the training plan.</p></div>
-
-  <div class="card"><h2>Making your own jerky</h2>
-  <p class="small">Cheaper by a long way and you control the sugar. A kilo of topside dries to roughly 350 to 400g, and shop packs are 50 to 60g, so one kilo is six or seven packets. On the sugar: plain and original are usually low, teriyaki and honey and barbecue are where it hides, so read the panel and want under about 5g per 100g.</p>
-  <details style="margin-top:10px"><summary>The recipe and the method</summary>
-  <p class="small" style="margin-top:8px"><b>THE MEAT.</b> Topside, round, rump or silverside. LEAN IS NOT OPTIONAL: fat does not dry, it goes rancid, and it is the single reason home jerky spoils. Trim every scrap off first.</p>
-  <p class="small" style="margin-top:8px"><b>THE SLICING TRICK.</b> Freeze it an hour or two until firm but not solid, then slice 3 to 5mm. WITH the grain for chewy, ACROSS for tender.</p>
-  <p class="small" style="margin-top:8px"><b>THE MARINADE, 1kg, no sugar.</b> 125ml soy, 60ml Worcestershire, 2 tsp cracked pepper, 2 tsp garlic powder, 1 tsp onion powder, 1 tsp smoked paprika, chilli flakes if you want. Less salty version: soy down to 80ml plus 45ml water. Bag it, fridge, 6 to 24 hours. Pat every strip dry before it goes in.</p>
-  <p class="small" style="margin-top:8px"><b>THE DEHYDRATOR.</b> 70 to 75 degrees, single layer, not touching, 4 to 8 hours. Done when a strip cracks and bends but does not snap clean.</p>
-  <p class="small" style="margin-top:8px"><b>THE SAFETY STEP, DO NOT SKIP IT.</b> The meat has to reach 71 degrees inside and most home dehydrators top out around 70, which is not reliably enough. Once it is dried, 10 minutes in the oven at 135. Verified against ThermoWorks' jerky food-safety guidance, Oct 2026.</p>
-  <p class="small" style="margin-top:8px"><b>STORING.</b> Cool completely or it sweats and moulds. No nitrites in yours, so it does NOT live in the pantry: fridge two to three weeks, freezer months. A kilo on a Sunday covers a fortnight of 3pm.</p>
-  </details></div>`;
+  return actCard(false)
+   + roll("The shopping list", shopBody, false)
+   + roll("Sunday night, 45 minutes", prepBody, false)
+   + roll("What I actually ate", logBody, false)
+   + roll("The scales", scaleBody, false)
+   + roll("Progress", progBody, false)
+   + roll("Making your own jerky", jerkyBody, false);
 }
 function rSync(){
   const c=store.cfg;
