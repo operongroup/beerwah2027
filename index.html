@@ -83,7 +83,7 @@ header .count{margin-left:auto;text-align:right}
 header .count b{display:block;font-size:30px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;
   background:linear-gradient(135deg,var(--brand2),var(--brand));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 header .count span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
-.chips{padding:8px 18px 10px;display:flex;gap:6px;flex-wrap:wrap;max-width:880px;margin:0 auto}
+.chips{padding:8px 18px 10px;display:flex;gap:6px;flex-wrap:nowrap;max-width:880px;margin:0 auto}
 .chip{font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:99px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--ink2)}
 .chip.acc{border-color:rgba(var(--brandrgb),.5);color:var(--brand2);background:rgba(var(--brandrgb),.10)}
 nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(var(--navrgb),.85);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
@@ -1453,9 +1453,7 @@ function render(){
   renderEvents(t);
   const wk=weekOf(t);
   const wkm = WEEKS[Math.min(NW,Math.max(1,wk))];
-  $("#chips").innerHTML = `<span class="chip acc">Week ${Math.min(NW,Math.max(1,wk))} of ${NW} · Phase ${wkm?esc(wkm.phase):""}</span>
-    ${wkm&&wkm.down?'<span class="chip">DOWN WEEK · not optional</span>':""}
-    <span class="chip">${wkm?wkm.km+"km · "+wkm.vert+"m vert this week":""}</span>`;
+  $("#chips").innerHTML = `<span class="chip acc" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">W${Math.min(NW,Math.max(1,wk))} of ${NW} · ${wkm?esc(wkm.phase):""}${wkm&&wkm.down?" · DOWN":""}${wkm?" · "+wkm.km+"km · "+wkm.vert+"m":""}</span>`;
   const R={Today:rToday,Week:rWeek,Plan:rPlan,Strength:rStrength,Food:rFood,Content:rContent,Progress:rProgress,Rules:rRules,Sync:rSync};
   $("#main").innerHTML = (tab==="Today"&&dayView)? rDayView(dayView) : R[tab]();
   if(tab==="Progress") drawCharts();
