@@ -2207,6 +2207,15 @@ const NUT = {
     {id:"beer", g:"Anytime",   n:"Beer, schooner",                 p:1,  k:140},
     {id:"wine", g:"Anytime",   n:"Glass of wine",                  p:0,  k:120}
   ],
+  week: [
+    [1,"Mon","Rest day","Nothing changes, and that is the trap. No run means no rush, and this is the easiest day of the week to let slide. Hit the number anyway."],
+    [2,"Tue","Quality session","<b>Half a banana before you go out.</b> This is the hardest session of the week and running it empty costs you the session. Everything else as normal."],
+    [3,"Wed","Easy run","Standard day. Nothing changes."],
+    [4,"Thu","Easy + strides","<b>WEIGH IN this morning</b>, after the run, before breakfast. And <b>send Jess the shopping list tonight</b>, because the order goes in tomorrow."],
+    [5,"Fri","Strength, no run","No run means no post-run breakfast window. Eat it at the same time anyway or the whole day slides. Groceries get ordered today."],
+    [6,"Sat","Long run","<b>The big one.</b> Half a banana before. After it, add a second slice of toast or a banana to the usual breakfast. <b>DO NOT cut on long run day</b>, you will pay for it on Sunday and again on Tuesday."],
+    [0,"Sun","Climb or easy, then prep","Normal day, then <b>45 minutes of prep in the evening</b>. That is the card below and it is the one thing that makes the rest of the week happen."]
+  ],
   day: [
     ["4:30am","Pod shot with a dash of oat milk. Nothing else.","0g"],
     ["Back from the run","<b>200g Greek yoghurt, one scoop of protein stirred through, a handful of frozen berries.</b> Forty seconds. No cooking.","44g"],
@@ -2303,6 +2312,7 @@ function wtChart(){
 function rFood(){
   const d=todayISO(), s=nutSum(d), pct=Math.min(1,s.p/NUT.target), left=Math.max(0,NUT.target-s.p);
   const log=(store.nut[d]||[]), kleft=NUT.kcal_budget-s.k;
+  const today3=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][new Date(d+"T12:00").getDay()];
   const groups=[["Breakfast","BREAKFAST"],["Lunch","LUNCH"],["3pm","3PM"],["Peckish","IF YOU ARE PECKISH"],["Out","OUT, OR YOU FORGOT BREAKFAST"],["Anytime","DRINKS AND ODDS"],["Yours","YOURS"]];
   const af=allFoods();
   const face=f=>esc(f.n)+' <b style="color:var(--brand)">'+f.p+'g</b> <span style="opacity:.6">'+f.k+'</span>';
@@ -2317,22 +2327,26 @@ function rFood(){
   const w=store.wt, wk=Object.keys(w).sort(), last=wk.length?w[wk[wk.length-1]]:NUT.start_kg;
   const diff=NUT.start_kg-last;
   const lostTxt = wk.length? (Math.abs(diff)<0.05? "level with 82.0" : (diff>0? diff.toFixed(1)+"kg down from 82.0" : (-diff).toFixed(1)+"kg up from 82.0")) : "No weigh-in yet";
-  return `<div class="card"><h2>The day. Just do this.</h2>
+  return `<div class="card"><h2>The week</h2>
+  <table><tr><th>Day</th><th>Training</th><th>What changes</th></tr>
+  ${NUT.week.map(r=>`<tr${r[1]===today3?' style="background:rgba(232,67,14,.10)"':''}><td><b>${r[1]}</b></td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join("")}</table>
+
+  <h2 style="margin-top:16px">Every day, same times</h2>
   <table><tr><th>When</th><th>Eat</th><th style="text-align:right">Protein</th></tr>
   ${NUT.day.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td style="text-align:right">${r[2]}</td></tr>`).join("")}</table>
-  <p class="small" style="margin-top:8px">Same every day on purpose. The thing that fails at 4am is deciding, not willpower.</p></div>
+  <p class="small" style="margin-top:8px">Same every day on purpose. The thing that fails at 4am is deciding, not willpower. The week above only tells you what is different.</p></div>
 
-  <div class="card"><h2>Sunday night. 45 minutes, once.</h2>
-  <p class="small">Do this and the week runs itself. Skip it and you will buy lunch.</p>
-  <table style="margin-top:8px"><tr><th>Do</th><th>How</th><th style="text-align:right">Time</th></tr>
-  ${NUT.prep.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td style="text-align:right">${r[2]}</td></tr>`).join("")}</table>
-  <p class="small" style="margin-top:8px"><b>NOT on Sunday:</b> the wraps. Build each one in the morning or the night before, because a wrap built on Sunday is a wet paper bag by Wednesday.</p></div>
-
-  <div class="card"><h2>The shop. One week exactly.</h2>
-  <p class="small">You order Friday, so this goes to Jess Thursday night. These quantities ARE the week above, nothing spare and nothing missing.</p>
+  <div class="card"><h2>The shopping list</h2>
+  <p class="small">Send it <b>Thursday night</b>, because the order goes in Friday. These quantities ARE the week above. Nothing spare, nothing missing.</p>
   <div class="row" style="margin-top:8px"><button class="btn" onclick="shopShare()">Send to Jess</button><button class="ghost" onclick="shopCopy()">Copy list</button></div>
   <table style="margin-top:10px"><tr><th>Buy</th><th>Why that much</th></tr>
   ${NUT.shop.map(r=>`<tr><td><b>${esc(r[0])}</b></td><td>${esc(r[1])}</td></tr>`).join("")}</table></div>
+
+  <div class="card"><h2>Sunday night. 45 minutes, once.</h2>
+  <p class="small">Do this and the week runs itself. Skip it and you will buy lunch five times.</p>
+  <table style="margin-top:8px"><tr><th>Do</th><th>How</th><th style="text-align:right">Time</th></tr>
+  ${NUT.prep.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td style="text-align:right">${r[2]}</td></tr>`).join("")}</table>
+  <p class="small" style="margin-top:8px"><b>NOT on Sunday:</b> the wraps. Build each one the morning you eat it, or the night before. A wrap built on Sunday is a wet paper bag by Wednesday.</p></div>
 
   <div class="card"><h2>Peckish days</h2>
   <p class="small">Some days you will be hungry and that is fine, it is not a failure. Two rules before you eat anything.</p>
