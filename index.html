@@ -114,6 +114,10 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
 .brief{margin:10px 0 4px;padding:12px 14px;border-radius:12px;
   background:rgba(var(--brandrgb),.10);border:1px solid rgba(var(--brandrgb),.35);
   color:var(--ink);font-size:15px;font-weight:600;line-height:1.45}
+.blist{margin:0;padding:0 0 0 16px;list-style:none}
+.blist li{position:relative;margin:0 0 9px;white-space:normal}
+.blist li:last-child{margin-bottom:0}
+.blist li::before{content:"";position:absolute;left:-13px;top:.58em;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.5}
 .fullpres{margin-top:8px}
 .fullpres summary{cursor:pointer;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--muted)}
 .fullpres .pres{margin-top:8px}
@@ -390,7 +394,7 @@ const WEEKS = {
   "km": 46.2,
   "vert": 550,
   "down": false,
-  "note": "RETURN WEEK, REBUILT 25 Oct 2026. Last run was 19 Oct: 22.2km in fourteen days and 5km in the last ten. CTL 20.3 against 23.5 on 15 Oct, so about 14 percent off, but ATL is down to 12.6, form is +7.7 and HRV sat at 92 and 94 the last two days. You also averaged 13,553 steps a day on holiday against 11,964 at home, which held your tissue load tolerance even though it did nothing for your running fitness. So this is a trim, not a reset: 49.7km and 650m becomes 46.2km and 550m. Monday becomes an easy 5km because there is no weekend load to recover from and Tuesday needs a run in the legs first. Tuesday goes from 3 x 10 to 3 x 8. Saturday's trail day drops from 15.0km and 350m to 11.0km and 250m, which is the cut that matters, because descent is what threatens that calf. Sunday's belt climb stays, minus the loaded pinch set. The tens and the pinch set both come back in Week 15."
+  "note": "RETURN WEEK, REBUILT 25 Oct 2026. || Last run was 19 Oct: 22.2km in fourteen days and 5km in the last ten. || CTL 20.3 against 23.5 on 15 Oct, so about 14 percent off. But ATL is down to 12.6, form is +7.7 and HRV sat at 92 and 94 the last two days. || You averaged 13,553 steps a day on holiday against 11,964 at home. That held your tissue load tolerance even though it did nothing for your running fitness. || So this is a trim, not a reset: 49.7km and 650m becomes 46.2km and 550m. || Monday becomes an easy 5km, because there is no weekend load to recover from and Tuesday needs a run in the legs first. || Tuesday goes from 3 x 10 to 3 x 8. || Saturday's trail day drops from 15.0km and 350m to 11.0km and 250m. That is the cut that matters, because descent is what threatens that calf. || Sunday's belt climb stays, minus the loaded pinch set. || The tens and the pinch set both come back in Week 15."
  },
  "15": {
   "phase": "2 Build",
@@ -1161,6 +1165,9 @@ let planWk = null; let dayView = null;
 // ---------- helpers ----------
 const $ = s => document.querySelector(s);
 const esc = s => String(s??"").replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+// Cards store their segments separated by "||". Render 2+ segments as dot points so a card is scannable instead of a wall of text.
+const segList = t => { const p=String(t??"").split("||").map(x=>x.trim()).filter(Boolean);
+  return p.length<2 ? esc(t??"") : '<ul class="blist">'+p.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>'; };
 const iso = d => { const z=n=>String(n).padStart(2,"0"); return d.getFullYear()+"-"+z(d.getMonth()+1)+"-"+z(d.getDate()); };
 const todayISO = () => iso(new Date());
 const dayDiff = (a,b) => Math.round((new Date(b+"T12:00")-new Date(a+"T12:00"))/864e5);
@@ -1545,7 +1552,7 @@ function sessionCard(s, expanded){
     locBlock = `<div class="locwrap">
       <button class="locbtn ${l.loc==="out"?"on":""}" onclick="setLoc(${s.id},'out')">🌳 Outside</button>
       <button class="locbtn ${l.loc==="tm"?"on":""}" onclick="setLoc(${s.id},'tm')">🏃 Treadmill</button>
-    </div>` + (brief? `<div class="brief">${esc(brief)}</div>`
+    </div>` + (brief? `<div class="brief">${segList(brief)}</div>`
                     : `<p class="small" style="margin:6px 2px 0">Pick one to see the short version.</p>`)
       + (hrMain? `<div class="hrnote"><span class="hrlbl">\u2665 HEART RATE</span><p>${esc(hrMain)}</p>${
           hrCaveat? `<details class="hrwhy"><summary>Why "~"?</summary><p>${esc(hrCaveat)}</p></details>`:""}</div>`:"");
@@ -1555,7 +1562,7 @@ function sessionCard(s, expanded){
     ${meta?`<p class="small">${meta}${s.type!=="strength"?" planned":""}</p>`:""}
     ${rtBlock}
     ${locBlock}
-    <details class="fullpres"><summary>Full detail</summary><p class="pres">${esc(s.prescription)}</p></details>
+    <details class="fullpres"><summary>Full detail</summary><div class="pres">${segList(s.prescription)}</div></details>
     ${wucd(s.wu,"Warm-up","↗","wu")}${logForm}${wucd(s.cd,"Cool-down","↘","cdd")}${actHtml}</div>`;
 }
 function rContent(){
@@ -1600,7 +1607,7 @@ function rToday(){
   let head=`<div class="card hero">${ringSVG(pct, Math.round(pct*100)+"%", "WEEK VOL")}
     <div class="ht"><b>${wa.km.toFixed(1)} of ${wm?wm.km:0}km this week</b>
     <p>${Math.round(wa.vert)} of ${wm?wm.vert:0}m vert · ${wm?esc(wm.phase):""}${wm&&wm.down?" · DOWN WEEK":""}</p>
-    ${wm&&wm.note?`<p class="small">${esc(wm.note)}</p>`:""}</div></div>${syncLine}
+    ${wm&&wm.note?`<div class="small">${segList(wm.note)}</div>`:""}</div></div>${syncLine}
   <h2 style="font-size:11px;color:var(--muted);margin:2px 2px 8px;letter-spacing:.09em">TODAY — ${new Date().toDateString().toUpperCase()}</h2>`;
   if(!list.length){
     const before = t<START;
