@@ -110,7 +110,7 @@ main{max-width:880px;margin:0 auto;padding:4px 14px 24px}
   background:transparent;color:var(--ink2);border:1px solid var(--border)}
 .locbtn.on{background:var(--brand2);border-color:var(--brand2);color:#fff}
 .locwrap{margin:10px 0 0}
-.locbtn{font-size:13px;font-weight:700;padding:9px 16px}
+.locbtn{font-size:13px;font-weight:700;padding:9px 16px;max-width:100%;white-space:normal;text-align:left}
 .brief{margin:10px 0 4px;padding:12px 14px;border-radius:12px;
   background:rgba(var(--brandrgb),.10);border:1px solid rgba(var(--brandrgb),.35);
   color:var(--ink);font-size:15px;font-weight:600;line-height:1.45}
@@ -2206,10 +2206,10 @@ const NUT = {
   target: 130, kcal_budget: 1450,
   start_kg: 82.0, start_date: "2026-10-15", hold_until: "2026-10-26", rate: 0.5, goal_kg: 75,
   foods: [
-    {id:"gy",   g:"Breakfast", n:"Greek yoghurt, 200g",            p:19, k:130},
-    {id:"pp",   g:"Breakfast", n:"Scoop of protein powder",        p:24, k:120},
+    {id:"gy",   g:"Breakfast", n:"Greek yoghurt, 200g high protein", p:17, k:111},
+    {id:"pp",   g:"Breakfast", n:"Protein scoop, 34g (Musashi)",   p:23, k:143},
     {id:"ber",  g:"Breakfast", n:"Frozen berries, 80g",            p:1,  k:40},
-    {id:"hpy",  g:"Breakfast", n:"High-protein yoghurt pouch",     p:13, k:110},
+    {id:"hpy",  g:"Breakfast", n:"YoPRO tub, 160g",                p:15, k:93},
     {id:"egg3", g:"Breakfast", n:"3 eggs on 1 slice toast",        p:21, k:290},
     {id:"oats", g:"Breakfast", n:"90-second oats sachet",          p:5,  k:170},
     {id:"wrap", g:"Lunch",     n:"THE WRAP, 150g chicken + salad", p:50, k:460},
@@ -2256,7 +2256,7 @@ const NUT = {
     ["Bag the jerky and this week's snack","Five lots of 50g jerky, and portion the snack into five too. If you portion it you eat the portion. If you take the big bag to work you eat the big bag.","5 min"]
   ],
   shop: [
-    ["Greek yoghurt, plain, 1kg tub","200g x 5 mornings"],
+    ["Farmers Union Greek Style HIGH PROTEIN Natural yoghurt, 900g x 2","200g x 5 mornings. TWO tubs: one 900g only lasts four and a half days. CHANGED 28 Oct 2026 and the brand matters. The regular Woolworths Greek yoghurt you were buying is made with cream: 234 cal and only 10g protein per 200g, with 10.6g of saturated fat. This one is 111 cal and 16.6g protein with 0.4g fat, off the panel. Same breakfast, 123 calories less and 6.6g more protein, every morning."],
     ["Frozen mixed berries, 500g bag","80g x 5 mornings"],
     ["Eggs, 1 dozen","10 for the weekday mornings, 2 spare for the weekend"],
     ["Chicken breast, 1kg raw","Cooks to about 750g, which is 150g x 5 weekday wraps. Leftovers are the weekend bonus"],
@@ -2312,7 +2312,7 @@ function todayActs(){
   const A=[];
   if(dow===2||dow===6) A.push(["pre","Half a banana before you go out","Hard session today, and running it empty costs you the session. <b>No bananas in the house?</b> A slice of toast with honey, or a muesli bar, or a spoon of jam. The point is 20 to 30g of carbs in you, not the banana specifically."]);
   A.push(["pod","Pod shot with a dash of oat milk",""]);
-  A.push(["bfast","200g Greek yoghurt, 1 scoop protein, handful of frozen berries","Same time run or no run, weekday or weekend. This one does not move. It is the anchor the rest of the day hangs off."]);
+  A.push(["bfast","200g HIGH-PROTEIN Greek yoghurt, 1 scoop protein, handful of frozen berries","Same time run or no run, weekday or weekend. This one does not move. It is the anchor the rest of the day hangs off.  ||  THE YOGHURT HAS TO BE THE HIGH-PROTEIN ONE, changed 28 Oct 2026. Farmers Union Greek Style High Protein Natural, or Chobani Protein. The ordinary Greek yoghurt is made with cream and costs you 123 calories and 6.6g of protein every morning for nothing."]);
   A.push(["cre","Creatine, 3 to 5g","Stir it into the same yoghurt. One action, not two."]);
   if(dow===6) A.push(["xtra","One extra slice of toast, or a whole banana","Long run day. You eat MORE today, not less. Cutting on long run day costs you Sunday and Tuesday."]);
   A.push(["hyd","Dr Hydrate","<b>"+(wknd?"Before AND after the long run, and through the day.":"In the work bottle. Long blacks on top of that, as many as you like.")+"</b>"]);
