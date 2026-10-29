@@ -197,6 +197,16 @@ label.f{display:flex;flex-direction:column;gap:3px;font-size:11px;color:var(--mu
 .hero .ht b{font-size:19px;font-weight:800;letter-spacing:-.01em}
 .hero .ht p{font-size:13px;color:var(--ink2);margin-top:2px}
 .hero .ht .small{margin-top:6px}
+.fuel{display:flex;align-items:center;gap:13px;margin:-4px 0 13px;padding:10px 13px;border-radius:14px;background:var(--surface2);border:1px solid var(--border);cursor:pointer}
+.fuel svg{flex:none}
+.fuelt{flex:1;min-width:0}
+.fuelt p{font-size:13px;color:var(--ink2);margin:0;line-height:1.55;display:flex;align-items:center;gap:7px}
+.fuelt b{color:var(--ink);font-size:15px;font-weight:800}
+.fuelt span{color:var(--muted);font-size:11.5px}
+.fuelt i{width:7px;height:7px;border-radius:50%;flex:none}
+.fuelt i.d1{background:var(--brand2)}
+.fuelt i.d2{background:var(--s2)}
+.fuelt i.d2.o{background:var(--crit)}
 .verdict{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--grid)}
 .verdict:first-of-type{border-top:0}
 .dot{width:9px;height:9px;border-radius:50%;margin-top:6px;flex:none;box-shadow:0 0 10px currentColor}
@@ -1628,6 +1638,24 @@ function rContent(){
   </div>` + briefCard;
 }
 function tickShot(k,v){ const s=store.shots||{}; if(v)s[k]=1; else delete s[k]; store.shots=s; render(); }
+function fuelRing(){
+  const d=todayISO(), s=nutSum(d);
+  const pp=Math.min(1,Math.max(0,s.p/NUT.target));
+  const kk=Math.min(1,Math.max(0,s.k/NUT.kcal_budget));
+  const over=s.k>NUT.kcal_budget;
+  const R1=25,R2=16,C1=2*Math.PI*R1,C2=2*Math.PI*R2;
+  return `<div class="fuel" onclick="go('Food')" title="Tap for the food tab">
+    <svg width="62" height="62" viewBox="0 0 62 62" aria-hidden="true">
+      <circle cx="31" cy="31" r="${R1}" fill="none" stroke="var(--grid)" stroke-width="6"/>
+      <circle cx="31" cy="31" r="${R1}" fill="none" stroke="var(--brand2)" stroke-width="6" stroke-linecap="round" stroke-dasharray="${C1.toFixed(2)}" stroke-dashoffset="${(C1*(1-pp)).toFixed(2)}" transform="rotate(-90 31 31)"/>
+      <circle cx="31" cy="31" r="${R2}" fill="none" stroke="var(--grid)" stroke-width="6"/>
+      <circle cx="31" cy="31" r="${R2}" fill="none" stroke="${over?"var(--crit)":"var(--s2)"}" stroke-width="6" stroke-linecap="round" stroke-dasharray="${C2.toFixed(2)}" stroke-dashoffset="${(C2*(1-kk)).toFixed(2)}" transform="rotate(-90 31 31)"/>
+    </svg>
+    <div class="fuelt">
+      <p><i class="d1"></i><b>${Math.round(s.p)}g</b> protein <span>of ${NUT.target}</span></p>
+      <p><i class="d2${over?" o":""}"></i><b>${Math.round(s.k)}</b> cal <span>of ${NUT.kcal_budget}</span></p>
+    </div></div>`;
+}
 function rToday(){
   if(ATHLETE.intake && !store.intake.done) return rIntake();
   const t=todayISO(); let list=sessionsOn(t);
@@ -1641,7 +1669,7 @@ function rToday(){
   let head=`<div class="card hero">${ringSVG(pct, Math.round(pct*100)+"%", "WEEK VOL")}
     <div class="ht"><b>${wa.km.toFixed(1)} of ${wm?wm.km:0}km this week</b>
     <p>${Math.round(wa.vert)} of ${wm?wm.vert:0}m vert · ${wm?esc(wm.phase):""}${wm&&wm.down?" · DOWN WEEK":""}</p>
-    ${wm&&wm.note?`<div class="small">${segList(wm.note)}</div>`:""}</div></div>${syncLine}
+    ${wm&&wm.note?`<div class="small">${segList(wm.note)}</div>`:""}</div></div>${fuelRing()}${syncLine}
   <h2 style="font-size:11px;color:var(--muted);margin:2px 2px 8px;letter-spacing:.09em">TODAY — ${new Date().toDateString().toUpperCase()}</h2>`;
   if(!list.length){
     const before = t<START;
