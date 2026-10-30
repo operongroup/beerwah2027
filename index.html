@@ -1668,8 +1668,7 @@ function rToday(){
     : `<div class="syncbar"><span>${ATHLETE.device}${syncAge===null?" never synced":(syncAge<2?" synced just now":" synced "+(syncAge<60? syncAge+" min ago" : Math.round(syncAge/60)+"h ago"))}</span><button class="ghost" onclick="maybeSync(true)">Sync now</button></div>`;
   let head=`<div class="card hero">${ringSVG(pct, Math.round(pct*100)+"%", "WEEK VOL")}
     <div class="ht"><b>${wa.km.toFixed(1)} of ${wm?wm.km:0}km this week</b>
-    <p>${Math.round(wa.vert)} of ${wm?wm.vert:0}m vert · ${wm?esc(wm.phase):""}${wm&&wm.down?" · DOWN WEEK":""}</p>
-    ${wm&&wm.note?`<div class="small">${segList(wm.note)}</div>`:""}</div></div>${fuelRing()}${syncLine}
+    <p>${Math.round(wa.vert)} of ${wm?wm.vert:0}m vert · ${wm?esc(wm.phase):""}${wm&&wm.down?" · DOWN WEEK":""}</p></div></div>${fuelRing()}${syncLine}
   <h2 style="font-size:11px;color:var(--muted);margin:2px 2px 8px;letter-spacing:.09em">TODAY — ${new Date().toDateString().toUpperCase()}</h2>`;
   if(!list.length){
     const before = t<START;
@@ -1905,7 +1904,6 @@ function rWeek(wk){
     <button class="ghost" onclick="planWk=${Math.max(1,wk-1)};render()">‹</button>
     <b style="flex:1;text-align:center">Week ${wk} · ${esc(m.phase)}${m.down?" · DOWN":""}</b>
     <button class="ghost" onclick="planWk=${Math.min(NW,wk+1)};render()">›</button></div>`;
-  if(m.note) html+=`<p class="small" style="margin:0 2px 8px">${esc(m.note)}</p>`;
   html+=`<div class="card"><div class="row" style="justify-content:space-between"><span class="small">Volume: <b>${a.km.toFixed(1)}</b> / ${m.km}km target</span><span class="small">Vert: <b>${Math.round(a.vert)}</b> / ${m.vert}m</span></div>
     <div class="bar"><i style="width:${Math.min(100,100*a.km/m.km)}%"></i></div>
     <div class="bar"><i style="width:${Math.min(100,100*a.vert/Math.max(1,m.vert))}%;" class="alt"></i></div></div>`;
@@ -1962,7 +1960,6 @@ function rPlan(){
       <div class="p" style="color:${phaseColor(m.phase)}">${esc(m.phase)}</div>
       <div class="k">${m.km}km · ${m.vert}m</div>
       ${a.km>0?`<div class="bar"><i style="width:${Math.min(100,100*a.km/m.km)}%"></i></div>`:""}
-      ${m.note?`<div class="small" style="font-size:10px;margin-top:2px">${esc(m.note.slice(0,42))}</div>`:""}
     </div>`; }
   html+=`</div></div>`;
   html+=ATHLETE.milestones_html||"";
